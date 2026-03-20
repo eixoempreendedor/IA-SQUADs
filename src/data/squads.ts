@@ -151,7 +151,7 @@ export const inactiveSquads: Squad[] = [
     name: "Agentes de Férias",
     description: "Catálogo de agentes conselheiros temporariamente inativos. Pensadores brilhantes cujo expertise não se alinha diretamente com o negócio atual, mas que podem ser reativados.",
     version: "v1.0.0",
-    agents: 5,
+    agents: 10,
     tasks: 0,
     workflows: 0,
     tags: ["archive", "inactive", "venture-capital", "scaling", "activism", "vulnerability", "hedge-fund"],
