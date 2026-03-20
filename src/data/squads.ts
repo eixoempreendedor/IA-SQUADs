@@ -50,8 +50,8 @@ export const squads: Squad[] = [
     description: "Squad especialista em todas as dimensões do Claude Code: hooks, skills, subagents, MCP, plugins, agent teams, customização, integração e roadmap tracking.",
     version: "v1.0.0",
     agents: 8,
-    tasks: 26,
-    workflows: 3,
+    tasks: 0,
+    workflows: 0,
     tags: ["claude-code", "hooks", "skills", "subagents", "mcp", "plugins", "agent-teams", "customization", "integration", "context-engineering"],
     color: "#3b82f6",
   },
@@ -61,7 +61,7 @@ export const squads: Squad[] = [
     description: "Squad de elite com 23 agentes de copywriting — 22 copywriters lendários + 1 orquestrador. Cobre direct response, email, funis, VSLs, cartas de vendas.",
     version: "v1.0.0",
     agents: 23,
-    tasks: 13,
+    tasks: 12,
     workflows: 2,
     tags: ["copywriting", "direct-response", "sales-letter", "email", "vsl", "funnel", "headline", "offer", "ad-copy", "launch", "brand-copy"],
     color: "#f97316",
@@ -144,6 +144,22 @@ export const squads: Squad[] = [
     color: "#22c55e",
   },
 ];
+
+export const inactiveSquads: Squad[] = [
+  {
+    id: "agentes-de-ferias",
+    name: "Agentes de Férias",
+    description: "Catálogo de agentes conselheiros temporariamente inativos. Pensadores brilhantes cujo expertise não se alinha diretamente com o negócio atual, mas que podem ser reativados.",
+    version: "v1.0.0",
+    agents: 5,
+    tasks: 0,
+    workflows: 0,
+    tags: ["archive", "inactive", "venture-capital", "scaling", "activism", "vulnerability", "hedge-fund"],
+    color: "#6b7280",
+  },
+];
+
+export const allSquads = [...squads, ...inactiveSquads];
 
 export const totals = {
   squads: squads.length,

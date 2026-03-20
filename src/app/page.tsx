@@ -1,7 +1,7 @@
 import Sidebar from "@/components/Sidebar";
 import StatsBar from "@/components/StatsBar";
 import SquadCard from "@/components/SquadCard";
-import { squads, totals } from "@/data/squads";
+import { squads, inactiveSquads, totals } from "@/data/squads";
 
 export default function Home() {
   return (
@@ -29,6 +29,21 @@ export default function Home() {
               <SquadCard key={squad.id} squad={squad} />
             ))}
           </div>
+
+          {/* Inactive Squads */}
+          {inactiveSquads.length > 0 && (
+            <>
+              <h2 className="text-xl font-semibold mt-12 mb-1">Squads Inativos</h2>
+              <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
+                Agentes temporariamente fora de atividade — podem ser reativados
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 opacity-60">
+                {inactiveSquads.map((squad) => (
+                  <SquadCard key={squad.id} squad={squad} />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </main>
     </div>
