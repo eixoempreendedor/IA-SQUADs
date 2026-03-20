@@ -14,12 +14,12 @@ export const squads: Squad[] = [
   {
     id: "advisory-board",
     name: "Advisory Board",
-    description: "Board de 11 conselheiros estratégicos — Ray Dalio, Charlie Munger, Naval Ravikant, Peter Thiel, Reid Hoffman, Simon Sinek, Brené Brown, e mais.",
-    version: "v1.0.0",
+    description: "Board de 10 conselheiros estratégicos otimizado para método comportamental para empreendedores — Munger, Naval, Sinek, Lencioni, Sivers, Cunningham, Sullivan, Wickman, Goldsmith, BJ Fogg.",
+    version: "v2.0.0",
     agents: 11,
     tasks: 7,
-    workflows: 2,
-    tags: ["strategy", "investment", "leadership", "mental-models", "scaling", "purpose", "entrepreneurship"],
+    workflows: 7,
+    tags: ["strategy", "behavioral-change", "leadership", "mental-models", "entrepreneurship", "habits", "operating-system", "coaching", "thinking", "purpose"],
     color: "#f59e0b",
   },
   {
