@@ -62,9 +62,10 @@ export default function AgentesPage() {
           {/* Agent Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
             {filtered.map((agent) => (
-              <div
+              <a
                 key={`${agent.squadId}-${agent.id}`}
-                className={`rounded-lg border p-4 flex items-start gap-3 transition-shadow hover:shadow-md hover:shadow-black/10 ${agent.inactive ? "opacity-50" : ""}`}
+                href={`/IA-Squads/agentes/${agent.squadId}/${agent.id}`}
+                className={`rounded-lg border p-4 flex items-start gap-3 transition-all hover:shadow-md hover:shadow-black/10 hover:border-orange-500/30 cursor-pointer ${agent.inactive ? "opacity-50" : ""}`}
                 style={{ background: "var(--bg-card)", borderColor: "var(--border-card)" }}
               >
                 <span className="text-2xl flex-shrink-0 mt-0.5">{agent.icon}</span>
@@ -78,7 +79,7 @@ export default function AgentesPage() {
                     {agent.squadName}
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
