@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { readFile } from "fs/promises";
 import path from "path";
 
-const SQUADS_BASE = "C:\\Users\\luizf\\aios-core\\.aios-core\\squads";
+const SQUADS_BASE = path.join(process.cwd(), "src", "data", "squads-md");
 
 export async function GET(
   _request: Request,
