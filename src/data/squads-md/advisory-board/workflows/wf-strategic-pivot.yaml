@@ -1,0 +1,162 @@
+# Strategic Pivot Workflow v1.0.0
+# Evaluate whether to pivot, persist, or simplify
+
+workflow:
+  id: wf-strategic-pivot
+  name: "Avaliacao de Pivo Estrategico"
+  trigger: "*strategic-pivot"
+  entry_agent: board-chair
+  estimated_duration: "60-90 minutes"
+  description: |
+    Workflow para avaliar se o empreendedor deve pivotar, persistir ou simplificar.
+    Combina inversao de Munger (como garantir que falhe), analise de leverage de Naval,
+    Hell Yeah test de Sivers, e pre-mortem de Cunningham para uma decisao de alta qualidade.
+
+  type: sequential
+  sequence:
+    - agent: board-chair
+      action: frame-pivot
+      creates: pivot_context
+    - agent: charlie-munger
+      action: inversion
+      creates: failure_analysis
+    - agent: naval-ravikant
+      action: leverage-analysis
+      creates: leverage_assessment
+    - agent: derek-sivers
+      action: hell-yeah-test
+      creates: simplicity_check
+    - agent: keith-cunningham
+      action: pre-mortem
+      creates: risk_analysis
+    - agent: board-chair
+      action: synthesize
+      creates: pivot_decision
+
+phases:
+  - id: phase_1_frame
+    name: "Frame the Pivot Question"
+    agent: board-chair
+    depends_on: []
+    description: "Clarify what is being considered — pivot to what? Why now? What triggered this?"
+    checkpoint:
+      gate: "Current path and proposed pivot clearly defined, triggers identified"
+      veto: "HALT if this is driven by FOMO or shiny object syndrome — diagnose first"
+    outputs:
+      - current_path
+      - proposed_pivot
+      - trigger_events
+      - emotional_state
+
+  - id: phase_2_inversion
+    name: "Inversion Analysis — How to Guarantee Failure"
+    agent: charlie-munger
+    depends_on: [phase_1_frame]
+    description: "Apply Munger's inversion — analyze both paths through failure lens"
+    checkpoint:
+      gate: "Failure scenarios mapped for BOTH paths (current and pivot)"
+      veto: "HALT if only analyzing one path — must compare both rigorously"
+    munger_protocol:
+      - "Inversion of current path — how would staying the course guarantee failure?"
+      - "Inversion of pivot — how would the pivot guarantee failure?"
+      - "Circle of Competence — does the founder have specific knowledge for the new path?"
+      - "Second-Order Thinking — what happens 2-3 steps after the pivot?"
+      - "Cognitive Bias check — is the desire to pivot driven by sunk cost fallacy, or is the desire to stay driven by loss aversion?"
+      - "Lollapalooza — are multiple failure forces combining on the current path?"
+    outputs:
+      - current_path_failure_modes
+      - pivot_failure_modes
+      - competence_assessment
+      - bias_identification
+
+  - id: phase_3_leverage
+    name: "Leverage & Specific Knowledge Analysis"
+    agent: naval-ravikant
+    depends_on: [phase_1_frame]
+    description: "Assess which path has more leverage and aligns with specific knowledge"
+    parallel_with: phase_2_inversion
+    checkpoint:
+      gate: "Leverage type and specific knowledge alignment assessed for both paths"
+      veto: "HALT if pivot abandons all accumulated specific knowledge without good reason"
+    naval_protocol:
+      - "Specific Knowledge — what does the founder know that looks like play to them?"
+      - "Does the current path or pivot better leverage this specific knowledge?"
+      - "Leverage analysis — which path has code, media, capital, or labor leverage?"
+      - "Compounding — which path compounds better over 5-10 years?"
+      - "Productize Yourself — which path better packages the founder's unique abilities?"
+      - "Escape Competition Through Authenticity — which path is more authentically THEM?"
+    outputs:
+      - specific_knowledge_fit
+      - leverage_comparison
+      - compounding_assessment
+      - authenticity_check
+
+  - id: phase_4_hell_yeah
+    name: "Hell Yeah or No — Simplicity Check"
+    agent: derek-sivers
+    depends_on: [phase_2_inversion, phase_3_leverage]
+    description: "Apply the contrarian simplicity lens — maybe neither path is right"
+    checkpoint:
+      gate: "Hell Yeah test applied, third option (simplify) considered"
+      veto: "HALT if pivot is just adding complexity — maybe subtraction is the answer"
+    sivers_protocol:
+      - "Hell Yeah test — does the pivot make you say HELL YEAH?"
+      - "Does the CURRENT path make you say HELL YEAH?"
+      - "Third option — what if you SIMPLIFIED instead of pivoted?"
+      - "Do the opposite — what would happen if you did nothing?"
+      - "Is this about growth or about ego?"
+      - "What would 'enough' look like without any pivot?"
+      - "Ideas x Execution — is this a new idea or a new execution plan for the same idea?"
+    outputs:
+      - hell_yeah_current
+      - hell_yeah_pivot
+      - simplification_option
+      - do_nothing_scenario
+
+  - id: phase_5_pre_mortem
+    name: "Pre-Mortem — Deep Risk Analysis"
+    agent: keith-cunningham
+    depends_on: [phase_4_hell_yeah]
+    description: "Imagine both paths failed — what caused the failure?"
+    checkpoint:
+      gate: "Pre-mortem completed for all options, Dumb Tax calculated"
+      veto: "HALT if no pre-mortem for the 'do nothing' option — inaction has costs too"
+    cunningham_protocol:
+      - "Pre-Mortem CURRENT: Imagine 12 months passed and staying failed. What happened?"
+      - "Pre-Mortem PIVOT: Imagine 12 months passed and the pivot failed. What happened?"
+      - "Pre-Mortem SIMPLIFY: Imagine 12 months passed and simplifying failed. What happened?"
+      - "Dumb Tax — what is the cost of getting this decision wrong for each path?"
+      - "What is the ONE question I should be asking that I haven't asked?"
+      - "Am I making this decision as Owner (strategic) or Operator (reactive/emotional)?"
+    outputs:
+      - pre_mortem_current
+      - pre_mortem_pivot
+      - pre_mortem_simplify
+      - dumb_tax_comparison
+      - owner_operator_check
+
+  - id: phase_6_synthesize
+    name: "Pivot Decision — Contrarian Synthesis"
+    agent: board-chair
+    depends_on: [phase_5_pre_mortem]
+    description: "Synthesize all analyses into a clear recommendation with dissenting view"
+    checkpoint:
+      gate: "Clear verdict with reasoning, dissenting view, and implementation plan"
+      veto: "HALT if all analyses agree — check for groupthink, include contrarian view"
+    outputs:
+      - verdict  # PERSIST | PIVOT | SIMPLIFY | HYBRID
+      - reasoning
+      - dissenting_view
+      - implementation_plan
+      - kill_criteria
+      - 90_day_experiment
+
+completion_criteria:
+  - "Inversion completed for both paths (Munger)"
+  - "Leverage and specific knowledge assessed (Naval)"
+  - "Hell Yeah test applied, simplification option considered (Sivers)"
+  - "Pre-mortem for all options including 'do nothing' (Cunningham)"
+  - "Clear verdict: PERSIST, PIVOT, SIMPLIFY, or HYBRID"
+  - "Dissenting view included in recommendation"
+  - "90-day experiment or implementation plan defined"
+  - "Kill criteria established for the chosen path"

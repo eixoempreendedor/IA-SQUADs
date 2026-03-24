@@ -1,0 +1,106 @@
+workflow:
+  id: wf-copy-review
+  name: "Revisão de Copy — Verdade com Espinha e Conversão"
+  version: "1.0.0"
+  description: |
+    Revisão rápida de qualquer peça de copy antes de publicação.
+    Valida: Grande Ideia, verdade com espinha, tom de voz, BrandScript
+    alignment, e consistência de marca. Rápido e acionável.
+  trigger: "*copy-review"
+  entry_agent: romano
+  estimated_duration: "15-20 minutes"
+  type: sequential
+
+  sequence:
+    - agent: romano
+      action: copy-analysis
+      creates: copy_score
+    - agent: donald-miller
+      action: sb7-check
+      creates: sb7_approval
+    - agent: brand-chief
+      action: brand-check
+      creates: final_verdict
+
+phases:
+  - id: phase_0
+    name: "Análise Romano"
+    agent: romano
+    description: |
+      Checklist de Copy com scoring 1-10:
+      1. Tem Grande Ideia? (tabu/contraste/escândalo)
+      2. Abre com reframe, não com resposta?
+      3. Usa verdade com espinha? (limite → benefício)
+      4. Tom conversacional e preciso? (não corporativo)
+      5. Tem 'carne'? (substância real, não fluff)
+      6. Termina com AÇÃO? (não 'pense sobre isso')
+      7. Se tirar o nome, ainda parece do Eixo?
+      8. Clareza > gentileza? (diz o que é, pra quem, o que faz, o que NÃO faz)
+      9. Consistência mata carência? (tom de abundância, não desespero)
+      10. Dissidência: soa diferente do mercado?
+    inputs:
+      - copy_to_review: "A peça de copy a ser avaliada"
+      - copy_type: "string — landing_page, email, post, reel_script, newsletter, proposta"
+    outputs:
+      - copy_score: number
+      - romano_checklist:
+          type: object
+          fields: [grande_ideia, reframe_opening, verdade_espinha, tom_conversacional, carne, action_ending, brand_voice, clareza, abundancia, dissidencia]
+      - specific_adjustments: "list — correções pontuais com sugestão"
+    checkpoint:
+      gate: "Score ≥ 7/10 para prosseguir"
+      veto: "Score < 5/10 — reescrever, não ajustar"
+
+  - id: phase_1
+    name: "SB7 Check"
+    agent: donald-miller
+    depends_on: [phase_0]
+    description: |
+      Verificação StoryBrand rápida:
+      1. O cliente é o herói? (não a marca)
+      2. Problema interno presente? (emoção)
+      3. Guia com empathy + authority?
+      4. Plano claro? (≤3 passos)
+      5. CTA presente e forte?
+      6. Stakes (fracasso) mencionado?
+      7. Grunt test: 5 segundos — o que, como ajuda, o que fazer?
+    outputs:
+      - sb7_checklist:
+          type: object
+          fields: [hero_is_customer, internal_problem, guide_empathy_authority, clear_plan, strong_cta, stakes_present, grunt_test]
+      - sb7_verdict: "string — approved, adjust, rewrite"
+    checkpoint:
+      gate: "Grunt test passa em 5 segundos"
+      veto: "Marca posicionada como herói"
+
+  - id: phase_2
+    name: "Brand Check"
+    agent: brand-chief
+    depends_on: [phase_0, phase_1]
+    description: |
+      Verificação final de marca:
+      1. Tom de voz alinhado (6 atributos: direto, humano, simples, verdadeiro, estruturado, comportamental)?
+      2. Arquétipo expresso (Explorador 80%, Governante 20%)?
+      3. Paleta de cores respeitada (se visual)?
+      4. Verbal Nail ou Mantra presente?
+      5. Visual Hammer referenciado (se aplicável)?
+      6. Categoria 'Método Comportamental' presente ou implícita?
+    outputs:
+      - brand_checklist:
+          type: object
+          fields: [tone_aligned, archetype_expressed, palette_respected, verbal_nail_present, visual_hammer_present, category_present]
+      - final_verdict: "string — PUBLICAR, REVISAR, REJEITAR"
+      - revision_notes: "list — se REVISAR, o que ajustar"
+    checkpoint:
+      gate: "Veredicto final emitido"
+
+scoring:
+  publish: "Romano ≥ 7 AND SB7 approved AND Brand check all green"
+  revise: "Romano ≥ 5 AND minor SB7/Brand adjustments needed"
+  reject: "Romano < 5 OR fundamental SB7/Brand failures"
+
+completion_criteria:
+  - "Copy avaliada com score numérico"
+  - "SB7 alignment verificado"
+  - "Brand consistency confirmada"
+  - "Veredicto final: PUBLICAR, REVISAR ou REJEITAR"

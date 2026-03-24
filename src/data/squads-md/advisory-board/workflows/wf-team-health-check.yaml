@@ -1,0 +1,174 @@
+# Team Health Check Workflow v1.0.0
+# Diagnose and improve team health using Lencioni + Sinek + Goldsmith
+
+workflow:
+  id: wf-team-health-check
+  name: "Diagnostico de Saude do Time"
+  trigger: "*team-health-check"
+  entry_agent: board-chair
+  estimated_duration: "60-90 minutes"
+  description: |
+    Diagnostico completo de saude do time combinando as 5 Disfuncoes de Lencioni,
+    o Golden Circle de Sinek para alinhamento de proposito, e o coaching comportamental
+    de Goldsmith para mudanca de lideranca. Gera um plano de intervencao com quick wins
+    e mudancas estruturais.
+
+  type: sequential
+  sequence:
+    - agent: board-chair
+      action: frame-health-check
+      creates: team_context
+    - agent: patrick-lencioni
+      action: five-dysfunctions
+      creates: dysfunction_diagnosis
+    - agent: simon-sinek
+      action: purpose-alignment
+      creates: purpose_assessment
+    - agent: marshall-goldsmith
+      action: leader-mirror
+      creates: leader_assessment
+    - agent: patrick-lencioni
+      action: intervention-design
+      creates: intervention_plan
+    - agent: board-chair
+      action: synthesize
+      creates: health_plan
+
+phases:
+  - id: phase_1_frame
+    name: "Frame the Team Challenge"
+    agent: board-chair
+    depends_on: []
+    description: "Understand the team structure, symptoms, and history of the problem"
+    checkpoint:
+      gate: "Team context clear, observable symptoms documented, previous interventions noted"
+      veto: "HALT if this is a single interpersonal conflict — handle directly, not as team issue"
+    outputs:
+      - team_context
+      - symptoms
+      - previous_interventions
+
+  - id: phase_2_dysfunctions
+    name: "Five Dysfunctions Scan"
+    agent: patrick-lencioni
+    depends_on: [phase_1_frame]
+    description: "Assess the team against Lencioni's Five Dysfunctions pyramid"
+    checkpoint:
+      gate: "Primary dysfunction identified, severity assessed, cascade mapped"
+      veto: "HALT if trust hasn't been assessed — everything builds on trust"
+    lencioni_protocol:
+      - "1. Absence of Trust — Do team members hide weaknesses and mistakes?"
+      - "2. Fear of Conflict — Do they avoid difficult conversations?"
+      - "3. Lack of Commitment — Do they fail to buy into decisions?"
+      - "4. Avoidance of Accountability — Do they avoid calling out peers?"
+      - "5. Inattention to Results — Do they prioritize individual status over team goals?"
+      - "Identify the PRIMARY dysfunction (they cascade from trust downward)"
+      - "Assess severity: early_warning | established | crisis"
+      - "Working Genius — are people in the right seats for their natural talents?"
+      - "Ideal Team Player check — humble, hungry, people-smart?"
+    outputs:
+      - dysfunction_scores
+      - primary_dysfunction
+      - severity
+      - cascade_map
+      - working_genius_gaps
+
+  - id: phase_3_purpose
+    name: "Purpose Alignment Check"
+    agent: simon-sinek
+    depends_on: [phase_2_dysfunctions]
+    description: "Assess whether the team has a shared WHY and Circle of Safety"
+    checkpoint:
+      gate: "WHY clarity assessed, Circle of Safety evaluated, infinite vs finite game identified"
+      veto: "HALT if there is no articulated WHY — this may be the root cause"
+    sinek_protocol:
+      - "Is the WHY clear and shared across the team?"
+      - "Golden Circle — do decisions flow from WHY → HOW → WHAT?"
+      - "Circle of Safety — does the leader extend safety so the team focuses outward?"
+      - "Infinite Game — is the team playing to sustain or playing to win?"
+      - "Are leaders serving the people, or are people serving the leaders?"
+      - "Neurochemistry check — is there Oxytocin (trust/bonding) or just Dopamine (hits/rewards)?"
+    outputs:
+      - why_clarity_score
+      - circle_of_safety_assessment
+      - game_type
+      - leadership_orientation
+
+  - id: phase_4_leader_mirror
+    name: "Leader Mirror"
+    agent: marshall-goldsmith
+    depends_on: [phase_2_dysfunctions, phase_3_purpose]
+    description: "Assess whether the leader's behavior is contributing to the dysfunction"
+    checkpoint:
+      gate: "Leader's contribution to dysfunction identified, ONE behavior change recommended"
+      veto: "HALT if leader is defensive — frame as growth opportunity, not blame"
+    goldsmith_protocol:
+      - "Is the leader's behavior the root cause or a symptom?"
+      - "Which of the 20 bad habits is most present in the leader?"
+      - "What Got You Here Won't Get You There — is a past strength now a weakness?"
+      - "Feedforward from the team — what ONE change would they most appreciate?"
+      - "Does the leader model the trust they expect from the team?"
+      - "Daily Question: 'Did I do my BEST to make my team feel safe today?'"
+    outputs:
+      - leader_contribution
+      - primary_bad_habit
+      - feedforward_from_team
+      - one_behavior_change
+
+  - id: phase_5_intervention
+    name: "Intervention Design"
+    agent: patrick-lencioni
+    depends_on: [phase_4_leader_mirror]
+    description: "Design a phased intervention addressing root dysfunction first"
+    checkpoint:
+      gate: "Intervention plan with quick wins (week 1), structural changes (month 1-3), and metrics"
+      veto: "HALT if intervention is a surface fix (team building event) without addressing root cause"
+    intervention_options:
+      trust_building:
+        - "Personal Histories Exercise — vulnerability-based trust"
+        - "Behavioral profiling — understand each other's styles"
+        - "Leader goes first — vulnerability from the top"
+      conflict_enabling:
+        - "Establish conflict norms — direct, compassionate, issue-focused"
+        - "Mining for conflict — actively seek disagreement in meetings"
+        - "Real-time permission — call out avoidance in the moment"
+      commitment_driving:
+        - "Cascading communication — decisions summarized and shared within 24h"
+        - "Deadline commitment — clear deadlines and ownership for every decision"
+        - "Disagree and commit protocol — voice concerns, then fully commit"
+      accountability_installing:
+        - "Peer accountability norms — team holds each other accountable"
+        - "Regular progress reviews — not just top-down, but lateral"
+        - "Scorecard visibility — everyone sees everyone's numbers"
+      results_focusing:
+        - "Team scoreboard — visible, shared, updated weekly"
+        - "Collective results over individual recognition"
+        - "Reward team wins, not individual heroics"
+    outputs:
+      - intervention_plan
+      - quick_wins_week1
+      - structural_changes_month1
+      - sustained_practices_month3
+
+  - id: phase_6_synthesize
+    name: "Health Plan Synthesis"
+    agent: board-chair
+    depends_on: [phase_5_intervention]
+    description: "Compile the complete team health plan with measurement and escalation"
+    checkpoint:
+      gate: "Complete plan with diagnosis, intervention, metrics, and escalation triggers"
+      veto: "HALT if plan doesn't address leader behavior — leader change is often prerequisite"
+    outputs:
+      - team_health_plan
+      - measurement_criteria
+      - escalation_triggers
+      - l10_meeting_adjustments
+      - 90_day_review_date
+
+completion_criteria:
+  - "Five Dysfunctions assessed with primary dysfunction identified (Lencioni)"
+  - "Purpose alignment checked — WHY and Circle of Safety (Sinek)"
+  - "Leader's contribution assessed — ONE behavior change recommended (Goldsmith)"
+  - "Intervention designed addressing root dysfunction first (Lencioni)"
+  - "Quick wins for week 1 + structural changes for month 1-3"
+  - "Measurement criteria and escalation triggers defined"

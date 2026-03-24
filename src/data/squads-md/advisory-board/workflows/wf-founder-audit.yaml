@@ -1,0 +1,155 @@
+# Founder Audit Workflow v1.0.0
+# Personal audit — is the founder in the right seat doing the right things?
+
+workflow:
+  id: wf-founder-audit
+  name: "Auditoria do Fundador"
+  trigger: "*founder-audit"
+  entry_agent: board-chair
+  estimated_duration: "60-90 minutes"
+  description: |
+    Auditoria pessoal do fundador para avaliar se esta na funcao certa, fazendo as
+    coisas certas, com os comportamentos certos. Combina Unique Ability (Sullivan),
+    Hell Yeah test (Sivers), Thinking Time (Cunningham) e diagnóstico comportamental
+    (Goldsmith) para redesenhar a funcao do fundador.
+
+  type: sequential
+  sequence:
+    - agent: board-chair
+      action: frame-audit
+      creates: audit_context
+    - agent: dan-sullivan
+      action: unique-ability
+      creates: ability_map
+    - agent: derek-sivers
+      action: hell-yeah-test
+      creates: activity_filter
+    - agent: keith-cunningham
+      action: thinking-time
+      creates: role_analysis
+    - agent: marshall-goldsmith
+      action: behavior-gap
+      creates: behavior_assessment
+    - agent: board-chair
+      action: synthesize
+      creates: founder_redesign
+
+phases:
+  - id: phase_1_frame
+    name: "Frame the Audit"
+    agent: board-chair
+    depends_on: []
+    description: "Understand the founder's current state, frustrations, and aspirations"
+    checkpoint:
+      gate: "Current activities mapped, pain points identified, aspirations clear"
+      veto: "HALT if founder is in acute crisis — route to founder_council first"
+    outputs:
+      - current_activities
+      - pain_points
+      - aspirations
+
+  - id: phase_2_unique_ability
+    name: "Unique Ability Mapping"
+    agent: dan-sullivan
+    depends_on: [phase_1_frame]
+    description: "Map the founder's Unique Ability — what energizes AND creates value"
+    checkpoint:
+      gate: "4 zones mapped: Incompetence, Competence, Excellence, Unique Ability"
+      veto: "HALT if founder cannot identify any Unique Ability activities — dig deeper"
+    sullivan_protocol:
+      - "Zone of Incompetence — activities you're bad at (delegate immediately)"
+      - "Zone of Competence — activities you're OK at but others do better (delegate)"
+      - "Zone of Excellence — activities you're great at but that drain you (dangerous — delegate)"
+      - "Zone of Unique Ability — what feels like play to you, looks like work to others"
+      - "10x filter — which activities, if you did 10x more of them, would transform the business?"
+      - "Gap and Gain — what progress have you already made vs. your ideal?"
+    outputs:
+      - four_zones_map
+      - unique_ability_activities
+      - delegation_candidates
+      - ten_x_activities
+
+  - id: phase_3_hell_yeah
+    name: "Hell Yeah or No Filter"
+    agent: derek-sivers
+    depends_on: [phase_2_unique_ability]
+    description: "Apply the Hell Yeah test to every current activity and commitment"
+    checkpoint:
+      gate: "Each activity scored Hell Yeah or No, elimination list created"
+      veto: "HALT if everything is a 'no' — may indicate burnout, not misalignment"
+    sivers_protocol:
+      - "For each current activity: Is this a HELL YEAH? If not, it's a no"
+      - "What would you do if you had half the commitments?"
+      - "Are you doing things because you SHOULD or because you WANT TO?"
+      - "Do the opposite check — what if you stopped doing the 'no' activities?"
+      - "Is complexity a sign of growth or a sign of drift?"
+      - "What would 'enough' look like for you right now?"
+    outputs:
+      - hell_yeah_activities
+      - elimination_list
+      - simplification_opportunities
+
+  - id: phase_4_thinking_time
+    name: "Role Redesign — Thinking Time"
+    agent: keith-cunningham
+    depends_on: [phase_3_hell_yeah]
+    description: "Deep strategic thinking about the founder's optimal role"
+    checkpoint:
+      gate: "Owner vs Operator assessment complete, role redesign drafted"
+      veto: "HALT if redesign is unrealistic given current constraints — iterate"
+    cunningham_protocol:
+      - "Am I acting as Owner (working ON) or Operator (working IN)?"
+      - "What activities am I doing that NOBODY should be doing?"
+      - "What is the Dumb Tax of staying in the current role configuration?"
+      - "If I could only work 20 hours/week, which activities would I keep?"
+      - "Pre-Mortem — if I don't change my role, what breaks in 12 months?"
+      - "What does my Business Machine need from ME specifically?"
+    outputs:
+      - owner_vs_operator_score
+      - role_redesign_draft
+      - twenty_hour_test
+      - pre_mortem
+
+  - id: phase_5_behavior_gap
+    name: "Behavioral Gap Analysis"
+    agent: marshall-goldsmith
+    depends_on: [phase_4_thinking_time]
+    description: "Identify the behavioral gap preventing the founder from operating in their ideal role"
+    checkpoint:
+      gate: "ONE key behavior identified as the bottleneck, change plan suggested"
+      veto: "HALT if trying to fix multiple behaviors — pick the ONE with highest leverage"
+    goldsmith_protocol:
+      - "What Got You Here Won't Get You There — which success habit is now limiting?"
+      - "Which of the 20 bad habits is most present? (winning too much, adding too much value, etc.)"
+      - "What would your team say is your biggest blind spot?"
+      - "Feedforward — what ONE behavior change would have the most impact?"
+      - "Is the founder the bottleneck? (Usually yes)"
+    outputs:
+      - limiting_behavior
+      - blind_spots
+      - one_behavior_change
+      - feedforward_input
+
+  - id: phase_6_synthesize
+    name: "Founder Redesign Plan"
+    agent: board-chair
+    depends_on: [phase_5_behavior_gap]
+    description: "Synthesize all analyses into a comprehensive founder role redesign"
+    checkpoint:
+      gate: "Complete redesign plan with role changes, delegations, and behavior shift"
+      veto: "HALT if plan requires too many simultaneous changes — phase it"
+    outputs:
+      - founder_redesign_plan
+      - delegation_roadmap
+      - behavior_change_protocol
+      - 90_day_transition_plan
+      - success_indicators
+
+completion_criteria:
+  - "Unique Ability mapped across 4 zones (Sullivan)"
+  - "Hell Yeah test applied to all activities (Sivers)"
+  - "Owner vs Operator assessed via Thinking Time (Cunningham)"
+  - "ONE behavioral bottleneck identified (Goldsmith)"
+  - "Role redesign plan with phased implementation"
+  - "Delegation roadmap for non-Unique-Ability activities"
+  - "90-day transition plan with checkpoints"

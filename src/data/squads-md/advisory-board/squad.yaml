@@ -1,0 +1,155 @@
+name: advisory-board
+version: "2.0.0"
+short-title: "Advisory Board"
+description: "Board de 10 conselheiros estratégicos otimizado para método comportamental para empreendedores — Charlie Munger, Naval Ravikant, Simon Sinek, Patrick Lencioni, Derek Sivers, Keith Cunningham, Dan Sullivan, Gino Wickman, Marshall Goldsmith, BJ Fogg."
+author: "Synkra AIOS"
+license: MIT
+slashPrefix: "advisory-board"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - strategy
+  - behavioral-change
+  - leadership
+  - mental-models
+  - entrepreneurship
+  - habits
+  - operating-system
+  - coaching
+  - thinking
+  - purpose
+
+changelog:
+  v2.0.0:
+    date: "2026-03-19"
+    changes:
+      removed:
+        - peter-thiel.md       # → agentes-de-ferias (venture capital — baixa aderência a PMEs)
+        - reid-hoffman.md      # → agentes-de-ferias (blitzscaling — baixa aderência a PMEs)
+        - ray-dalio.md         # → agentes-de-ferias (hedge fund — baixa aderência a PMEs)
+        - yvon-chouinard.md    # → agentes-de-ferias (environmental activism — baixa aderência a PMEs)
+        - brene-brown.md       # → agentes-de-ferias (shame resilience — profundo demais para contexto PME)
+      added:
+        - keith-cunningham.md  # Strategic Thinking, Thinking Time, The Road Less Stupid
+        - dan-sullivan.md      # Who Not How, 10x, Gap and Gain, Strategic Coach
+        - gino-wickman.md      # EOS, Traction, L10, Rocks, V/TO
+        - marshall-goldsmith.md # Behavioral change in leaders, Feedforward, Daily Questions
+        - bj-fogg.md           # B=MAP, Tiny Habits, Behavior Design, Stanford
+    reason: "Realinhamento do conselho para o negócio atual: método comportamental para donos de PMEs"
+
+components:
+  agents:
+    # Tier 0 — Orchestrator
+    - board-chair.md
+
+    # Tier 1 — Strategic Thinking & Decision Quality
+    - charlie-munger.md        # Mental Models, Inversion, Cognitive Bias
+    - keith-cunningham.md      # Thinking Time, Dumb Tax, Business Machine
+
+    # Tier 1 — Entrepreneurial Growth & Leverage
+    - naval-ravikant.md        # Specific Knowledge, Leverage, Wealth Creation
+    - dan-sullivan.md          # Who Not How, 10x, Gap and Gain, Unique Ability
+
+    # Tier 1 — Purpose & Culture
+    - simon-sinek.md           # Golden Circle, WHY, Infinite Game
+    - patrick-lencioni.md      # Five Dysfunctions, Organizational Health, Working Genius
+
+    # Tier 1 — Behavioral Change & Habit Installation
+    - marshall-goldsmith.md    # Leadership Behavioral Change, Feedforward, Daily Questions
+    - bj-fogg.md               # B=MAP, Tiny Habits, Behavior Design
+
+    # Tier 1 — Business Operations & Simplicity
+    - gino-wickman.md          # EOS, Traction, Rocks, L10, Accountability Chart
+    - derek-sivers.md          # Hell Yeah or No, Simplicity, Enough, Minimalist Founder
+
+  tasks:
+    - convene-board.md
+    - diagnose.md
+    - evaluate-scaling.md
+    - get-founder-counsel.md
+    - resolve-culture-crisis.md
+    - review.md
+    - seek-investment-counsel.md
+  workflows:
+    - wf-board-meeting.yaml
+    - wf-decision-framework.yaml
+    - wf-behavior-change.yaml
+    - wf-quarterly-rocks.yaml
+    - wf-founder-audit.yaml
+    - wf-team-health-check.yaml
+    - wf-strategic-pivot.yaml
+  checklists:
+    - output-quality.md
+
+routing_matrix:
+  strategic_thinking:
+    primary: keith-cunningham
+    secondary: charlie-munger
+    triggers: ["thinking time", "decision quality", "dumb tax", "what am I not seeing", "pre-mortem"]
+  mental_models:
+    primary: charlie-munger
+    secondary: keith-cunningham
+    triggers: ["mental models", "inversion", "cognitive bias", "circle of competence"]
+  wealth_leverage:
+    primary: naval-ravikant
+    secondary: dan-sullivan
+    triggers: ["leverage", "specific knowledge", "wealth", "productize", "freedom"]
+  entrepreneurial_growth:
+    primary: dan-sullivan
+    secondary: gino-wickman
+    triggers: ["10x", "who not how", "gap and gain", "unique ability", "delegation"]
+  purpose_why:
+    primary: simon-sinek
+    secondary: derek-sivers
+    triggers: ["purpose", "why", "golden circle", "infinite game", "just cause"]
+  team_health:
+    primary: patrick-lencioni
+    secondary: marshall-goldsmith
+    triggers: ["team dysfunction", "trust", "accountability", "meetings", "organizational health"]
+  behavioral_change:
+    primary: marshall-goldsmith
+    secondary: bj-fogg
+    triggers: ["behavior change", "leadership habits", "what got you here", "feedforward", "daily questions"]
+  habit_installation:
+    primary: bj-fogg
+    secondary: marshall-goldsmith
+    triggers: ["habits", "tiny habits", "B=MAP", "anchor", "motivation", "prompt", "behavior design"]
+  business_operations:
+    primary: gino-wickman
+    secondary: keith-cunningham
+    triggers: ["EOS", "traction", "rocks", "scorecard", "L10", "operating system", "process"]
+  simplicity_focus:
+    primary: derek-sivers
+    secondary: dan-sullivan
+    triggers: ["simplicity", "enough", "hell yeah", "focus", "minimalist", "small business"]
+
+multi_advisor_protocols:
+  board_meeting:
+    description: "Full board deliberation on a complex strategic question"
+    process:
+      - "Board Chair frames the question and context"
+      - "Each relevant advisor provides their perspective (2-4 advisors)"
+      - "Board Chair identifies tensions and complementarities"
+      - "Synthesis: areas of agreement, productive disagreements, recommended path"
+      - "Clear next steps with accountability"
+  thinking_council:
+    advisors: [charlie-munger, keith-cunningham, naval-ravikant]
+    use_when: "Major strategic decision requiring deep thinking and risk analysis"
+  behavior_lab:
+    advisors: [marshall-goldsmith, bj-fogg, dan-sullivan]
+    use_when: "Installing behavioral change in the entrepreneur or their team"
+  operations_council:
+    advisors: [gino-wickman, patrick-lencioni, keith-cunningham]
+    use_when: "Business needs a system overhaul — processes, team, accountability"
+  founder_council:
+    advisors: [naval-ravikant, derek-sivers, dan-sullivan]
+    use_when: "Founder at crossroads — life-business alignment, values, next chapter"
+  contrarian_panel:
+    advisors: [charlie-munger, derek-sivers, keith-cunningham]
+    use_when: "Conventional wisdom seems wrong, need dissenting views"
+
+config:
+  extends: extend

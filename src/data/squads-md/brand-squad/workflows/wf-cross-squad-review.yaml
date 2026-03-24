@@ -1,0 +1,128 @@
+workflow:
+  id: wf-cross-squad-review
+  name: "Board Review — Conselho Avalia Output do Brand Squad"
+  version: "1.0.0"
+  description: |
+    O Advisory Board avalia outputs do Brand Squad com perspectivas externas
+    (estratégia, comportamento, operações, simplicidade). Identifica gaps
+    que especialistas de branding não veem por estarem dentro da disciplina.
+  trigger: "*board-review"
+  entry_agent: board-chair
+  estimated_duration: "45-60 minutes"
+  type: sequential-with-parallel
+  cross_squad: [advisory-board, brand-squad]
+
+  sequence:
+    - agent: board-chair
+      action: frame
+      creates: review_brief
+    - agent: "[selected-advisors]"
+      action: evaluate
+      creates: advisor_evaluations
+      parallel: true
+    - agent: board-chair
+      action: synthesize
+      creates: board_memo
+    - agent: brand-chief
+      action: respond
+      creates: action_plan
+
+phases:
+  - id: phase_0
+    name: "Frame the Review"
+    agent: board-chair
+    squad: advisory-board
+    description: |
+      Receber o output do Brand Squad (manual, rebrand, campanha, funil, copy).
+      Selecionar 3-5 advisors mais relevantes para o tipo de output.
+      Definir critérios de avaliação específicos por advisor.
+    inputs:
+      - brand_output: "O deliverable do Brand Squad a ser avaliado"
+      - output_type: "string — manual, rebrand, campaign, funnel, copy"
+    outputs:
+      - review_brief:
+          type: object
+          fields: [output_summary, selected_advisors, evaluation_criteria_per_advisor]
+    advisor_selection_guide:
+      manual_de_marca: [charlie-munger, keith-cunningham, derek-sivers, simon-sinek, bj-fogg]
+      campanha_conteudo: [romano, keith-cunningham, derek-sivers]
+      funil_vendas: [naval-ravikant, keith-cunningham, gino-wickman]
+      novo_produto: [keith-cunningham, dan-sullivan, charlie-munger]
+      copy_messaging: [romano, derek-sivers, marshall-goldsmith]
+    checkpoint:
+      gate: "Brief completo com advisors selecionados e critérios definidos"
+
+  - id: phase_1
+    name: "Avaliação Paralela"
+    agent: "[selected-advisors]"
+    squad: advisory-board
+    depends_on: [phase_0]
+    parallel: true
+    description: |
+      Cada advisor avalia pelo seu framework específico:
+      - Munger: vieses cognitivos, inversão, moat, checklist racional
+      - Cunningham: dumb tax, Thinking Time questions, business machine
+      - Naval: leverage, specific knowledge, productize yourself
+      - Sullivan: 10x test, Who Not How, Gap vs Gain
+      - Sinek: WHY alignment, Celery Test, infinite game
+      - Lencioni: 6 Critical Questions, team dysfunction risk
+      - Goldsmith: comportamento do líder alinhado? One behavior to change?
+      - Fogg: hábitos desenhados com B=MAP? Tiny enough?
+      - Wickman: Rocks definidos? Scorecard? V/TO alinhado?
+      - Sivers: Hell Yeah test? Simples o suficiente? Enough?
+    outputs:
+      - advisor_evaluations:
+          type: list
+          per_advisor: {advisor_name: string, framework_used: string, score: number, findings: list, recommendations: list}
+    checkpoint:
+      gate: "Mínimo 3 avaliações independentes completas"
+
+  - id: phase_2
+    name: "Síntese do Conselho"
+    agent: board-chair
+    squad: advisory-board
+    depends_on: [phase_1]
+    description: |
+      Mapear áreas de consenso (todos concordam).
+      Identificar tensões produtivas (divergências úteis).
+      Registrar nota dissidente (opinião minoritária valiosa).
+      Priorizar top 5 recomendações com urgência.
+    outputs:
+      - board_memo:
+          type: object
+          fields:
+            consensus: "list — onde todos concordam"
+            tensions: "list — divergências produtivas"
+            dissenting_note: "string — opinião minoritária"
+            top_5_recommendations: "list — priorizadas por urgência"
+            overall_score: number
+    checkpoint:
+      gate: "Memorando completo com consensos, tensões e recomendações"
+      veto: "Todos concordam sem nenhuma tensão — checar groupthink"
+
+  - id: phase_3
+    name: "Resposta do Brand Squad"
+    agent: brand-chief
+    squad: brand-squad
+    depends_on: [phase_2]
+    description: |
+      Brand Chief analisa memorando do conselho.
+      Aceitar, rejeitar ou adaptar cada recomendação com justificativa.
+      Criar plano de ação com Rocks (quarterly priorities).
+    outputs:
+      - action_plan:
+          type: object
+          fields:
+            accepted: "list — recomendações aceitas com ação"
+            rejected: "list — recomendações rejeitadas com justificativa"
+            adapted: "list — recomendações adaptadas"
+            rocks: "list — quarterly priorities com dono e métrica"
+    checkpoint:
+      gate: "Cada recomendação tem resposta (aceitar/rejeitar/adaptar)"
+
+completion_criteria:
+  - "Mínimo 3 advisors avaliaram independentemente"
+  - "Memorando com consensos, tensões e nota dissidente"
+  - "Top 5 recomendações priorizadas"
+  - "Brand Chief respondeu cada recomendação"
+  - "Rocks definidos com dono e métrica"

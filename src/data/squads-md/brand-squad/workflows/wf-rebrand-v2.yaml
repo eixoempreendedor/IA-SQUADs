@@ -1,0 +1,155 @@
+workflow:
+  id: wf-rebrand-v2
+  name: "Rebranding v2 — Com Romano e Board Review"
+  version: "2.0.0"
+  description: |
+    Workflow de rebranding atualizado para o Brand Squad v2.0.
+    Inclui Romano (copy & voice review) e cross-squad review pelo Advisory Board.
+    Substitui wf-rebrand.yaml (que referenciava agentes removidos).
+    Preserva o que funciona, corrige o que não funciona, e valida com o Conselho.
+  trigger: "*rebrand"
+  entry_agent: brand-chief
+  estimated_duration: "60-90 minutes"
+  type: sequential
+  cross_squad: [advisory-board]
+  replaces: wf-rebrand
+
+  sequence:
+    - agent: david-aaker
+      action: audit-brand
+      creates: audit_report
+    - agent: al-ries
+      action: positioning-review
+      creates: positioning_review
+    - agent: romano
+      action: copy-voice-review
+      creates: copy_review
+    - agent: alina-wheeler
+      action: build-identity
+      creates: updated_identity
+    - agent: donald-miller
+      action: create-brand-story
+      creates: updated_messaging
+    - agent: board-chair
+      action: board-review
+      creates: board_memo
+      squad: advisory-board
+
+phases:
+  - id: phase_0
+    name: "Brand Audit"
+    agent: david-aaker
+    task: audit-brand.md
+    description: |
+      Auditoria completa de brand equity (5 dimensões de Aaker)
+      e brand identity (4 perspectivas).
+      Classificação: preservar / corrigir / reconstruir.
+    outputs:
+      - audit_report: markdown
+      - health_score: number
+      - preserve_list: list
+      - fix_list: list
+      - rebuild_list: list
+    checkpoint:
+      gate: "Audit completo com classificação preserve/fix/rebuild"
+      veto: "Audit revela marca saudável — rebrand não justificado"
+
+  - id: phase_1
+    name: "Positioning Review"
+    agent: al-ries
+    task: create-positioning.md
+    depends_on: [phase_0]
+    description: |
+      Reavaliar posicionamento contra landscape competitivo atual.
+      Verificar: categoria ainda válida? Verbal Nail funciona?
+      Visual Hammer comunica? Teste das Leis Imutáveis.
+    outputs:
+      - positioning_review: markdown
+      - category_status: "string — valid, evolve, pivot"
+      - verbal_nail_status: "string — strong, adjust, replace"
+      - change_magnitude: "string — keep, refine, pivot"
+    checkpoint:
+      gate: "Decisão de posicionamento: keep, refine, ou pivot"
+      veto: "Pivot proposto sem análise competitiva suficiente"
+
+  - id: phase_2
+    name: "Copy & Voice Review"
+    agent: romano
+    depends_on: [phase_0, phase_1]
+    description: |
+      Romano avalia toda a comunicação da marca:
+      - One-liner ainda funciona?
+      - Tom de voz consistente com a categoria?
+      - Copy tem 'verdade com espinha'?
+      - Teste de dissidência: ainda soa diferente do mercado?
+      - Grande Ideia presente na comunicação?
+      - Consistência mata carência: presença regular?
+    outputs:
+      - copy_review: markdown
+      - voice_consistency: number
+      - dissidence_score: number
+      - copy_adjustments: list
+    checkpoint:
+      gate: "Review de copy e voz completa com scores e ajustes"
+      veto: "Copy soa como todos os concorrentes (dissidência zero)"
+
+  - id: phase_3
+    name: "Identity Update"
+    agent: alina-wheeler
+    task: build-identity.md
+    depends_on: [phase_0, phase_1, phase_2]
+    description: |
+      Atualizar identidade visual e verbal com base no audit,
+      positioning review e copy review. Preservar elementos
+      fortes, redesenhar fracos. Verificar 9 Ideais.
+    outputs:
+      - updated_identity: markdown
+      - nine_ideals_scores: object
+      - change_summary: list
+    checkpoint:
+      gate: "Identity updates alinhados com positioning e preservam forças"
+      veto: "Mudanças destroem brand equity existente sem justificativa"
+
+  - id: phase_4
+    name: "Messaging Refresh"
+    agent: donald-miller
+    task: create-brand-story.md
+    depends_on: [phase_1, phase_2, phase_3]
+    description: |
+      Refresh do BrandScript SB7 e sistema verbal completo.
+      Atualizar: BrandScript, one-liner, CTAs, Authority stack.
+      Incorporar feedback do Romano (copy review) e Ries (positioning).
+    outputs:
+      - updated_brandscript: markdown
+      - updated_one_liner: string
+      - updated_ctas: object
+      - updated_authority: list
+    checkpoint:
+      gate: "Messaging consistente com positioning e identity atualizados"
+      veto: "Story desconectada das capacidades reais da marca"
+
+  - id: phase_5
+    name: "Board Review"
+    agent: board-chair
+    squad: advisory-board
+    depends_on: [phase_0, phase_1, phase_2, phase_3, phase_4]
+    description: |
+      Advisory Board avalia o resultado completo do rebrand.
+      Seleciona 3-5 advisors relevantes. Cada um avalia pelo seu framework.
+      Síntese com consensos, tensões produtivas e nota dissidente.
+    outputs:
+      - board_memo: markdown
+      - board_score: number
+      - recommendations: list
+      - dissenting_note: string
+    checkpoint:
+      gate: "Memorando do conselho completo com score e recomendações"
+      veto: "Todos concordam sem tensão — checar groupthink"
+
+completion_criteria:
+  - "Brand audited com classificação preserve/fix/rebuild"
+  - "Positioning reviewed com decisão (keep, refine, pivot)"
+  - "Copy e voz revisados por Romano com scores"
+  - "Identity atualizada preservando forças"
+  - "Messaging refreshed com StoryBrand alignment"
+  - "Board review completo com memorando e recomendações"

@@ -1,0 +1,73 @@
+name: agentes-de-ferias
+version: "2.0.0"
+short-title: "Agentes de Férias"
+description: "Catálogo de agentes temporariamente inativos — ex-Advisory Board e ex-Brand Squad. Pensadores brilhantes cujo expertise não se alinha diretamente com o negócio atual (método comportamental para donos de PMEs), mas que podem ser reativados para projetos específicos."
+author: "Synkra AIOS"
+license: MIT
+slashPrefix: "ferias"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - archive
+  - inactive
+  - venture-capital
+  - scaling
+  - activism
+  - vulnerability
+  - hedge-fund
+  - luxury
+  - brand-equity
+  - evidence-based
+  - employer-brand
+  - dtc-startup
+
+status: inactive
+reason: |
+  Agentes removidos do Advisory Board e Brand Squad em 2026-03-19 por baixa aderência
+  ao negócio atual (método comportamental para donos de PMEs em cidades médias do Brasil).
+  Podem ser reativados para consultas específicas dentro do seu domínio.
+
+components:
+  agents:
+    # Ex-Advisory Board — removidos em 2026-03-19
+    - peter-thiel.md           # Venture Capital, Zero to One, Monopoly Theory
+    - reid-hoffman.md          # Blitzscaling, Networks, LinkedIn
+    - ray-dalio.md             # Hedge Fund, Principles, Macro Economics
+    - yvon-chouinard.md        # Environmental Activism, Anti-Growth, Patagonia
+    - brene-brown.md           # Vulnerability, Shame Resilience, Courage
+    # Ex-Brand Squad — removidos em 2026-03-19
+    - jean-noel-kapferer.md    # Identity Prism, Luxury Strategy, Anti-Laws
+    - kevin-keller.md          # CBBE Model, Brand Management, Brand Tracking
+    - byron-sharp.md           # How Brands Grow, Distinctiveness, Evidence-Based
+    - denise-yohn.md           # Brand Culture, FUSE, Internal/Employer Branding
+    - emily-heyward.md         # Startup Branding, DTC, Obsessed
+
+reactivation_guide:
+  # Ex-Advisory Board
+  peter-thiel:
+    use_when: "Análise contrarian profunda, avaliação de monopólio, decisão de venture capital"
+  reid-hoffman:
+    use_when: "Estratégia de network effects, decisão de blitzscaling, ABZ planning"
+  ray-dalio:
+    use_when: "Criação de sistema de princípios, análise macroeconômica, radical transparency"
+  yvon-chouinard:
+    use_when: "Decisões de sustentabilidade, missão vs lucro, anti-growth strategy"
+  brene-brown:
+    use_when: "Crise de confiança no time, cultura de vulnerabilidade, liderança corajosa"
+  # Ex-Brand Squad
+  jean-noel-kapferer:
+    use_when: "Revisão profunda de identidade (Identity Prism), estratégia luxury, extensão de marca"
+  kevin-keller:
+    use_when: "Medição formal de brand equity (CBBE), brand tracking com pesquisa de mercado"
+  byron-sharp:
+    use_when: "Análise evidence-based de crescimento, mental/physical availability, mercado FMCG"
+  denise-yohn:
+    use_when: "Employer branding, fusão marca-cultura em organizações com 100+ funcionários"
+  emily-heyward:
+    use_when: "Lançamento de marca DTC, startup de produto físico, venture-backed brand"
+
+config:
+  extends: extend

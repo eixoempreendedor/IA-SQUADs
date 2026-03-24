@@ -1,0 +1,135 @@
+# Quarterly Rocks Workflow v1.0.0
+# Integrated quarterly planning combining EOS + Thinking Time + 10x
+
+workflow:
+  id: wf-quarterly-rocks
+  name: "Planejamento Trimestral Integrado"
+  trigger: "*quarterly-rocks"
+  entry_agent: board-chair
+  estimated_duration: "60-90 minutes"
+  description: |
+    Workflow de planejamento trimestral integrando o sistema EOS de Wickman (Rocks,
+    Scorecard, IDS), o Thinking Time de Cunningham (pergunta estrategica do trimestre),
+    e o Who Not How de Sullivan (delegacao e 10x thinking).
+
+  type: sequential
+  sequence:
+    - agent: board-chair
+      action: frame-quarter
+      creates: quarter_context
+    - agent: gino-wickman
+      action: scorecard-review
+      creates: quarter_review
+    - agent: keith-cunningham
+      action: thinking-time
+      creates: strategic_question
+    - agent: gino-wickman
+      action: define-rocks
+      creates: quarterly_rocks
+    - agent: dan-sullivan
+      action: who-not-how
+      creates: delegation_plan
+    - agent: board-chair
+      action: synthesize
+      creates: quarter_plan
+
+phases:
+  - id: phase_1_review
+    name: "Scorecard Review & IDS"
+    agent: gino-wickman
+    depends_on: []
+    description: "Review last quarter's Scorecard, Rocks completion, and IDS on open issues"
+    checkpoint:
+      gate: "Scorecard reviewed, Rocks scored (complete/incomplete), top 3 issues identified"
+      veto: "HALT if no data available — cannot plan without reviewing what happened"
+    eos_protocol:
+      - "Review Scorecard — which numbers are on/off track?"
+      - "Score last quarter's Rocks — complete or incomplete (no partial credit)"
+      - "Target: 80%+ completion rate = healthy"
+      - "IDS on top issues — Identify, Discuss, Solve (in that order)"
+      - "What patterns emerge from the data?"
+    outputs:
+      - scorecard_review
+      - rocks_completion_rate
+      - issues_identified
+      - patterns
+
+  - id: phase_2_thinking_time
+    name: "Strategic Thinking Time"
+    agent: keith-cunningham
+    depends_on: [phase_1_review]
+    description: "Apply Thinking Time to identify THE strategic question for this quarter"
+    checkpoint:
+      gate: "ONE strategic question defined that, if answered, transforms the quarter"
+      veto: "HALT if multiple questions compete — pick the ONE with highest leverage"
+    cunningham_protocol:
+      - "Based on the Scorecard review, what is the ONE question that matters most?"
+      - "What am I not seeing about last quarter's results?"
+      - "Pre-Mortem — imagine this quarter fails. What was the cause?"
+      - "Am I working ON the business (Owner) or IN the business (Operator)?"
+      - "What is the Dumb Tax I'm currently paying?"
+    outputs:
+      - strategic_question
+      - pre_mortem_risks
+      - owner_vs_operator_assessment
+
+  - id: phase_3_rocks
+    name: "Define Quarterly Rocks"
+    agent: gino-wickman
+    depends_on: [phase_2_thinking_time]
+    description: "Set 3-7 Rocks for the quarter based on strategic question and Scorecard"
+    checkpoint:
+      gate: "3-7 Rocks defined, each SMART, each with clear owner"
+      veto: "HALT if more than 7 Rocks — ruthlessly prioritize"
+    rocks_protocol:
+      - "Each Rock must answer part of the strategic question"
+      - "SMART: Specific, Measurable, Achievable, Relevant, Time-bound (quarter)"
+      - "Each Rock has ONE owner (not shared ownership)"
+      - "Company Rocks (3-7) + Individual Rocks (3-7 per person)"
+      - "If it's not a Rock, it's a To-Do or an Issue — not everything is a priority"
+    outputs:
+      - company_rocks
+      - individual_rocks
+      - accountability_chart_updates
+
+  - id: phase_4_delegation
+    name: "Who Not How"
+    agent: dan-sullivan
+    depends_on: [phase_3_rocks]
+    description: "For each Rock, apply Who Not How — identify the WHO, not the HOW"
+    checkpoint:
+      gate: "Each Rock has a WHO assigned, founder's unique ability protected"
+      veto: "HALT if founder is the WHO for more than 2 Rocks — delegate more"
+    sullivan_protocol:
+      - "For each Rock: WHO can do this? (not HOW do I do this?)"
+      - "Which Rocks align with the founder's Unique Ability?"
+      - "Which Rocks should be delegated entirely?"
+      - "10x Check — are these Rocks incremental (2x) or exponential (10x)?"
+      - "Gap and Gain — celebrate progress from last quarter before planning next"
+    outputs:
+      - delegation_assignments
+      - unique_ability_alignment
+      - ten_x_assessment
+      - gap_and_gain_review
+
+  - id: phase_5_synthesize
+    name: "Quarter Plan Synthesis"
+    agent: board-chair
+    depends_on: [phase_4_delegation]
+    description: "Compile the complete quarterly plan with Rocks, delegation, and L10 agenda"
+    checkpoint:
+      gate: "Complete quarter plan ready with Rocks, owners, L10 structure, and success metrics"
+      veto: "HALT if plan feels overwhelming — simplify"
+    outputs:
+      - quarterly_plan
+      - l10_meeting_structure
+      - weekly_scorecard
+      - 90_day_milestones
+
+completion_criteria:
+  - "Last quarter reviewed — Scorecard and Rocks scored (Wickman)"
+  - "Strategic question defined via Thinking Time (Cunningham)"
+  - "3-7 Rocks set with SMART criteria and owners (Wickman)"
+  - "Who Not How applied — delegation maximized (Sullivan)"
+  - "10x check completed — Rocks are exponential, not incremental (Sullivan)"
+  - "L10 meeting structure defined for weekly accountability"

@@ -1,0 +1,119 @@
+workflow:
+  id: wf-content-machine
+  name: "Máquina de Conteúdo"
+  version: "1.0.0"
+  description: |
+    Produção semanal de conteúdo com DNA de marca. Garante que toda peça publicada
+    tem Grande Ideia, está alinhada com o BrandScript, respeita os arquétipos,
+    e usa o Visual Hammer. Transforma conteúdo de "quando dá vontade" em máquina.
+  trigger: "*content-machine"
+  entry_agent: brand-chief
+  estimated_duration: "30-45 minutes"
+  type: sequential
+  frequency: weekly
+
+  sequence:
+    - agent: brand-chief
+      action: brief-semanal
+      creates: weekly_brief
+    - agent: romano
+      action: grande-ideia
+      creates: grande_ideia_headlines
+    - agent: donald-miller
+      action: brandscript-check
+      creates: messaging_approval
+    - agent: archetype-consultant
+      action: expression-check
+      creates: content_briefs
+    - agent: brand-chief
+      action: review
+      creates: approved_content
+
+phases:
+  - id: phase_0
+    name: "Pauta Semanal"
+    agent: brand-chief
+    description: "Define o foco da semana: pilar 4C, CCE em destaque, temas e ganchos baseados em eventos reais, cases ou insights recentes."
+    inputs:
+      - current_4c_focus: "Qual pilar dos 4Cs é foco esta semana"
+      - current_cce: "Qual CCE está sendo trabalhada nas turmas"
+      - recent_events: "Cases, insights, eventos recentes"
+    outputs:
+      - weekly_brief:
+          type: object
+          fields: [pilar_4c, cce_foco, tema_central, gancho_semanal, formato_sugerido]
+    checkpoint:
+      gate: "Brief tem pilar, CCE, tema e gancho definidos"
+
+  - id: phase_1
+    name: "Grande Ideia"
+    agent: romano
+    depends_on: [phase_0]
+    description: |
+      Criar 3 opções de Grande Ideia para a semana usando tabu, contraste ou escândalo.
+      Selecionar 1 como tema central. Derivar 5 headlines a partir dela.
+      Cada headline deve ter: benefício, emoção, mecanismo implícito.
+    outputs:
+      - grande_ideia: "string — a ideia central da semana"
+      - headlines: "list — 5 headlines derivadas"
+      - metodo_usado: "string — tabu, contraste ou escândalo"
+    checkpoint:
+      gate: "Grande Ideia selecionada com 5 headlines derivadas"
+      veto: "Headline genérica que qualquer concorrente poderia usar"
+
+  - id: phase_2
+    name: "BrandScript Check"
+    agent: donald-miller
+    depends_on: [phase_1]
+    description: |
+      Verificar se a Grande Ideia está alinhada com o SB7.
+      O HERÓI é o cliente (não a marca). O problema interno está presente.
+      O guia tem empathy + authority. O CTA é claro.
+    outputs:
+      - sb7_alignment: "boolean"
+      - adjustments: "list — ajustes de messaging se necessário"
+    checkpoint:
+      gate: "Grande Ideia alinhada com BrandScript"
+      veto: "Marca posicionada como herói em vez de guia"
+
+  - id: phase_3
+    name: "Expressão & Formato"
+    agent: archetype-consultant
+    depends_on: [phase_2]
+    description: |
+      Validar tom Explorador (80%) + Governante (20%).
+      Garantir que Visual Hammer aparece em pelo menos 2 peças.
+      Definir formato ideal para cada conteúdo (reel, carrossel, story, post, newsletter).
+    outputs:
+      - content_briefs:
+          type: list
+          count: 5
+          fields: [headline, formato, pilar_4c, visual_hammer_presente, tom_arquetipal]
+    checkpoint:
+      gate: "5 peças briefadas com formato e tom validados"
+      veto: "Visual Hammer ausente em todas as peças"
+
+  - id: phase_4
+    name: "Review Final"
+    agent: brand-chief
+    depends_on: [phase_3]
+    description: |
+      Checklist final: tom de voz (6 atributos), pilar 4C presente,
+      Grande Ideia presente, paleta de cores respeitada, verbal nail ou mantra presente.
+    outputs:
+      - approved_content: "list — 5 conteúdos aprovados para produção"
+      - weekly_scorecard: "object — métricas esperadas da semana"
+    checkpoint:
+      gate: "Todas as peças passam no checklist de marca"
+
+weekly_deliverables:
+  - "3 posts/reels para Instagram (1 por pilar 4C)"
+  - "1 newsletter semanal ('O Placar do Empreendedor')"
+  - "1 story sequence (bastidores/case/verdade com espinha)"
+
+completion_criteria:
+  - "5 peças de conteúdo briefadas e aprovadas"
+  - "Grande Ideia definida com método (tabu/contraste/escândalo)"
+  - "BrandScript alignment confirmado"
+  - "Visual Hammer presente em pelo menos 2 peças"
+  - "Tom de voz validado contra os 6 atributos"

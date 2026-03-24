@@ -1,0 +1,139 @@
+workflow:
+  id: wf-offer-creation
+  name: "Oferta Irresistível — Da Ideia ao Produto"
+  version: "1.0.0"
+  description: |
+    Transforma uma ideia de produto em oferta com posicionamento, copy e
+    validação estratégica. Usa Thinking Time (Cunningham) para diagnóstico,
+    Romano para copy, Miller para BrandScript, Ries para positioning check,
+    e Sullivan para 10x check.
+  trigger: "*offer"
+  entry_agent: brand-chief
+  estimated_duration: "60-90 minutes"
+  type: sequential
+  cross_squad: [advisory-board]
+
+  sequence:
+    - agent: keith-cunningham
+      action: thinking-time
+      creates: product_diagnosis
+      squad: advisory-board
+    - agent: romano
+      action: offer-copy
+      creates: offer_copy
+    - agent: donald-miller
+      action: product-brandscript
+      creates: product_brandscript
+    - agent: al-ries
+      action: positioning-check
+      creates: positioning_verdict
+    - agent: dan-sullivan
+      action: tenx-check
+      creates: strategic_verdict
+      squad: advisory-board
+
+phases:
+  - id: phase_0
+    name: "Thinking Time"
+    agent: keith-cunningham
+    squad: advisory-board
+    description: |
+      Diagnóstico estratégico profundo antes de criar qualquer copy:
+      - Qual problema REAL esse produto resolve?
+      - Quem ESPECIFICAMENTE tem esse problema?
+      - O que acontece se o cliente NÃO comprar?
+      - Qual é o dumb tax de NÃO ter esse produto?
+      - Pre-mortem: imaginar que falhou — por quê?
+      - Qual parte da Business Machine esse produto melhora?
+    inputs:
+      - product_idea: "Descrição do produto/programa"
+      - target_audience: "Público pretendido"
+      - price_range: "Faixa de preço pretendida"
+    outputs:
+      - product_diagnosis:
+          type: object
+          fields: [real_problem, specific_audience, consequence_of_no, dumb_tax, premortem_risks, machine_component]
+    checkpoint:
+      gate: "Diagnóstico com problema real, audiência específica e pre-mortem"
+      veto: "Produto é solução procurando problema"
+
+  - id: phase_1
+    name: "Copy da Oferta"
+    agent: romano
+    depends_on: [phase_0]
+    description: |
+      Posicionar o produto na Escada de Lucro (L1-L5).
+      Criar a Grande Ideia do produto (tabu/contraste/escândalo).
+      Aplicar Verdade com Espinha: qual a limitação honesta?
+      Escrever 1 página de venda: headline + body + CTA.
+    outputs:
+      - escada_position: "string — L1, L2, L3, L4 ou L5"
+      - grande_ideia: "string — a frase que para o scroll"
+      - verdade_com_espinha: "string — limite real → benefício"
+      - sales_page_copy:
+          type: object
+          fields: [headline, subheadline, body, social_proof, cta, ps]
+    checkpoint:
+      gate: "Copy com Grande Ideia, Verdade com Espinha e CTA"
+      veto: "Copy genérica sem dissidência"
+
+  - id: phase_2
+    name: "BrandScript do Produto"
+    agent: donald-miller
+    depends_on: [phase_1]
+    description: |
+      SB7 específico para este produto:
+      Hero (cliente deste produto), Problem (3 níveis),
+      Guide (empathy + authority), Plan (3 passos),
+      CTA, Failure, Success.
+    outputs:
+      - product_brandscript:
+          type: object
+          fields: [character, external_problem, internal_problem, philosophical_problem, guide_empathy, guide_authority, plan, direct_cta, transitional_cta, failure, success]
+    checkpoint:
+      gate: "BrandScript completo com os 7 elementos"
+      veto: "Marca como herói em vez de guia"
+
+  - id: phase_3
+    name: "Positioning Check"
+    agent: al-ries
+    depends_on: [phase_1, phase_2]
+    description: |
+      Verificações críticas:
+      - Este produto dilui ou fortalece a categoria?
+      - Passa no teste: 'fortalece ou dilui os 4Cs?'
+      - A palavra MÉTODO está presente?
+      - É extensão de linha (pecado) ou reforço de posição?
+    outputs:
+      - positioning_verdict:
+          type: object
+          fields: [strengthens_category: boolean, method_present: boolean, line_extension_risk: string, verdict: string]
+    checkpoint:
+      gate: "Produto aprovado pelo positioning check"
+      veto: "Produto dilui a categoria — extensão de linha detectada"
+
+  - id: phase_4
+    name: "10x Check"
+    agent: dan-sullivan
+    squad: advisory-board
+    depends_on: [phase_3]
+    description: |
+      Validação estratégica do Sullivan:
+      - Este produto faz parte do 20% que gera 80% de resultado?
+      - Quem é o WHO que executa? (não pode ser Luiz pra tudo)
+      - Isso é medido pelo Gap (ideal) ou pelo Gain (progresso)?
+      - O produto cria Free Days ou rouba Free Days?
+    outputs:
+      - strategic_verdict:
+          type: object
+          fields: [in_20_percent: boolean, who_not_how: string, gap_or_gain: string, free_days_impact: string, recommendation: string]
+    checkpoint:
+      gate: "Produto aprovado estrategicamente"
+      veto: "Produto exige que Luiz trabalhe mais sem gerar leverage"
+
+completion_criteria:
+  - "Thinking Time diagnosis completo com pre-mortem"
+  - "Copy da oferta com Grande Ideia e Verdade com Espinha"
+  - "BrandScript SB7 do produto completo"
+  - "Positioning check aprovado (não dilui categoria)"
+  - "10x check aprovado (no 20% que importa, com WHO definido)"

@@ -1,0 +1,162 @@
+name: brand-squad
+version: "2.0.0"
+short-title: "Brand Squad"
+description: "Squad de estratégia de marca otimizado para método comportamental para empreendedores — 7 pensadores de branding, 3 especialistas funcionais, 1 copywriter-estrategista e 1 orquestrador. Cobre posicionamento, diferenciação, messaging, identidade visual, copy e arquitetura de marca."
+author: "Synkra AIOS"
+license: MIT
+slashPrefix: "brand-squad"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - branding
+  - brand-strategy
+  - positioning
+  - identity
+  - naming
+  - archetype
+  - storybrand
+  - brand-equity
+  - brand-architecture
+  - copy
+  - sales-messaging
+
+changelog:
+  v2.0.0:
+    date: "2026-03-19"
+    changes:
+      removed:
+        - jean-noel-kapferer.md  # → agentes-de-ferias (luxury focus, Prism already installed)
+        - kevin-keller.md        # → agentes-de-ferias (CBBE for large corporates)
+        - byron-sharp.md         # → agentes-de-ferias (FMCG evidence-based, not applicable to niche method)
+        - denise-yohn.md         # → agentes-de-ferias (employer branding for 500+ orgs)
+        - emily-heyward.md       # → agentes-de-ferias (DTC startup, venture-backed, US market)
+      added:
+        - romano.md              # Copy & Sales Strategy with "verdade com espinha"
+    reason: "Recomendação do Advisory Board: realinhar squad para método comportamental PMEs. Adicionar copy/sales capability."
+
+components:
+  agents:
+    # Tier 0 — Orchestrator
+    - brand-chief.md
+
+    # Tier 1 — Brand Strategy & Equity
+    - david-aaker.md            # Brand Equity, Architecture, Portfolio
+
+    # Tier 1 — Positioning & Differentiation
+    - al-ries.md                # Positioning, Category Creation, Visual Hammer, 22 Laws
+    - marty-neumeier.md         # Zag, Onlyness, Brand Gap, Radical Differentiation
+
+    # Tier 1 — Brand Building & Communication
+    - donald-miller.md          # StoryBrand SB7, BrandScript, One-liner, Funnel
+
+    # Tier 1 — Copy & Sales Strategy (NEW)
+    - romano.md                 # Verdade com Espinha, Grande Ideia, Dissidência, Copy que Vende
+
+    # Tier 1 — Brand Identity & Expression
+    - alina-wheeler.md          # Five-Phase Process, Nine Ideals, Visual System, Touchpoints
+    - archetype-consultant.md   # Jungian Archetypes, Brand Personality
+    - naming-strategist.md      # Brand Naming, Linguistic Analysis
+
+    # Tier 2 — Specialized Support
+    - domain-scout.md           # Domain Availability, Digital Presence
+    - miller-sticky-brand.md    # StoryBrand Implementation, Deliverables
+
+  tasks:
+    # Brand Analysis
+    - audit-brand.md
+    - diagnose.md
+    - review.md
+    # Brand Creation
+    - create-positioning.md
+    - generate-names.md
+    - build-identity.md
+    - create-brand-story.md
+    - design-architecture.md
+    - map-archetype.md
+  workflows:
+    # Brand Lifecycle
+    - wf-brand-creation.yaml           # Criar marca do zero (6 fases)
+    - wf-rebrand-v2.yaml              # Rebrand com Romano + Board Review (substitui wf-rebrand.yaml)
+    # Content & Copy
+    - wf-content-machine.yaml         # Produção semanal de conteúdo (recorrente)
+    - wf-copy-review.yaml             # Revisão de copy antes de publicar (on-demand)
+    - wf-visual-hammer-activation.yaml # Ativar Visual Hammer em conteúdo
+    # Sales & Offers
+    - wf-sales-funnel.yaml            # Escada de Lucro — funil completo
+    - wf-offer-creation.yaml          # Nova oferta com Thinking Time + copy + positioning
+    # Cross-Squad
+    - wf-cross-squad-review.yaml      # Advisory Board avalia output do Brand Squad
+    # Legacy (deprecated)
+    - wf-rebrand.yaml                 # DEPRECATED — usar wf-rebrand-v2.yaml
+  checklists:
+    - output-quality.md
+
+config:
+  extends: extend
+
+routing_matrix:
+  brand_equity:
+    primary: david-aaker
+    secondary: al-ries
+    triggers: ["brand equity", "brand value", "brand loyalty", "brand awareness", "brand associations"]
+  positioning:
+    primary: al-ries
+    secondary: marty-neumeier
+    triggers: ["positioning", "category", "focus", "differentiation", "own a word"]
+  differentiation:
+    primary: marty-neumeier
+    secondary: romano
+    triggers: ["zag", "onlyness", "differentiation", "brand gap", "dissidência"]
+  messaging:
+    primary: donald-miller
+    secondary: miller-sticky-brand
+    triggers: ["StoryBrand", "messaging", "one-liner", "brand script", "website copy"]
+  copy_sales:
+    primary: romano
+    secondary: donald-miller
+    triggers: ["copy", "sales page", "email de venda", "headline", "verdade com espinha", "Grande Ideia", "clareza vende"]
+  visual_identity:
+    primary: alina-wheeler
+    secondary: archetype-consultant
+    triggers: ["logo", "visual identity", "brand guidelines", "design system", "touchpoints"]
+  naming:
+    primary: naming-strategist
+    secondary: domain-scout
+    triggers: ["naming", "brand name", "rename", "name generation", "domain"]
+  archetype:
+    primary: archetype-consultant
+    secondary: romano
+    triggers: ["archetype", "brand personality", "brand character", "Jung", "tom de voz"]
+  brand_architecture:
+    primary: david-aaker
+    secondary: al-ries
+    triggers: ["brand architecture", "sub-brands", "branded house", "house of brands", "portfolio"]
+  content_strategy:
+    primary: romano
+    secondary: donald-miller
+    triggers: ["conteúdo", "content", "newsletter", "email marketing", "reels", "copy diário"]
+
+multi_specialist_scenarios:
+  complete_rebrand:
+    sequence:
+      - al-ries: "Define positioning and category"
+      - marty-neumeier: "Define differentiation (Zag)"
+      - donald-miller: "Craft messaging (StoryBrand)"
+      - romano: "Write copy with verdade com espinha"
+      - alina-wheeler: "Design identity system"
+      - naming-strategist: "Validate/create name"
+
+  daily_content:
+    sequence:
+      - romano: "Write with Grande Ideia + Dissidência"
+      - donald-miller: "Align with BrandScript"
+      - archetype-consultant: "Ensure personality consistency"
+
+  sales_funnel:
+    sequence:
+      - romano: "Copy for landing page + emails (Escada de Lucro)"
+      - donald-miller: "BrandScript alignment + grunt test"
+      - al-ries: "Positioning consistency check"

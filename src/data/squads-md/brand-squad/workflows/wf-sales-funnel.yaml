@@ -1,0 +1,157 @@
+workflow:
+  id: wf-sales-funnel
+  name: "Escada de Lucro — Funil de Vendas Completo"
+  version: "1.0.0"
+  description: |
+    Construção do funil de vendas completo usando a Escada de Lucro do Romano
+    integrada com StoryBrand do Miller. Cobre: lead generator → nurture →
+    conversão → recorrência. Inclui advisory review de leverage (Naval).
+  trigger: "*sales-funnel"
+  entry_agent: brand-chief
+  estimated_duration: "90-120 minutes"
+  type: sequential
+  cross_squad: [advisory-board]
+
+  sequence:
+    - agent: romano
+      action: escada-de-lucro
+      creates: profit_ladder
+    - agent: romano
+      action: landing-page-copy
+      creates: landing_page_copy
+      collaborator: donald-miller
+    - agent: romano
+      action: lead-generator-copy
+      creates: lead_generator_package
+    - agent: romano
+      action: email-sequence
+      creates: email_sequences
+      collaborator: donald-miller
+    - agent: al-ries
+      action: positioning-check
+      creates: positioning_approval
+    - agent: naval-ravikant
+      action: leverage-check
+      creates: leverage_report
+      squad: advisory-board
+
+phases:
+  - id: phase_0
+    name: "Escada de Lucro"
+    agent: romano
+    description: |
+      Mapear os 5 níveis da Escada de Lucro para o negócio:
+      L1 Lead Magnet, L2 Micro Oferta, L3 Produto Principal,
+      L4 Premium, L5 Recorrência. Definir preço, formato e
+      transição entre níveis. Incluir estratégia de reativação
+      de base existente (o ativo mais valioso).
+    outputs:
+      - profit_ladder:
+          type: object
+          levels:
+            L1: {name: string, price: string, format: string, purpose: string}
+            L2: {name: string, price: string, format: string, purpose: string}
+            L3: {name: string, price: string, format: string, purpose: string}
+            L4: {name: string, price: string, format: string, purpose: string}
+            L5: {name: string, price: string, format: string, purpose: string}
+          reactivation_strategy: string
+    checkpoint:
+      gate: "5 níveis definidos com preço e transição"
+      veto: "Escada com apenas 1-2 níveis (não é escada, é degrau)"
+
+  - id: phase_1
+    name: "Landing Page"
+    agent: romano
+    collaborator: donald-miller
+    depends_on: [phase_0]
+    description: |
+      Romano escreve copy com verdade com espinha.
+      Miller garante estrutura StoryBrand wireframe.
+      Deve passar no grunt test: 5 segundos — o que ofereço,
+      como ajuda, o que fazer agora.
+    outputs:
+      - landing_page_copy:
+          type: object
+          sections: [header, stakes, value_prop, guide, plan, cta, failure, success, footer]
+      - grunt_test_result: boolean
+    checkpoint:
+      gate: "Landing page passa no grunt test de 5 segundos"
+      veto: "Copy sem Grande Ideia ou sem CTA claro"
+
+  - id: phase_2
+    name: "Lead Generator"
+    agent: romano
+    depends_on: [phase_0]
+    description: |
+      Copy do lead generator (ex: PDF 'Mapa dos 4Cs').
+      Landing page de captura com headline + benefícios + CTA.
+      Thank-you page com micro-oferta (L2 da Escada).
+    outputs:
+      - lead_generator_copy: "markdown — conteúdo do lead magnet"
+      - capture_page_copy: "markdown — headline + body + CTA"
+      - thank_you_page: "markdown — com micro-oferta"
+    checkpoint:
+      gate: "Lead generator completo com captura e thank-you"
+
+  - id: phase_3
+    name: "Email Sequences"
+    agent: romano
+    collaborator: donald-miller
+    depends_on: [phase_1, phase_2]
+    description: |
+      Romano: 6 emails de nurture (verdade com espinha, valor puro).
+      Miller: 5 emails de venda (StoryBrand sequence).
+      Cada email: 1 Grande Ideia + 1 CTA.
+    outputs:
+      - nurture_emails:
+          type: list
+          count: 6
+          fields: [subject, grande_ideia, body_summary, cta]
+      - sales_emails:
+          type: list
+          count: 5
+          fields: [subject, sb7_element, body_summary, cta]
+    checkpoint:
+      gate: "11 emails escritos e sequenciados"
+      veto: "Emails que vendem sem ensinar primeiro (Romano rule)"
+
+  - id: phase_4
+    name: "Positioning Check"
+    agent: al-ries
+    depends_on: [phase_1, phase_3]
+    description: |
+      Todo o funil comunica a mesma posição?
+      A palavra MÉTODO aparece em cada nível?
+      A categoria 'Método Comportamental' está presente?
+      Consistência de Verbal Nail ao longo do funil.
+    outputs:
+      - positioning_consistency: boolean
+      - adjustments: "list — desvios encontrados"
+    checkpoint:
+      gate: "Funil posicionalmente consistente"
+      veto: "Funil que muda de posição entre níveis"
+
+  - id: phase_5
+    name: "Leverage Check (Advisory)"
+    agent: naval-ravikant
+    squad: advisory-board
+    depends_on: [phase_0, phase_4]
+    description: |
+      Avaliação de leverage pelo Advisory Board (Naval Ravikant):
+      O funil usa code leverage? (automação, plataforma)
+      O funil usa media leverage? (conteúdo escalável)
+      Qual parte do funil escala sem o Luiz presente?
+    outputs:
+      - leverage_score: number
+      - leverage_gaps: "list — onde falta leverage"
+      - scale_recommendations: "list — como escalar cada nível"
+    checkpoint:
+      gate: "Leverage report completo com recomendações"
+
+completion_criteria:
+  - "Escada de Lucro com 5 níveis definidos"
+  - "Landing page com copy e grunt test aprovado"
+  - "Lead generator completo com captura e thank-you"
+  - "11 emails (6 nurture + 5 sales) escritos"
+  - "Positioning consistency confirmada por Al Ries"
+  - "Leverage report do Advisory Board entregue"

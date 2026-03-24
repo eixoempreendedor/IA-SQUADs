@@ -1,0 +1,136 @@
+workflow:
+  id: wf-visual-hammer-activation
+  name: "Ativação do Visual Hammer — Do Conceito ao Conteúdo"
+  version: "1.0.0"
+  description: |
+    Materializa o Visual Hammer definido no manual de marca.
+    Transforma o conceito (ex: 'A Bifurcação') em execuções visuais
+    concretas (fotografia, grafismo, motion, ícone, metáfora),
+    com copy de ativação e plano de implantação.
+  trigger: "*activate-hammer"
+  entry_agent: brand-chief
+  estimated_duration: "30-45 minutes"
+  type: sequential
+
+  sequence:
+    - agent: alina-wheeler
+      action: visual-brief
+      creates: visual_hammer_briefs
+    - agent: romano
+      action: activation-copy
+      creates: activation_copies
+    - agent: archetype-consultant
+      action: consistency-check
+      creates: archetype_approval
+    - agent: brand-chief
+      action: activation-plan
+      creates: activation_plan
+
+phases:
+  - id: phase_0
+    name: "Brief Visual"
+    agent: alina-wheeler
+    description: |
+      Definir 5 execuções visuais do Visual Hammer:
+      1. Fotografia — real-world manifestation (bifurcação em natureza/cidade)
+      2. Grafismo — versão gráfica para social media (linhas que se separam)
+      3. Motion — animação curta para reels/stories (linha se destaca do grupo)
+      4. Ícone — versão simplificada para avatar, favicon, watermark
+      5. Metáfora fotográfica — pessoa/empresário na bifurcação (lifestyle)
+      Para cada: referências visuais, especificações técnicas, paleta aplicada.
+    inputs:
+      - visual_hammer_concept: "Conceito do hammer conforme manual de marca"
+      - brand_palette: "Paleta de cores da marca"
+      - brand_typography: "Sistema tipográfico"
+    outputs:
+      - visual_hammer_briefs:
+          type: list
+          count: 5
+          per_item:
+            execution_type: "string — photography, graphic, motion, icon, lifestyle"
+            description: "string — o que mostrar"
+            references: "list — referências visuais"
+            specs: "object — dimensões, formatos, resoluções"
+            palette_application: "string — como a paleta se aplica"
+    checkpoint:
+      gate: "5 execuções briefadas com referências e specs"
+      veto: "Hammer é abstrato demais — não reconhecível em 2 segundos"
+
+  - id: phase_1
+    name: "Copy de Ativação"
+    agent: romano
+    depends_on: [phase_0]
+    description: |
+      Escrever 5 textos que usam a metáfora do Visual Hammer:
+      Cada texto integra a metáfora visual com Grande Ideia + CTA.
+      Textos devem funcionar sozinhos (sem a imagem) E com a imagem.
+      Exemplos de ângulos:
+      - "Enquanto a maioria segue pelo caminho do improviso..."
+      - "Tem uma estrada larga e uma estreita..."
+      - "Todo empreendedor chega numa bifurcação..."
+    outputs:
+      - activation_copies:
+          type: list
+          count: 5
+          per_item:
+            headline: string
+            body: string
+            metaphor_used: string
+            grande_ideia: string
+            cta: string
+            format_suggestion: "string — post, reel, carrossel, story, newsletter"
+    checkpoint:
+      gate: "5 copies que integram metáfora visual com Grande Ideia"
+      veto: "Metáfora forçada ou desconectada do posicionamento"
+
+  - id: phase_2
+    name: "Consistência Arquetípica"
+    agent: archetype-consultant
+    depends_on: [phase_0, phase_1]
+    description: |
+      Validar que o Visual Hammer ativado expressa corretamente:
+      - Explorador (80%): caminho próprio, visão, escolha consciente
+      - Governante (20%): comando, autoridade, decisão estruturada
+      - Não expressa sombras: arrogância, elitismo, rigidez
+      - É reconhecível em 2 segundos (visual) e 5 segundos (copy)
+    outputs:
+      - archetype_approval:
+          type: object
+          fields:
+            explorer_score: number
+            ruler_score: number
+            shadow_risk: "string — low, medium, high"
+            recognition_speed: "string — passes 2-sec test or not"
+            verdict: "string — approved, adjust, reject"
+    checkpoint:
+      gate: "Hammer expressa arquétipos corretamente sem sombras"
+      veto: "Hammer comunica arrogância ou elitismo (sombra do Explorador)"
+
+  - id: phase_3
+    name: "Plano de Ativação"
+    agent: brand-chief
+    depends_on: [phase_0, phase_1, phase_2]
+    description: |
+      Calendário de implantação do Visual Hammer:
+      - Quando cada execução visual entra em produção
+      - Frequência: hammer aparece em pelo menos 30% do conteúdo
+      - Métricas: como medir reconhecimento do hammer
+      - Integração com Content Machine (wf-content-machine)
+    outputs:
+      - activation_plan:
+          type: object
+          fields:
+            production_calendar: "list — datas e responsáveis por execução"
+            frequency_rule: "string — % mínimo de conteúdo com hammer"
+            measurement: "string — como medir reconhecimento"
+            content_machine_integration: "string — como o hammer entra no workflow semanal"
+            rocks: "list — quarterly priorities para ativação"
+    checkpoint:
+      gate: "Plano com calendário, frequência e métricas definidas"
+
+completion_criteria:
+  - "5 execuções visuais briefadas com specs"
+  - "5 copies de ativação escritas com Grande Ideia"
+  - "Consistência arquetípica aprovada"
+  - "Plano de ativação com calendário e métricas"
+  - "Integração com Content Machine definida"

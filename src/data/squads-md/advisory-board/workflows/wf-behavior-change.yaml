@@ -1,0 +1,133 @@
+# Behavior Change Workflow v1.0.0
+# Install behavioral change in the entrepreneur using Goldsmith + Fogg + Cunningham
+
+workflow:
+  id: wf-behavior-change
+  name: "Instalacao de Mudanca Comportamental"
+  trigger: "*behavior-change"
+  entry_agent: board-chair
+  estimated_duration: "45-60 minutes"
+  description: |
+    Workflow para identificar e instalar mudancas comportamentais no empreendedor.
+    Combina o diagnostico de Goldsmith (o que mudar), o design de BJ Fogg (como mudar
+    com Tiny Habits) e a disciplina de Cunningham (como sustentar com Thinking Time).
+
+  type: sequential
+  sequence:
+    - agent: board-chair
+      action: frame-behavior
+      creates: behavior_context
+    - agent: marshall-goldsmith
+      action: diagnose-behavior
+      creates: behavior_diagnosis
+    - agent: bj-fogg
+      action: design-habit
+      creates: habit_design
+    - agent: keith-cunningham
+      action: accountability-system
+      creates: accountability_plan
+    - agent: board-chair
+      action: synthesize
+      creates: change_plan
+
+phases:
+  - id: phase_1_frame
+    name: "Frame the Behavioral Challenge"
+    agent: board-chair
+    depends_on: []
+    description: "Identify the behavior that is limiting the entrepreneur's growth"
+    checkpoint:
+      gate: "Specific behavior identified with observable impact on business/life"
+      veto: "HALT if the problem is systemic, not behavioral — route to operations_council"
+    outputs:
+      - behavior_description
+      - impact_assessment
+      - change_motivation
+
+  - id: phase_2_diagnose
+    name: "Behavioral Diagnosis"
+    agent: marshall-goldsmith
+    depends_on: [phase_1_frame]
+    description: "Apply Goldsmith's framework to identify the root behavioral pattern"
+    checkpoint:
+      gate: "ONE specific behavior identified for change, not multiple"
+      veto: "HALT if trying to change more than one behavior — focus on ONE"
+    goldsmith_protocol:
+      - "Which of the 20 bad habits is present? (winning too much, adding too much value, etc.)"
+      - "What Got You Here Won't Get You There — is this a success habit turned limitation?"
+      - "Stakeholder impact — who suffers from this behavior?"
+      - "Feedforward — what do others suggest for the future (not feedback about past)?"
+      - "Pick ONE behavior. Not five. ONE."
+    outputs:
+      - primary_behavior
+      - root_pattern
+      - stakeholder_impact
+      - feedforward_suggestions
+
+  - id: phase_3_design
+    name: "Tiny Habit Design"
+    agent: bj-fogg
+    depends_on: [phase_2_diagnose]
+    description: "Design the replacement behavior using B=MAP and Tiny Habits"
+    checkpoint:
+      gate: "Tiny Habit recipe created with anchor, behavior, and celebration"
+      veto: "HALT if the designed habit is too large — make it absurdly small"
+    bmap_protocol:
+      - "B = MAP — Behavior happens when Motivation, Ability, and Prompt align"
+      - "Make it TINY — what is the 2-minute version? The 30-second version?"
+      - "Find the ANCHOR — what existing routine does this attach to?"
+      - "Design the PROMPT — what naturally triggers this behavior?"
+      - "Plan the CELEBRATION — immediate positive reinforcement (shine)"
+      - "Focus on Ability over Motivation — motivation is unreliable"
+    outputs:
+      - tiny_habit_recipe
+      - anchor_behavior
+      - prompt_design
+      - celebration_plan
+      - scaling_path
+
+  - id: phase_4_accountability
+    name: "Accountability System"
+    agent: keith-cunningham
+    depends_on: [phase_3_design]
+    description: "Create a Thinking Time protocol to sustain the behavioral change"
+    checkpoint:
+      gate: "Weekly Thinking Time question defined, measurement system in place"
+      veto: "HALT if accountability relies only on willpower — needs structure"
+    cunningham_protocol:
+      - "Define ONE Thinking Time question for weekly review of this behavior"
+      - "Pre-Mortem — imagine the habit failed after 30 days. What killed it?"
+      - "What is the Dumb Tax of NOT changing this behavior?"
+      - "What environmental changes reduce friction for the new behavior?"
+      - "Owner vs Operator — is this behavior keeping you as Operator?"
+    outputs:
+      - thinking_time_question
+      - pre_mortem_risks
+      - environmental_changes
+      - measurement_system
+
+  - id: phase_5_synthesize
+    name: "Change Plan Synthesis"
+    agent: board-chair
+    depends_on: [phase_4_accountability]
+    description: "Combine diagnosis, habit design, and accountability into a unified change plan"
+    goldsmith_daily_questions:
+      - "Did I do my BEST to [new behavior] today? (score 1-10)"
+      - "Did I do my BEST to find positive meaning in my work today?"
+      - "Did I do my BEST to be fully engaged today?"
+    checkpoint:
+      gate: "Complete change plan with diagnosis, habit recipe, accountability, and daily questions"
+      veto: "HALT if plan is too complex — simplify ruthlessly"
+    outputs:
+      - unified_change_plan
+      - daily_questions
+      - 30_day_protocol
+      - success_indicators
+
+completion_criteria:
+  - "ONE behavior identified for change (Goldsmith)"
+  - "Tiny Habit recipe designed with anchor and celebration (Fogg)"
+  - "Accountability system with Thinking Time question (Cunningham)"
+  - "Daily Questions defined for self-scoring (Goldsmith)"
+  - "30-day protocol with measurement milestones"
+  - "Pre-mortem completed — failure modes identified and mitigated"
