@@ -63,6 +63,12 @@ domains:
     secondary_agent: dan-koe
     description: "Daily emails and engagement — Settle for anti-guru daily emails, Koe for personal brand"
 
+  inspirational_cronica:
+    keywords: [crônica, cronica, inspirational newsletter, carta inspiracional, scene-first, story-led, motivational letter, peer-voice, lição, chronicle]
+    primary_agent: samer-agi
+    secondary_agent: ben-settle
+    description: "Inspirational crônicas and newsletters — Samer Agi for scene-first openings and story-carried lessons, Settle for daily cadence"
+
   classic_mail:
     keywords: [classic letter, direct mail, mail order, empathy letter, print, magalog opening]
     primary_agent: robert-collier

@@ -1,7 +1,7 @@
 name: copy-squad
-version: "1.0.0"
+version: "1.1.0"
 short-title: "Copy Squad"
-description: "Squad de elite com 23 agentes de copywriting — 22 copywriters lendários + 1 orquestrador. Cobre direct response, email, funis, VSLs, cartas de vendas, ofertas e copywriting de marca."
+description: "Squad de elite com 24 agentes de copywriting — 23 copywriters + 1 orquestrador. Cobre direct response, email, funis, VSLs, cartas de vendas, ofertas, copywriting de marca e crônica/newsletter inspiracional."
 author: "Synkra AIOS"
 license: MIT
 slashPrefix: "copy-squad"
@@ -47,6 +47,7 @@ components:
     - ben-settle.md
     - andre-chaperon.md
     - dan-koe.md
+    - samer-agi.md
     # Tier 1D — Offers & Sales Pages
     - joe-sugarman.md
     - david-ogilvy.md
@@ -83,5 +84,5 @@ config:
 #   tier_0: Orchestration — copy-chief
 #   tier_1a: Direct Response Legends — gary-halbert, eugene-schwartz, claude-hopkins, gary-bencivenga, robert-collier, john-carlton, jim-rutz
 #   tier_1b: Modern Copy & Funnels — dan-kennedy, frank-kern, russell-brunson, todd-brown, stefan-georgi, jon-benson, ry-schwartz
-#   tier_1c: Email & Relationship — ben-settle, andre-chaperon, dan-koe
+#   tier_1c: Email & Relationship — ben-settle, andre-chaperon, dan-koe, samer-agi
 #   tier_1d: Offers & Sales Pages — joe-sugarman, david-ogilvy, clayton-makepeace, parris-lampropoulos, david-deutsch
