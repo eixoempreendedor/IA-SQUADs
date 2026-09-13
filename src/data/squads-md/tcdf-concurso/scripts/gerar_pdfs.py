@@ -87,18 +87,38 @@ def partes(texto: str):
 
 def linha_topico(numero, titulo, peso, com_campo=True, q_n2=None, aulas=None):
     marca = f" <font size=7 color='#6d28d9'>[Gran {', '.join(str(a) for a in aulas)}]</font>" if aulas else ""
-    esquerda = [Bolinha(), Paragraph(f"<b>{numero}.</b> {titulo}{marca}", TOPICO)]
     direita = f"peso {peso} · N2: {q_n2}q<br/>N1: ____ / 20" if com_campo else f"peso {peso}"
-    t = Table([[esquerda[0], esquerda[1], Paragraph(direita, NOTA)]],
-              colWidths=[7 * mm, 119 * mm, 32 * mm])
+    t = Table([[
+        Bolinha(cor=colors.HexColor("#c4b5fd")),
+        Bolinha(),
+        Paragraph(f"<b>{numero}.</b> {titulo}{marca}", TOPICO),
+        Paragraph(direita, NOTA),
+    ]], colWidths=[6.5 * mm, 7 * mm, 112.5 * mm, 32 * mm])
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
         ("TOPPADDING", (0, 0), (-1, -1), 3),
         ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
-        ("ALIGN", (2, 0), (2, 0), "RIGHT"),
+        ("ALIGN", (3, 0), (3, 0), "RIGHT"),
         ("LINEABOVE", (0, 0), (-1, 0), 0.4, LINHA),
+    ]))
+    return t
+
+
+def legenda_bolinhas():
+    """Cabecalho das duas colunas de marcacao, alinhado com linha_topico."""
+    t = Table([[
+        Paragraph("<font size=6.5 color='#6d28d9'><b>ESTUDEI</b></font>", NOTA),
+        Paragraph("<font size=6.5 color='#374151'><b>VENCI</b></font>", NOTA),
+        Paragraph("", NOTA),
+    ]], colWidths=[13.5 * mm, 17 * mm, 127.5 * mm])
+    t.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "BOTTOM"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 2),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
     ]))
     return t
 
@@ -106,10 +126,10 @@ def linha_topico(numero, titulo, peso, com_campo=True, q_n2=None, aulas=None):
 def linha_sub(texto, sugerido=False):
     estilo = SUB if not sugerido else ParagraphStyle("subsug", parent=SUB, textColor=CINZA)
     t = Table([[Bolinha(raio=1.7 * mm, cor=CLARO), Paragraph(texto, estilo)]],
-              colWidths=[7 * mm, 151 * mm])
+              colWidths=[13.5 * mm, 144.5 * mm])
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
-        ("LEFTPADDING", (0, 0), (0, 0), 8),
+        ("LEFTPADDING", (0, 0), (0, 0), 14.5),
         ("LEFTPADDING", (1, 0), (1, 0), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
         ("TOPPADDING", (0, 0), (-1, -1), 1.5),
@@ -216,8 +236,9 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None):
 
     hist.append(Paragraph("CHECKLIST DE CONTEÚDO", SECAO))
     hist.append(Paragraph(
-        "Bolinha grande = tópico do edital (unidade de Nível 1: 20 questões, meta 18/20). "
-        "Bolinha pequena = subtópico. Marque o subtópico quando estudar; marque o tópico só quando o lote de 20 passar. "
+        "Cada tópico do edital tem <b>duas marcações</b>: a primeira bolinha (<font color='#6d28d9'>ESTUDEI</font>) "
+        "é o conteúdo visto; a segunda (VENCI) só é marcada quando o lote de 20 questões daquele tópico fecha em "
+        "18/20. Ver a aula não vence o tópico. As bolinhas menores são os subtópicos, para acompanhar o estudo. "
         "<font color='#6d28d9'>[Gran N]</font> = número da aula no curso que cobre aquele tópico — o curso fatia e "
         "reordena o programa, então a numeração das aulas não é a do edital.",
         NOTA))
@@ -228,6 +249,7 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None):
         hist.append(Paragraph(
             f"{info['nome']} <font size=8 color='#6b7280'>· {info['bloco']} · "
             f"{r['por_materia'][b['id']]} questões no simulado</font>", MATERIA))
+        hist.append(legenda_bolinhas())
         fora = [t["n"] for t in info["ementa"] if t["n"] not in b["topicos"]]
         if fora:
             onde = sorted({outros[(info["id"], n)] for n in fora})
