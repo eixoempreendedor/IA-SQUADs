@@ -138,6 +138,22 @@ Cada arquivo `.md` de agente e autossuficiente (persona, ementa oficial da mater
 
 `aula-de-topico` · `corrigir-discursiva` · `diagnosticar-e-rotear` · `diagnostico-de-erros` · `gerar-simulado` · `montar-plano-de-estudos` · `revisao-do-dia` · `simulado-nivel-1` · `simulado-nivel-2` · `simulado-nivel-3` · `verticalizar-edital`
 
+## Checklists em PDF
+
+Um PDF por dia da semana, para imprimir: checklist com uma bolinha por topico e por subtopico do edital, campo para o resultado do lote de Nivel 1 de cada topico, e a tabela de registro dos simulados daquele dia. Domingo traz o registro geral do Nivel 3 e a projecao por bloco.
+
+| Dia | Arquivo |
+|---|---|
+| Segunda-feira | [`pdf/1-segunda-feira-direito-administrativo-e-contratacoes.pdf`](pdf/1-segunda-feira-direito-administrativo-e-contratacoes.pdf) |
+| Terça-feira | [`pdf/2-terca-feira-orcamento-financas-e-tributacao.pdf`](pdf/2-terca-feira-orcamento-financas-e-tributacao.pdf) |
+| Quarta-feira | [`pdf/3-quarta-feira-controle-externo-e-organizacao-do-estado.pdf`](pdf/3-quarta-feira-controle-externo-e-organizacao-do-estado.pdf) |
+| Quinta-feira | [`pdf/4-quinta-feira-governanca-gestao-e-dados.pdf`](pdf/4-quinta-feira-governanca-gestao-e-dados.pdf) |
+| Sexta-feira | [`pdf/5-sexta-feira-pessoal-servidores-e-previdencia.pdf`](pdf/5-sexta-feira-pessoal-servidores-e-previdencia.pdf) |
+| Sábado | [`pdf/6-sabado-instrumentais-e-distrito-federal.pdf`](pdf/6-sabado-instrumentais-e-distrito-federal.pdf) |
+| Domingo | [`pdf/7-domingo-nivel-3.pdf`](pdf/7-domingo-nivel-3.pdf) |
+
+Gerados por `python3 scripts/gerar_pdfs.py` — mudou grupo ou ementa, e so rodar de novo.
+
 ## Templates
 
 [`mapa-de-progressao.md`](templates/mapa-de-progressao.md) · [`diario-de-erros.md`](templates/diario-de-erros.md) · [`folha-de-simulado.md`](templates/folha-de-simulado.md) · [`flashcards.md`](templates/flashcards.md)
@@ -150,6 +166,7 @@ Os 48 agentes de materia e o `reitor-tcdf` sao **gerados** a partir de `scripts/
 python3 scripts/gerar_agentes.py        # agentes, squad.yaml, data/
 python3 scripts/gerar_progressao.py     # grupos de conteudo e mapa de progressao
 python3 scripts/gerar_status.py         # status atual a partir dos simulados registrados
+python3 scripts/gerar_pdfs.py           # os 7 PDFs de checklist (pdf/)
 python3 scripts/gerar_readme.py         # este README
 python3 scripts/sync_app_registry.py    # registra o squad em squads.ts e agents.ts
 ```

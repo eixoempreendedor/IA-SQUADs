@@ -7,9 +7,17 @@ Uso:
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
+
+
+def slug(texto: str) -> str:
+    """Mesma regra de nomes de arquivo usada por gerar_pdfs.py."""
+    t = unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
 CORE = [
     ("🎓", "reitor-tcdf", "Orquestrador e porta de entrada: diagnostica, prioriza pelo peso do edital e roteia"),
     ("♟️", "estrategista-cebraspe", "Tecnica de prova C/E, politica de chute, gestao de tempo, recursos"),
@@ -134,6 +142,16 @@ def main() -> int:
                "| [`wf-progressao-por-niveis`](workflows/wf-progressao-por-niveis.yaml) | Sistema de 90% para avancar |",
                "| [`wf-reta-final`](workflows/wf-reta-final.yaml) | Ultimos 60 dias |", "",
                "## Tasks", "", " · ".join(f"`{t[:-3]}`" for t in tasks), "",
+               "## Checklists em PDF", "",
+               "Um PDF por dia da semana, para imprimir: checklist com uma bolinha por topico e por subtopico do "
+               "edital, campo para o resultado do lote de Nivel 1 de cada topico, e a tabela de registro dos "
+               "simulados daquele dia. Domingo traz o registro geral do Nivel 3 e a projecao por bloco.", "",
+               "| Dia | Arquivo |", "|---|---|"]
+    for i, g in enumerate(prog["grupos"], 1):
+        nome_pdf = f"{i}-{slug(g['dia'])}-{slug(g['nome'])}.pdf"
+        linhas.append(f"| {g['dia']} | [`pdf/{nome_pdf}`](pdf/{nome_pdf}) |")
+    linhas += ["| Domingo | [`pdf/7-domingo-nivel-3.pdf`](pdf/7-domingo-nivel-3.pdf) |", "",
+               "Gerados por `python3 scripts/gerar_pdfs.py` — mudou grupo ou ementa, e so rodar de novo.", "",
                "## Templates", "",
                "[`mapa-de-progressao.md`](templates/mapa-de-progressao.md) · "
                "[`diario-de-erros.md`](templates/diario-de-erros.md) · "
@@ -145,6 +163,7 @@ def main() -> int:
                "python3 scripts/gerar_agentes.py        # agentes, squad.yaml, data/",
                "python3 scripts/gerar_progressao.py     # grupos de conteudo e mapa de progressao",
                "python3 scripts/gerar_status.py         # status atual a partir dos simulados registrados",
+               "python3 scripts/gerar_pdfs.py           # os 7 PDFs de checklist (pdf/)",
                "python3 scripts/gerar_readme.py         # este README",
                "python3 scripts/sync_app_registry.py    # registra o squad em squads.ts e agents.ts",
                "```", "",

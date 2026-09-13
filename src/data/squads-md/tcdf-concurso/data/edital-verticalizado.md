@@ -156,7 +156,7 @@
 
 **Ementa**
 
-1. {'n': '1', 'peso': 3, 'texto': '1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação'}
+1. {'n': '1', 'peso': 3, 'texto': '1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação', 'subtopicos_sugeridos': ['Avaliação da cena, segurança do socorrista e avaliação da vítima', 'Reconhecimento de urgência e emergência e acionamento do socorro (SAMU 192 / Bombeiros 193)', 'Engasgo (obstrução de via aérea) e manobra de desobstrução', 'Sangramento e controle de hemorragia', 'Fratura e imobilização', 'Queimadura', 'Desmaio', 'Convulsão', 'Intoxicação']}
 
 **Base normativa**
 
@@ -217,7 +217,7 @@
 **Ementa**
 
 1. {'n': '1', 'peso': 5, 'texto': '1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF'}
-2. {'n': '2', 'peso': 5, 'texto': '2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)'}
+2. {'n': '2', 'peso': 5, 'texto': '2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)', 'subtopicos_sugeridos': ['Título I — Da organização e do funcionamento do Tribunal', 'Título II — Da competência e da jurisdição', 'Título III — Dos processos: instauração, instrução, julgamento e recursos (até o art. 116)']}
 
 **Base normativa**
 
@@ -558,7 +558,7 @@
 
 **Ementa**
 
-1. {'n': '1', 'peso': 8, 'texto': '1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)'}
+1. {'n': '1', 'peso': 8, 'texto': '1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)', 'subtopicos_sugeridos': ['Disposições preliminares, cargo público e provimento (nomeação, posse, exercício, estágio probatório)', 'Vacância, remoção, redistribuição e substituição', 'Direitos e vantagens: remuneração, vencimento, vantagens, indenizações e gratificações', 'Férias, licenças, afastamentos e concessões', 'Deveres, proibições, acumulação e responsabilidades do servidor', 'Regime disciplinar: penalidades, sindicância, processo administrativo disciplinar e prescrição', 'Seguridade do servidor e disposições finais']}
 
 **Base normativa**
 
