@@ -32,9 +32,18 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural, política e econômica do Distrito Federal e da Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE) (Lei Complementar federal nº 94/1998 e Decreto federal nº 7.469/2011)"
-    - "2 Plano Distrital de Política para Mulheres (2020–2023)"
-    - "3 Lei Federal nº 11.340/2006 – Lei Maria da Penha"
+    - topico: 1
+      peso_estimado: 2
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "1 Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural, política e econômica do Distrito Federal e da Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE) (Lei Complementar federal nº 94/1998 e Decreto federal nº 7.469/2011)"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "2 Plano Distrital de Política para Mulheres (2020–2023)"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "3 Lei Federal nº 11.340/2006 – Lei Maria da Penha"
 
 base_normativa:
     - "Lei Complementar federal nº 94/1998 (RIDE)"
@@ -130,3 +139,14 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **4 itens** em P1 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural,... | 2 | Sábado — Instrumentais e Distrito Federal |
+| **2** Plano Distrital de Política para Mulheres (2020–2023) | 1 | Sábado — Instrumentais e Distrito Federal |
+| **3** Lei Federal nº 11.340/2006 – Lei Maria da Penha | 1 | Sábado — Instrumentais e Distrito Federal |

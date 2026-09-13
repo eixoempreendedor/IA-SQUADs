@@ -48,9 +48,18 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural, política e econômica do Distrito Federal e da Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE) (Lei Complementar federal nº 94/1998 e Decreto federal nº 7.469/2011)"
-    - "2 Plano Distrital de Política para Mulheres (2020–2023)"
-    - "3 Lei Federal nº 11.340/2006 – Lei Maria da Penha"
+    - topico: 1
+      peso_estimado: 2
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "1 Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural, política e econômica do Distrito Federal e da Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE) (Lei Complementar federal nº 94/1998 e Decreto federal nº 7.469/2011)"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "2 Plano Distrital de Política para Mulheres (2020–2023)"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "3 Lei Federal nº 11.340/2006 – Lei Maria da Penha"
 
 base_normativa:
     - "Lei Complementar federal nº 94/1998 (RIDE)"
@@ -135,3 +144,15 @@ integration_with_squad:
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
 Esta materia esta classificada como **media** (4 itens estimados em P1).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural,... | 2 | Sábado — Instrumentais e Distrito Federal |
+| **2** Plano Distrital de Política para Mulheres (2020–2023) | 1 | Sábado — Instrumentais e Distrito Federal |
+| **3** Lei Federal nº 11.340/2006 – Lei Maria da Penha | 1 | Sábado — Instrumentais e Distrito Federal |

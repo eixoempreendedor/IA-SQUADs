@@ -76,8 +76,9 @@ def main() -> int:
             f"| {m['icone']} **{m['nome']}** | {m['bloco']} | {m['itens_estimados']} | {m['prioridade']} | "
             f"`{m['id']}-professor` | `{m['id']}-examinador` | `{m['id']}-revisor` |"
         )
-    linhas += ["", "> A distribuicao de itens por materia e **estimativa** ponderada pelo tamanho da ementa e pelo "
-                   "historico da banca: o edital fixa o total de cada bloco (35 / 45 / 70), nao o total por materia.", ""]
+    linhas += ["", f"> {c['observacao_itens']}", "",
+               f"> O edital tem **{sum(len(m['ementa']) for m in mats)} topicos numerados** no total. Cada um e uma "
+               "unidade de Nivel 1 e pertence a exatamente um grupo de conteudo.", ""]
 
     linhas += ["## Progressao por niveis (90% para avancar)", "",
                f"O estudo avanca por **resultado medido**, nao por tempo estudado. Questoes do "
@@ -87,12 +88,23 @@ def main() -> int:
     for n in prog["sistema"]["niveis"]:
         linhas.append(f"| **{n['nivel']} — {n['nome']}** | {n['unidade']} | {n['questoes']} | {n['quando']} | {n['aprovado_gera']} |")
     linhas += ["", "### Grupos de conteudo (seg a sab)", "",
-               "| Dia | Grupo | Itens | Materias | Cotas no simulado de 50 |", "|---|---|---|---|---|"]
+               f"{prog['sistema']['estrutura_dos_grupos']}", "",
+               "| Dia | Grupo | Peso est. | Materias (topicos) — cota no simulado de 50 |", "|---|---|---|---|"]
+
+    def peso_grupo(g):
+        total = 0
+        for b in g["materias"]:
+            pesos = {t["n"]: t["peso"] for t in nomes[b["id"]]["ementa"]}
+            total += sum(pesos[n] for n in b["topicos"])
+        return total
+
     for g in prog["grupos"]:
-        lista = " · ".join(nomes[x["id"]]["nome"] for x in g["materias"])
-        cotas = " · ".join(f"{x['questoes_n2']}" for x in g["materias"])
-        linhas.append(f"| {g['dia']} | **{g['nome']}** | {g['itens_edital']} | {lista} | {cotas} |")
-    linhas += ["| Domingo | **Nivel 3 — simulado geral** | pool vencido | Todas as materias vencidas | 200 proporcionais |", "",
+        lista = " · ".join(
+            f"{nomes[b['id']]['nome']} ({', '.join(b['topicos'])}) — {b['questoes_n2']}q"
+            for b in g["materias"]
+        )
+        linhas.append(f"| {g['dia']} | **{g['nome']}** | {peso_grupo(g)} | {lista} |")
+    linhas += ["| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |", "",
                "Composicao completa, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). "
                "Acompanhamento: [`templates/mapa-de-progressao.md`](templates/mapa-de-progressao.md).", "",
                "Para mudar grupos, cotas, meta ou metrica, edite `scripts/progressao.json` e rode "

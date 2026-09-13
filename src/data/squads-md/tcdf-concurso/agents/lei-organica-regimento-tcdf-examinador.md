@@ -32,8 +32,14 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF"
-    - "2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)"
+    - topico: 1
+      peso_estimado: 5
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF"
+    - topico: 2
+      peso_estimado: 5
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)"
 
 base_normativa:
     - "Lei Complementar distrital nº 1/1994 — Lei Orgânica do TCDF"
@@ -129,3 +135,13 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **10 itens** em P2 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 p... | 5 | Quarta-feira — Controle Externo e Organização do Estado |
+| **2** Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116) | 5 | Quarta-feira — Controle Externo e Organização do Estado |

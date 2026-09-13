@@ -10,7 +10,8 @@ workflow:
   description: |
     Sistema de avanco por desempenho medido em simulados do Gran Cursos.
     Nada avanca por tempo estudado: avanca por indice liquido de 90%.
-    Nivel 1 (tema, 20 questoes) -> Nivel 2 (grupo do dia, 50 questoes) -> Nivel 3 (domingo, 200 questoes).
+    Nivel 1 (topico, 20 questoes) -> Nivel 2 (grupo do dia, 50 questoes) -> Nivel 3 (domingo, 200 questoes).
+    Os grupos sao formados por TOPICOS do edital: uma materia pode aparecer em mais de um dia.
 
   type: cyclical
   sequence:
@@ -25,23 +26,23 @@ workflow:
     - agent: arbitro-da-progressao
       action: apurar
       input: lote_20
-      creates: tema_vencido_ou_reforco
-      regra: ">= 90% liquido = tema vencido"
+      creates: topico_vencido_ou_reforco
+      regra: ">= 90% liquido = topico vencido"
     - agent: "<materia>-revisor"
       action: revisao-do-dia
-      condition: "tema reprovado ou revisao espacada agendada"
+      condition: "topico reprovado ou revisao espacada agendada"
       creates: reforco
     - agent: arbitro-da-progressao
       action: simulado-nivel-2
       creates: grupo_vencido_ou_repeticao
       quando: "manha do dia fixo do grupo"
-      pre_requisito: "70% dos temas do grupo vencidos no Nivel 1"
+      pre_requisito: "70% do peso dos topicos do grupo vencido no Nivel 1"
       regra: ">= 90% liquido = grupo vencido e entra no pool do Nivel 3"
     - agent: arbitro-da-progressao
       action: simulado-nivel-3
       creates: apuracao_dominical
       quando: "domingo de manha"
-      regra: "composicao proporcional ao peso das materias vencidas; regressao abaixo de 90% em 2 domingos ou 80% em 1"
+      regra: "composicao proporcional ao peso dos topicos vencidos; grupo regride abaixo de 90% em 2 domingos ou 80% em 1"
     - agent: mentor-desempenho
       action: diagnostico-de-erros
       input: apuracao_dominical
@@ -54,17 +55,17 @@ workflow:
       observacao: "Grupo vencido libera tempo do seu dia para os grupos ainda pendentes"
 
   calendario:
-    segunda: "G1 — Direito Administrativo e Contratacoes (50 questoes)"
-    terca: "G2 — Financas Publicas (50 questoes)"
-    quarta: "G3 — Constitucional e Institucional (50 questoes)"
-    quinta: "G4 — Gestao Publica (50 questoes)"
-    sexta: "G5 — Direitos Complementares (50 questoes)"
-    sabado: "G6 — Instrumentais (semana A) / Complementares (semana B) (50 questoes)"
-    domingo: "Nivel 3 — 200 questoes das materias vencidas + relatorio semanal"
+    segunda: "Direito Administrativo e Contratações — 50 questoes"
+    terca: "Orçamento, Finanças e Tributação — 50 questoes"
+    quarta: "Controle Externo e Organização do Estado — 50 questoes"
+    quinta: "Governança, Gestão e Dados — 50 questoes"
+    sexta: "Pessoal: Servidores e Previdência — 50 questoes"
+    sabado: "Instrumentais e Distrito Federal — 50 questoes"
+    domingo: "Nivel 3 — 200 questoes dos topicos vencidos + relatorio semanal"
 
   metricas:
-    - "Temas vencidos / temas totais por materia"
+    - "Topicos vencidos / 87 topicos do edital"
     - "Grupos vencidos (0 a 6)"
-    - "Itens do edital no pool do Nivel 3 (meta: 150)"
+    - "Peso somado no pool do Nivel 3 (meta: 150)"
     - "Liquido do domingo, total e por materia"
     - "Regressoes por mes (indicador de aprovacao superficial no Nivel 2)"

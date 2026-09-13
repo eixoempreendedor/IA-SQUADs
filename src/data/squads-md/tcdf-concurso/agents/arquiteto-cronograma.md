@@ -81,28 +81,19 @@ integration_with_squad:
 
 ## MODELO DE CICLO (20 HORAS SEMANAIS)
 
-Um bloco por dia espelha o grupo de conteudo daquele dia (ver `data/grupos-de-conteudo.md`), de modo que o simulado de Nivel 2 da manha cobre exatamente o que foi estudado na semana.
+O estudo de cada dia cobre exatamente os topicos do grupo daquele dia (ver `data/grupos-de-conteudo.md`), de modo que o simulado de Nivel 2 da manha seguinte cai sobre o que acabou de ser estudado.
 
-| Dia | Grupo | Materia | Tipo | Duracao |
-|---|---|---|---|---|
-| Segunda-feira | Direito Administrativo e Contratações | Direito Administrativo | Teoria + questoes | 2h |
-|  |  | Gestão de Contratos | Teoria + questoes | 1h |
-| Terça-feira | Orçamento e Finanças Públicas | Administração Financeira e Orçamentária | Teoria + questoes | 2h |
-|  |  | Lei Orgânica do Distrito Federal | Lei seca + questoes | 1h |
-| Quarta-feira | Constitucional e Institucional | Direito Constitucional | Teoria + questoes | 1h30 |
-|  |  | Lei Orgânica do TCDF e Regimento Interno | Lei seca + questoes | 1h30 |
-| Quinta-feira | Gestão e Dados | Administração Geral e Pública | Teoria + questoes | 2h |
-|  |  | Análise de Dados, Noções de Estatística e Inteligência Artificial | Teoria + questoes | 1h |
-| Sexta-feira | Servidor e Direitos Complementares | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | Lei seca + questoes | 1h |
-|  |  | Direito Previdenciário | Teoria + questoes | 1h |
-|  |  | Noções de Direito Civil | Teoria + questoes | 45min |
-|  |  | Noções de Direito Tributário | Teoria + questoes | 45min |
-| Sábado | Instrumentais e Distrito Federal | Língua Portuguesa | Questoes + reescrita | 1h30 |
-|  |  | Raciocínio Lógico e Matemática Financeira | Exercicios | 1h15 |
-|  |  | Conhecimentos do Distrito Federal e Política para Mulheres | Teoria + questoes | 45min |
-|  |  | Noções de Primeiros Socorros | Teoria + questoes | 30min |
-| Domingo | — | Simulado de Nivel 3 (200 questoes) | Simulado + correcao | 4h + 1h |
+| Dia | Grupo (peso est.) | O que estudar | Horas |
+|---|---|---|---|
+| Segunda-feira | **Direito Administrativo e Contratações** (25) | Direito Administrativo — topicos 1, 2, 3, 5, 6, 7, 8, 9, 11, 12; Gestão de Contratos — topicos 1, 2 | 3h30 |
+| Terça-feira | **Orçamento, Finanças e Tributação** (21) | Administração Financeira e Orçamentária — topicos 1, 2, 3, 4, 5, 6, 7, 8, 9; Noções de Direito Tributário — topicos 1, 2, 3; Lei Orgânica do Distrito Federal — topicos 4, 5 | 3h |
+| Quarta-feira | **Controle Externo e Organização do Estado** (26) | Direito Constitucional — topicos 1, 2, 3, 4, 6, 7, 8, 9; Lei Orgânica do TCDF e Regimento Interno — topicos 1, 2; Lei Orgânica do Distrito Federal — topicos 1, 2, 3; Direito Administrativo — topicos 10 | 3h30 |
+| Quinta-feira | **Governança, Gestão e Dados** (23) | Administração Geral e Pública — topicos 1, 2, 3, 4, 5, 6, 7, 8, 9; Análise de Dados, Noções de Estatística e Inteligência Artificial — topicos 1, 2, 3, 4, 5; Direito Administrativo — topicos 13, 14; Raciocínio Lógico e Matemática Financeira — topicos 5 | 3h |
+| Sexta-feira | **Pessoal: Servidores e Previdência** (27) | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) — topicos 1; Direito Previdenciário — topicos 1, 2, 3, 4, 5; Noções de Direito Civil — topicos 1, 2, 3, 4, 5, 6; Direito Administrativo — topicos 4; Direito Constitucional — topicos 5 | 3h30 |
+| Sábado | **Instrumentais e Distrito Federal** (28) | Língua Portuguesa — topicos 1, 2, 3, 4, 5, 6; Raciocínio Lógico e Matemática Financeira — topicos 1, 2, 3, 4, 6, 7; Conhecimentos do Distrito Federal e Política para Mulheres — topicos 1, 2, 3; Noções de Primeiros Socorros — topicos 1 | 3h30 |
+| Domingo | Simulado de Nivel 3 | 200 questoes + correcao e relatorio | 5h |
 
+Dentro de cada dia, distribua as horas na proporcao do peso dos topicos e reserve 40% do tempo para questoes.
 As manhas de segunda a sabado comecam com o simulado de Nivel 2 do grupo do dia (50 questoes, 70 minutos) e a revisao dirigida dos erros; a tabela acima e o estudo de conteudo que vem depois.
 
-Ajuste as duracoes proporcionalmente as horas reais do candidato — o que importa e a proporcao entre as materias, que segue o peso de cada uma no edital.
+Ajuste as duracoes as horas reais do candidato — o que importa e a proporcao entre os grupos.

@@ -48,8 +48,14 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF"
-    - "2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)"
+    - topico: 1
+      peso_estimado: 5
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF"
+    - topico: 2
+      peso_estimado: 5
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)"
 
 base_normativa:
     - "Lei Complementar distrital nº 1/1994 — Lei Orgânica do TCDF"
@@ -133,3 +139,14 @@ integration_with_squad:
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
 Esta materia esta classificada como **critica** (10 itens estimados em P2).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 p... | 5 | Quarta-feira — Controle Externo e Organização do Estado |
+| **2** Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116) | 5 | Quarta-feira — Controle Externo e Organização do Estado |

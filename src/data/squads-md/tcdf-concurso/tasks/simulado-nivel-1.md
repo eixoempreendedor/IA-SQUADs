@@ -8,7 +8,7 @@ elicit: true
 Entrada:
   - campo: tema
     tipo: string
-    origem: User Input (topico da ementa recem-estudado)
+    origem: User Input (topico numerado da ementa oficial, recem-estudado)
     obrigatorio: true
   - campo: resultado_gran
     tipo: string
@@ -44,7 +44,9 @@ Checklist:
 
 ## Objetivo
 
-Fechar o ciclo estudo → questao no mesmo dia: 20 questoes sobre o tema estudado, meta de 90% liquido. Aprovou, o tema entra no grupo e conta para liberar o Nivel 2.
+Fechar o ciclo estudo → questao no mesmo dia: 20 questoes sobre **um topico numerado da ementa**, meta de 90% liquido. Aprovou, o topico entra vencido no grupo a que pertence e conta para liberar o simulado de Nivel 2 daquele dia.
+
+Qual topico pertence a qual dia esta no `MAPA DE TOPICOS` do agente professor da materia e em [`data/grupos-de-conteudo.md`](../data/grupos-de-conteudo.md). Atencao: a mesma materia pode ter topicos em dias diferentes — Direito Administrativo, por exemplo, aparece em quatro dias.
 
 ## Fluxo
 

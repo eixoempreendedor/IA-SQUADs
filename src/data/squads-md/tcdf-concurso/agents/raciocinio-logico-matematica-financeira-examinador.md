@@ -32,13 +32,34 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Estruturas lógicas"
-    - "2 Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões"
-    - "3 Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equivalências; 3.4 leis de De Morgan; 3.5 diagramas lógicos"
-    - "4 Lógica de primeira ordem"
-    - "5 Princípios de contagem e probabilidade"
-    - "6 Operações com conjuntos"
-    - "7 Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nominal, efetiva, equivalente), sistemas de amortização e fluxo de caixa"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "1 Estruturas lógicas"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "2 Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões"
+    - topico: 3
+      peso_estimado: 3
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "3 Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equivalências; 3.4 leis de De Morgan; 3.5 diagramas lógicos"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "4 Lógica de primeira ordem"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "5 Princípios de contagem e probabilidade"
+    - topico: 6
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "6 Operações com conjuntos"
+    - topico: 7
+      peso_estimado: 2
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "7 Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nominal, efetiva, equivalente), sistemas de amortização e fluxo de caixa"
 
 base_normativa:
     []
@@ -132,3 +153,18 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **10 itens** em P1 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Estruturas lógicas | 1 | Sábado — Instrumentais e Distrito Federal |
+| **2** Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões | 1 | Sábado — Instrumentais e Distrito Federal |
+| **3** Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equival... | 3 | Sábado — Instrumentais e Distrito Federal |
+| **4** Lógica de primeira ordem | 1 | Sábado — Instrumentais e Distrito Federal |
+| **5** Princípios de contagem e probabilidade | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **6** Operações com conjuntos | 1 | Sábado — Instrumentais e Distrito Federal |
+| **7** Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nomin... | 2 | Sábado — Instrumentais e Distrito Federal |

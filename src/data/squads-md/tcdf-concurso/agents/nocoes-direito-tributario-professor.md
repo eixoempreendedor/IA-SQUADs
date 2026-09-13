@@ -22,7 +22,7 @@ contexto_da_prova:
   cargo: "Analista Administrativo de Controle Externo — Área de Gestão — Serviços Técnico-Administrativos (ANACE)"
   banca: "Cebraspe"
   bloco: "P2 — Conhecimentos Específicos"
-  itens_estimados: 5
+  itens_estimados: 4
   prioridade: "media"
   formato: "Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla"
   justificativa_de_peso: "Recorte muito curto: para na definição das espécies tributárias. Crédito tributário e lançamento não foram cobrados."
@@ -48,9 +48,18 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário"
-    - "2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias"
-    - "3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário"
+    - topico: 2
+      peso_estimado: 2
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições"
 
 base_normativa:
     - "CF/88, arts. 145 a 162"
@@ -132,4 +141,16 @@ integration_with_squad:
 | media | Conceitos centrais + questoes | 30-45 min |
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
-Esta materia esta classificada como **media** (5 itens estimados em P2).
+Esta materia esta classificada como **media** (4 itens estimados em P2).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **2** Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder... | 2 | Terça-feira — Orçamento, Finanças e Tributação |
+| **3** Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melh... | 1 | Terça-feira — Orçamento, Finanças e Tributação |

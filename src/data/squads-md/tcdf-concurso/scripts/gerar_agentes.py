@@ -11,6 +11,7 @@ sobrescritos: eles estao listados em AGENTES_CORE.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -49,13 +50,60 @@ def bloco_nome(bloco: str, edital: dict) -> str:
 
 
 def ementa_md(materia: dict) -> str:
-    return "\n".join(f"{i}. {t}" for i, t in enumerate(materia["ementa"], 1))
+    return "\n".join(f"{t['n']}. {t['texto']}" for t in materia["ementa"])
+
+
+def grupo_do_topico(prog: dict | None) -> dict:
+    """Mapa (materia_id, n) -> {'dia': ..., 'grupo': ...} a partir de progressao.json."""
+    mapa = {}
+    if not prog:
+        return mapa
+    for g in prog["grupos"]:
+        for bloco in g["materias"]:
+            for n in bloco["topicos"]:
+                mapa[(bloco["id"], n)] = {"dia": g["dia"], "grupo": g["nome"]}
+    return mapa
+
+
+def ementa_yaml(m: dict, mapa: dict, indent: int = 4) -> str:
+    pad = " " * indent
+    linhas = []
+    for t in m["ementa"]:
+        onde = mapa.get((m["id"], t["n"]), {})
+        linhas.append(f"{pad}- topico: {t['n']}")
+        linhas.append(f"{pad}  peso_estimado: {t['peso']}")
+        if onde:
+            linhas.append(f"{pad}  estuda_em: {y(onde['dia'] + ' — ' + onde['grupo'])}")
+        linhas.append(f"{pad}  texto: {y(t['texto'])}")
+    return "\n".join(linhas)
+
+
+def peso_do_grupo(grupo: dict, materias: dict) -> int:
+    """Soma o peso estimado de todos os topicos de um grupo."""
+    total = 0
+    for bloco in grupo["materias"]:
+        pesos = {t["n"]: t["peso"] for t in materias[bloco["id"]]["ementa"]}
+        total += sum(pesos[n] for n in bloco["topicos"])
+    return total
+
+
+def tabela_topicos(m: dict, mapa: dict) -> str:
+    linhas = ["| Tópico | Peso est. | Dia do simulado de Nível 2 |", "|---|---|---|"]
+    for t in m["ementa"]:
+        onde = mapa.get((m["id"], t["n"]), {})
+        curto = re.sub(r"^\d+\s+", "", t["texto"])
+        if len(curto) > 110:
+            curto = curto[:107].rstrip() + "..."
+        dia = f"{onde['dia']} — {onde['grupo']}" if onde else "—"
+        linhas.append(f"| **{t['n']}** {curto} | {t['peso']} | {dia} |")
+    return "\n".join(linhas)
 
 
 # --------------------------------------------------------------------------
 # PROFESSOR
 # --------------------------------------------------------------------------
-def professor(m: dict, edital: dict) -> str:
+def professor(m: dict, edital: dict, mapa: dict | None = None) -> str:
+    mapa = mapa or {}
     nome = m["nome"]
     bloco = m["bloco"]
     return f"""# Professor de {nome} — TCDF/ANACE
@@ -108,7 +156,7 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-{lista(m["ementa"])}
+{ementa_yaml(m, mapa)}
 
 base_normativa:
 {lista(m["base_normativa"])}
@@ -185,13 +233,22 @@ integration_with_squad:
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
 Esta materia esta classificada como **{m["prioridade"]}** ({m["itens_estimados"]} itens estimados em {bloco}).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+{tabela_topicos(m, mapa)}
 """
 
 
 # --------------------------------------------------------------------------
 # EXAMINADOR
 # --------------------------------------------------------------------------
-def examinador(m: dict, edital: dict) -> str:
+def examinador(m: dict, edital: dict, mapa: dict | None = None) -> str:
+    mapa = mapa or {}
     nome = m["nome"]
     bloco = m["bloco"]
     return f"""# Examinador de {nome} — TCDF/ANACE
@@ -228,7 +285,7 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-{lista(m["ementa"])}
+{ementa_yaml(m, mapa)}
 
 base_normativa:
 {lista(m["base_normativa"])}
@@ -318,13 +375,21 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **{m["itens_estimados"]} itens** em {bloco} — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+{tabela_topicos(m, mapa)}
 """
 
 
 # --------------------------------------------------------------------------
 # REVISOR
 # --------------------------------------------------------------------------
-def revisor(m: dict, edital: dict) -> str:
+def revisor(m: dict, edital: dict, mapa: dict | None = None) -> str:
+    mapa = mapa or {}
     nome = m["nome"]
     bloco = m["bloco"]
     return f"""# Revisor de {nome} — TCDF/ANACE
@@ -359,7 +424,7 @@ persona_profile:
   communication_style: "Objetivo, em blocos curtos, sempre em formato de recuperacao ativa (pergunta antes da resposta)"
 
 ementa_oficial:
-{lista(m["ementa"])}
+{ementa_yaml(m, mapa)}
 
 pontos_de_decoreba_obrigatoria:
 {lista(m["base_normativa"])}
@@ -437,6 +502,12 @@ integration_with_squad:
 
 {nome} vale cerca de **{m["itens_estimados"]} itens** ({bloco}) e esta classificada como **{m["prioridade"]}**.
 Use isso para decidir a frequencia: materia critica entra no ciclo semanalmente; materia de prioridade baixa, quinzenalmente.
+
+## TOPICOS E ONDE ELES VOLTAM
+
+Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no simulado de Nivel 2.
+
+{tabela_topicos(m, mapa)}
 """
 
 
@@ -629,11 +700,13 @@ def reitor(edital: dict, prog: dict | None = None) -> str:
 
     dias = ""
     if prog:
-        linhas = ["| Dia | Grupo | Itens | Materias |", "|---|---|---|---|"]
-        nomes = {m["id"]: m["nome"] for m in mats}
+        linhas = ["| Dia | Grupo | Itens est. | Materias (topicos) |", "|---|---|---|---|"]
+        por_id = {m["id"]: m for m in mats}
         for g in prog["grupos"]:
-            lista = ", ".join(nomes[x["id"]] for x in g["materias"])
-            linhas.append(f"| {g['dia']} | **{g['nome']}** | {g['itens_edital']} | {lista} |")
+            lista = ", ".join(
+                f"{por_id[x['id']]['nome']} ({', '.join(x['topicos'])})" for x in g["materias"]
+            )
+            linhas.append(f"| {g['dia']} | **{g['nome']}** | {peso_do_grupo(g, por_id)} | {lista} |")
         linhas.append("| Domingo | **Nivel 3 — simulado geral (200 questoes)** | pool vencido | Todas as materias vencidas |")
         dias = "\n".join(linhas)
 
@@ -786,6 +859,8 @@ def main() -> int:
     prog_path = RAIZ / "scripts" / "progressao.json"
     prog = json.loads(prog_path.read_text(encoding="utf-8")) if prog_path.exists() else None
 
+    mapa = grupo_do_topico(prog)
+
     AGENTS_DIR.mkdir(parents=True, exist_ok=True)
     if not check:
         (AGENTS_DIR / "reitor-tcdf.md").write_text(reitor(edital, prog), encoding="utf-8")
@@ -794,7 +869,7 @@ def main() -> int:
     for m in materias:
         for papel in PAPEIS:
             nome_arquivo = f"{m['id']}-{papel}.md"
-            conteudo = GERADORES[papel](m, edital)
+            conteudo = GERADORES[papel](m, edital, mapa)
             destino = AGENTS_DIR / nome_arquivo
             if not check:
                 destino.write_text(conteudo, encoding="utf-8")

@@ -13,36 +13,36 @@
       {
         "nivel": 1,
         "nome": "Tema",
-        "unidade": "Um topico da ementa da materia (ex.: Titulo 1 de Direito Constitucional, Ato Administrativo)",
+        "unidade": "Um tópico numerado da ementa oficial (ex.: Direito Administrativo, tópico 3 — Ato administrativo)",
         "questoes": 20,
         "quando": "Logo apos estudar o tema, no mesmo dia",
         "meta": 0.9,
-        "aprovado_gera": "Tema marcado como VENCIDO e liberado para compor o simulado de Nivel 2 do grupo",
+        "aprovado_gera": "Tópico marcado como VENCIDO e liberado para compor o simulado de Nível 2 do grupo a que ele pertence",
         "reprovado_gera": "Aula de reforco com o professor da materia + 20 questoes novas em 48h (maximo 2 repeticoes antes de revisao completa do tema)"
       },
       {
         "nivel": 2,
         "nome": "Grupo de conteudo",
-        "unidade": "Um dos 6 grupos de conteudo (seg a sab)",
+        "unidade": "Um dos 6 grupos de conteúdo (conjunto de tópicos de matérias diferentes que se estudam juntos)",
         "questoes": 50,
         "quando": "Manha do dia fixo do grupo, antes de qualquer conteudo novo",
         "meta": 0.9,
-        "pre_requisito": "Pelo menos 70% dos temas do grupo ja vencidos no Nivel 1",
+        "pre_requisito": "Pelo menos 70% do peso dos tópicos do grupo já vencido no Nível 1",
         "aprovado_gera": "Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal",
         "reprovado_gera": "Grupo permanece no Nivel 2 e repete na semana seguinte; as materias com pior liquido recebem revisao dirigida e novos lotes de Nivel 1 nos temas fracos"
       },
       {
         "nivel": 3,
         "nome": "Simulado geral",
-        "unidade": "Todas as materias ja vencidas no Nivel 2",
+        "unidade": "Todos os tópicos dos grupos já vencidos no Nível 2",
         "questoes": 200,
         "quando": "Domingo de manha, cronometrado",
         "meta": 0.9,
-        "composicao": "Proporcional ao peso de cada materia vencida no edital (itens da materia / soma dos itens das materias vencidas) x 200",
+        "composicao": "Proporcional ao peso de cada tópico vencido: 200 x (peso do tópico / soma dos pesos do pool)",
         "inicio": "Quando o pool de matérias vencidas somar pelo menos 30 itens do edital (~20% da prova). Antes disso, rode um simulado reduzido proporcional, com mínimo de 50 questões",
-        "aprovado_gera": "Materia confirmada no pool; segue em manutencao semanal sem voltar ao Nivel 2",
+        "aprovado_gera": "Grupo confirmado no pool; segue em manutenção semanal sem voltar ao Nível 2",
         "reprovado_gera": "Materia abaixo da meta entra em observacao: revisao dirigida na semana e novo lote de Nivel 2 no dia do seu grupo",
-        "regressao": "Materia que ficar abaixo de 0,90 no Nivel 3 por 2 domingos seguidos, ou abaixo de 0,80 em um unico domingo, volta para o Nivel 2 e reentra no dia do seu grupo"
+        "regressao": "Grupo cujos tópicos, somados, ficarem abaixo de 0,90 em 2 domingos seguidos, ou abaixo de 0,80 em um único domingo, volta inteiro para o Nível 2 e reentra no seu dia da semana"
       }
     ],
     "rotina_diaria": {
@@ -54,111 +54,226 @@
       "nivel_1": "20 questoes em ate 30 minutos",
       "nivel_2": "50 questoes em ate 70 minutos",
       "nivel_3": "200 questoes em ate 4 horas (ritmo real de prova)"
-    }
+    },
+    "estrutura_dos_grupos": "Os grupos são formados por TÓPICOS, não por matérias. Uma matéria pode aparecer em mais de um dia quando o edital espalha o mesmo assunto por programas diferentes (Direito Administrativo aparece em quatro dias, Constitucional e LODF em dois). Cada tópico do edital pertence a exatamente um grupo — sem sobreposição e sem lacuna."
   },
   "grupos": [
     {
       "id": "g1-administrativo-contratacoes",
       "dia": "Segunda-feira",
       "nome": "Direito Administrativo e Contratações",
-      "tese": "A maior matéria do edital (22 itens) no mesmo dia da matéria que compartilha com ela a Lei 14.133/2021 e o Decreto distrital 44.330/2023.",
-      "itens_edital": 30,
+      "tese": "O núcleo do Direito Administrativo (ato, poderes, princípios, organização, responsabilidade, processo) mais tudo que é contratação: o tópico 12 de DA e a matéria Gestão de Contratos citam a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023. Estudar separado é ler a mesma lei duas vezes.",
       "materias": [
         {
           "id": "direito-administrativo",
-          "itens": 22,
-          "questoes_n2": 37
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "11",
+            "12"
+          ],
+          "questoes_n2": 36
         },
         {
           "id": "gestao-de-contratos",
-          "itens": 8,
-          "questoes_n2": 13
+          "topicos": [
+            "1",
+            "2"
+          ],
+          "questoes_n2": 14
         }
       ]
     },
     {
-      "id": "g2-orcamento-financas",
+      "id": "g2-orcamento-financas-tributacao",
       "dia": "Terça-feira",
-      "nome": "Orçamento e Finanças Públicas",
-      "tese": "AFO com o tópico 4 da LODF (tributação e orçamento do DF): o mesmo assunto na norma geral e na norma distrital.",
-      "itens_edital": 22,
+      "nome": "Orçamento, Finanças e Tributação",
+      "tese": "O caminho do dinheiro público: AFO inteira, o tópico 4 da LODF (tributação e orçamento do DF) e todo o Direito Tributário, que no recorte do edital para na receita — exatamente onde AFO começa.",
       "materias": [
         {
           "id": "administracao-financeira-orcamentaria",
-          "itens": 16,
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
           "questoes_n2": 36
+        },
+        {
+          "id": "nocoes-direito-tributario",
+          "topicos": [
+            "1",
+            "2",
+            "3"
+          ],
+          "questoes_n2": 9
         },
         {
           "id": "lei-organica-df",
-          "itens": 6,
-          "questoes_n2": 14
+          "topicos": [
+            "4",
+            "5"
+          ],
+          "questoes_n2": 5
         }
       ]
     },
     {
-      "id": "g3-constitucional-institucional",
+      "id": "g3-controle-externo-estado",
       "dia": "Quarta-feira",
-      "nome": "Constitucional e Institucional",
-      "tese": "CF arts. 70 a 75 e a Lei Orgânica do TCDF são o mesmo objeto em duas alturas: o controle externo e o tribunal que o exerce.",
-      "itens_edital": 20,
+      "nome": "Controle Externo e Organização do Estado",
+      "tese": "O dia do cargo: a fiscalização contábil, financeira e orçamentária (Constitucional 7.4), o tribunal que a exerce (Lei Orgânica e Regimento do TCDF), o controle da administração e a improbidade (DA 10) e a organização dos poderes na CF e na LODF.",
       "materias": [
         {
           "id": "direito-constitucional",
-          "itens": 10,
-          "questoes_n2": 25
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "questoes_n2": 19
         },
         {
           "id": "lei-organica-regimento-tcdf",
-          "itens": 10,
-          "questoes_n2": 25
+          "topicos": [
+            "1",
+            "2"
+          ],
+          "questoes_n2": 19
+        },
+        {
+          "id": "lei-organica-df",
+          "topicos": [
+            "1",
+            "2",
+            "3"
+          ],
+          "questoes_n2": 8
+        },
+        {
+          "id": "direito-administrativo",
+          "topicos": [
+            "10"
+          ],
+          "questoes_n2": 4
         }
       ]
     },
     {
-      "id": "g4-gestao-e-dados",
+      "id": "g4-governanca-gestao-dados",
       "dia": "Quinta-feira",
-      "nome": "Gestão e Dados",
-      "tese": "Administração Geral e Pública absorve governança, processos, pessoas e projetos; Análise de Dados é o ferramental que sustenta tudo isso.",
-      "itens_edital": 22,
+      "nome": "Governança, Gestão e Dados",
+      "tese": "Administração Geral e Pública inteira (governança, ferramentas, processos, competências, projetos) com o ferramental que a sustenta: análise de dados, Excel e IA, mais transparência e proteção de dados (LAI e LGPD, tópicos 13 e 14 de DA) e a probabilidade de RLM, que é a base da estatística descritiva.",
       "materias": [
         {
           "id": "administracao-geral-e-publica",
-          "itens": 16,
-          "questoes_n2": 36
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "questoes_n2": 33
         },
         {
           "id": "analise-dados-estatistica-ia",
-          "itens": 6,
-          "questoes_n2": 14
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "questoes_n2": 11
+        },
+        {
+          "id": "direito-administrativo",
+          "topicos": [
+            "13",
+            "14"
+          ],
+          "questoes_n2": 4
+        },
+        {
+          "id": "raciocinio-logico-matematica-financeira",
+          "topicos": [
+            "5"
+          ],
+          "questoes_n2": 2
         }
       ]
     },
     {
-      "id": "g5-servidor-direitos",
+      "id": "g5-pessoal-servidores-previdencia",
       "dia": "Sexta-feira",
-      "nome": "Servidor e Direitos Complementares",
-      "tese": "LC 840/2011 e Direito Previdenciário são o mesmo servidor em dois momentos; Civil e Tributário fecham o que resta de P2.",
-      "itens_edital": 27,
+      "nome": "Pessoal: Servidores e Previdência",
+      "tese": "O mesmo servidor visto por quatro normas: agentes públicos na CF (Constitucional 5) e no Direito Administrativo (DA 4), o estatuto distrital (LC 840/2011), a aposentadoria (Previdenciário) e a parte geral do Código Civil, que dá a base de pessoas, prazos, prescrição e decadência usada nos três.",
       "materias": [
         {
           "id": "regime-juridico-servidores-df",
-          "itens": 8,
+          "topicos": [
+            "1"
+          ],
           "questoes_n2": 15
         },
         {
           "id": "direito-previdenciario",
-          "itens": 8,
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
           "questoes_n2": 15
         },
         {
           "id": "nocoes-direito-civil",
-          "itens": 6,
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "questoes_n2": 11
         },
         {
-          "id": "nocoes-direito-tributario",
-          "itens": 5,
-          "questoes_n2": 9
+          "id": "direito-administrativo",
+          "topicos": [
+            "4"
+          ],
+          "questoes_n2": 5
+        },
+        {
+          "id": "direito-constitucional",
+          "topicos": [
+            "5"
+          ],
+          "questoes_n2": 4
         }
       ]
     },
@@ -166,28 +281,47 @@
       "id": "g6-instrumentais-df",
       "dia": "Sábado",
       "nome": "Instrumentais e Distrito Federal",
-      "tese": "Todo o bloco de conhecimentos básicos que sobra: matérias de treino constante e de varredura, com peso real de 29 itens.",
-      "itens_edital": 29,
+      "tese": "As matérias que se treinam por constância, não por volume: Português e Raciocínio Lógico, mais os dois conteúdos de varredura do bloco básico (Distrito Federal e Primeiros Socorros). Vale 28 itens — mais do que qualquer matéria isolada do edital.",
       "materias": [
         {
           "id": "lingua-portuguesa",
-          "itens": 12,
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "questoes_n2": 21
         },
         {
           "id": "raciocinio-logico-matematica-financeira",
-          "itens": 10,
-          "questoes_n2": 17
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "6",
+            "7"
+          ],
+          "questoes_n2": 16
         },
         {
           "id": "conhecimentos-df-politica-mulheres",
-          "itens": 4,
+          "topicos": [
+            "1",
+            "2",
+            "3"
+          ],
           "questoes_n2": 7
         },
         {
           "id": "nocoes-primeiros-socorros",
-          "itens": 3,
-          "questoes_n2": 5
+          "topicos": [
+            "1"
+          ],
+          "questoes_n2": 6
         }
       ]
     }

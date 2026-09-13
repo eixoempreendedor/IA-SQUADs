@@ -124,7 +124,7 @@ mapa_do_edital:
     - materia: direito-constitucional
       nome: "Direito Constitucional"
       bloco: P2
-      itens_estimados: 10
+      itens_estimados: 12
       prioridade: critica
       agentes:
         aprender: direito-constitucional-professor
@@ -151,7 +151,7 @@ mapa_do_edital:
     - materia: nocoes-direito-tributario
       nome: "Noções de Direito Tributário"
       bloco: P2
-      itens_estimados: 5
+      itens_estimados: 4
       prioridade: media
       agentes:
         aprender: nocoes-direito-tributario-professor
@@ -160,7 +160,7 @@ mapa_do_edital:
     - materia: analise-dados-estatistica-ia
       nome: "Análise de Dados, Noções de Estatística e Inteligência Artificial"
       bloco: P2
-      itens_estimados: 6
+      itens_estimados: 5
       prioridade: alta
       agentes:
         aprender: analise-dados-estatistica-ia-professor
@@ -169,7 +169,7 @@ mapa_do_edital:
     - materia: direito-administrativo
       nome: "Direito Administrativo"
       bloco: P3
-      itens_estimados: 22
+      itens_estimados: 25
       prioridade: critica
       agentes:
         aprender: direito-administrativo-professor
@@ -178,7 +178,7 @@ mapa_do_edital:
     - materia: administracao-financeira-orcamentaria
       nome: "Administração Financeira e Orçamentária"
       bloco: P3
-      itens_estimados: 16
+      itens_estimados: 15
       prioridade: critica
       agentes:
         aprender: administracao-financeira-orcamentaria-professor
@@ -187,7 +187,7 @@ mapa_do_edital:
     - materia: administracao-geral-e-publica
       nome: "Administração Geral e Pública"
       bloco: P3
-      itens_estimados: 16
+      itens_estimados: 15
       prioridade: critica
       agentes:
         aprender: administracao-geral-e-publica-professor
@@ -205,7 +205,7 @@ mapa_do_edital:
     - materia: gestao-de-contratos
       nome: "Gestão de Contratos"
       bloco: P3
-      itens_estimados: 8
+      itens_estimados: 7
       prioridade: alta
       agentes:
         aprender: gestao-de-contratos-professor
@@ -262,29 +262,29 @@ integration_with_squad:
 | 🚑 Noções de Primeiros Socorros | P1 | 3 | baixa | `nocoes-primeiros-socorros-professor` · `nocoes-primeiros-socorros-examinador` · `nocoes-primeiros-socorros-revisor` |
 | 🧮 Raciocínio Lógico e Matemática Financeira | P1 | 10 | alta | `raciocinio-logico-matematica-financeira-professor` · `raciocinio-logico-matematica-financeira-examinador` · `raciocinio-logico-matematica-financeira-revisor` |
 | ⚖️ Lei Orgânica do TCDF e Regimento Interno | P2 | 10 | critica | `lei-organica-regimento-tcdf-professor` · `lei-organica-regimento-tcdf-examinador` · `lei-organica-regimento-tcdf-revisor` |
-| 📜 Direito Constitucional | P2 | 10 | critica | `direito-constitucional-professor` · `direito-constitucional-examinador` · `direito-constitucional-revisor` |
+| 📜 Direito Constitucional | P2 | 12 | critica | `direito-constitucional-professor` · `direito-constitucional-examinador` · `direito-constitucional-revisor` |
 | 🧓 Direito Previdenciário | P2 | 8 | alta | `direito-previdenciario-professor` · `direito-previdenciario-examinador` · `direito-previdenciario-revisor` |
 | 📕 Noções de Direito Civil | P2 | 6 | media | `nocoes-direito-civil-professor` · `nocoes-direito-civil-examinador` · `nocoes-direito-civil-revisor` |
-| 💰 Noções de Direito Tributário | P2 | 5 | media | `nocoes-direito-tributario-professor` · `nocoes-direito-tributario-examinador` · `nocoes-direito-tributario-revisor` |
-| 🤖 Análise de Dados, Noções de Estatística e Inteligência Artificial | P2 | 6 | alta | `analise-dados-estatistica-ia-professor` · `analise-dados-estatistica-ia-examinador` · `analise-dados-estatistica-ia-revisor` |
-| 🏢 Direito Administrativo | P3 | 22 | critica | `direito-administrativo-professor` · `direito-administrativo-examinador` · `direito-administrativo-revisor` |
-| 📊 Administração Financeira e Orçamentária | P3 | 16 | critica | `administracao-financeira-orcamentaria-professor` · `administracao-financeira-orcamentaria-examinador` · `administracao-financeira-orcamentaria-revisor` |
-| 🏗️ Administração Geral e Pública | P3 | 16 | critica | `administracao-geral-e-publica-professor` · `administracao-geral-e-publica-examinador` · `administracao-geral-e-publica-revisor` |
+| 💰 Noções de Direito Tributário | P2 | 4 | media | `nocoes-direito-tributario-professor` · `nocoes-direito-tributario-examinador` · `nocoes-direito-tributario-revisor` |
+| 🤖 Análise de Dados, Noções de Estatística e Inteligência Artificial | P2 | 5 | alta | `analise-dados-estatistica-ia-professor` · `analise-dados-estatistica-ia-examinador` · `analise-dados-estatistica-ia-revisor` |
+| 🏢 Direito Administrativo | P3 | 25 | critica | `direito-administrativo-professor` · `direito-administrativo-examinador` · `direito-administrativo-revisor` |
+| 📊 Administração Financeira e Orçamentária | P3 | 15 | critica | `administracao-financeira-orcamentaria-professor` · `administracao-financeira-orcamentaria-examinador` · `administracao-financeira-orcamentaria-revisor` |
+| 🏗️ Administração Geral e Pública | P3 | 15 | critica | `administracao-geral-e-publica-professor` · `administracao-geral-e-publica-examinador` · `administracao-geral-e-publica-revisor` |
 | 👤 Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | P3 | 8 | alta | `regime-juridico-servidores-df-professor` · `regime-juridico-servidores-df-examinador` · `regime-juridico-servidores-df-revisor` |
-| 📑 Gestão de Contratos | P3 | 8 | alta | `gestao-de-contratos-professor` · `gestao-de-contratos-examinador` · `gestao-de-contratos-revisor` |
+| 📑 Gestão de Contratos | P3 | 7 | alta | `gestao-de-contratos-professor` · `gestao-de-contratos-examinador` · `gestao-de-contratos-revisor` |
 
 **Transversais:** `estrategista-cebraspe` · `arquiteto-cronograma` · `redator-discursiva` · `mentor-desempenho` · `arbitro-da-progressao`.
 
 ## A SEMANA
 
-| Dia | Grupo | Itens | Materias |
+| Dia | Grupo | Itens est. | Materias (topicos) |
 |---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** | 30 | Direito Administrativo, Gestão de Contratos |
-| Terça-feira | **Orçamento e Finanças Públicas** | 22 | Administração Financeira e Orçamentária, Lei Orgânica do Distrito Federal |
-| Quarta-feira | **Constitucional e Institucional** | 20 | Direito Constitucional, Lei Orgânica do TCDF e Regimento Interno |
-| Quinta-feira | **Gestão e Dados** | 22 | Administração Geral e Pública, Análise de Dados, Noções de Estatística e Inteligência Artificial |
-| Sexta-feira | **Servidor e Direitos Complementares** | 27 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011), Direito Previdenciário, Noções de Direito Civil, Noções de Direito Tributário |
-| Sábado | **Instrumentais e Distrito Federal** | 29 | Língua Portuguesa, Raciocínio Lógico e Matemática Financeira, Conhecimentos do Distrito Federal e Política para Mulheres, Noções de Primeiros Socorros |
+| Segunda-feira | **Direito Administrativo e Contratações** | 25 | Direito Administrativo (1, 2, 3, 5, 6, 7, 8, 9, 11, 12), Gestão de Contratos (1, 2) |
+| Terça-feira | **Orçamento, Finanças e Tributação** | 21 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9), Noções de Direito Tributário (1, 2, 3), Lei Orgânica do Distrito Federal (4, 5) |
+| Quarta-feira | **Controle Externo e Organização do Estado** | 26 | Direito Constitucional (1, 2, 3, 4, 6, 7, 8, 9), Lei Orgânica do TCDF e Regimento Interno (1, 2), Lei Orgânica do Distrito Federal (1, 2, 3), Direito Administrativo (10) |
+| Quinta-feira | **Governança, Gestão e Dados** | 23 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9), Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5), Direito Administrativo (13, 14), Raciocínio Lógico e Matemática Financeira (5) |
+| Sexta-feira | **Pessoal: Servidores e Previdência** | 27 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1), Direito Previdenciário (1, 2, 3, 4, 5), Noções de Direito Civil (1, 2, 3, 4, 5, 6), Direito Administrativo (4), Direito Constitucional (5) |
+| Sábado | **Instrumentais e Distrito Federal** | 28 | Língua Portuguesa (1, 2, 3, 4, 5, 6), Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 6, 7), Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3), Noções de Primeiros Socorros (1) |
 | Domingo | **Nivel 3 — simulado geral (200 questoes)** | pool vencido | Todas as materias vencidas |
 
 ## PROTOCOLO DE DIAGNOSTICO

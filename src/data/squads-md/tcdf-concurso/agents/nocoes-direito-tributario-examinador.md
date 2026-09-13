@@ -21,7 +21,7 @@ contexto_da_prova:
   banca: "Cebraspe"
   formato: "Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla"
   bloco: "P2 — Conhecimentos Específicos"
-  itens_estimados: 5
+  itens_estimados: 4
   penalidade: "Cada item errado anula um item certo — o chute desinformado tem valor esperado negativo"
 
 persona_profile:
@@ -32,9 +32,18 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário"
-    - "2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias"
-    - "3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário"
+    - topico: 2
+      peso_estimado: 2
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições"
 
 base_normativa:
     - "CF/88, arts. 145 a 162"
@@ -128,4 +137,15 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | 50/50 real | Deixar em branco |
 | Nao faco ideia | Deixar em branco |
 
-Esta materia vale aproximadamente **5 itens** em P2 — dimensione o esforco do treino a isso.
+Esta materia vale aproximadamente **4 itens** em P2 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **2** Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder... | 2 | Terça-feira — Orçamento, Finanças e Tributação |
+| **3** Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melh... | 1 | Terça-feira — Orçamento, Finanças e Tributação |

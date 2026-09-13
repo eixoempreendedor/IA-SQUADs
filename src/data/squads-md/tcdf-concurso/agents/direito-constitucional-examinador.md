@@ -21,7 +21,7 @@ contexto_da_prova:
   banca: "Cebraspe"
   formato: "Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla"
   bloco: "P2 — Conhecimentos Específicos"
-  itens_estimados: 10
+  itens_estimados: 12
   penalidade: "Cada item errado anula um item certo — o chute desinformado tem valor esperado negativo"
 
 persona_profile:
@@ -32,15 +32,42 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Constituição da República Federativa do Brasil de 1988: 1.1 princípios fundamentais"
-    - "2 Aplicabilidade das normas constitucionais: 2.1 normas de eficácia plena, contida e limitada; normas programáticas; 2.2 emenda, reforma e revisão constitucional"
-    - "3 Direitos e garantias fundamentais: 3.1 direitos e deveres individuais e coletivos, direitos sociais, direitos de nacionalidade, direitos políticos, partidos políticos"
-    - "4 Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Federal e municípios"
-    - "5 Administração pública: 5.1 disposições gerais; 5.2 servidores públicos"
-    - "6 Poder Executivo: 6.1 atribuições e responsabilidades do presidente da República"
-    - "7 Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições; 7.3 processo legislativo; 7.4 fiscalização contábil, financeira e orçamentária; 7.5 comissões parlamentares de inquérito"
-    - "8 Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judiciário"
-    - "9 Funções essenciais à justiça: 9.1 Ministério Público; 9.2 advocacia pública; 9.3 Defensoria Pública"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "1 Constituição da República Federativa do Brasil de 1988: 1.1 princípios fundamentais"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "2 Aplicabilidade das normas constitucionais: 2.1 normas de eficácia plena, contida e limitada; normas programáticas; 2.2 emenda, reforma e revisão constitucional"
+    - topico: 3
+      peso_estimado: 2
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "3 Direitos e garantias fundamentais: 3.1 direitos e deveres individuais e coletivos, direitos sociais, direitos de nacionalidade, direitos políticos, partidos políticos"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "4 Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Federal e municípios"
+    - topico: 5
+      peso_estimado: 2
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "5 Administração pública: 5.1 disposições gerais; 5.2 servidores públicos"
+    - topico: 6
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "6 Poder Executivo: 6.1 atribuições e responsabilidades do presidente da República"
+    - topico: 7
+      peso_estimado: 2
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "7 Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições; 7.3 processo legislativo; 7.4 fiscalização contábil, financeira e orçamentária; 7.5 comissões parlamentares de inquérito"
+    - topico: 8
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "8 Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judiciário"
+    - topico: 9
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "9 Funções essenciais à justiça: 9.1 Ministério Público; 9.2 advocacia pública; 9.3 Defensoria Pública"
 
 base_normativa:
     - "Constituição Federal de 1988 e emendas"
@@ -134,4 +161,21 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | 50/50 real | Deixar em branco |
 | Nao faco ideia | Deixar em branco |
 
-Esta materia vale aproximadamente **10 itens** em P2 — dimensione o esforco do treino a isso.
+Esta materia vale aproximadamente **12 itens** em P2 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Constituição da República Federativa do Brasil de 1988: 1.1 princípios fundamentais | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **2** Aplicabilidade das normas constitucionais: 2.1 normas de eficácia plena, contida e limitada; normas program... | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **3** Direitos e garantias fundamentais: 3.1 direitos e deveres individuais e coletivos, direitos sociais, direit... | 2 | Quarta-feira — Controle Externo e Organização do Estado |
+| **4** Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Fede... | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **5** Administração pública: 5.1 disposições gerais; 5.2 servidores públicos | 2 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **6** Poder Executivo: 6.1 atribuições e responsabilidades do presidente da República | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **7** Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições; 7.3 processo legislativo; 7.4 fiscalizaç... | 2 | Quarta-feira — Controle Externo e Organização do Estado |
+| **8** Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judiciário | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **9** Funções essenciais à justiça: 9.1 Ministério Público; 9.2 advocacia pública; 9.3 Defensoria Pública | 1 | Quarta-feira — Controle Externo e Organização do Estado |

@@ -48,12 +48,30 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Lei de Introdução às Normas do Direito Brasileiro"
-    - "2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio"
-    - "3 Bens"
-    - "4 Fatos jurídicos: 4.1 negócio jurídico"
-    - "5 Atos jurídicos lícitos e ilícitos"
-    - "6 Prescrição e decadência"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "1 Lei de Introdução às Normas do Direito Brasileiro"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "3 Bens"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "4 Fatos jurídicos: 4.1 negócio jurídico"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "5 Atos jurídicos lícitos e ilícitos"
+    - topico: 6
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "6 Prescrição e decadência"
 
 base_normativa:
     - "Lei nº 10.406/2002 — Código Civil, parte geral (arts. 1º a 232)"
@@ -136,3 +154,18 @@ integration_with_squad:
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
 Esta materia esta classificada como **media** (6 itens estimados em P2).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei de Introdução às Normas do Direito Brasileiro | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **2** Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **3** Bens | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **4** Fatos jurídicos: 4.1 negócio jurídico | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **5** Atos jurídicos lícitos e ilícitos | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **6** Prescrição e decadência | 1 | Sexta-feira — Pessoal: Servidores e Previdência |

@@ -48,7 +48,10 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação"
+    - topico: 1
+      peso_estimado: 3
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação"
 
 base_normativa:
     - "Protocolos do SAMU 192"
@@ -130,3 +133,13 @@ integration_with_squad:
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
 Esta materia esta classificada como **baixa** (3 itens estimados em P1).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorr... | 3 | Sábado — Instrumentais e Distrito Federal |

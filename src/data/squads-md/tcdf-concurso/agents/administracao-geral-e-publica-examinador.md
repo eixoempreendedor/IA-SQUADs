@@ -21,7 +21,7 @@ contexto_da_prova:
   banca: "Cebraspe"
   formato: "Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla"
   bloco: "P3 — Conhecimentos Especializados"
-  itens_estimados: 16
+  itens_estimados: 15
   penalidade: "Cada item errado anula um item certo — o chute desinformado tem valor esperado negativo"
 
 persona_profile:
@@ -32,15 +32,42 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Evolução da administração: 1.1 perspectiva clássica (administração científica, organizações burocráticas); 1.2 perspectiva humanista (movimento das relações humanas, perspectiva dos recursos humanos, abordagem das ciências comportamentais); 1.3 ciência administrativa (pensamento sistêmico, teoria da contingência)"
-    - "2 Evolução da administração do setor público brasileiro: 2.1 estrutura organizacional do Estado: três poderes; 2.2 formas de administração pública"
-    - "3 Administração pública patrimonialista: 3.1 administração pública burocrática; 3.2 administração pública gerencial"
-    - "4 Governança: 4.1 princípios da governança pública (capacidade de resposta, integridade, confiabilidade, melhoria regulatória, transparência, prestação de contas e responsabilidades); 4.2 práticas e mecanismos de governança pública (liderança, estratégia, controle)"
-    - "5 Funções administrativas: planejamento, organização, direção e controle"
-    - "6 Ferramentas da administração: 6.1 análise SWOT; 6.2 matriz GUT; 6.3 5W2H; 6.4 ciclo PDCA; 6.5 mapas estratégicos; 6.6 benchmarking; 6.7 fatores críticos de sucesso"
-    - "7 Modelagem de processos: 7.1 propósito da modelagem de processos; 7.2 notações: BPMN, cadeia de processos orientada a eventos (EPC), IDEF0, cadeia de valor"
-    - "8 Gestão de pessoas por competências: 8.1 conhecimentos, habilidades e atitudes (CHA); 8.2 matriz de competência; 8.3 avaliação participativa por objetivo (APPO); 8.4 liderança; 8.5 motivação"
-    - "9 Gestão de projetos e portfólios: 9.1 padrões de referência em gerenciamento de projetos (PMBOK, Prince, Scrum e métodos ágeis); 9.2 cronogramas (decomposição de escopo, sequenciamento de atividades, estimativa de esforço e duração, alocação de pessoas); 9.3 Kanban"
+    - topico: 1
+      peso_estimado: 2
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "1 Evolução da administração: 1.1 perspectiva clássica (administração científica, organizações burocráticas); 1.2 perspectiva humanista (movimento das relações humanas, perspectiva dos recursos humanos, abordagem das ciências comportamentais); 1.3 ciência administrativa (pensamento sistêmico, teoria da contingência)"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "2 Evolução da administração do setor público brasileiro: 2.1 estrutura organizacional do Estado: três poderes; 2.2 formas de administração pública"
+    - topico: 3
+      peso_estimado: 2
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "3 Administração pública patrimonialista: 3.1 administração pública burocrática; 3.2 administração pública gerencial"
+    - topico: 4
+      peso_estimado: 3
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "4 Governança: 4.1 princípios da governança pública (capacidade de resposta, integridade, confiabilidade, melhoria regulatória, transparência, prestação de contas e responsabilidades); 4.2 práticas e mecanismos de governança pública (liderança, estratégia, controle)"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "5 Funções administrativas: planejamento, organização, direção e controle"
+    - topico: 6
+      peso_estimado: 2
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "6 Ferramentas da administração: 6.1 análise SWOT; 6.2 matriz GUT; 6.3 5W2H; 6.4 ciclo PDCA; 6.5 mapas estratégicos; 6.6 benchmarking; 6.7 fatores críticos de sucesso"
+    - topico: 7
+      peso_estimado: 2
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "7 Modelagem de processos: 7.1 propósito da modelagem de processos; 7.2 notações: BPMN, cadeia de processos orientada a eventos (EPC), IDEF0, cadeia de valor"
+    - topico: 8
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "8 Gestão de pessoas por competências: 8.1 conhecimentos, habilidades e atitudes (CHA); 8.2 matriz de competência; 8.3 avaliação participativa por objetivo (APPO); 8.4 liderança; 8.5 motivação"
+    - topico: 9
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "9 Gestão de projetos e portfólios: 9.1 padrões de referência em gerenciamento de projetos (PMBOK, Prince, Scrum e métodos ágeis); 9.2 cronogramas (decomposição de escopo, sequenciamento de atividades, estimativa de esforço e duração, alocação de pessoas); 9.3 Kanban"
 
 base_normativa:
     - "Referencial Básico de Governança Organizacional do TCU"
@@ -137,4 +164,21 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | 50/50 real | Deixar em branco |
 | Nao faco ideia | Deixar em branco |
 
-Esta materia vale aproximadamente **16 itens** em P3 — dimensione o esforco do treino a isso.
+Esta materia vale aproximadamente **15 itens** em P3 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Evolução da administração: 1.1 perspectiva clássica (administração científica, organizações burocráticas);... | 2 | Quinta-feira — Governança, Gestão e Dados |
+| **2** Evolução da administração do setor público brasileiro: 2.1 estrutura organizacional do Estado: três poderes... | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **3** Administração pública patrimonialista: 3.1 administração pública burocrática; 3.2 administração pública ger... | 2 | Quinta-feira — Governança, Gestão e Dados |
+| **4** Governança: 4.1 princípios da governança pública (capacidade de resposta, integridade, confiabilidade, melh... | 3 | Quinta-feira — Governança, Gestão e Dados |
+| **5** Funções administrativas: planejamento, organização, direção e controle | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **6** Ferramentas da administração: 6.1 análise SWOT; 6.2 matriz GUT; 6.3 5W2H; 6.4 ciclo PDCA; 6.5 mapas estraté... | 2 | Quinta-feira — Governança, Gestão e Dados |
+| **7** Modelagem de processos: 7.1 propósito da modelagem de processos; 7.2 notações: BPMN, cadeia de processos or... | 2 | Quinta-feira — Governança, Gestão e Dados |
+| **8** Gestão de pessoas por competências: 8.1 conhecimentos, habilidades e atitudes (CHA); 8.2 matriz de competên... | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **9** Gestão de projetos e portfólios: 9.1 padrões de referência em gerenciamento de projetos (PMBOK, Prince, Scr... | 1 | Quinta-feira — Governança, Gestão e Dados |

@@ -77,7 +77,7 @@ materias:
   - id: direito-constitucional
     nome: "Direito Constitucional"
     bloco: P2
-    itens_estimados: 10
+    itens_estimados: 12
     prioridade: critica
     icone: "📜"
     agentes:
@@ -107,7 +107,7 @@ materias:
   - id: nocoes-direito-tributario
     nome: "Noções de Direito Tributário"
     bloco: P2
-    itens_estimados: 5
+    itens_estimados: 4
     prioridade: media
     icone: "💰"
     agentes:
@@ -117,7 +117,7 @@ materias:
   - id: analise-dados-estatistica-ia
     nome: "Análise de Dados, Noções de Estatística e Inteligência Artificial"
     bloco: P2
-    itens_estimados: 6
+    itens_estimados: 5
     prioridade: alta
     icone: "🤖"
     agentes:
@@ -127,7 +127,7 @@ materias:
   - id: direito-administrativo
     nome: "Direito Administrativo"
     bloco: P3
-    itens_estimados: 22
+    itens_estimados: 25
     prioridade: critica
     icone: "🏢"
     agentes:
@@ -137,7 +137,7 @@ materias:
   - id: administracao-financeira-orcamentaria
     nome: "Administração Financeira e Orçamentária"
     bloco: P3
-    itens_estimados: 16
+    itens_estimados: 15
     prioridade: critica
     icone: "📊"
     agentes:
@@ -147,7 +147,7 @@ materias:
   - id: administracao-geral-e-publica
     nome: "Administração Geral e Pública"
     bloco: P3
-    itens_estimados: 16
+    itens_estimados: 15
     prioridade: critica
     icone: "🏗️"
     agentes:
@@ -167,7 +167,7 @@ materias:
   - id: gestao-de-contratos
     nome: "Gestão de Contratos"
     bloco: P3
-    itens_estimados: 8
+    itens_estimados: 7
     prioridade: alta
     icone: "📑"
     agentes:

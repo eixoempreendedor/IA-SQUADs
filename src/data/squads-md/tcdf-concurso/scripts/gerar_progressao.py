@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Gera a documentacao do sistema de progressao por niveis e valida a consistencia.
 
+Os grupos de conteudo sao formados por TOPICOS do edital, nao por materias:
+uma materia pode aparecer em mais de um dia. A validacao garante que cada
+topico do edital pertence a exatamente um grupo.
+
 Le scripts/progressao.json + scripts/edital.json e escreve:
-  - data/grupos-de-conteudo.md   (tabela dos 6 grupos, seg a sab, com as cotas de questoes)
-  - templates/mapa-de-progressao.md  (folha de acompanhamento com as 21 materias)
+  - data/grupos-de-conteudo.md      (os 6 grupos, seg a sab, com topicos e cotas)
+  - templates/mapa-de-progressao.md (folha de acompanhamento por topico)
 
 Uso:
     python3 scripts/gerar_progressao.py
@@ -12,45 +16,64 @@ Uso:
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 PROG = RAIZ / "scripts" / "progressao.json"
 EDITAL = RAIZ / "scripts" / "edital.json"
+QUESTOES_N2 = 50
 
 
-def blocos(grupo: dict) -> list:
-    """Um grupo simples rende um bloco; um grupo com rotacao rende um por variante."""
-    return [grupo] if "materias" in grupo else grupo["variantes"]
+def curto(texto: str, limite: int = 90) -> str:
+    t = re.sub(r"^\d+\s+", "", texto)
+    return t if len(t) <= limite else t[: limite - 3].rstrip() + "..."
+
+
+def pesos(materia: dict) -> dict:
+    return {t["n"]: t["peso"] for t in materia["ementa"]}
+
+
+def peso_do_bloco(bloco: dict, materias: dict) -> int:
+    p = pesos(materias[bloco["id"]])
+    return sum(p[n] for n in bloco["topicos"])
+
+
+def peso_do_grupo(grupo: dict, materias: dict) -> int:
+    return sum(peso_do_bloco(b, materias) for b in grupo["materias"])
 
 
 def validar(prog: dict, materias: dict) -> list[str]:
-    erros, vistas = [], []
+    erros: list[str] = []
+    vistos: list[tuple[str, str]] = []
     for g in prog["grupos"]:
-        soma_itens = 0
-        for b in blocos(g):
-            total_q = sum(m["questoes_n2"] for m in b["materias"])
-            if total_q != prog["sistema"]["niveis"][1]["questoes"]:
-                erros.append(f"{g['id']}/{b.get('id', '-')}: questoes_n2 somam {total_q}, esperado 50")
-            for m in b["materias"]:
-                vistas.append(m["id"])
-                soma_itens += m["itens"]
-                if m["id"] not in materias:
-                    erros.append(f"{m['id']}: materia inexistente no edital.json")
-                elif materias[m["id"]]["itens_estimados"] != m["itens"]:
-                    erros.append(
-                        f"{m['id']}: itens {m['itens']} divergem do edital "
-                        f"({materias[m['id']]['itens_estimados']})"
-                    )
-        if soma_itens != g["itens_edital"]:
-            erros.append(f"{g['id']}: itens_edital {g['itens_edital']} != soma das materias {soma_itens}")
-    faltando = sorted(set(materias) - set(vistas))
-    duplicadas = sorted({x for x in vistas if vistas.count(x) > 1})
-    if faltando:
-        erros.append("materias sem grupo: " + ", ".join(faltando))
-    if duplicadas:
-        erros.append("materias em mais de um grupo: " + ", ".join(duplicadas))
+        total_q = sum(b["questoes_n2"] for b in g["materias"])
+        if total_q != QUESTOES_N2:
+            erros.append(f"{g['id']}: cotas somam {total_q} questoes, esperado {QUESTOES_N2}")
+        for b in g["materias"]:
+            if b["id"] not in materias:
+                erros.append(f"{g['id']}: materia inexistente '{b['id']}'")
+                continue
+            validos = pesos(materias[b["id"]])
+            for n in b["topicos"]:
+                if n not in validos:
+                    erros.append(f"{g['id']}/{b['id']}: topico {n} nao existe na ementa")
+                else:
+                    vistos.append((b["id"], n))
+
+    todos = {(m["id"], t["n"]) for m in materias.values() for t in m["ementa"]}
+    faltando = sorted(todos - set(vistos))
+    duplicados = sorted({x for x in vistos if vistos.count(x) > 1})
+    for mid, n in faltando:
+        erros.append(f"topico sem grupo: {mid} #{n}")
+    for mid, n in duplicados:
+        erros.append(f"topico em mais de um grupo: {mid} #{n}")
+
+    soma = sum(peso_do_grupo(g, materias) for g in prog["grupos"])
+    total_edital = sum(m["itens_estimados"] for m in materias.values())
+    if soma != total_edital:
+        erros.append(f"peso somado dos grupos ({soma}) != itens estimados do edital ({total_edital})")
     return erros
 
 
@@ -63,9 +86,11 @@ def doc_grupos(prog: dict, materias: dict) -> str:
         "> GERADO por `scripts/gerar_progressao.py` a partir de `scripts/progressao.json`. Nao edite a mao.",
         "",
         f"Fonte das questoes: **{s['fonte_das_questoes']}**. "
-        f"Criterio de aprovacao: **{crit['metrica']}** = `{crit['formula']}` >= **{crit['meta']:.0%}**.",
+        f"Criterio: **{crit['metrica']}** = `{crit['formula']}` >= **{crit['meta']:.0%}**.",
         "",
         crit["observacao"],
+        "",
+        f"**Como os grupos sao formados:** {s['estrutura_dos_grupos']}",
         "",
         "## Os tres niveis",
         "",
@@ -77,24 +102,46 @@ def doc_grupos(prog: dict, materias: dict) -> str:
             f"| **{n['nivel']} — {n['nome']}** | {n['unidade']} | {n['questoes']} | "
             f"{n['quando']} | {n['meta']:.0%} | {n['aprovado_gera']} |"
         )
-    out += ["", "## Semana", "", "| Dia | Grupo | Itens no edital | Materias |", "|---|---|---|---|"]
+
+    out += ["", "## A semana", "", "| Dia | Grupo | Peso est. | Materias (topicos) |", "|---|---|---|---|"]
     for g in prog["grupos"]:
-        for b in blocos(g):
-            nome = g["nome"] if "materias" in g else f"{g['nome']} — variante {b['id']} ({b['nome']}, semanas {b['semanas']})"
-            nomes = ", ".join(materias[m["id"]]["nome"] for m in b["materias"])
-            out.append(f"| {g['dia']} | **{nome}** | {g['itens_edital']} | {nomes} |")
-    out += ["| Domingo | **Nivel 3 — simulado geral** | pool vencido | Todas as materias ja vencidas no Nivel 2 |", ""]
-    out += ["## Composicao de cada simulado de Nivel 2 (50 questoes)", ""]
+        lista = " · ".join(
+            f"{materias[b['id']]['nome']} ({', '.join(b['topicos'])})" for b in g["materias"]
+        )
+        out.append(f"| {g['dia']} | **{g['nome']}** | {peso_do_grupo(g, materias)} | {lista} |")
+    out.append("| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |")
+    out.append("")
+
+    out += ["## Cada grupo em detalhe", ""]
     for g in prog["grupos"]:
-        for b in blocos(g):
-            titulo = g["nome"] if "materias" in g else f"{g['nome']} — variante {b['id']}: {b['nome']}"
-            out += [f"### {g['dia']} · {titulo}", ""]
-            if "materias" in g:
-                out += [f"*{g['tese']}*", ""]
-            out += ["| Materia | Itens no edital | Questoes no simulado |", "|---|---|---|"]
-            for m in b["materias"]:
-                out.append(f"| {materias[m['id']]['nome']} | {m['itens']} | **{m['questoes_n2']}** |")
-            out += [f"| **Total** | **{sum(m['itens'] for m in b['materias'])}** | **{sum(m['questoes_n2'] for m in b['materias'])}** |", ""]
+        out += [
+            f"### {g['dia']} · {g['nome']} — {peso_do_grupo(g, materias)} itens estimados",
+            "",
+            f"*{g['tese']}*",
+            "",
+            "| Materia | Topicos | Peso est. | Questoes no simulado |",
+            "|---|---|---|---|",
+        ]
+        for b in g["materias"]:
+            out.append(
+                f"| {materias[b['id']]['nome']} | {', '.join(b['topicos'])} | "
+                f"{peso_do_bloco(b, materias)} | **{b['questoes_n2']}** |"
+            )
+        out += [
+            f"| **Total** | — | **{peso_do_grupo(g, materias)}** | **{sum(b['questoes_n2'] for b in g['materias'])}** |",
+            "",
+            "<details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>",
+            "",
+            "| Materia | # | Topico | Peso |",
+            "|---|---|---|---|",
+        ]
+        for b in g["materias"]:
+            textos = {t["n"]: t["texto"] for t in materias[b["id"]]["ementa"]}
+            p = pesos(materias[b["id"]])
+            for n in b["topicos"]:
+                out.append(f"| {materias[b['id']]['nome']} | {n} | {curto(textos[n], 120)} | {p[n]} |")
+        out += ["", "</details>", ""]
+
     out += [
         "## Rotina",
         "",
@@ -102,65 +149,77 @@ def doc_grupos(prog: dict, materias: dict) -> str:
         f"- **Tarde/noite (seg a sab):** {s['rotina_diaria']['tarde_noite']}",
         f"- **Domingo:** {s['rotina_diaria']['domingo']}",
         "",
-        "Tempo-alvo: "
-        + " · ".join(f"**Nivel {k[-1]}** {v}" for k, v in s["tempo_alvo"].items()),
+        "Tempo-alvo: " + " · ".join(f"**Nivel {k[-1]}** {v}" for k, v in s["tempo_alvo"].items()),
         "",
         "## Regras de avanco e regressao",
         "",
     ]
     for n in s["niveis"]:
         out += [f"**Nivel {n['nivel']} — {n['nome']}**", ""]
-        if n.get("pre_requisito"):
-            out.append(f"- Pre-requisito: {n['pre_requisito']}")
-        if n.get("composicao"):
-            out.append(f"- Composicao: {n['composicao']}")
-        if n.get("inicio"):
-            out.append(f"- Inicio: {n['inicio']}")
-        out.append(f"- Aprovado ({n['meta']:.0%}+): {n['aprovado_gera']}")
-        if n.get("reprovado_gera"):
-            out.append(f"- Reprovado: {n['reprovado_gera']}")
-        if n.get("regressao"):
-            out.append(f"- Regressao: {n['regressao']}")
+        for chave, rotulo in [
+            ("pre_requisito", "Pre-requisito"),
+            ("composicao", "Composicao"),
+            ("inicio", "Inicio"),
+            ("aprovado_gera", f"Aprovado ({n['meta']:.0%}+)"),
+            ("reprovado_gera", "Reprovado"),
+            ("regressao", "Regressao"),
+        ]:
+            if n.get(chave):
+                out.append(f"- {rotulo}: {n[chave]}")
         out.append("")
     return "\n".join(out) + "\n"
 
 
 def mapa(prog: dict, materias: dict) -> str:
+    total = sum(m["itens_estimados"] for m in materias.values())
     out = [
         "# Mapa de progressao — TCDF/ANACE",
         "",
-        "> GERADO por `scripts/gerar_progressao.py`. Copie para onde voce acompanha (planilha, Notion, papel) e atualize a cada simulado.",
+        "> GERADO por `scripts/gerar_progressao.py`. Copie para onde voce acompanha (planilha, Notion, papel) "
+        "e marque a cada simulado.",
         "",
-        "Status: `—` nao iniciado · `N1` temas em andamento · `N1 OK` todos os temas vencidos · "
-        "`N2` em simulado de grupo · **`VENCIDA`** aprovada com 90% e no pool do Nivel 3 · `REGREDIU` voltou ao Nivel 2.",
+        "Cada linha e uma unidade de Nivel 1 (20 questoes, 90% para vencer). Quando todos os topicos de um dia "
+        "estiverem vencidos, o grupo daquele dia esta pronto para o simulado de Nivel 2.",
         "",
-        "| Dia | Grupo | Materia | Itens | Temas vencidos (N1) | Melhor N2 | Status | Ultimo N3 |",
+        "Status: `—` nao iniciado · `EM ESTUDO` · **`VENCIDO`** (>= 90% em 20 questoes) · `REFORCO` (reprovou uma vez) "
+        "· `REVISAR` (reprovou duas vezes)",
+        "",
+        "| Dia | Grupo | Materia | # | Topico | Peso | Status | Data |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for g in prog["grupos"]:
-        for b in blocos(g):
-            rotulo = g["nome"] if "materias" in g else f"{g['nome']} ({b['id']})"
-            for m in b["materias"]:
-                info = materias[m["id"]]
-                temas = len(info["ementa"])
+        for b in g["materias"]:
+            info = materias[b["id"]]
+            textos = {t["n"]: t["texto"] for t in info["ementa"]}
+            p = pesos(info)
+            for n in b["topicos"]:
                 out.append(
-                    f"| {g['dia']} | {rotulo} | {info['icone']} {info['nome']} | {m['itens']} | "
-                    f"0 / {temas} |  | — |  |"
+                    f"| {g['dia'][:3]} | {g['nome']} | {info['icone']} {info['nome']} | {n} | "
+                    f"{curto(textos[n], 70)} | {p[n]} |  |  |"
                 )
     out += [
         "",
-        "## Pool do Nivel 3",
+        "## Nivel 2 — grupos",
         "",
-        "| Materias vencidas | Itens somados | % da prova | Questoes no domingo |",
+        "| Dia | Grupo | Peso | Topicos vencidos | Melhor resultado | Status |",
+        "|---|---|---|---|---|---|",
+    ]
+    for g in prog["grupos"]:
+        n_top = sum(len(b["topicos"]) for b in g["materias"])
+        out.append(f"| {g['dia']} | {g['nome']} | {peso_do_grupo(g, materias)} | 0 / {n_top} |  | — |")
+    out += [
+        "",
+        "## Nivel 3 — pool",
+        "",
+        f"| Grupos vencidos | Peso somado | % do edital ({total}) | Questoes no domingo |",
         "|---|---|---|---|",
-        "| 0 | 0 | 0% | — (minimo de 30 itens para iniciar) |",
+        "| 0 | 0 | 0% | — (minimo de 30 de peso para iniciar) |",
         "",
-        "A cota de cada materia no simulado de 200 questoes e proporcional: "
-        "`questoes = 200 x (itens da materia / itens somados do pool)`.",
+        "Cota de cada topico no simulado de 200: `200 x (peso do topico / peso somado do pool)`.",
         "",
-        "## Registro semanal",
+        "## Registro dos domingos",
         "",
-        "| Domingo | Materias no pool | Questoes | Acertos | Erros | Liquido | % | Materias abaixo de 90% |",
+        "| Data | Grupos no pool | Questoes | Acertos | Erros | Liquido | % | Grupos abaixo de 90% |",
         "|---|---|---|---|---|---|---|---|",
         "|  |  |  |  |  |  |  |  |",
         "",
@@ -183,9 +242,8 @@ def main() -> int:
         (RAIZ / "data" / "grupos-de-conteudo.md").write_text(doc_grupos(prog, materias), encoding="utf-8")
         (RAIZ / "templates" / "mapa-de-progressao.md").write_text(mapa(prog, materias), encoding="utf-8")
 
-    n_grupos = len(prog["grupos"])
-    n_blocos = sum(len(blocos(g)) for g in prog["grupos"])
-    print(f"{n_grupos} grupos ({n_blocos} variantes de simulado) cobrindo {len(materias)} materias — consistente")
+    n_top = sum(len(b["topicos"]) for g in prog["grupos"] for b in g["materias"])
+    print(f"{len(prog['grupos'])} grupos cobrindo {n_top} topicos de {len(materias)} materias — consistente")
     if check:
         print("modo --check: nenhum arquivo foi escrito")
     return 0

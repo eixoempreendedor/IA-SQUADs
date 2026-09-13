@@ -22,7 +22,7 @@ contexto_da_prova:
   cargo: "Analista Administrativo de Controle Externo — Área de Gestão — Serviços Técnico-Administrativos (ANACE)"
   banca: "Cebraspe"
   bloco: "P3 — Conhecimentos Especializados"
-  itens_estimados: 16
+  itens_estimados: 15
   prioridade: "critica"
   formato: "Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla"
   justificativa_de_peso: "Segunda maior matéria do bloco pesado e núcleo técnico do controle externo: Lei 4.320, LRF e o Decreto distrital 32.598/2010."
@@ -48,15 +48,42 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 princípios orçamentários; 1.4 ciclo orçamentário; 1.5 processo orçamentário"
-    - "2 Orçamento público no Brasil: 2.1 sistema de planejamento e de orçamento federal; 2.2 plano plurianual; 2.3 diretrizes orçamentárias; 2.4 orçamento anual; 2.5 sistema e processo de orçamentação; 2.6 classificações orçamentárias; 2.7 estrutura programática; 2.8 créditos ordinários e adicionais"
-    - "3 Programação e execução orçamentária e financeira: 3.1 descentralização orçamentária e financeira; 3.2 acompanhamento da execução; 3.3 sistemas de informações; 3.4 alterações orçamentárias"
-    - "4 Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 fontes; 4.4 dívida ativa"
-    - "5 Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 restos a pagar; 5.4 despesas de exercícios anteriores; 5.5 dívida flutuante e fundada; 5.6 suprimento de fundos"
-    - "6 Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabilidade Fiscal)"
-    - "7 Lei nº 4.320/1964 e suas alterações"
-    - "8 Transferências voluntárias"
-    - "9 Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento, finanças, patrimônio e contabilidade do Distrito Federal)"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "1 Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 princípios orçamentários; 1.4 ciclo orçamentário; 1.5 processo orçamentário"
+    - topico: 2
+      peso_estimado: 2
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "2 Orçamento público no Brasil: 2.1 sistema de planejamento e de orçamento federal; 2.2 plano plurianual; 2.3 diretrizes orçamentárias; 2.4 orçamento anual; 2.5 sistema e processo de orçamentação; 2.6 classificações orçamentárias; 2.7 estrutura programática; 2.8 créditos ordinários e adicionais"
+    - topico: 3
+      peso_estimado: 2
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "3 Programação e execução orçamentária e financeira: 3.1 descentralização orçamentária e financeira; 3.2 acompanhamento da execução; 3.3 sistemas de informações; 3.4 alterações orçamentárias"
+    - topico: 4
+      peso_estimado: 2
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "4 Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 fontes; 4.4 dívida ativa"
+    - topico: 5
+      peso_estimado: 2
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "5 Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 restos a pagar; 5.4 despesas de exercícios anteriores; 5.5 dívida flutuante e fundada; 5.6 suprimento de fundos"
+    - topico: 6
+      peso_estimado: 3
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "6 Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabilidade Fiscal)"
+    - topico: 7
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "7 Lei nº 4.320/1964 e suas alterações"
+    - topico: 8
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "8 Transferências voluntárias"
+    - topico: 9
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "9 Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento, finanças, patrimônio e contabilidade do Distrito Federal)"
 
 base_normativa:
     - "Lei nº 4.320/1964"
@@ -142,4 +169,22 @@ integration_with_squad:
 | media | Conceitos centrais + questoes | 30-45 min |
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
-Esta materia esta classificada como **critica** (16 itens estimados em P3).
+Esta materia esta classificada como **critica** (15 itens estimados em P3).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 princípios orçamentários; 1.4 ciclo orçame... | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **2** Orçamento público no Brasil: 2.1 sistema de planejamento e de orçamento federal; 2.2 plano plurianual; 2.3... | 2 | Terça-feira — Orçamento, Finanças e Tributação |
+| **3** Programação e execução orçamentária e financeira: 3.1 descentralização orçamentária e financeira; 3.2 acomp... | 2 | Terça-feira — Orçamento, Finanças e Tributação |
+| **4** Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 fontes; 4.4 dívida ativa | 2 | Terça-feira — Orçamento, Finanças e Tributação |
+| **5** Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 restos a pagar; 5.4 despesas de exercício... | 2 | Terça-feira — Orçamento, Finanças e Tributação |
+| **6** Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabilidade Fiscal) | 3 | Terça-feira — Orçamento, Finanças e Tributação |
+| **7** Lei nº 4.320/1964 e suas alterações | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **8** Transferências voluntárias | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **9** Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento, finanças, patrimônio e contabilidade d... | 1 | Terça-feira — Orçamento, Finanças e Tributação |

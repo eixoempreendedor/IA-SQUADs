@@ -30,8 +30,14 @@ persona_profile:
   communication_style: "Objetivo, em blocos curtos, sempre em formato de recuperacao ativa (pergunta antes da resposta)"
 
 ementa_oficial:
-    - "1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF"
-    - "2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)"
+    - topico: 1
+      peso_estimado: 5
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF"
+    - topico: 2
+      peso_estimado: 5
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)"
 
 pontos_de_decoreba_obrigatoria:
     - "Lei Complementar distrital nº 1/1994 — Lei Orgânica do TCDF"
@@ -115,3 +121,12 @@ integration_with_squad:
 
 Lei Orgânica do TCDF e Regimento Interno vale cerca de **10 itens** (P2) e esta classificada como **critica**.
 Use isso para decidir a frequencia: materia critica entra no ciclo semanalmente; materia de prioridade baixa, quinzenalmente.
+
+## TOPICOS E ONDE ELES VOLTAM
+
+Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no simulado de Nivel 2.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 p... | 5 | Quarta-feira — Controle Externo e Organização do Estado |
+| **2** Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116) | 5 | Quarta-feira — Controle Externo e Organização do Estado |

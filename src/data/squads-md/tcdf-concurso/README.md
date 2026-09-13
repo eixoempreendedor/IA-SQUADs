@@ -62,18 +62,20 @@ Minimo global nas objetivas: **45,00 pontos na soma de P1 + P2 + P3**. Só é co
 | 🚑 **Noções de Primeiros Socorros** | P1 | 3 | baixa | `nocoes-primeiros-socorros-professor` | `nocoes-primeiros-socorros-examinador` | `nocoes-primeiros-socorros-revisor` |
 | 🧮 **Raciocínio Lógico e Matemática Financeira** | P1 | 10 | alta | `raciocinio-logico-matematica-financeira-professor` | `raciocinio-logico-matematica-financeira-examinador` | `raciocinio-logico-matematica-financeira-revisor` |
 | ⚖️ **Lei Orgânica do TCDF e Regimento Interno** | P2 | 10 | critica | `lei-organica-regimento-tcdf-professor` | `lei-organica-regimento-tcdf-examinador` | `lei-organica-regimento-tcdf-revisor` |
-| 📜 **Direito Constitucional** | P2 | 10 | critica | `direito-constitucional-professor` | `direito-constitucional-examinador` | `direito-constitucional-revisor` |
+| 📜 **Direito Constitucional** | P2 | 12 | critica | `direito-constitucional-professor` | `direito-constitucional-examinador` | `direito-constitucional-revisor` |
 | 🧓 **Direito Previdenciário** | P2 | 8 | alta | `direito-previdenciario-professor` | `direito-previdenciario-examinador` | `direito-previdenciario-revisor` |
 | 📕 **Noções de Direito Civil** | P2 | 6 | media | `nocoes-direito-civil-professor` | `nocoes-direito-civil-examinador` | `nocoes-direito-civil-revisor` |
-| 💰 **Noções de Direito Tributário** | P2 | 5 | media | `nocoes-direito-tributario-professor` | `nocoes-direito-tributario-examinador` | `nocoes-direito-tributario-revisor` |
-| 🤖 **Análise de Dados, Noções de Estatística e Inteligência Artificial** | P2 | 6 | alta | `analise-dados-estatistica-ia-professor` | `analise-dados-estatistica-ia-examinador` | `analise-dados-estatistica-ia-revisor` |
-| 🏢 **Direito Administrativo** | P3 | 22 | critica | `direito-administrativo-professor` | `direito-administrativo-examinador` | `direito-administrativo-revisor` |
-| 📊 **Administração Financeira e Orçamentária** | P3 | 16 | critica | `administracao-financeira-orcamentaria-professor` | `administracao-financeira-orcamentaria-examinador` | `administracao-financeira-orcamentaria-revisor` |
-| 🏗️ **Administração Geral e Pública** | P3 | 16 | critica | `administracao-geral-e-publica-professor` | `administracao-geral-e-publica-examinador` | `administracao-geral-e-publica-revisor` |
+| 💰 **Noções de Direito Tributário** | P2 | 4 | media | `nocoes-direito-tributario-professor` | `nocoes-direito-tributario-examinador` | `nocoes-direito-tributario-revisor` |
+| 🤖 **Análise de Dados, Noções de Estatística e Inteligência Artificial** | P2 | 5 | alta | `analise-dados-estatistica-ia-professor` | `analise-dados-estatistica-ia-examinador` | `analise-dados-estatistica-ia-revisor` |
+| 🏢 **Direito Administrativo** | P3 | 25 | critica | `direito-administrativo-professor` | `direito-administrativo-examinador` | `direito-administrativo-revisor` |
+| 📊 **Administração Financeira e Orçamentária** | P3 | 15 | critica | `administracao-financeira-orcamentaria-professor` | `administracao-financeira-orcamentaria-examinador` | `administracao-financeira-orcamentaria-revisor` |
+| 🏗️ **Administração Geral e Pública** | P3 | 15 | critica | `administracao-geral-e-publica-professor` | `administracao-geral-e-publica-examinador` | `administracao-geral-e-publica-revisor` |
 | 👤 **Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011)** | P3 | 8 | alta | `regime-juridico-servidores-df-professor` | `regime-juridico-servidores-df-examinador` | `regime-juridico-servidores-df-revisor` |
-| 📑 **Gestão de Contratos** | P3 | 8 | alta | `gestao-de-contratos-professor` | `gestao-de-contratos-examinador` | `gestao-de-contratos-revisor` |
+| 📑 **Gestão de Contratos** | P3 | 7 | alta | `gestao-de-contratos-professor` | `gestao-de-contratos-examinador` | `gestao-de-contratos-revisor` |
 
-> A distribuicao de itens por materia e **estimativa** ponderada pelo tamanho da ementa e pelo historico da banca: o edital fixa o total de cada bloco (35 / 45 / 70), nao o total por materia.
+> O edital fixa o total de itens por bloco (35/45/70), não por matéria nem por tópico. Os pesos por tópico são estimativa própria, usada para dimensionar grupos de estudo e cotas de simulado.
+
+> O edital tem **87 topicos numerados** no total. Cada um e uma unidade de Nivel 1 e pertence a exatamente um grupo de conteudo.
 
 ## Progressao por niveis (90% para avancar)
 
@@ -81,21 +83,23 @@ O estudo avanca por **resultado medido**, nao por tempo estudado. Questoes do **
 
 | Nivel | Unidade | Questoes | Quando | Aprovado gera |
 |---|---|---|---|---|
-| **1 — Tema** | Um topico da ementa da materia (ex.: Titulo 1 de Direito Constitucional, Ato Administrativo) | 20 | Logo apos estudar o tema, no mesmo dia | Tema marcado como VENCIDO e liberado para compor o simulado de Nivel 2 do grupo |
-| **2 — Grupo de conteudo** | Um dos 6 grupos de conteudo (seg a sab) | 50 | Manha do dia fixo do grupo, antes de qualquer conteudo novo | Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal |
-| **3 — Simulado geral** | Todas as materias ja vencidas no Nivel 2 | 200 | Domingo de manha, cronometrado | Materia confirmada no pool; segue em manutencao semanal sem voltar ao Nivel 2 |
+| **1 — Tema** | Um tópico numerado da ementa oficial (ex.: Direito Administrativo, tópico 3 — Ato administrativo) | 20 | Logo apos estudar o tema, no mesmo dia | Tópico marcado como VENCIDO e liberado para compor o simulado de Nível 2 do grupo a que ele pertence |
+| **2 — Grupo de conteudo** | Um dos 6 grupos de conteúdo (conjunto de tópicos de matérias diferentes que se estudam juntos) | 50 | Manha do dia fixo do grupo, antes de qualquer conteudo novo | Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal |
+| **3 — Simulado geral** | Todos os tópicos dos grupos já vencidos no Nível 2 | 200 | Domingo de manha, cronometrado | Grupo confirmado no pool; segue em manutenção semanal sem voltar ao Nível 2 |
 
 ### Grupos de conteudo (seg a sab)
 
-| Dia | Grupo | Itens | Materias | Cotas no simulado de 50 |
-|---|---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** | 30 | Direito Administrativo · Gestão de Contratos | 37 · 13 |
-| Terça-feira | **Orçamento e Finanças Públicas** | 22 | Administração Financeira e Orçamentária · Lei Orgânica do Distrito Federal | 36 · 14 |
-| Quarta-feira | **Constitucional e Institucional** | 20 | Direito Constitucional · Lei Orgânica do TCDF e Regimento Interno | 25 · 25 |
-| Quinta-feira | **Gestão e Dados** | 22 | Administração Geral e Pública · Análise de Dados, Noções de Estatística e Inteligência Artificial | 36 · 14 |
-| Sexta-feira | **Servidor e Direitos Complementares** | 27 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) · Direito Previdenciário · Noções de Direito Civil · Noções de Direito Tributário | 15 · 15 · 11 · 9 |
-| Sábado | **Instrumentais e Distrito Federal** | 29 | Língua Portuguesa · Raciocínio Lógico e Matemática Financeira · Conhecimentos do Distrito Federal e Política para Mulheres · Noções de Primeiros Socorros | 21 · 17 · 7 · 5 |
-| Domingo | **Nivel 3 — simulado geral** | pool vencido | Todas as materias vencidas | 200 proporcionais |
+Os grupos são formados por TÓPICOS, não por matérias. Uma matéria pode aparecer em mais de um dia quando o edital espalha o mesmo assunto por programas diferentes (Direito Administrativo aparece em quatro dias, Constitucional e LODF em dois). Cada tópico do edital pertence a exatamente um grupo — sem sobreposição e sem lacuna.
+
+| Dia | Grupo | Peso est. | Materias (topicos) — cota no simulado de 50 |
+|---|---|---|---|
+| Segunda-feira | **Direito Administrativo e Contratações** | 25 | Direito Administrativo (1, 2, 3, 5, 6, 7, 8, 9, 11, 12) — 36q · Gestão de Contratos (1, 2) — 14q |
+| Terça-feira | **Orçamento, Finanças e Tributação** | 21 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) — 36q · Noções de Direito Tributário (1, 2, 3) — 9q · Lei Orgânica do Distrito Federal (4, 5) — 5q |
+| Quarta-feira | **Controle Externo e Organização do Estado** | 26 | Direito Constitucional (1, 2, 3, 4, 6, 7, 8, 9) — 19q · Lei Orgânica do TCDF e Regimento Interno (1, 2) — 19q · Lei Orgânica do Distrito Federal (1, 2, 3) — 8q · Direito Administrativo (10) — 4q |
+| Quinta-feira | **Governança, Gestão e Dados** | 23 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9) — 33q · Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) — 11q · Direito Administrativo (13, 14) — 4q · Raciocínio Lógico e Matemática Financeira (5) — 2q |
+| Sexta-feira | **Pessoal: Servidores e Previdência** | 27 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1) — 15q · Direito Previdenciário (1, 2, 3, 4, 5) — 15q · Noções de Direito Civil (1, 2, 3, 4, 5, 6) — 11q · Direito Administrativo (4) — 5q · Direito Constitucional (5) — 4q |
+| Sábado | **Instrumentais e Distrito Federal** | 28 | Língua Portuguesa (1, 2, 3, 4, 5, 6) — 21q · Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 6, 7) — 16q · Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3) — 7q · Noções de Primeiros Socorros (1) — 6q |
+| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |
 
 Composicao completa, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). Acompanhamento: [`templates/mapa-de-progressao.md`](templates/mapa-de-progressao.md).
 

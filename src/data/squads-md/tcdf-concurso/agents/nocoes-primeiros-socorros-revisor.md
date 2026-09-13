@@ -30,7 +30,10 @@ persona_profile:
   communication_style: "Objetivo, em blocos curtos, sempre em formato de recuperacao ativa (pergunta antes da resposta)"
 
 ementa_oficial:
-    - "1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação"
+    - topico: 1
+      peso_estimado: 3
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação"
 
 pontos_de_decoreba_obrigatoria:
     - "Protocolos do SAMU 192"
@@ -112,3 +115,11 @@ integration_with_squad:
 
 Noções de Primeiros Socorros vale cerca de **3 itens** (P1) e esta classificada como **baixa**.
 Use isso para decidir a frequencia: materia critica entra no ciclo semanalmente; materia de prioridade baixa, quinzenalmente.
+
+## TOPICOS E ONDE ELES VOLTAM
+
+Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no simulado de Nivel 2.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorr... | 3 | Sábado — Instrumentais e Distrito Federal |

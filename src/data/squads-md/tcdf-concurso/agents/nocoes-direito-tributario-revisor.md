@@ -19,7 +19,7 @@ agent:
 
 contexto_da_prova:
   bloco: "P2 — Conhecimentos Específicos"
-  itens_estimados: 5
+  itens_estimados: 4
   prioridade: "media"
 
 persona_profile:
@@ -30,9 +30,18 @@ persona_profile:
   communication_style: "Objetivo, em blocos curtos, sempre em formato de recuperacao ativa (pergunta antes da resposta)"
 
 ementa_oficial:
-    - "1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário"
-    - "2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias"
-    - "3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário"
+    - topico: 2
+      peso_estimado: 2
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições"
 
 pontos_de_decoreba_obrigatoria:
     - "CF/88, arts. 145 a 162"
@@ -113,5 +122,15 @@ integration_with_squad:
 
 ### Peso desta materia no ciclo
 
-Noções de Direito Tributário vale cerca de **5 itens** (P2) e esta classificada como **media**.
+Noções de Direito Tributário vale cerca de **4 itens** (P2) e esta classificada como **media**.
 Use isso para decidir a frequencia: materia critica entra no ciclo semanalmente; materia de prioridade baixa, quinzenalmente.
+
+## TOPICOS E ONDE ELES VOLTAM
+
+Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no simulado de Nivel 2.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **2** Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder... | 2 | Terça-feira — Orçamento, Finanças e Tributação |
+| **3** Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melh... | 1 | Terça-feira — Orçamento, Finanças e Tributação |

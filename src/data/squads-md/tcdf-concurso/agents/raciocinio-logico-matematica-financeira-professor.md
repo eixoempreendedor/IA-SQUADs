@@ -48,13 +48,34 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Estruturas lógicas"
-    - "2 Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões"
-    - "3 Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equivalências; 3.4 leis de De Morgan; 3.5 diagramas lógicos"
-    - "4 Lógica de primeira ordem"
-    - "5 Princípios de contagem e probabilidade"
-    - "6 Operações com conjuntos"
-    - "7 Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nominal, efetiva, equivalente), sistemas de amortização e fluxo de caixa"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "1 Estruturas lógicas"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "2 Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões"
+    - topico: 3
+      peso_estimado: 3
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "3 Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equivalências; 3.4 leis de De Morgan; 3.5 diagramas lógicos"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "4 Lógica de primeira ordem"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "5 Princípios de contagem e probabilidade"
+    - topico: 6
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "6 Operações com conjuntos"
+    - topico: 7
+      peso_estimado: 2
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "7 Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nominal, efetiva, equivalente), sistemas de amortização e fluxo de caixa"
 
 base_normativa:
     []
@@ -136,3 +157,19 @@ integration_with_squad:
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
 Esta materia esta classificada como **alta** (10 itens estimados em P1).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Estruturas lógicas | 1 | Sábado — Instrumentais e Distrito Federal |
+| **2** Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões | 1 | Sábado — Instrumentais e Distrito Federal |
+| **3** Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equival... | 3 | Sábado — Instrumentais e Distrito Federal |
+| **4** Lógica de primeira ordem | 1 | Sábado — Instrumentais e Distrito Federal |
+| **5** Princípios de contagem e probabilidade | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **6** Operações com conjuntos | 1 | Sábado — Instrumentais e Distrito Federal |
+| **7** Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nomin... | 2 | Sábado — Instrumentais e Distrito Federal |

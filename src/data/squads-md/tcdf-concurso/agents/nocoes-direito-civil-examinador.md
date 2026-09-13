@@ -32,12 +32,30 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Lei de Introdução às Normas do Direito Brasileiro"
-    - "2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio"
-    - "3 Bens"
-    - "4 Fatos jurídicos: 4.1 negócio jurídico"
-    - "5 Atos jurídicos lícitos e ilícitos"
-    - "6 Prescrição e decadência"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "1 Lei de Introdução às Normas do Direito Brasileiro"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "3 Bens"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "4 Fatos jurídicos: 4.1 negócio jurídico"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "5 Atos jurídicos lícitos e ilícitos"
+    - topico: 6
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "6 Prescrição e decadência"
 
 base_normativa:
     - "Lei nº 10.406/2002 — Código Civil, parte geral (arts. 1º a 232)"
@@ -132,3 +150,17 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **6 itens** em P2 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei de Introdução às Normas do Direito Brasileiro | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **2** Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **3** Bens | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **4** Fatos jurídicos: 4.1 negócio jurídico | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **5** Atos jurídicos lícitos e ilícitos | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **6** Prescrição e decadência | 1 | Sexta-feira — Pessoal: Servidores e Previdência |

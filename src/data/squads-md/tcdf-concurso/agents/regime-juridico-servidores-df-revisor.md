@@ -30,7 +30,10 @@ persona_profile:
   communication_style: "Objetivo, em blocos curtos, sempre em formato de recuperacao ativa (pergunta antes da resposta)"
 
 ementa_oficial:
-    - "1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)"
+    - topico: 1
+      peso_estimado: 8
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)"
 
 pontos_de_decoreba_obrigatoria:
     - "Lei Complementar distrital nº 840/2011, com as alterações vigentes"
@@ -112,3 +115,11 @@ integration_with_squad:
 
 Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) vale cerca de **8 itens** (P3) e esta classificada como **alta**.
 Use isso para decidir a frequencia: materia critica entra no ciclo semanalmente; materia de prioridade baixa, quinzenalmente.
+
+## TOPICOS E ONDE ELES VOLTAM
+
+Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no simulado de Nivel 2.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarq... | 8 | Sexta-feira — Pessoal: Servidores e Previdência |

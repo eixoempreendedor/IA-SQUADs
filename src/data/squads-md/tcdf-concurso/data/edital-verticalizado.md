@@ -33,16 +33,16 @@
 | 4 | 🚑 Noções de Primeiros Socorros | P1 | 3 | baixa | `nocoes-primeiros-socorros-professor` · `nocoes-primeiros-socorros-examinador` · `nocoes-primeiros-socorros-revisor` |
 | 5 | 🧮 Raciocínio Lógico e Matemática Financeira | P1 | 10 | alta | `raciocinio-logico-matematica-financeira-professor` · `raciocinio-logico-matematica-financeira-examinador` · `raciocinio-logico-matematica-financeira-revisor` |
 | 6 | ⚖️ Lei Orgânica do TCDF e Regimento Interno | P2 | 10 | critica | `lei-organica-regimento-tcdf-professor` · `lei-organica-regimento-tcdf-examinador` · `lei-organica-regimento-tcdf-revisor` |
-| 7 | 📜 Direito Constitucional | P2 | 10 | critica | `direito-constitucional-professor` · `direito-constitucional-examinador` · `direito-constitucional-revisor` |
+| 7 | 📜 Direito Constitucional | P2 | 12 | critica | `direito-constitucional-professor` · `direito-constitucional-examinador` · `direito-constitucional-revisor` |
 | 8 | 🧓 Direito Previdenciário | P2 | 8 | alta | `direito-previdenciario-professor` · `direito-previdenciario-examinador` · `direito-previdenciario-revisor` |
 | 9 | 📕 Noções de Direito Civil | P2 | 6 | media | `nocoes-direito-civil-professor` · `nocoes-direito-civil-examinador` · `nocoes-direito-civil-revisor` |
-| 10 | 💰 Noções de Direito Tributário | P2 | 5 | media | `nocoes-direito-tributario-professor` · `nocoes-direito-tributario-examinador` · `nocoes-direito-tributario-revisor` |
-| 11 | 🤖 Análise de Dados, Noções de Estatística e Inteligência Artificial | P2 | 6 | alta | `analise-dados-estatistica-ia-professor` · `analise-dados-estatistica-ia-examinador` · `analise-dados-estatistica-ia-revisor` |
-| 12 | 🏢 Direito Administrativo | P3 | 22 | critica | `direito-administrativo-professor` · `direito-administrativo-examinador` · `direito-administrativo-revisor` |
-| 13 | 📊 Administração Financeira e Orçamentária | P3 | 16 | critica | `administracao-financeira-orcamentaria-professor` · `administracao-financeira-orcamentaria-examinador` · `administracao-financeira-orcamentaria-revisor` |
-| 14 | 🏗️ Administração Geral e Pública | P3 | 16 | critica | `administracao-geral-e-publica-professor` · `administracao-geral-e-publica-examinador` · `administracao-geral-e-publica-revisor` |
+| 10 | 💰 Noções de Direito Tributário | P2 | 4 | media | `nocoes-direito-tributario-professor` · `nocoes-direito-tributario-examinador` · `nocoes-direito-tributario-revisor` |
+| 11 | 🤖 Análise de Dados, Noções de Estatística e Inteligência Artificial | P2 | 5 | alta | `analise-dados-estatistica-ia-professor` · `analise-dados-estatistica-ia-examinador` · `analise-dados-estatistica-ia-revisor` |
+| 12 | 🏢 Direito Administrativo | P3 | 25 | critica | `direito-administrativo-professor` · `direito-administrativo-examinador` · `direito-administrativo-revisor` |
+| 13 | 📊 Administração Financeira e Orçamentária | P3 | 15 | critica | `administracao-financeira-orcamentaria-professor` · `administracao-financeira-orcamentaria-examinador` · `administracao-financeira-orcamentaria-revisor` |
+| 14 | 🏗️ Administração Geral e Pública | P3 | 15 | critica | `administracao-geral-e-publica-professor` · `administracao-geral-e-publica-examinador` · `administracao-geral-e-publica-revisor` |
 | 15 | 👤 Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | P3 | 8 | alta | `regime-juridico-servidores-df-professor` · `regime-juridico-servidores-df-examinador` · `regime-juridico-servidores-df-revisor` |
-| 16 | 📑 Gestão de Contratos | P3 | 8 | alta | `gestao-de-contratos-professor` · `gestao-de-contratos-examinador` · `gestao-de-contratos-revisor` |
+| 16 | 📑 Gestão de Contratos | P3 | 7 | alta | `gestao-de-contratos-professor` · `gestao-de-contratos-examinador` · `gestao-de-contratos-revisor` |
 
 ---
 
@@ -56,12 +56,12 @@
 
 **Ementa**
 
-1. 1 Compreensão e interpretação de textos de gêneros variados
-2. 2 Reconhecimento de tipos e gêneros textuais
-3. 3 Domínio da ortografia oficial
-4. 4 Domínio dos mecanismos de coesão textual: 4.1 emprego de elementos de referenciação, substituição e repetição, de conectores e de outros elementos de sequenciação textual; 4.2 emprego de tempos e modos verbais
-5. 5 Domínio da estrutura morfossintática do período: 5.1 emprego das classes de palavras; 5.2 relações de coordenação entre orações e entre termos da oração; 5.3 relações de subordinação entre orações e entre termos da oração; 5.4 emprego dos sinais de pontuação; 5.5 concordância verbal e nominal; 5.6 regência verbal e nominal; 5.7 emprego do sinal indicativo de crase; 5.8 colocação dos pronomes átonos
-6. 6 Reescrita de frases e parágrafos do texto: 6.1 significação das palavras; 6.2 substituição de palavras ou de trechos de texto; 6.3 reorganização da estrutura de orações e de períodos do texto; 6.4 reescrita de textos de diferentes gêneros e níveis de formalidade
+1. {'n': '1', 'peso': 3, 'texto': '1 Compreensão e interpretação de textos de gêneros variados'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Reconhecimento de tipos e gêneros textuais'}
+3. {'n': '3', 'peso': 1, 'texto': '3 Domínio da ortografia oficial'}
+4. {'n': '4', 'peso': 2, 'texto': '4 Domínio dos mecanismos de coesão textual: 4.1 emprego de elementos de referenciação, substituição e repetição, de conectores e de outros elementos de sequenciação textual; 4.2 emprego de tempos e modos verbais'}
+5. {'n': '5', 'peso': 3, 'texto': '5 Domínio da estrutura morfossintática do período: 5.1 emprego das classes de palavras; 5.2 relações de coordenação entre orações e entre termos da oração; 5.3 relações de subordinação entre orações e entre termos da oração; 5.4 emprego dos sinais de pontuação; 5.5 concordância verbal e nominal; 5.6 regência verbal e nominal; 5.7 emprego do sinal indicativo de crase; 5.8 colocação dos pronomes átonos'}
+6. {'n': '6', 'peso': 2, 'texto': '6 Reescrita de frases e parágrafos do texto: 6.1 significação das palavras; 6.2 substituição de palavras ou de trechos de texto; 6.3 reorganização da estrutura de orações e de períodos do texto; 6.4 reescrita de textos de diferentes gêneros e níveis de formalidade'}
 
 **Base normativa**
 
@@ -90,11 +90,11 @@
 
 **Ementa**
 
-1. 1 Fundamentos da organização dos poderes e do Distrito Federal
-2. 2 Organização do Distrito Federal
-3. 3 Organização dos poderes
-4. 4 Tributação e orçamento do Distrito Federal
-5. 5 Ordem econômica do Distrito Federal
+1. {'n': '1', 'peso': 1, 'texto': '1 Fundamentos da organização dos poderes e do Distrito Federal'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Organização do Distrito Federal'}
+3. {'n': '3', 'peso': 2, 'texto': '3 Organização dos poderes'}
+4. {'n': '4', 'peso': 1, 'texto': '4 Tributação e orçamento do Distrito Federal'}
+5. {'n': '5', 'peso': 1, 'texto': '5 Ordem econômica do Distrito Federal'}
 
 **Base normativa**
 
@@ -122,9 +122,9 @@
 
 **Ementa**
 
-1. 1 Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural, política e econômica do Distrito Federal e da Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE) (Lei Complementar federal nº 94/1998 e Decreto federal nº 7.469/2011)
-2. 2 Plano Distrital de Política para Mulheres (2020–2023)
-3. 3 Lei Federal nº 11.340/2006 – Lei Maria da Penha
+1. {'n': '1', 'peso': 2, 'texto': '1 Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural, política e econômica do Distrito Federal e da Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE) (Lei Complementar federal nº 94/1998 e Decreto federal nº 7.469/2011)'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Plano Distrital de Política para Mulheres (2020–2023)'}
+3. {'n': '3', 'peso': 1, 'texto': '3 Lei Federal nº 11.340/2006 – Lei Maria da Penha'}
 
 **Base normativa**
 
@@ -156,7 +156,7 @@
 
 **Ementa**
 
-1. 1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação
+1. {'n': '1', 'peso': 3, 'texto': '1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação'}
 
 **Base normativa**
 
@@ -185,13 +185,13 @@
 
 **Ementa**
 
-1. 1 Estruturas lógicas
-2. 2 Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões
-3. 3 Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equivalências; 3.4 leis de De Morgan; 3.5 diagramas lógicos
-4. 4 Lógica de primeira ordem
-5. 5 Princípios de contagem e probabilidade
-6. 6 Operações com conjuntos
-7. 7 Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nominal, efetiva, equivalente), sistemas de amortização e fluxo de caixa
+1. {'n': '1', 'peso': 1, 'texto': '1 Estruturas lógicas'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões'}
+3. {'n': '3', 'peso': 3, 'texto': '3 Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equivalências; 3.4 leis de De Morgan; 3.5 diagramas lógicos'}
+4. {'n': '4', 'peso': 1, 'texto': '4 Lógica de primeira ordem'}
+5. {'n': '5', 'peso': 1, 'texto': '5 Princípios de contagem e probabilidade'}
+6. {'n': '6', 'peso': 1, 'texto': '6 Operações com conjuntos'}
+7. {'n': '7', 'peso': 2, 'texto': '7 Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nominal, efetiva, equivalente), sistemas de amortização e fluxo de caixa'}
 
 **Armadilhas tipicas da banca**
 
@@ -216,8 +216,8 @@
 
 **Ementa**
 
-1. 1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF
-2. 2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)
+1. {'n': '1', 'peso': 5, 'texto': '1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF'}
+2. {'n': '2', 'peso': 5, 'texto': '2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)'}
 
 **Base normativa**
 
@@ -242,21 +242,21 @@
 
 ### 📜 Direito Constitucional
 
-`P2` · 10 itens estimados · prioridade **critica**
+`P2` · 12 itens estimados · prioridade **critica**
 
 *Base do controle externo e maior densidade doutrinária e jurisprudencial de P2. O tópico 7.4 (fiscalização contábil, financeira e orçamentária) é o coração do cargo.*
 
 **Ementa**
 
-1. 1 Constituição da República Federativa do Brasil de 1988: 1.1 princípios fundamentais
-2. 2 Aplicabilidade das normas constitucionais: 2.1 normas de eficácia plena, contida e limitada; normas programáticas; 2.2 emenda, reforma e revisão constitucional
-3. 3 Direitos e garantias fundamentais: 3.1 direitos e deveres individuais e coletivos, direitos sociais, direitos de nacionalidade, direitos políticos, partidos políticos
-4. 4 Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Federal e municípios
-5. 5 Administração pública: 5.1 disposições gerais; 5.2 servidores públicos
-6. 6 Poder Executivo: 6.1 atribuições e responsabilidades do presidente da República
-7. 7 Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições; 7.3 processo legislativo; 7.4 fiscalização contábil, financeira e orçamentária; 7.5 comissões parlamentares de inquérito
-8. 8 Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judiciário
-9. 9 Funções essenciais à justiça: 9.1 Ministério Público; 9.2 advocacia pública; 9.3 Defensoria Pública
+1. {'n': '1', 'peso': 1, 'texto': '1 Constituição da República Federativa do Brasil de 1988: 1.1 princípios fundamentais'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Aplicabilidade das normas constitucionais: 2.1 normas de eficácia plena, contida e limitada; normas programáticas; 2.2 emenda, reforma e revisão constitucional'}
+3. {'n': '3', 'peso': 2, 'texto': '3 Direitos e garantias fundamentais: 3.1 direitos e deveres individuais e coletivos, direitos sociais, direitos de nacionalidade, direitos políticos, partidos políticos'}
+4. {'n': '4', 'peso': 1, 'texto': '4 Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Federal e municípios'}
+5. {'n': '5', 'peso': 2, 'texto': '5 Administração pública: 5.1 disposições gerais; 5.2 servidores públicos'}
+6. {'n': '6', 'peso': 1, 'texto': '6 Poder Executivo: 6.1 atribuições e responsabilidades do presidente da República'}
+7. {'n': '7', 'peso': 2, 'texto': '7 Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições; 7.3 processo legislativo; 7.4 fiscalização contábil, financeira e orçamentária; 7.5 comissões parlamentares de inquérito'}
+8. {'n': '8', 'peso': 1, 'texto': '8 Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judiciário'}
+9. {'n': '9', 'peso': 1, 'texto': '9 Funções essenciais à justiça: 9.1 Ministério Público; 9.2 advocacia pública; 9.3 Defensoria Pública'}
 
 **Base normativa**
 
@@ -287,11 +287,11 @@
 
 **Ementa**
 
-1. 1 Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios constitucionais
-2. 2 Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991
-3. 3 Regime próprio de previdência social dos servidores públicos – RPPS
-4. 4 Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008
-5. 5 Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei Complementar distrital nº 932/2017
+1. {'n': '1', 'peso': 1, 'texto': '1 Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios constitucionais'}
+2. {'n': '2', 'peso': 2, 'texto': '2 Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991'}
+3. {'n': '3', 'peso': 2, 'texto': '3 Regime próprio de previdência social dos servidores públicos – RPPS'}
+4. {'n': '4', 'peso': 2, 'texto': '4 Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008'}
+5. {'n': '5', 'peso': 1, 'texto': '5 Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei Complementar distrital nº 932/2017'}
 
 **Base normativa**
 
@@ -323,12 +323,12 @@
 
 **Ementa**
 
-1. 1 Lei de Introdução às Normas do Direito Brasileiro
-2. 2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio
-3. 3 Bens
-4. 4 Fatos jurídicos: 4.1 negócio jurídico
-5. 5 Atos jurídicos lícitos e ilícitos
-6. 6 Prescrição e decadência
+1. {'n': '1', 'peso': 1, 'texto': '1 Lei de Introdução às Normas do Direito Brasileiro'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio'}
+3. {'n': '3', 'peso': 1, 'texto': '3 Bens'}
+4. {'n': '4', 'peso': 1, 'texto': '4 Fatos jurídicos: 4.1 negócio jurídico'}
+5. {'n': '5', 'peso': 1, 'texto': '5 Atos jurídicos lícitos e ilícitos'}
+6. {'n': '6', 'peso': 1, 'texto': '6 Prescrição e decadência'}
 
 **Base normativa**
 
@@ -352,15 +352,15 @@
 
 ### 💰 Noções de Direito Tributário
 
-`P2` · 5 itens estimados · prioridade **media**
+`P2` · 4 itens estimados · prioridade **media**
 
 *Recorte muito curto: para na definição das espécies tributárias. Crédito tributário e lançamento não foram cobrados.*
 
 **Ementa**
 
-1. 1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário
-2. 2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias
-3. 3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições
+1. {'n': '1', 'peso': 1, 'texto': '1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário'}
+2. {'n': '2', 'peso': 2, 'texto': '2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias'}
+3. {'n': '3', 'peso': 1, 'texto': '3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições'}
 
 **Base normativa**
 
@@ -384,17 +384,17 @@
 
 ### 🤖 Análise de Dados, Noções de Estatística e Inteligência Artificial
 
-`P2` · 6 itens estimados · prioridade **alta**
+`P2` · 5 itens estimados · prioridade **alta**
 
 *Matéria nova, com Excel avançado, Power Query e IA generativa nomeados no edital. Pouquíssimos candidatos estudam isso — é diferencial puro.*
 
 **Ementa**
 
-1. 1 Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e qualitativos); 1.2 produtos da análise de dados (base de dados, relatórios, planilhas e dashboards)
-2. 2 Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas de tendência central (média, mediana e moda) e medidas de dispersão (variância e desvio-padrão) voltadas à identificação de anomalias; 2.2 identificação de outliers e análise de séries históricas
-3. 3 Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão, histograma); 3.2 boas práticas para construção de gráficos; 3.3 princípios de narrativa com dados
-4. 4 Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de saída; encadeamento de prompt); 4.2 vieses cognitivos; 4.3 ética no uso de dados e inteligência artificial
-5. 5 Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power Query para extração e tratamento de dados); 5.2 fórmulas lógicas, financeiras e de busca; 5.3 tabelas dinâmicas e tratamento de grandes bases relacionais
+1. {'n': '1', 'peso': 1, 'texto': '1 Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e qualitativos); 1.2 produtos da análise de dados (base de dados, relatórios, planilhas e dashboards)'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas de tendência central (média, mediana e moda) e medidas de dispersão (variância e desvio-padrão) voltadas à identificação de anomalias; 2.2 identificação de outliers e análise de séries históricas'}
+3. {'n': '3', 'peso': 1, 'texto': '3 Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão, histograma); 3.2 boas práticas para construção de gráficos; 3.3 princípios de narrativa com dados'}
+4. {'n': '4', 'peso': 1, 'texto': '4 Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de saída; encadeamento de prompt); 4.2 vieses cognitivos; 4.3 ética no uso de dados e inteligência artificial'}
+5. {'n': '5', 'peso': 1, 'texto': '5 Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power Query para extração e tratamento de dados); 5.2 fórmulas lógicas, financeiras e de busca; 5.3 tabelas dinâmicas e tratamento de grandes bases relacionais'}
 
 **Base normativa**
 
@@ -420,26 +420,26 @@
 
 ### 🏢 Direito Administrativo
 
-`P3` · 22 itens estimados · prioridade **critica**
+`P3` · 25 itens estimados · prioridade **critica**
 
 *A maior matéria do edital, com 14 tópicos no bloco de maior peso. Sozinha vale mais do que toda a prova de conhecimentos básicos.*
 
 **Ementa**
 
-1. 1 Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos
-2. 2 Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes
-3. 3 Ato administrativo: 3.1 conceito, requisitos, atributos, classificação e espécies; 3.2 extinção do ato administrativo: cassação, anulação, revogação e convalidação; 3.3 decadência administrativa
-4. 4 Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, emprego e função pública (provimento, vacância, efetividade, estabilidade e vitaliciedade); 4.5 remuneração; 4.6 direitos e deveres; 4.7 responsabilidades; 4.8 sindicância e processo administrativo disciplinar
-5. 5 Poderes da administração pública: 5.1 hierárquico, disciplinar, regulamentar e de polícia; 5.2 uso e abuso do poder
-6. 6 Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expressos e implícitos da administração pública
-7. 7 Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 responsabilidade por ato comissivo; 7.3 responsabilidade por omissão; 7.4 requisitos para a demonstração da responsabilidade; 7.5 causas excludentes e atenuantes; 7.6 reparação do dano; 7.7 direito de regresso
-8. 8 Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 classificação; 8.4 princípios; 8.5 formas de prestação e meios de execução
-9. 9 Organização administrativa: 9.1 autarquias, fundações, empresas públicas e sociedades de economia mista; 9.2 entidades paraestatais e terceiro setor (serviços sociais autônomos, entidades de apoio, organizações sociais, organizações da sociedade civil de interesse público)
-10. 10 Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicial; 10.3 controle legislativo; 10.4 improbidade administrativa: Lei federal nº 8.429/1992
-11. 11 Lei federal nº 9.784/1999 e suas alterações (processo administrativo), aplicável ao Distrito Federal por força da Lei distrital nº 2.834/2001
-12. 12 Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/2021; 12.2 contratos administrativos; 12.3 Decreto distrital nº 44.330/2023
-13. 13 Lei nº 12.527/2011 (Lei de Acesso à Informação)
-14. 14 Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD)
+1. {'n': '1', 'peso': 1, 'texto': '1 Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes'}
+3. {'n': '3', 'peso': 3, 'texto': '3 Ato administrativo: 3.1 conceito, requisitos, atributos, classificação e espécies; 3.2 extinção do ato administrativo: cassação, anulação, revogação e convalidação; 3.3 decadência administrativa'}
+4. {'n': '4', 'peso': 3, 'texto': '4 Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, emprego e função pública (provimento, vacância, efetividade, estabilidade e vitaliciedade); 4.5 remuneração; 4.6 direitos e deveres; 4.7 responsabilidades; 4.8 sindicância e processo administrativo disciplinar'}
+5. {'n': '5', 'peso': 2, 'texto': '5 Poderes da administração pública: 5.1 hierárquico, disciplinar, regulamentar e de polícia; 5.2 uso e abuso do poder'}
+6. {'n': '6', 'peso': 2, 'texto': '6 Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expressos e implícitos da administração pública'}
+7. {'n': '7', 'peso': 2, 'texto': '7 Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 responsabilidade por ato comissivo; 7.3 responsabilidade por omissão; 7.4 requisitos para a demonstração da responsabilidade; 7.5 causas excludentes e atenuantes; 7.6 reparação do dano; 7.7 direito de regresso'}
+8. {'n': '8', 'peso': 1, 'texto': '8 Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 classificação; 8.4 princípios; 8.5 formas de prestação e meios de execução'}
+9. {'n': '9', 'peso': 2, 'texto': '9 Organização administrativa: 9.1 autarquias, fundações, empresas públicas e sociedades de economia mista; 9.2 entidades paraestatais e terceiro setor (serviços sociais autônomos, entidades de apoio, organizações sociais, organizações da sociedade civil de interesse público)'}
+10. {'n': '10', 'peso': 2, 'texto': '10 Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicial; 10.3 controle legislativo; 10.4 improbidade administrativa: Lei federal nº 8.429/1992'}
+11. {'n': '11', 'peso': 1, 'texto': '11 Lei federal nº 9.784/1999 e suas alterações (processo administrativo), aplicável ao Distrito Federal por força da Lei distrital nº 2.834/2001'}
+12. {'n': '12', 'peso': 3, 'texto': '12 Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/2021; 12.2 contratos administrativos; 12.3 Decreto distrital nº 44.330/2023'}
+13. {'n': '13', 'peso': 1, 'texto': '13 Lei nº 12.527/2011 (Lei de Acesso à Informação)'}
+14. {'n': '14', 'peso': 1, 'texto': '14 Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD)'}
 
 **Base normativa**
 
@@ -467,21 +467,21 @@
 
 ### 📊 Administração Financeira e Orçamentária
 
-`P3` · 16 itens estimados · prioridade **critica**
+`P3` · 15 itens estimados · prioridade **critica**
 
 *Segunda maior matéria do bloco pesado e núcleo técnico do controle externo: Lei 4.320, LRF e o Decreto distrital 32.598/2010.*
 
 **Ementa**
 
-1. 1 Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 princípios orçamentários; 1.4 ciclo orçamentário; 1.5 processo orçamentário
-2. 2 Orçamento público no Brasil: 2.1 sistema de planejamento e de orçamento federal; 2.2 plano plurianual; 2.3 diretrizes orçamentárias; 2.4 orçamento anual; 2.5 sistema e processo de orçamentação; 2.6 classificações orçamentárias; 2.7 estrutura programática; 2.8 créditos ordinários e adicionais
-3. 3 Programação e execução orçamentária e financeira: 3.1 descentralização orçamentária e financeira; 3.2 acompanhamento da execução; 3.3 sistemas de informações; 3.4 alterações orçamentárias
-4. 4 Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 fontes; 4.4 dívida ativa
-5. 5 Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 restos a pagar; 5.4 despesas de exercícios anteriores; 5.5 dívida flutuante e fundada; 5.6 suprimento de fundos
-6. 6 Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabilidade Fiscal)
-7. 7 Lei nº 4.320/1964 e suas alterações
-8. 8 Transferências voluntárias
-9. 9 Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento, finanças, patrimônio e contabilidade do Distrito Federal)
+1. {'n': '1', 'peso': 1, 'texto': '1 Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 princípios orçamentários; 1.4 ciclo orçamentário; 1.5 processo orçamentário'}
+2. {'n': '2', 'peso': 2, 'texto': '2 Orçamento público no Brasil: 2.1 sistema de planejamento e de orçamento federal; 2.2 plano plurianual; 2.3 diretrizes orçamentárias; 2.4 orçamento anual; 2.5 sistema e processo de orçamentação; 2.6 classificações orçamentárias; 2.7 estrutura programática; 2.8 créditos ordinários e adicionais'}
+3. {'n': '3', 'peso': 2, 'texto': '3 Programação e execução orçamentária e financeira: 3.1 descentralização orçamentária e financeira; 3.2 acompanhamento da execução; 3.3 sistemas de informações; 3.4 alterações orçamentárias'}
+4. {'n': '4', 'peso': 2, 'texto': '4 Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 fontes; 4.4 dívida ativa'}
+5. {'n': '5', 'peso': 2, 'texto': '5 Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 restos a pagar; 5.4 despesas de exercícios anteriores; 5.5 dívida flutuante e fundada; 5.6 suprimento de fundos'}
+6. {'n': '6', 'peso': 3, 'texto': '6 Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabilidade Fiscal)'}
+7. {'n': '7', 'peso': 1, 'texto': '7 Lei nº 4.320/1964 e suas alterações'}
+8. {'n': '8', 'peso': 1, 'texto': '8 Transferências voluntárias'}
+9. {'n': '9', 'peso': 1, 'texto': '9 Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento, finanças, patrimônio e contabilidade do Distrito Federal)'}
 
 **Base normativa**
 
@@ -509,21 +509,21 @@
 
 ### 🏗️ Administração Geral e Pública
 
-`P3` · 16 itens estimados · prioridade **critica**
+`P3` · 15 itens estimados · prioridade **critica**
 
 *Matéria guarda-chuva: absorve governança, ferramentas da administração, modelagem de processos, gestão por competências e gestão de projetos num único programa.*
 
 **Ementa**
 
-1. 1 Evolução da administração: 1.1 perspectiva clássica (administração científica, organizações burocráticas); 1.2 perspectiva humanista (movimento das relações humanas, perspectiva dos recursos humanos, abordagem das ciências comportamentais); 1.3 ciência administrativa (pensamento sistêmico, teoria da contingência)
-2. 2 Evolução da administração do setor público brasileiro: 2.1 estrutura organizacional do Estado: três poderes; 2.2 formas de administração pública
-3. 3 Administração pública patrimonialista: 3.1 administração pública burocrática; 3.2 administração pública gerencial
-4. 4 Governança: 4.1 princípios da governança pública (capacidade de resposta, integridade, confiabilidade, melhoria regulatória, transparência, prestação de contas e responsabilidades); 4.2 práticas e mecanismos de governança pública (liderança, estratégia, controle)
-5. 5 Funções administrativas: planejamento, organização, direção e controle
-6. 6 Ferramentas da administração: 6.1 análise SWOT; 6.2 matriz GUT; 6.3 5W2H; 6.4 ciclo PDCA; 6.5 mapas estratégicos; 6.6 benchmarking; 6.7 fatores críticos de sucesso
-7. 7 Modelagem de processos: 7.1 propósito da modelagem de processos; 7.2 notações: BPMN, cadeia de processos orientada a eventos (EPC), IDEF0, cadeia de valor
-8. 8 Gestão de pessoas por competências: 8.1 conhecimentos, habilidades e atitudes (CHA); 8.2 matriz de competência; 8.3 avaliação participativa por objetivo (APPO); 8.4 liderança; 8.5 motivação
-9. 9 Gestão de projetos e portfólios: 9.1 padrões de referência em gerenciamento de projetos (PMBOK, Prince, Scrum e métodos ágeis); 9.2 cronogramas (decomposição de escopo, sequenciamento de atividades, estimativa de esforço e duração, alocação de pessoas); 9.3 Kanban
+1. {'n': '1', 'peso': 2, 'texto': '1 Evolução da administração: 1.1 perspectiva clássica (administração científica, organizações burocráticas); 1.2 perspectiva humanista (movimento das relações humanas, perspectiva dos recursos humanos, abordagem das ciências comportamentais); 1.3 ciência administrativa (pensamento sistêmico, teoria da contingência)'}
+2. {'n': '2', 'peso': 1, 'texto': '2 Evolução da administração do setor público brasileiro: 2.1 estrutura organizacional do Estado: três poderes; 2.2 formas de administração pública'}
+3. {'n': '3', 'peso': 2, 'texto': '3 Administração pública patrimonialista: 3.1 administração pública burocrática; 3.2 administração pública gerencial'}
+4. {'n': '4', 'peso': 3, 'texto': '4 Governança: 4.1 princípios da governança pública (capacidade de resposta, integridade, confiabilidade, melhoria regulatória, transparência, prestação de contas e responsabilidades); 4.2 práticas e mecanismos de governança pública (liderança, estratégia, controle)'}
+5. {'n': '5', 'peso': 1, 'texto': '5 Funções administrativas: planejamento, organização, direção e controle'}
+6. {'n': '6', 'peso': 2, 'texto': '6 Ferramentas da administração: 6.1 análise SWOT; 6.2 matriz GUT; 6.3 5W2H; 6.4 ciclo PDCA; 6.5 mapas estratégicos; 6.6 benchmarking; 6.7 fatores críticos de sucesso'}
+7. {'n': '7', 'peso': 2, 'texto': '7 Modelagem de processos: 7.1 propósito da modelagem de processos; 7.2 notações: BPMN, cadeia de processos orientada a eventos (EPC), IDEF0, cadeia de valor'}
+8. {'n': '8', 'peso': 1, 'texto': '8 Gestão de pessoas por competências: 8.1 conhecimentos, habilidades e atitudes (CHA); 8.2 matriz de competência; 8.3 avaliação participativa por objetivo (APPO); 8.4 liderança; 8.5 motivação'}
+9. {'n': '9', 'peso': 1, 'texto': '9 Gestão de projetos e portfólios: 9.1 padrões de referência em gerenciamento de projetos (PMBOK, Prince, Scrum e métodos ágeis); 9.2 cronogramas (decomposição de escopo, sequenciamento de atividades, estimativa de esforço e duração, alocação de pessoas); 9.3 Kanban'}
 
 **Base normativa**
 
@@ -558,7 +558,7 @@
 
 **Ementa**
 
-1. 1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)
+1. {'n': '1', 'peso': 8, 'texto': '1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)'}
 
 **Base normativa**
 
@@ -581,14 +581,14 @@
 
 ### 📑 Gestão de Contratos
 
-`P3` · 8 itens estimados · prioridade **alta**
+`P3` · 7 itens estimados · prioridade **alta**
 
 *Matéria autônoma e muito prática: fiscalização contratual, sanções e reequilíbrio econômico-financeiro, com a IN 5/2017 e o decreto distrital nomeados.*
 
 **Ementa**
 
-1. 1 Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da Secretaria de Gestão do Ministério do Planejamento, Desenvolvimento e Gestão; 1.3 Decreto distrital nº 44.330/2023
-2. 2 Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do contrato; 2.3 papel do preposto da contratada; 2.4 acompanhamento da execução contratual; 2.5 registro e notificação de irregularidades; 2.6 definição e aplicação de penalidades e sanções administrativas; 2.7 equação econômico-financeira (reajuste e repactuação)
+1. {'n': '1', 'peso': 3, 'texto': '1 Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da Secretaria de Gestão do Ministério do Planejamento, Desenvolvimento e Gestão; 1.3 Decreto distrital nº 44.330/2023'}
+2. {'n': '2', 'peso': 4, 'texto': '2 Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do contrato; 2.3 papel do preposto da contratada; 2.4 acompanhamento da execução contratual; 2.5 registro e notificação de irregularidades; 2.6 definição e aplicação de penalidades e sanções administrativas; 2.7 equação econômico-financeira (reajuste e repactuação)'}
 
 **Base normativa**
 

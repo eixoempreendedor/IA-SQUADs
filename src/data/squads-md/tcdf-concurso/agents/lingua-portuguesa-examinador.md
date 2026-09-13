@@ -32,12 +32,30 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Compreensão e interpretação de textos de gêneros variados"
-    - "2 Reconhecimento de tipos e gêneros textuais"
-    - "3 Domínio da ortografia oficial"
-    - "4 Domínio dos mecanismos de coesão textual: 4.1 emprego de elementos de referenciação, substituição e repetição, de conectores e de outros elementos de sequenciação textual; 4.2 emprego de tempos e modos verbais"
-    - "5 Domínio da estrutura morfossintática do período: 5.1 emprego das classes de palavras; 5.2 relações de coordenação entre orações e entre termos da oração; 5.3 relações de subordinação entre orações e entre termos da oração; 5.4 emprego dos sinais de pontuação; 5.5 concordância verbal e nominal; 5.6 regência verbal e nominal; 5.7 emprego do sinal indicativo de crase; 5.8 colocação dos pronomes átonos"
-    - "6 Reescrita de frases e parágrafos do texto: 6.1 significação das palavras; 6.2 substituição de palavras ou de trechos de texto; 6.3 reorganização da estrutura de orações e de períodos do texto; 6.4 reescrita de textos de diferentes gêneros e níveis de formalidade"
+    - topico: 1
+      peso_estimado: 3
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "1 Compreensão e interpretação de textos de gêneros variados"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "2 Reconhecimento de tipos e gêneros textuais"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "3 Domínio da ortografia oficial"
+    - topico: 4
+      peso_estimado: 2
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "4 Domínio dos mecanismos de coesão textual: 4.1 emprego de elementos de referenciação, substituição e repetição, de conectores e de outros elementos de sequenciação textual; 4.2 emprego de tempos e modos verbais"
+    - topico: 5
+      peso_estimado: 3
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "5 Domínio da estrutura morfossintática do período: 5.1 emprego das classes de palavras; 5.2 relações de coordenação entre orações e entre termos da oração; 5.3 relações de subordinação entre orações e entre termos da oração; 5.4 emprego dos sinais de pontuação; 5.5 concordância verbal e nominal; 5.6 regência verbal e nominal; 5.7 emprego do sinal indicativo de crase; 5.8 colocação dos pronomes átonos"
+    - topico: 6
+      peso_estimado: 2
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "6 Reescrita de frases e parágrafos do texto: 6.1 significação das palavras; 6.2 substituição de palavras ou de trechos de texto; 6.3 reorganização da estrutura de orações e de períodos do texto; 6.4 reescrita de textos de diferentes gêneros e níveis de formalidade"
 
 base_normativa:
     - "Acordo Ortográfico da Língua Portuguesa vigente"
@@ -131,3 +149,17 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **12 itens** em P1 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Compreensão e interpretação de textos de gêneros variados | 3 | Sábado — Instrumentais e Distrito Federal |
+| **2** Reconhecimento de tipos e gêneros textuais | 1 | Sábado — Instrumentais e Distrito Federal |
+| **3** Domínio da ortografia oficial | 1 | Sábado — Instrumentais e Distrito Federal |
+| **4** Domínio dos mecanismos de coesão textual: 4.1 emprego de elementos de referenciação, substituição e repetiç... | 2 | Sábado — Instrumentais e Distrito Federal |
+| **5** Domínio da estrutura morfossintática do período: 5.1 emprego das classes de palavras; 5.2 relações de coord... | 3 | Sábado — Instrumentais e Distrito Federal |
+| **6** Reescrita de frases e parágrafos do texto: 6.1 significação das palavras; 6.2 substituição de palavras ou d... | 2 | Sábado — Instrumentais e Distrito Federal |

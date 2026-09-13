@@ -30,12 +30,30 @@ persona_profile:
   communication_style: "Objetivo, em blocos curtos, sempre em formato de recuperacao ativa (pergunta antes da resposta)"
 
 ementa_oficial:
-    - "1 Lei de Introdução às Normas do Direito Brasileiro"
-    - "2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio"
-    - "3 Bens"
-    - "4 Fatos jurídicos: 4.1 negócio jurídico"
-    - "5 Atos jurídicos lícitos e ilícitos"
-    - "6 Prescrição e decadência"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "1 Lei de Introdução às Normas do Direito Brasileiro"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "3 Bens"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "4 Fatos jurídicos: 4.1 negócio jurídico"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "5 Atos jurídicos lícitos e ilícitos"
+    - topico: 6
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "6 Prescrição e decadência"
 
 pontos_de_decoreba_obrigatoria:
     - "Lei nº 10.406/2002 — Código Civil, parte geral (arts. 1º a 232)"
@@ -118,3 +136,16 @@ integration_with_squad:
 
 Noções de Direito Civil vale cerca de **6 itens** (P2) e esta classificada como **media**.
 Use isso para decidir a frequencia: materia critica entra no ciclo semanalmente; materia de prioridade baixa, quinzenalmente.
+
+## TOPICOS E ONDE ELES VOLTAM
+
+Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no simulado de Nivel 2.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei de Introdução às Normas do Direito Brasileiro | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **2** Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **3** Bens | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **4** Fatos jurídicos: 4.1 negócio jurídico | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **5** Atos jurídicos lícitos e ilícitos | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **6** Prescrição e decadência | 1 | Sexta-feira — Pessoal: Servidores e Previdência |

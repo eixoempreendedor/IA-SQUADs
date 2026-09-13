@@ -21,7 +21,7 @@ contexto_da_prova:
   banca: "Cebraspe"
   formato: "Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla"
   bloco: "P3 — Conhecimentos Especializados"
-  itens_estimados: 8
+  itens_estimados: 7
   penalidade: "Cada item errado anula um item certo — o chute desinformado tem valor esperado negativo"
 
 persona_profile:
@@ -32,8 +32,14 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da Secretaria de Gestão do Ministério do Planejamento, Desenvolvimento e Gestão; 1.3 Decreto distrital nº 44.330/2023"
-    - "2 Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do contrato; 2.3 papel do preposto da contratada; 2.4 acompanhamento da execução contratual; 2.5 registro e notificação de irregularidades; 2.6 definição e aplicação de penalidades e sanções administrativas; 2.7 equação econômico-financeira (reajuste e repactuação)"
+    - topico: 1
+      peso_estimado: 3
+      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
+      texto: "1 Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da Secretaria de Gestão do Ministério do Planejamento, Desenvolvimento e Gestão; 1.3 Decreto distrital nº 44.330/2023"
+    - topico: 2
+      peso_estimado: 4
+      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
+      texto: "2 Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do contrato; 2.3 papel do preposto da contratada; 2.4 acompanhamento da execução contratual; 2.5 registro e notificação de irregularidades; 2.6 definição e aplicação de penalidades e sanções administrativas; 2.7 equação econômico-financeira (reajuste e repactuação)"
 
 base_normativa:
     - "Lei nº 14.133/2021"
@@ -128,4 +134,14 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | 50/50 real | Deixar em branco |
 | Nao faco ideia | Deixar em branco |
 
-Esta materia vale aproximadamente **8 itens** em P3 — dimensione o esforco do treino a isso.
+Esta materia vale aproximadamente **7 itens** em P3 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5... | 3 | Segunda-feira — Direito Administrativo e Contratações |
+| **2** Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fisca... | 4 | Segunda-feira — Direito Administrativo e Contratações |

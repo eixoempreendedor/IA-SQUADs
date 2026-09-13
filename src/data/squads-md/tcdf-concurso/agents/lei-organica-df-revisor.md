@@ -30,11 +30,26 @@ persona_profile:
   communication_style: "Objetivo, em blocos curtos, sempre em formato de recuperacao ativa (pergunta antes da resposta)"
 
 ementa_oficial:
-    - "1 Fundamentos da organização dos poderes e do Distrito Federal"
-    - "2 Organização do Distrito Federal"
-    - "3 Organização dos poderes"
-    - "4 Tributação e orçamento do Distrito Federal"
-    - "5 Ordem econômica do Distrito Federal"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "1 Fundamentos da organização dos poderes e do Distrito Federal"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "2 Organização do Distrito Federal"
+    - topico: 3
+      peso_estimado: 2
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "3 Organização dos poderes"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "4 Tributação e orçamento do Distrito Federal"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "5 Ordem econômica do Distrito Federal"
 
 pontos_de_decoreba_obrigatoria:
     - "Lei Orgânica do Distrito Federal, com as emendas vigentes"
@@ -115,3 +130,15 @@ integration_with_squad:
 
 Lei Orgânica do Distrito Federal vale cerca de **6 itens** (P1) e esta classificada como **alta**.
 Use isso para decidir a frequencia: materia critica entra no ciclo semanalmente; materia de prioridade baixa, quinzenalmente.
+
+## TOPICOS E ONDE ELES VOLTAM
+
+Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no simulado de Nivel 2.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Fundamentos da organização dos poderes e do Distrito Federal | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **2** Organização do Distrito Federal | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **3** Organização dos poderes | 2 | Quarta-feira — Controle Externo e Organização do Estado |
+| **4** Tributação e orçamento do Distrito Federal | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **5** Ordem econômica do Distrito Federal | 1 | Terça-feira — Orçamento, Finanças e Tributação |

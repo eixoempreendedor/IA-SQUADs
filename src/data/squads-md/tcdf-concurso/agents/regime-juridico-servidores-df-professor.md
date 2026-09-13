@@ -48,7 +48,10 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)"
+    - topico: 1
+      peso_estimado: 8
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)"
 
 base_normativa:
     - "Lei Complementar distrital nº 840/2011, com as alterações vigentes"
@@ -130,3 +133,13 @@ integration_with_squad:
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
 Esta materia esta classificada como **alta** (8 itens estimados em P3).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarq... | 8 | Sexta-feira — Pessoal: Servidores e Previdência |

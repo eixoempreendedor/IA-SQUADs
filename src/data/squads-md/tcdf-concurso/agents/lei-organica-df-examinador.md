@@ -32,11 +32,26 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Fundamentos da organização dos poderes e do Distrito Federal"
-    - "2 Organização do Distrito Federal"
-    - "3 Organização dos poderes"
-    - "4 Tributação e orçamento do Distrito Federal"
-    - "5 Ordem econômica do Distrito Federal"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "1 Fundamentos da organização dos poderes e do Distrito Federal"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "2 Organização do Distrito Federal"
+    - topico: 3
+      peso_estimado: 2
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      texto: "3 Organização dos poderes"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "4 Tributação e orçamento do Distrito Federal"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      texto: "5 Ordem econômica do Distrito Federal"
 
 base_normativa:
     - "Lei Orgânica do Distrito Federal, com as emendas vigentes"
@@ -129,3 +144,16 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **6 itens** em P1 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Fundamentos da organização dos poderes e do Distrito Federal | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **2** Organização do Distrito Federal | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **3** Organização dos poderes | 2 | Quarta-feira — Controle Externo e Organização do Estado |
+| **4** Tributação e orçamento do Distrito Federal | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **5** Ordem econômica do Distrito Federal | 1 | Terça-feira — Orçamento, Finanças e Tributação |

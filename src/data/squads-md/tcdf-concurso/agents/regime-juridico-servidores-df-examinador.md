@@ -32,7 +32,10 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)"
+    - topico: 1
+      peso_estimado: 8
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)"
 
 base_normativa:
     - "Lei Complementar distrital nº 840/2011, com as alterações vigentes"
@@ -126,3 +129,12 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **8 itens** em P3 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarq... | 8 | Sexta-feira — Pessoal: Servidores e Previdência |

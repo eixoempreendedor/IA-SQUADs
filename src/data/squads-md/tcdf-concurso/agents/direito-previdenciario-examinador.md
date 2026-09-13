@@ -32,11 +32,26 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios constitucionais"
-    - "2 Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991"
-    - "3 Regime próprio de previdência social dos servidores públicos – RPPS"
-    - "4 Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008"
-    - "5 Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei Complementar distrital nº 932/2017"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "1 Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios constitucionais"
+    - topico: 2
+      peso_estimado: 2
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "2 Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991"
+    - topico: 3
+      peso_estimado: 2
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "3 Regime próprio de previdência social dos servidores públicos – RPPS"
+    - topico: 4
+      peso_estimado: 2
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "4 Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      texto: "5 Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei Complementar distrital nº 932/2017"
 
 base_normativa:
     - "CF/88, arts. 40 e 194 a 204, com a EC 103/2019"
@@ -133,3 +148,16 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **8 itens** em P2 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios cons... | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **2** Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991 | 2 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **3** Regime próprio de previdência social dos servidores públicos – RPPS | 2 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **4** Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008 | 2 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **5** Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei... | 1 | Sexta-feira — Pessoal: Servidores e Previdência |

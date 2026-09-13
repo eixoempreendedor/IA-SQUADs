@@ -22,7 +22,7 @@ contexto_da_prova:
   cargo: "Analista Administrativo de Controle Externo — Área de Gestão — Serviços Técnico-Administrativos (ANACE)"
   banca: "Cebraspe"
   bloco: "P3 — Conhecimentos Especializados"
-  itens_estimados: 8
+  itens_estimados: 7
   prioridade: "alta"
   formato: "Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla"
   justificativa_de_peso: "Matéria autônoma e muito prática: fiscalização contratual, sanções e reequilíbrio econômico-financeiro, com a IN 5/2017 e o decreto distrital nomeados."
@@ -48,8 +48,14 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da Secretaria de Gestão do Ministério do Planejamento, Desenvolvimento e Gestão; 1.3 Decreto distrital nº 44.330/2023"
-    - "2 Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do contrato; 2.3 papel do preposto da contratada; 2.4 acompanhamento da execução contratual; 2.5 registro e notificação de irregularidades; 2.6 definição e aplicação de penalidades e sanções administrativas; 2.7 equação econômico-financeira (reajuste e repactuação)"
+    - topico: 1
+      peso_estimado: 3
+      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
+      texto: "1 Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da Secretaria de Gestão do Ministério do Planejamento, Desenvolvimento e Gestão; 1.3 Decreto distrital nº 44.330/2023"
+    - topico: 2
+      peso_estimado: 4
+      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
+      texto: "2 Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do contrato; 2.3 papel do preposto da contratada; 2.4 acompanhamento da execução contratual; 2.5 registro e notificação de irregularidades; 2.6 definição e aplicação de penalidades e sanções administrativas; 2.7 equação econômico-financeira (reajuste e repactuação)"
 
 base_normativa:
     - "Lei nº 14.133/2021"
@@ -133,4 +139,15 @@ integration_with_squad:
 | media | Conceitos centrais + questoes | 30-45 min |
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
-Esta materia esta classificada como **alta** (8 itens estimados em P3).
+Esta materia esta classificada como **alta** (7 itens estimados em P3).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5... | 3 | Segunda-feira — Direito Administrativo e Contratações |
+| **2** Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fisca... | 4 | Segunda-feira — Direito Administrativo e Contratações |

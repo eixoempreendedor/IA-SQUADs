@@ -22,7 +22,7 @@ contexto_da_prova:
   cargo: "Analista Administrativo de Controle Externo — Área de Gestão — Serviços Técnico-Administrativos (ANACE)"
   banca: "Cebraspe"
   bloco: "P2 — Conhecimentos Específicos"
-  itens_estimados: 6
+  itens_estimados: 5
   prioridade: "alta"
   formato: "Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla"
   justificativa_de_peso: "Matéria nova, com Excel avançado, Power Query e IA generativa nomeados no edital. Pouquíssimos candidatos estudam isso — é diferencial puro."
@@ -48,11 +48,26 @@ persona:
     - "Lei seca sem compreensao nao se sustenta ate o dia da prova"
 
 ementa_oficial:
-    - "1 Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e qualitativos); 1.2 produtos da análise de dados (base de dados, relatórios, planilhas e dashboards)"
-    - "2 Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas de tendência central (média, mediana e moda) e medidas de dispersão (variância e desvio-padrão) voltadas à identificação de anomalias; 2.2 identificação de outliers e análise de séries históricas"
-    - "3 Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão, histograma); 3.2 boas práticas para construção de gráficos; 3.3 princípios de narrativa com dados"
-    - "4 Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de saída; encadeamento de prompt); 4.2 vieses cognitivos; 4.3 ética no uso de dados e inteligência artificial"
-    - "5 Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power Query para extração e tratamento de dados); 5.2 fórmulas lógicas, financeiras e de busca; 5.3 tabelas dinâmicas e tratamento de grandes bases relacionais"
+    - topico: 1
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "1 Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e qualitativos); 1.2 produtos da análise de dados (base de dados, relatórios, planilhas e dashboards)"
+    - topico: 2
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "2 Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas de tendência central (média, mediana e moda) e medidas de dispersão (variância e desvio-padrão) voltadas à identificação de anomalias; 2.2 identificação de outliers e análise de séries históricas"
+    - topico: 3
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "3 Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão, histograma); 3.2 boas práticas para construção de gráficos; 3.3 princípios de narrativa com dados"
+    - topico: 4
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "4 Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de saída; encadeamento de prompt); 4.2 vieses cognitivos; 4.3 ética no uso de dados e inteligência artificial"
+    - topico: 5
+      peso_estimado: 1
+      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      texto: "5 Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power Query para extração e tratamento de dados); 5.2 fórmulas lógicas, financeiras e de busca; 5.3 tabelas dinâmicas e tratamento de grandes bases relacionais"
 
 base_normativa:
     - "Documentação do Microsoft Excel (Microsoft 365) e do Power Query"
@@ -136,4 +151,18 @@ integration_with_squad:
 | media | Conceitos centrais + questoes | 30-45 min |
 | baixa | Resumo e varredura de questoes | 15-25 min |
 
-Esta materia esta classificada como **alta** (6 itens estimados em P2).
+Esta materia esta classificada como **alta** (5 itens estimados em P2).
+
+## MAPA DE TOPICOS
+
+Cada linha e uma unidade de Nivel 1: estudou o topico, resolva 20 questoes dele e so avance com 90%.
+A ultima coluna diz em que dia aquele topico volta no simulado de Nivel 2 — a mesma materia pode aparecer
+em dias diferentes, porque os grupos sao formados por topico, nao por materia.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e quali... | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **2** Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas... | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **3** Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão,... | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **4** Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de sa... | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **5** Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power... | 1 | Quinta-feira — Governança, Gestão e Dados |

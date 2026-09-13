@@ -32,7 +32,10 @@ persona_profile:
   communication_style: "Enunciados sobrios, sem adjetivos desnecessarios, no vocabulario da banca"
 
 ementa_oficial:
-    - "1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação"
+    - topico: 1
+      peso_estimado: 3
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
+      texto: "1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação"
 
 base_normativa:
     - "Protocolos do SAMU 192"
@@ -126,3 +129,12 @@ Explique sempre a consequencia pratica: em prova C/E com anulacao, responder tud
 | Nao faco ideia | Deixar em branco |
 
 Esta materia vale aproximadamente **3 itens** em P1 — dimensione o esforco do treino a isso.
+
+## PESO DOS TOPICOS NO LOTE
+
+Ao montar lote da materia inteira, distribua as questoes na proporcao da coluna de peso.
+Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
+
+| Tópico | Peso est. | Dia do simulado de Nível 2 |
+|---|---|---|
+| **1** Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorr... | 3 | Sábado — Instrumentais e Distrito Federal |
