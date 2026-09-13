@@ -44,11 +44,11 @@ ementa_oficial:
       texto: "3 Organização dos poderes"
     - topico: 4
       peso_estimado: 1
-      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
       texto: "4 Tributação e orçamento do Distrito Federal"
     - topico: 5
       peso_estimado: 1
-      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
       texto: "5 Ordem econômica do Distrito Federal"
 
 pontos_de_decoreba_obrigatoria:
@@ -140,5 +140,5 @@ Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no si
 | **1** Fundamentos da organização dos poderes e do Distrito Federal | 1 | Quarta-feira — Controle Externo e Organização do Estado |
 | **2** Organização do Distrito Federal | 1 | Quarta-feira — Controle Externo e Organização do Estado |
 | **3** Organização dos poderes | 2 | Quarta-feira — Controle Externo e Organização do Estado |
-| **4** Tributação e orçamento do Distrito Federal | 1 | Terça-feira — Orçamento, Finanças e Tributação |
-| **5** Ordem econômica do Distrito Federal | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **4** Tributação e orçamento do Distrito Federal | 1 | Quarta-feira — Controle Externo e Organização do Estado |
+| **5** Ordem econômica do Distrito Federal | 1 | Quarta-feira — Controle Externo e Organização do Estado |

@@ -10,7 +10,7 @@ Fonte das questoes: **Gran Cursos (banco de questoes)**.
 
 O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e registrado ao lado, porque é ele que projeta a nota real: 90% bruto em um lote equivale a 80% líquido na régua da prova.
 
-**Como os grupos sao formados:** Os grupos são formados por TÓPICOS, não por matérias. Uma matéria pode aparecer em mais de um dia quando o edital espalha o mesmo assunto por programas diferentes (Direito Administrativo aparece em quatro dias, Constitucional e LODF em dois). Cada tópico do edital pertence a exatamente um grupo — sem sobreposição e sem lacuna.
+**Como os grupos sao formados:** Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é repartida entre dias. Os grupos reúnem matérias que compartilham norma ou vocabulário, de modo que estudar uma adianta a outra. Dentro do dia, a unidade de Nível 1 continua sendo o tópico numerado do edital.
 
 ## Os tres niveis
 
@@ -24,25 +24,25 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 
 | Dia | Grupo | Peso est. | Materias (topicos) |
 |---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** | 25 | Direito Administrativo (1, 2, 3, 5, 6, 7, 8, 9, 11, 12) · Gestão de Contratos (1, 2) |
-| Terça-feira | **Orçamento, Finanças e Tributação** | 21 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) · Noções de Direito Tributário (1, 2, 3) · Lei Orgânica do Distrito Federal (4, 5) |
-| Quarta-feira | **Controle Externo e Organização do Estado** | 26 | Direito Constitucional (1, 2, 3, 4, 6, 7, 8, 9) · Lei Orgânica do TCDF e Regimento Interno (1, 2) · Lei Orgânica do Distrito Federal (1, 2, 3) · Direito Administrativo (10) |
-| Quinta-feira | **Governança, Gestão e Dados** | 23 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9) · Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) · Direito Administrativo (13, 14) · Raciocínio Lógico e Matemática Financeira (5) |
-| Sexta-feira | **Pessoal: Servidores e Previdência** | 27 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1) · Direito Previdenciário (1, 2, 3, 4, 5) · Noções de Direito Civil (1, 2, 3, 4, 5, 6) · Direito Administrativo (4) · Direito Constitucional (5) |
-| Sábado | **Instrumentais e Distrito Federal** | 28 | Língua Portuguesa (1, 2, 3, 4, 5, 6) · Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 6, 7) · Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3) · Noções de Primeiros Socorros (1) |
+| Segunda-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) · Gestão de Contratos (1, 2) |
+| Terça-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) · Noções de Direito Tributário (1, 2, 3) |
+| Quarta-feira | **Controle Externo e Organização do Estado** | 28 | Direito Constitucional (1, 2, 3, 4, 5, 6, 7, 8, 9) · Lei Orgânica do TCDF e Regimento Interno (1, 2) · Lei Orgânica do Distrito Federal (1, 2, 3, 4, 5) |
+| Quinta-feira | **Gestão e Dados** | 20 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9) · Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) |
+| Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1) · Direito Previdenciário (1, 2, 3, 4, 5) · Noções de Direito Civil (1, 2, 3, 4, 5, 6) |
+| Sábado | **Instrumentais e Distrito Federal** | 29 | Língua Portuguesa (1, 2, 3, 4, 5, 6) · Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 5, 6, 7) · Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3) · Noções de Primeiros Socorros (1) |
 | Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |
 
 ## Cada grupo em detalhe
 
-### Segunda-feira · Direito Administrativo e Contratações — 25 itens estimados
+### Segunda-feira · Direito Administrativo e Contratações — 32 itens estimados
 
-*O núcleo do Direito Administrativo (ato, poderes, princípios, organização, responsabilidade, processo) mais tudo que é contratação: o tópico 12 de DA e a matéria Gestão de Contratos citam a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023. Estudar separado é ler a mesma lei duas vezes.*
+*A maior matéria do edital inteira, no mesmo dia da matéria que é a continuação dela: Gestão de Contratos detalha o tópico 12 de Direito Administrativo, com a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023. É o dia mais pesado da semana — por isso vem na segunda.*
 
 | Materia | Topicos | Peso est. | Questoes no simulado |
 |---|---|---|---|
-| Direito Administrativo | 1, 2, 3, 5, 6, 7, 8, 9, 11, 12 | 18 | **36** |
-| Gestão de Contratos | 1, 2 | 7 | **14** |
-| **Total** | — | **25** | **50** |
+| Direito Administrativo | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 | 25 | **39** |
+| Gestão de Contratos | 1, 2 | 7 | **11** |
+| **Total** | — | **32** | **50** |
 
 <details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>
 
@@ -51,28 +51,31 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 | Direito Administrativo | 1 | Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos | 1 |
 | Direito Administrativo | 2 | Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes | 1 |
 | Direito Administrativo | 3 | Ato administrativo: 3.1 conceito, requisitos, atributos, classificação e espécies; 3.2 extinção do ato administrativo... | 3 |
+| Direito Administrativo | 4 | Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, emprego e função... | 3 |
 | Direito Administrativo | 5 | Poderes da administração pública: 5.1 hierárquico, disciplinar, regulamentar e de polícia; 5.2 uso e abuso do poder | 2 |
 | Direito Administrativo | 6 | Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expressos e implícitos da administração pública | 2 |
 | Direito Administrativo | 7 | Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 responsabilidade por ato comissivo; 7.3 responsabilidad... | 2 |
 | Direito Administrativo | 8 | Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 classificação; 8.4 princípios; 8.5 formas de presta... | 1 |
 | Direito Administrativo | 9 | Organização administrativa: 9.1 autarquias, fundações, empresas públicas e sociedades de economia mista; 9.2 entidade... | 2 |
+| Direito Administrativo | 10 | Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicial; 10.3 co... | 2 |
 | Direito Administrativo | 11 | Lei federal nº 9.784/1999 e suas alterações (processo administrativo), aplicável ao Distrito Federal por força da Lei... | 1 |
 | Direito Administrativo | 12 | Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/2021; 12.2 contratos administrativos; 12.3 Decreto... | 3 |
+| Direito Administrativo | 13 | Lei nº 12.527/2011 (Lei de Acesso à Informação) | 1 |
+| Direito Administrativo | 14 | Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 |
 | Gestão de Contratos | 1 | Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da S... | 3 |
 | Gestão de Contratos | 2 | Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do... | 4 |
 
 </details>
 
-### Terça-feira · Orçamento, Finanças e Tributação — 21 itens estimados
+### Terça-feira · Orçamento e Tributação — 19 itens estimados
 
-*O caminho do dinheiro público: AFO inteira, o tópico 4 da LODF (tributação e orçamento do DF) e todo o Direito Tributário, que no recorte do edital para na receita — exatamente onde AFO começa.*
+*O caminho do dinheiro público: AFO (Lei 4.320, LRF e o Decreto distrital 32.598/2010) com o Direito Tributário, que no recorte do edital para na receita — exatamente onde a receita pública de AFO começa. É o dia mais leve, de propósito: serve de respiro entre segunda e quarta.*
 
 | Materia | Topicos | Peso est. | Questoes no simulado |
 |---|---|---|---|
-| Administração Financeira e Orçamentária | 1, 2, 3, 4, 5, 6, 7, 8, 9 | 15 | **36** |
-| Noções de Direito Tributário | 1, 2, 3 | 4 | **9** |
-| Lei Orgânica do Distrito Federal | 4, 5 | 2 | **5** |
-| **Total** | — | **21** | **50** |
+| Administração Financeira e Orçamentária | 1, 2, 3, 4, 5, 6, 7, 8, 9 | 15 | **39** |
+| Noções de Direito Tributário | 1, 2, 3 | 4 | **11** |
+| **Total** | — | **19** | **50** |
 
 <details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>
 
@@ -90,22 +93,19 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 | Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 |
 | Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributa... | 2 |
 | Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7... | 1 |
-| Lei Orgânica do Distrito Federal | 4 | Tributação e orçamento do Distrito Federal | 1 |
-| Lei Orgânica do Distrito Federal | 5 | Ordem econômica do Distrito Federal | 1 |
 
 </details>
 
-### Quarta-feira · Controle Externo e Organização do Estado — 26 itens estimados
+### Quarta-feira · Controle Externo e Organização do Estado — 28 itens estimados
 
-*O dia do cargo: a fiscalização contábil, financeira e orçamentária (Constitucional 7.4), o tribunal que a exerce (Lei Orgânica e Regimento do TCDF), o controle da administração e a improbidade (DA 10) e a organização dos poderes na CF e na LODF.*
+*O dia do cargo: a fiscalização contábil, financeira e orçamentária da CF (Constitucional, tópico 7.4), o tribunal que a exerce (Lei Orgânica e Regimento do TCDF) e a organização dos poderes no DF (LODF). As três normas tratam da mesma estrutura, em três alturas.*
 
 | Materia | Topicos | Peso est. | Questoes no simulado |
 |---|---|---|---|
-| Direito Constitucional | 1, 2, 3, 4, 6, 7, 8, 9 | 10 | **19** |
-| Lei Orgânica do TCDF e Regimento Interno | 1, 2 | 10 | **19** |
-| Lei Orgânica do Distrito Federal | 1, 2, 3 | 4 | **8** |
-| Direito Administrativo | 10 | 2 | **4** |
-| **Total** | — | **26** | **50** |
+| Direito Constitucional | 1, 2, 3, 4, 5, 6, 7, 8, 9 | 12 | **21** |
+| Lei Orgânica do TCDF e Regimento Interno | 1, 2 | 10 | **18** |
+| Lei Orgânica do Distrito Federal | 1, 2, 3, 4, 5 | 6 | **11** |
+| **Total** | — | **28** | **50** |
 
 <details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>
 
@@ -115,6 +115,7 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 | Direito Constitucional | 2 | Aplicabilidade das normas constitucionais: 2.1 normas de eficácia plena, contida e limitada; normas programáticas; 2.... | 1 |
 | Direito Constitucional | 3 | Direitos e garantias fundamentais: 3.1 direitos e deveres individuais e coletivos, direitos sociais, direitos de naci... | 2 |
 | Direito Constitucional | 4 | Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Federal e muni... | 1 |
+| Direito Constitucional | 5 | Administração pública: 5.1 disposições gerais; 5.2 servidores públicos | 2 |
 | Direito Constitucional | 6 | Poder Executivo: 6.1 atribuições e responsabilidades do presidente da República | 1 |
 | Direito Constitucional | 7 | Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições; 7.3 processo legislativo; 7.4 fiscalização contábi... | 2 |
 | Direito Constitucional | 8 | Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judiciário | 1 |
@@ -124,21 +125,20 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 | Lei Orgânica do Distrito Federal | 1 | Fundamentos da organização dos poderes e do Distrito Federal | 1 |
 | Lei Orgânica do Distrito Federal | 2 | Organização do Distrito Federal | 1 |
 | Lei Orgânica do Distrito Federal | 3 | Organização dos poderes | 2 |
-| Direito Administrativo | 10 | Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicial; 10.3 co... | 2 |
+| Lei Orgânica do Distrito Federal | 4 | Tributação e orçamento do Distrito Federal | 1 |
+| Lei Orgânica do Distrito Federal | 5 | Ordem econômica do Distrito Federal | 1 |
 
 </details>
 
-### Quinta-feira · Governança, Gestão e Dados — 23 itens estimados
+### Quinta-feira · Gestão e Dados — 20 itens estimados
 
-*Administração Geral e Pública inteira (governança, ferramentas, processos, competências, projetos) com o ferramental que a sustenta: análise de dados, Excel e IA, mais transparência e proteção de dados (LAI e LGPD, tópicos 13 e 14 de DA) e a probabilidade de RLM, que é a base da estatística descritiva.*
+*Administração Geral e Pública já traz governança, ferramentas, modelagem de processos, competências e projetos num programa só; Análise de Dados é o ferramental que sustenta tudo isso — estatística, Excel, visualização e IA aplicadas à gestão.*
 
 | Materia | Topicos | Peso est. | Questoes no simulado |
 |---|---|---|---|
-| Administração Geral e Pública | 1, 2, 3, 4, 5, 6, 7, 8, 9 | 15 | **33** |
-| Análise de Dados, Noções de Estatística e Inteligência Artificial | 1, 2, 3, 4, 5 | 5 | **11** |
-| Direito Administrativo | 13, 14 | 2 | **4** |
-| Raciocínio Lógico e Matemática Financeira | 5 | 1 | **2** |
-| **Total** | — | **23** | **50** |
+| Administração Geral e Pública | 1, 2, 3, 4, 5, 6, 7, 8, 9 | 15 | **38** |
+| Análise de Dados, Noções de Estatística e Inteligência Artificial | 1, 2, 3, 4, 5 | 5 | **12** |
+| **Total** | — | **20** | **50** |
 
 <details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>
 
@@ -158,24 +158,19 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 | Análise de Dados, Noções de Estatística e Inteligência Artificial | 3 | Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão, histograma... | 1 |
 | Análise de Dados, Noções de Estatística e Inteligência Artificial | 4 | Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de saída; encad... | 1 |
 | Análise de Dados, Noções de Estatística e Inteligência Artificial | 5 | Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power Query para... | 1 |
-| Direito Administrativo | 13 | Lei nº 12.527/2011 (Lei de Acesso à Informação) | 1 |
-| Direito Administrativo | 14 | Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 |
-| Raciocínio Lógico e Matemática Financeira | 5 | Princípios de contagem e probabilidade | 1 |
 
 </details>
 
-### Sexta-feira · Pessoal: Servidores e Previdência — 27 itens estimados
+### Sexta-feira · Servidores, Previdência e Direito Civil — 22 itens estimados
 
-*O mesmo servidor visto por quatro normas: agentes públicos na CF (Constitucional 5) e no Direito Administrativo (DA 4), o estatuto distrital (LC 840/2011), a aposentadoria (Previdenciário) e a parte geral do Código Civil, que dá a base de pessoas, prazos, prescrição e decadência usada nos três.*
+*O mesmo servidor em dois momentos — o estatuto distrital (LC 840/2011) e a aposentadoria (Previdenciário) — mais a parte geral do Código Civil, que dá a base de pessoas, prazos, prescrição e decadência usada nos dois.*
 
 | Materia | Topicos | Peso est. | Questoes no simulado |
 |---|---|---|---|
-| Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | 1 | 8 | **15** |
-| Direito Previdenciário | 1, 2, 3, 4, 5 | 8 | **15** |
-| Noções de Direito Civil | 1, 2, 3, 4, 5, 6 | 6 | **11** |
-| Direito Administrativo | 4 | 3 | **5** |
-| Direito Constitucional | 5 | 2 | **4** |
-| **Total** | — | **27** | **50** |
+| Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | 1 | 8 | **18** |
+| Direito Previdenciário | 1, 2, 3, 4, 5 | 8 | **18** |
+| Noções de Direito Civil | 1, 2, 3, 4, 5, 6 | 6 | **14** |
+| **Total** | — | **22** | **50** |
 
 <details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>
 
@@ -193,22 +188,20 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 | Noções de Direito Civil | 4 | Fatos jurídicos: 4.1 negócio jurídico | 1 |
 | Noções de Direito Civil | 5 | Atos jurídicos lícitos e ilícitos | 1 |
 | Noções de Direito Civil | 6 | Prescrição e decadência | 1 |
-| Direito Administrativo | 4 | Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, emprego e função... | 3 |
-| Direito Constitucional | 5 | Administração pública: 5.1 disposições gerais; 5.2 servidores públicos | 2 |
 
 </details>
 
-### Sábado · Instrumentais e Distrito Federal — 28 itens estimados
+### Sábado · Instrumentais e Distrito Federal — 29 itens estimados
 
-*As matérias que se treinam por constância, não por volume: Português e Raciocínio Lógico, mais os dois conteúdos de varredura do bloco básico (Distrito Federal e Primeiros Socorros). Vale 28 itens — mais do que qualquer matéria isolada do edital.*
+*Todo o bloco de conhecimentos básicos que resta: Português e Raciocínio Lógico, que se treinam por constância, mais os dois conteúdos de varredura (Distrito Federal e Primeiros Socorros). Vale 29 itens — mais do que qualquer matéria isolada do edital, exceto Direito Administrativo.*
 
 | Materia | Topicos | Peso est. | Questoes no simulado |
 |---|---|---|---|
 | Língua Portuguesa | 1, 2, 3, 4, 5, 6 | 12 | **21** |
-| Raciocínio Lógico e Matemática Financeira | 1, 2, 3, 4, 6, 7 | 9 | **16** |
+| Raciocínio Lógico e Matemática Financeira | 1, 2, 3, 4, 5, 6, 7 | 10 | **17** |
 | Conhecimentos do Distrito Federal e Política para Mulheres | 1, 2, 3 | 4 | **7** |
-| Noções de Primeiros Socorros | 1 | 3 | **6** |
-| **Total** | — | **28** | **50** |
+| Noções de Primeiros Socorros | 1 | 3 | **5** |
+| **Total** | — | **29** | **50** |
 
 <details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>
 
@@ -224,6 +217,7 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 | Raciocínio Lógico e Matemática Financeira | 2 | Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões | 1 |
 | Raciocínio Lógico e Matemática Financeira | 3 | Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equivalências; 3.... | 3 |
 | Raciocínio Lógico e Matemática Financeira | 4 | Lógica de primeira ordem | 1 |
+| Raciocínio Lógico e Matemática Financeira | 5 | Princípios de contagem e probabilidade | 1 |
 | Raciocínio Lógico e Matemática Financeira | 6 | Operações com conjuntos | 1 |
 | Raciocínio Lógico e Matemática Financeira | 7 | Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nominal, efetiv... | 2 |
 | Conhecimentos do Distrito Federal e Política para Mulheres | 1 | Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural, política... | 2 |

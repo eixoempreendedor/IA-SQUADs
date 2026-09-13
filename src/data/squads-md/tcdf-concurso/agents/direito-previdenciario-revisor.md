@@ -32,23 +32,23 @@ persona_profile:
 ementa_oficial:
     - topico: 1
       peso_estimado: 1
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "1 Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios constitucionais"
     - topico: 2
       peso_estimado: 2
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "2 Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991"
     - topico: 3
       peso_estimado: 2
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "3 Regime próprio de previdência social dos servidores públicos – RPPS"
     - topico: 4
       peso_estimado: 2
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "4 Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008"
     - topico: 5
       peso_estimado: 1
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "5 Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei Complementar distrital nº 932/2017"
 
 pontos_de_decoreba_obrigatoria:
@@ -141,8 +141,8 @@ Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no si
 
 | Tópico | Peso est. | Dia do simulado de Nível 2 |
 |---|---|---|
-| **1** Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios cons... | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **2** Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991 | 2 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **3** Regime próprio de previdência social dos servidores públicos – RPPS | 2 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **4** Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008 | 2 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **5** Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei... | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **1** Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios cons... | 1 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **2** Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991 | 2 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **3** Regime próprio de previdência social dos servidores públicos – RPPS | 2 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **4** Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008 | 2 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **5** Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei... | 1 | Sexta-feira — Servidores, Previdência e Direito Civil |

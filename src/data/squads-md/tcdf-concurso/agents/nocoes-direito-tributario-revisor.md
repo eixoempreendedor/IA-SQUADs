@@ -32,15 +32,15 @@ persona_profile:
 ementa_oficial:
     - topico: 1
       peso_estimado: 1
-      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      estuda_em: "Terça-feira — Orçamento e Tributação"
       texto: "1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário"
     - topico: 2
       peso_estimado: 2
-      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      estuda_em: "Terça-feira — Orçamento e Tributação"
       texto: "2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias"
     - topico: 3
       peso_estimado: 1
-      estuda_em: "Terça-feira — Orçamento, Finanças e Tributação"
+      estuda_em: "Terça-feira — Orçamento e Tributação"
       texto: "3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições"
 
 pontos_de_decoreba_obrigatoria:
@@ -131,6 +131,6 @@ Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no si
 
 | Tópico | Peso est. | Dia do simulado de Nível 2 |
 |---|---|---|
-| **1** Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | Terça-feira — Orçamento, Finanças e Tributação |
-| **2** Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder... | 2 | Terça-feira — Orçamento, Finanças e Tributação |
-| **3** Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melh... | 1 | Terça-feira — Orçamento, Finanças e Tributação |
+| **1** Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | Terça-feira — Orçamento e Tributação |
+| **2** Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder... | 2 | Terça-feira — Orçamento e Tributação |
+| **3** Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melh... | 1 | Terça-feira — Orçamento e Tributação |

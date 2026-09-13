@@ -279,12 +279,12 @@ integration_with_squad:
 
 | Dia | Grupo | Itens est. | Materias (topicos) |
 |---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** | 25 | Direito Administrativo (1, 2, 3, 5, 6, 7, 8, 9, 11, 12), Gestão de Contratos (1, 2) |
-| Terça-feira | **Orçamento, Finanças e Tributação** | 21 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9), Noções de Direito Tributário (1, 2, 3), Lei Orgânica do Distrito Federal (4, 5) |
-| Quarta-feira | **Controle Externo e Organização do Estado** | 26 | Direito Constitucional (1, 2, 3, 4, 6, 7, 8, 9), Lei Orgânica do TCDF e Regimento Interno (1, 2), Lei Orgânica do Distrito Federal (1, 2, 3), Direito Administrativo (10) |
-| Quinta-feira | **Governança, Gestão e Dados** | 23 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9), Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5), Direito Administrativo (13, 14), Raciocínio Lógico e Matemática Financeira (5) |
-| Sexta-feira | **Pessoal: Servidores e Previdência** | 27 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1), Direito Previdenciário (1, 2, 3, 4, 5), Noções de Direito Civil (1, 2, 3, 4, 5, 6), Direito Administrativo (4), Direito Constitucional (5) |
-| Sábado | **Instrumentais e Distrito Federal** | 28 | Língua Portuguesa (1, 2, 3, 4, 5, 6), Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 6, 7), Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3), Noções de Primeiros Socorros (1) |
+| Segunda-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14), Gestão de Contratos (1, 2) |
+| Terça-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9), Noções de Direito Tributário (1, 2, 3) |
+| Quarta-feira | **Controle Externo e Organização do Estado** | 28 | Direito Constitucional (1, 2, 3, 4, 5, 6, 7, 8, 9), Lei Orgânica do TCDF e Regimento Interno (1, 2), Lei Orgânica do Distrito Federal (1, 2, 3, 4, 5) |
+| Quinta-feira | **Gestão e Dados** | 20 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9), Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) |
+| Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1), Direito Previdenciário (1, 2, 3, 4, 5), Noções de Direito Civil (1, 2, 3, 4, 5, 6) |
+| Sábado | **Instrumentais e Distrito Federal** | 29 | Língua Portuguesa (1, 2, 3, 4, 5, 6), Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 5, 6, 7), Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3), Noções de Primeiros Socorros (1) |
 | Domingo | **Nivel 3 — simulado geral (200 questoes)** | pool vencido | Todas as materias vencidas |
 
 ## PROTOCOLO DE DIAGNOSTICO

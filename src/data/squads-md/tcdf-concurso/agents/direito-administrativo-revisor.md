@@ -44,7 +44,7 @@ ementa_oficial:
       texto: "3 Ato administrativo: 3.1 conceito, requisitos, atributos, classificação e espécies; 3.2 extinção do ato administrativo: cassação, anulação, revogação e convalidação; 3.3 decadência administrativa"
     - topico: 4
       peso_estimado: 3
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
       texto: "4 Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, emprego e função pública (provimento, vacância, efetividade, estabilidade e vitaliciedade); 4.5 remuneração; 4.6 direitos e deveres; 4.7 responsabilidades; 4.8 sindicância e processo administrativo disciplinar"
     - topico: 5
       peso_estimado: 2
@@ -68,7 +68,7 @@ ementa_oficial:
       texto: "9 Organização administrativa: 9.1 autarquias, fundações, empresas públicas e sociedades de economia mista; 9.2 entidades paraestatais e terceiro setor (serviços sociais autônomos, entidades de apoio, organizações sociais, organizações da sociedade civil de interesse público)"
     - topico: 10
       peso_estimado: 2
-      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
+      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
       texto: "10 Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicial; 10.3 controle legislativo; 10.4 improbidade administrativa: Lei federal nº 8.429/1992"
     - topico: 11
       peso_estimado: 1
@@ -80,11 +80,11 @@ ementa_oficial:
       texto: "12 Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/2021; 12.2 contratos administrativos; 12.3 Decreto distrital nº 44.330/2023"
     - topico: 13
       peso_estimado: 1
-      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
       texto: "13 Lei nº 12.527/2011 (Lei de Acesso à Informação)"
     - topico: 14
       peso_estimado: 1
-      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
       texto: "14 Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD)"
 
 pontos_de_decoreba_obrigatoria:
@@ -181,14 +181,14 @@ Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no si
 | **1** Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos | 1 | Segunda-feira — Direito Administrativo e Contratações |
 | **2** Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes | 1 | Segunda-feira — Direito Administrativo e Contratações |
 | **3** Ato administrativo: 3.1 conceito, requisitos, atributos, classificação e espécies; 3.2 extinção do ato admi... | 3 | Segunda-feira — Direito Administrativo e Contratações |
-| **4** Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, empreg... | 3 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **4** Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, empreg... | 3 | Segunda-feira — Direito Administrativo e Contratações |
 | **5** Poderes da administração pública: 5.1 hierárquico, disciplinar, regulamentar e de polícia; 5.2 uso e abuso... | 2 | Segunda-feira — Direito Administrativo e Contratações |
 | **6** Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expressos e implícitos da administração pública | 2 | Segunda-feira — Direito Administrativo e Contratações |
 | **7** Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 responsabilidade por ato comissivo; 7.3 respo... | 2 | Segunda-feira — Direito Administrativo e Contratações |
 | **8** Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 classificação; 8.4 princípios; 8.5 formas... | 1 | Segunda-feira — Direito Administrativo e Contratações |
 | **9** Organização administrativa: 9.1 autarquias, fundações, empresas públicas e sociedades de economia mista; 9.... | 2 | Segunda-feira — Direito Administrativo e Contratações |
-| **10** Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicia... | 2 | Quarta-feira — Controle Externo e Organização do Estado |
+| **10** Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicia... | 2 | Segunda-feira — Direito Administrativo e Contratações |
 | **11** Lei federal nº 9.784/1999 e suas alterações (processo administrativo), aplicável ao Distrito Federal por fo... | 1 | Segunda-feira — Direito Administrativo e Contratações |
 | **12** Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/2021; 12.2 contratos administrativos; 12... | 3 | Segunda-feira — Direito Administrativo e Contratações |
-| **13** Lei nº 12.527/2011 (Lei de Acesso à Informação) | 1 | Quinta-feira — Governança, Gestão e Dados |
-| **14** Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **13** Lei nº 12.527/2011 (Lei de Acesso à Informação) | 1 | Segunda-feira — Direito Administrativo e Contratações |
+| **14** Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 | Segunda-feira — Direito Administrativo e Contratações |

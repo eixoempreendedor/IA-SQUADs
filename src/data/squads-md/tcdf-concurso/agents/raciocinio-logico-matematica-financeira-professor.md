@@ -66,7 +66,7 @@ ementa_oficial:
       texto: "4 Lógica de primeira ordem"
     - topico: 5
       peso_estimado: 1
-      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      estuda_em: "Sábado — Instrumentais e Distrito Federal"
       texto: "5 Princípios de contagem e probabilidade"
     - topico: 6
       peso_estimado: 1
@@ -170,6 +170,6 @@ em dias diferentes, porque os grupos sao formados por topico, nao por materia.
 | **2** Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões | 1 | Sábado — Instrumentais e Distrito Federal |
 | **3** Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equival... | 3 | Sábado — Instrumentais e Distrito Federal |
 | **4** Lógica de primeira ordem | 1 | Sábado — Instrumentais e Distrito Federal |
-| **5** Princípios de contagem e probabilidade | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **5** Princípios de contagem e probabilidade | 1 | Sábado — Instrumentais e Distrito Federal |
 | **6** Operações com conjuntos | 1 | Sábado — Instrumentais e Distrito Federal |
 | **7** Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nomin... | 2 | Sábado — Instrumentais e Distrito Federal |

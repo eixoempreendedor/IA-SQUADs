@@ -32,7 +32,7 @@ persona_profile:
 ementa_oficial:
     - topico: 1
       peso_estimado: 8
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)"
 
 pontos_de_decoreba_obrigatoria:
@@ -122,4 +122,4 @@ Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no si
 
 | Tópico | Peso est. | Dia do simulado de Nível 2 |
 |---|---|---|
-| **1** Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarq... | 8 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **1** Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarq... | 8 | Sexta-feira — Servidores, Previdência e Direito Civil |

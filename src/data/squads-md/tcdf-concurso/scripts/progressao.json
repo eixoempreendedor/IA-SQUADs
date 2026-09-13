@@ -60,14 +60,14 @@
       "nivel_2": "50 questoes em ate 70 minutos",
       "nivel_3": "200 questoes em ate 4 horas (ritmo real de prova)"
     },
-    "estrutura_dos_grupos": "Os grupos são formados por TÓPICOS, não por matérias. Uma matéria pode aparecer em mais de um dia quando o edital espalha o mesmo assunto por programas diferentes (Direito Administrativo aparece em quatro dias, Constitucional e LODF em dois). Cada tópico do edital pertence a exatamente um grupo — sem sobreposição e sem lacuna."
+    "estrutura_dos_grupos": "Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é repartida entre dias. Os grupos reúnem matérias que compartilham norma ou vocabulário, de modo que estudar uma adianta a outra. Dentro do dia, a unidade de Nível 1 continua sendo o tópico numerado do edital."
   },
   "grupos": [
     {
       "id": "g1-administrativo-contratacoes",
       "dia": "Segunda-feira",
       "nome": "Direito Administrativo e Contratações",
-      "tese": "O núcleo do Direito Administrativo (ato, poderes, princípios, organização, responsabilidade, processo) mais tudo que é contratação: o tópico 12 de DA e a matéria Gestão de Contratos citam a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023. Estudar separado é ler a mesma lei duas vezes.",
+      "tese": "A maior matéria do edital inteira, no mesmo dia da matéria que é a continuação dela: Gestão de Contratos detalha o tópico 12 de Direito Administrativo, com a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023. É o dia mais pesado da semana — por isso vem na segunda.",
       "materias": [
         {
           "id": "direito-administrativo",
@@ -75,15 +75,19 @@
             "1",
             "2",
             "3",
+            "4",
             "5",
             "6",
             "7",
             "8",
             "9",
+            "10",
             "11",
-            "12"
+            "12",
+            "13",
+            "14"
           ],
-          "questoes_n2": 36
+          "questoes_n2": 39
         },
         {
           "id": "gestao-de-contratos",
@@ -91,15 +95,15 @@
             "1",
             "2"
           ],
-          "questoes_n2": 14
+          "questoes_n2": 11
         }
       ]
     },
     {
-      "id": "g2-orcamento-financas-tributacao",
+      "id": "g2-orcamento-tributacao",
       "dia": "Terça-feira",
-      "nome": "Orçamento, Finanças e Tributação",
-      "tese": "O caminho do dinheiro público: AFO inteira, o tópico 4 da LODF (tributação e orçamento do DF) e todo o Direito Tributário, que no recorte do edital para na receita — exatamente onde AFO começa.",
+      "nome": "Orçamento e Tributação",
+      "tese": "O caminho do dinheiro público: AFO (Lei 4.320, LRF e o Decreto distrital 32.598/2010) com o Direito Tributário, que no recorte do edital para na receita — exatamente onde a receita pública de AFO começa. É o dia mais leve, de propósito: serve de respiro entre segunda e quarta.",
       "materias": [
         {
           "id": "administracao-financeira-orcamentaria",
@@ -114,7 +118,7 @@
             "8",
             "9"
           ],
-          "questoes_n2": 36
+          "questoes_n2": 39
         },
         {
           "id": "nocoes-direito-tributario",
@@ -123,15 +127,7 @@
             "2",
             "3"
           ],
-          "questoes_n2": 9
-        },
-        {
-          "id": "lei-organica-df",
-          "topicos": [
-            "4",
-            "5"
-          ],
-          "questoes_n2": 5
+          "questoes_n2": 11
         }
       ]
     },
@@ -139,7 +135,7 @@
       "id": "g3-controle-externo-estado",
       "dia": "Quarta-feira",
       "nome": "Controle Externo e Organização do Estado",
-      "tese": "O dia do cargo: a fiscalização contábil, financeira e orçamentária (Constitucional 7.4), o tribunal que a exerce (Lei Orgânica e Regimento do TCDF), o controle da administração e a improbidade (DA 10) e a organização dos poderes na CF e na LODF.",
+      "tese": "O dia do cargo: a fiscalização contábil, financeira e orçamentária da CF (Constitucional, tópico 7.4), o tribunal que a exerce (Lei Orgânica e Regimento do TCDF) e a organização dos poderes no DF (LODF). As três normas tratam da mesma estrutura, em três alturas.",
       "materias": [
         {
           "id": "direito-constitucional",
@@ -148,12 +144,13 @@
             "2",
             "3",
             "4",
+            "5",
             "6",
             "7",
             "8",
             "9"
           ],
-          "questoes_n2": 19
+          "questoes_n2": 21
         },
         {
           "id": "lei-organica-regimento-tcdf",
@@ -161,31 +158,26 @@
             "1",
             "2"
           ],
-          "questoes_n2": 19
+          "questoes_n2": 18
         },
         {
           "id": "lei-organica-df",
           "topicos": [
             "1",
             "2",
-            "3"
+            "3",
+            "4",
+            "5"
           ],
-          "questoes_n2": 8
-        },
-        {
-          "id": "direito-administrativo",
-          "topicos": [
-            "10"
-          ],
-          "questoes_n2": 4
+          "questoes_n2": 11
         }
       ]
     },
     {
-      "id": "g4-governanca-gestao-dados",
+      "id": "g4-gestao-e-dados",
       "dia": "Quinta-feira",
-      "nome": "Governança, Gestão e Dados",
-      "tese": "Administração Geral e Pública inteira (governança, ferramentas, processos, competências, projetos) com o ferramental que a sustenta: análise de dados, Excel e IA, mais transparência e proteção de dados (LAI e LGPD, tópicos 13 e 14 de DA) e a probabilidade de RLM, que é a base da estatística descritiva.",
+      "nome": "Gestão e Dados",
+      "tese": "Administração Geral e Pública já traz governança, ferramentas, modelagem de processos, competências e projetos num programa só; Análise de Dados é o ferramental que sustenta tudo isso — estatística, Excel, visualização e IA aplicadas à gestão.",
       "materias": [
         {
           "id": "administracao-geral-e-publica",
@@ -200,7 +192,7 @@
             "8",
             "9"
           ],
-          "questoes_n2": 33
+          "questoes_n2": 38
         },
         {
           "id": "analise-dados-estatistica-ia",
@@ -211,37 +203,22 @@
             "4",
             "5"
           ],
-          "questoes_n2": 11
-        },
-        {
-          "id": "direito-administrativo",
-          "topicos": [
-            "13",
-            "14"
-          ],
-          "questoes_n2": 4
-        },
-        {
-          "id": "raciocinio-logico-matematica-financeira",
-          "topicos": [
-            "5"
-          ],
-          "questoes_n2": 2
+          "questoes_n2": 12
         }
       ]
     },
     {
-      "id": "g5-pessoal-servidores-previdencia",
+      "id": "g5-pessoal-e-civil",
       "dia": "Sexta-feira",
-      "nome": "Pessoal: Servidores e Previdência",
-      "tese": "O mesmo servidor visto por quatro normas: agentes públicos na CF (Constitucional 5) e no Direito Administrativo (DA 4), o estatuto distrital (LC 840/2011), a aposentadoria (Previdenciário) e a parte geral do Código Civil, que dá a base de pessoas, prazos, prescrição e decadência usada nos três.",
+      "nome": "Servidores, Previdência e Direito Civil",
+      "tese": "O mesmo servidor em dois momentos — o estatuto distrital (LC 840/2011) e a aposentadoria (Previdenciário) — mais a parte geral do Código Civil, que dá a base de pessoas, prazos, prescrição e decadência usada nos dois.",
       "materias": [
         {
           "id": "regime-juridico-servidores-df",
           "topicos": [
             "1"
           ],
-          "questoes_n2": 15
+          "questoes_n2": 18
         },
         {
           "id": "direito-previdenciario",
@@ -252,7 +229,7 @@
             "4",
             "5"
           ],
-          "questoes_n2": 15
+          "questoes_n2": 18
         },
         {
           "id": "nocoes-direito-civil",
@@ -264,21 +241,7 @@
             "5",
             "6"
           ],
-          "questoes_n2": 11
-        },
-        {
-          "id": "direito-administrativo",
-          "topicos": [
-            "4"
-          ],
-          "questoes_n2": 5
-        },
-        {
-          "id": "direito-constitucional",
-          "topicos": [
-            "5"
-          ],
-          "questoes_n2": 4
+          "questoes_n2": 14
         }
       ]
     },
@@ -286,7 +249,7 @@
       "id": "g6-instrumentais-df",
       "dia": "Sábado",
       "nome": "Instrumentais e Distrito Federal",
-      "tese": "As matérias que se treinam por constância, não por volume: Português e Raciocínio Lógico, mais os dois conteúdos de varredura do bloco básico (Distrito Federal e Primeiros Socorros). Vale 28 itens — mais do que qualquer matéria isolada do edital.",
+      "tese": "Todo o bloco de conhecimentos básicos que resta: Português e Raciocínio Lógico, que se treinam por constância, mais os dois conteúdos de varredura (Distrito Federal e Primeiros Socorros). Vale 29 itens — mais do que qualquer matéria isolada do edital, exceto Direito Administrativo.",
       "materias": [
         {
           "id": "lingua-portuguesa",
@@ -307,10 +270,11 @@
             "2",
             "3",
             "4",
+            "5",
             "6",
             "7"
           ],
-          "questoes_n2": 16
+          "questoes_n2": 17
         },
         {
           "id": "conhecimentos-df-politica-mulheres",
@@ -326,7 +290,7 @@
           "topicos": [
             "1"
           ],
-          "questoes_n2": 6
+          "questoes_n2": 5
         }
       ]
     }

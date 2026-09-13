@@ -50,27 +50,27 @@ persona:
 ementa_oficial:
     - topico: 1
       peso_estimado: 1
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "1 Lei de Introdução às Normas do Direito Brasileiro"
     - topico: 2
       peso_estimado: 1
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio"
     - topico: 3
       peso_estimado: 1
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "3 Bens"
     - topico: 4
       peso_estimado: 1
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "4 Fatos jurídicos: 4.1 negócio jurídico"
     - topico: 5
       peso_estimado: 1
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "5 Atos jurídicos lícitos e ilícitos"
     - topico: 6
       peso_estimado: 1
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Sexta-feira — Servidores, Previdência e Direito Civil"
       texto: "6 Prescrição e decadência"
 
 base_normativa:
@@ -163,9 +163,9 @@ em dias diferentes, porque os grupos sao formados por topico, nao por materia.
 
 | Tópico | Peso est. | Dia do simulado de Nível 2 |
 |---|---|---|
-| **1** Lei de Introdução às Normas do Direito Brasileiro | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **2** Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **3** Bens | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **4** Fatos jurídicos: 4.1 negócio jurídico | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **5** Atos jurídicos lícitos e ilícitos | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
-| **6** Prescrição e decadência | 1 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **1** Lei de Introdução às Normas do Direito Brasileiro | 1 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **2** Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio | 1 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **3** Bens | 1 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **4** Fatos jurídicos: 4.1 negócio jurídico | 1 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **5** Atos jurídicos lícitos e ilícitos | 1 | Sexta-feira — Servidores, Previdência e Direito Civil |
+| **6** Prescrição e decadência | 1 | Sexta-feira — Servidores, Previdência e Direito Civil |

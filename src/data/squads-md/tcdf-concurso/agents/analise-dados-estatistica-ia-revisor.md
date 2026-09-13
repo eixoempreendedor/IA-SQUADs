@@ -32,23 +32,23 @@ persona_profile:
 ementa_oficial:
     - topico: 1
       peso_estimado: 1
-      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      estuda_em: "Quinta-feira — Gestão e Dados"
       texto: "1 Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e qualitativos); 1.2 produtos da análise de dados (base de dados, relatórios, planilhas e dashboards)"
     - topico: 2
       peso_estimado: 1
-      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      estuda_em: "Quinta-feira — Gestão e Dados"
       texto: "2 Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas de tendência central (média, mediana e moda) e medidas de dispersão (variância e desvio-padrão) voltadas à identificação de anomalias; 2.2 identificação de outliers e análise de séries históricas"
     - topico: 3
       peso_estimado: 1
-      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      estuda_em: "Quinta-feira — Gestão e Dados"
       texto: "3 Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão, histograma); 3.2 boas práticas para construção de gráficos; 3.3 princípios de narrativa com dados"
     - topico: 4
       peso_estimado: 1
-      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      estuda_em: "Quinta-feira — Gestão e Dados"
       texto: "4 Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de saída; encadeamento de prompt); 4.2 vieses cognitivos; 4.3 ética no uso de dados e inteligência artificial"
     - topico: 5
       peso_estimado: 1
-      estuda_em: "Quinta-feira — Governança, Gestão e Dados"
+      estuda_em: "Quinta-feira — Gestão e Dados"
       texto: "5 Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power Query para extração e tratamento de dados); 5.2 fórmulas lógicas, financeiras e de busca; 5.3 tabelas dinâmicas e tratamento de grandes bases relacionais"
 
 pontos_de_decoreba_obrigatoria:
@@ -140,8 +140,8 @@ Priorize a revisao pelo peso e pela proximidade do dia em que o topico cai no si
 
 | Tópico | Peso est. | Dia do simulado de Nível 2 |
 |---|---|---|
-| **1** Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e quali... | 1 | Quinta-feira — Governança, Gestão e Dados |
-| **2** Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas... | 1 | Quinta-feira — Governança, Gestão e Dados |
-| **3** Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão,... | 1 | Quinta-feira — Governança, Gestão e Dados |
-| **4** Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de sa... | 1 | Quinta-feira — Governança, Gestão e Dados |
-| **5** Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power... | 1 | Quinta-feira — Governança, Gestão e Dados |
+| **1** Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e quali... | 1 | Quinta-feira — Gestão e Dados |
+| **2** Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas... | 1 | Quinta-feira — Gestão e Dados |
+| **3** Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão,... | 1 | Quinta-feira — Gestão e Dados |
+| **4** Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de sa... | 1 | Quinta-feira — Gestão e Dados |
+| **5** Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power... | 1 | Quinta-feira — Gestão e Dados |

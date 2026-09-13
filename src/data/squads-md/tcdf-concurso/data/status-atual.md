@@ -12,12 +12,12 @@ Para registrar, adicione entradas em `scripts/progresso.json` e rode `python3 sc
 
 | Dia | Grupo | Peso | Topicos vencidos | % do peso vencido | Nivel 2 | Status |
 |---|---|---|---|---|---|---|
-| Seg | Direito Administrativo e Contratações | 25 | 0/12 | 0% | — | em Nivel 1 |
-| Ter | Orçamento, Finanças e Tributação | 21 | 0/14 | 0% | — | em Nivel 1 |
-| Qua | Controle Externo e Organização do Estado | 26 | 0/14 | 0% | — | em Nivel 1 |
-| Qui | Governança, Gestão e Dados | 23 | 0/17 | 0% | — | em Nivel 1 |
-| Sex | Pessoal: Servidores e Previdência | 27 | 0/14 | 0% | — | em Nivel 1 |
-| Sáb | Instrumentais e Distrito Federal | 28 | 0/16 | 0% | — | em Nivel 1 |
+| Seg | Direito Administrativo e Contratações | 32 | 0/16 | 0% | — | em Nivel 1 |
+| Ter | Orçamento e Tributação | 19 | 0/12 | 0% | — | em Nivel 1 |
+| Qua | Controle Externo e Organização do Estado | 28 | 0/16 | 0% | — | em Nivel 1 |
+| Qui | Gestão e Dados | 20 | 0/14 | 0% | — | em Nivel 1 |
+| Sex | Servidores, Previdência e Direito Civil | 22 | 0/12 | 0% | — | em Nivel 1 |
+| Sáb | Instrumentais e Distrito Federal | 29 | 0/17 | 0% | — | em Nivel 1 |
 
 ## Nivel 3 — pool do domingo
 
@@ -34,17 +34,21 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 | Direito Administrativo | 1 | Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos | 1 | — |  |
 | Direito Administrativo | 2 | Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes | 1 | — |  |
 | Direito Administrativo | 3 | Ato administrativo: 3.1 conceito, requisitos, atributos, classifica... | 3 | — |  |
+| Direito Administrativo | 4 | Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 c... | 3 | — |  |
 | Direito Administrativo | 5 | Poderes da administração pública: 5.1 hierárquico, disciplinar, reg... | 2 | — |  |
 | Direito Administrativo | 6 | Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expres... | 2 | — |  |
 | Direito Administrativo | 7 | Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 respo... | 2 | — |  |
 | Direito Administrativo | 8 | Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 c... | 1 | — |  |
 | Direito Administrativo | 9 | Organização administrativa: 9.1 autarquias, fundações, empresas púb... | 2 | — |  |
+| Direito Administrativo | 10 | Controle da administração pública: 10.1 controle exercido pela admi... | 2 | — |  |
 | Direito Administrativo | 11 | Lei federal nº 9.784/1999 e suas alterações (processo administrativ... | 1 | — |  |
 | Direito Administrativo | 12 | Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/... | 3 | — |  |
+| Direito Administrativo | 13 | Lei nº 12.527/2011 (Lei de Acesso à Informação) | 1 | — |  |
+| Direito Administrativo | 14 | Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 | — |  |
 | Gestão de Contratos | 1 | Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 1... | 3 | — |  |
 | Gestão de Contratos | 2 | Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores... | 4 | — |  |
 
-### Terça-feira · Orçamento, Finanças e Tributação
+### Terça-feira · Orçamento e Tributação
 
 | Materia | # | Topico | Peso | Status | Melhor lote |
 |---|---|---|---|---|---|
@@ -60,8 +64,6 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 | Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | — |  |
 | Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário;... | 2 | — |  |
 | Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imp... | 1 | — |  |
-| Lei Orgânica do Distrito Federal | 4 | Tributação e orçamento do Distrito Federal | 1 | — |  |
-| Lei Orgânica do Distrito Federal | 5 | Ordem econômica do Distrito Federal | 1 | — |  |
 
 ### Quarta-feira · Controle Externo e Organização do Estado
 
@@ -71,6 +73,7 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 | Direito Constitucional | 2 | Aplicabilidade das normas constitucionais: 2.1 normas de eficácia p... | 1 | — |  |
 | Direito Constitucional | 3 | Direitos e garantias fundamentais: 3.1 direitos e deveres individua... | 2 | — |  |
 | Direito Constitucional | 4 | Organização político-administrativa do Estado: 4.1 Estado federal b... | 1 | — |  |
+| Direito Constitucional | 5 | Administração pública: 5.1 disposições gerais; 5.2 servidores públicos | 2 | — |  |
 | Direito Constitucional | 6 | Poder Executivo: 6.1 atribuições e responsabilidades do presidente... | 1 | — |  |
 | Direito Constitucional | 7 | Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições;... | 2 | — |  |
 | Direito Constitucional | 8 | Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judic... | 1 | — |  |
@@ -80,9 +83,10 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 | Lei Orgânica do Distrito Federal | 1 | Fundamentos da organização dos poderes e do Distrito Federal | 1 | — |  |
 | Lei Orgânica do Distrito Federal | 2 | Organização do Distrito Federal | 1 | — |  |
 | Lei Orgânica do Distrito Federal | 3 | Organização dos poderes | 2 | — |  |
-| Direito Administrativo | 10 | Controle da administração pública: 10.1 controle exercido pela admi... | 2 | — |  |
+| Lei Orgânica do Distrito Federal | 4 | Tributação e orçamento do Distrito Federal | 1 | — |  |
+| Lei Orgânica do Distrito Federal | 5 | Ordem econômica do Distrito Federal | 1 | — |  |
 
-### Quinta-feira · Governança, Gestão e Dados
+### Quinta-feira · Gestão e Dados
 
 | Materia | # | Topico | Peso | Status | Melhor lote |
 |---|---|---|---|---|---|
@@ -100,11 +104,8 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 | Análise de Dados, Noções de Estatística e Inteligência Artificial | 3 | Introdução à visualização de dados e storytelling: 3.1 tipos de grá... | 1 | — |  |
 | Análise de Dados, Noções de Estatística e Inteligência Artificial | 4 | Inteligência artificial generativa: 4.1 engenharia de prompt (conte... | 1 | — |  |
 | Análise de Dados, Noções de Estatística e Inteligência Artificial | 5 | Utilização de Excel (Microsoft 365) para análise de dados: 5.1 oper... | 1 | — |  |
-| Direito Administrativo | 13 | Lei nº 12.527/2011 (Lei de Acesso à Informação) | 1 | — |  |
-| Direito Administrativo | 14 | Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 | — |  |
-| Raciocínio Lógico e Matemática Financeira | 5 | Princípios de contagem e probabilidade | 1 | — |  |
 
-### Sexta-feira · Pessoal: Servidores e Previdência
+### Sexta-feira · Servidores, Previdência e Direito Civil
 
 | Materia | # | Topico | Peso | Status | Melhor lote |
 |---|---|---|---|---|---|
@@ -120,8 +121,6 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 | Noções de Direito Civil | 4 | Fatos jurídicos: 4.1 negócio jurídico | 1 | — |  |
 | Noções de Direito Civil | 5 | Atos jurídicos lícitos e ilícitos | 1 | — |  |
 | Noções de Direito Civil | 6 | Prescrição e decadência | 1 | — |  |
-| Direito Administrativo | 4 | Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 c... | 3 | — |  |
-| Direito Constitucional | 5 | Administração pública: 5.1 disposições gerais; 5.2 servidores públicos | 2 | — |  |
 
 ### Sábado · Instrumentais e Distrito Federal
 
@@ -137,6 +136,7 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 | Raciocínio Lógico e Matemática Financeira | 2 | Lógica de argumentação: 2.1 analogias, inferências, deduções e conc... | 1 | — |  |
 | Raciocínio Lógico e Matemática Financeira | 3 | Lógica sentencial (ou proposicional): 3.1 proposições simples e com... | 3 | — |  |
 | Raciocínio Lógico e Matemática Financeira | 4 | Lógica de primeira ordem | 1 | — |  |
+| Raciocínio Lógico e Matemática Financeira | 5 | Princípios de contagem e probabilidade | 1 | — |  |
 | Raciocínio Lógico e Matemática Financeira | 6 | Operações com conjuntos | 1 | — |  |
 | Raciocínio Lógico e Matemática Financeira | 7 | Matemática financeira: 7.1 razão e proporção, porcentagem, juros si... | 2 | — |  |
 | Conhecimentos do Distrito Federal e Política para Mulheres | 1 | Domínio de tópicos atuais e relevantes acerca da realidade étnica,... | 2 | — |  |

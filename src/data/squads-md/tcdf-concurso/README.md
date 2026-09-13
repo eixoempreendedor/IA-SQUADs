@@ -93,16 +93,16 @@ O **líquido** (`(acertos - erros) / total de questões do lote`) e apurado semp
 
 ### Grupos de conteudo (seg a sab)
 
-Os grupos são formados por TÓPICOS, não por matérias. Uma matéria pode aparecer em mais de um dia quando o edital espalha o mesmo assunto por programas diferentes (Direito Administrativo aparece em quatro dias, Constitucional e LODF em dois). Cada tópico do edital pertence a exatamente um grupo — sem sobreposição e sem lacuna.
+Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é repartida entre dias. Os grupos reúnem matérias que compartilham norma ou vocabulário, de modo que estudar uma adianta a outra. Dentro do dia, a unidade de Nível 1 continua sendo o tópico numerado do edital.
 
 | Dia | Grupo | Peso est. | Materias (topicos) — cota no simulado de 50 |
 |---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** | 25 | Direito Administrativo (1, 2, 3, 5, 6, 7, 8, 9, 11, 12) — 36q · Gestão de Contratos (1, 2) — 14q |
-| Terça-feira | **Orçamento, Finanças e Tributação** | 21 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) — 36q · Noções de Direito Tributário (1, 2, 3) — 9q · Lei Orgânica do Distrito Federal (4, 5) — 5q |
-| Quarta-feira | **Controle Externo e Organização do Estado** | 26 | Direito Constitucional (1, 2, 3, 4, 6, 7, 8, 9) — 19q · Lei Orgânica do TCDF e Regimento Interno (1, 2) — 19q · Lei Orgânica do Distrito Federal (1, 2, 3) — 8q · Direito Administrativo (10) — 4q |
-| Quinta-feira | **Governança, Gestão e Dados** | 23 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9) — 33q · Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) — 11q · Direito Administrativo (13, 14) — 4q · Raciocínio Lógico e Matemática Financeira (5) — 2q |
-| Sexta-feira | **Pessoal: Servidores e Previdência** | 27 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1) — 15q · Direito Previdenciário (1, 2, 3, 4, 5) — 15q · Noções de Direito Civil (1, 2, 3, 4, 5, 6) — 11q · Direito Administrativo (4) — 5q · Direito Constitucional (5) — 4q |
-| Sábado | **Instrumentais e Distrito Federal** | 28 | Língua Portuguesa (1, 2, 3, 4, 5, 6) — 21q · Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 6, 7) — 16q · Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3) — 7q · Noções de Primeiros Socorros (1) — 6q |
+| Segunda-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) — 39q · Gestão de Contratos (1, 2) — 11q |
+| Terça-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) — 39q · Noções de Direito Tributário (1, 2, 3) — 11q |
+| Quarta-feira | **Controle Externo e Organização do Estado** | 28 | Direito Constitucional (1, 2, 3, 4, 5, 6, 7, 8, 9) — 21q · Lei Orgânica do TCDF e Regimento Interno (1, 2) — 18q · Lei Orgânica do Distrito Federal (1, 2, 3, 4, 5) — 11q |
+| Quinta-feira | **Gestão e Dados** | 20 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9) — 38q · Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) — 12q |
+| Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1) — 18q · Direito Previdenciário (1, 2, 3, 4, 5) — 18q · Noções de Direito Civil (1, 2, 3, 4, 5, 6) — 14q |
+| Sábado | **Instrumentais e Distrito Federal** | 29 | Língua Portuguesa (1, 2, 3, 4, 5, 6) — 21q · Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 5, 6, 7) — 17q · Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3) — 7q · Noções de Primeiros Socorros (1) — 5q |
 | Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |
 
 Composicao completa, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). Estado atual, apurado dos simulados ja feitos: [`data/status-atual.md`](data/status-atual.md).
@@ -145,10 +145,10 @@ Um PDF por dia da semana, para imprimir: checklist com uma bolinha por topico e 
 | Dia | Arquivo |
 |---|---|
 | Segunda-feira | [`pdf/1-segunda-feira-direito-administrativo-e-contratacoes.pdf`](pdf/1-segunda-feira-direito-administrativo-e-contratacoes.pdf) |
-| Terça-feira | [`pdf/2-terca-feira-orcamento-financas-e-tributacao.pdf`](pdf/2-terca-feira-orcamento-financas-e-tributacao.pdf) |
+| Terça-feira | [`pdf/2-terca-feira-orcamento-e-tributacao.pdf`](pdf/2-terca-feira-orcamento-e-tributacao.pdf) |
 | Quarta-feira | [`pdf/3-quarta-feira-controle-externo-e-organizacao-do-estado.pdf`](pdf/3-quarta-feira-controle-externo-e-organizacao-do-estado.pdf) |
-| Quinta-feira | [`pdf/4-quinta-feira-governanca-gestao-e-dados.pdf`](pdf/4-quinta-feira-governanca-gestao-e-dados.pdf) |
-| Sexta-feira | [`pdf/5-sexta-feira-pessoal-servidores-e-previdencia.pdf`](pdf/5-sexta-feira-pessoal-servidores-e-previdencia.pdf) |
+| Quinta-feira | [`pdf/4-quinta-feira-gestao-e-dados.pdf`](pdf/4-quinta-feira-gestao-e-dados.pdf) |
+| Sexta-feira | [`pdf/5-sexta-feira-servidores-previdencia-e-direito-civil.pdf`](pdf/5-sexta-feira-servidores-previdencia-e-direito-civil.pdf) |
 | Sábado | [`pdf/6-sabado-instrumentais-e-distrito-federal.pdf`](pdf/6-sabado-instrumentais-e-distrito-federal.pdf) |
 | Domingo | [`pdf/7-domingo-nivel-3.pdf`](pdf/7-domingo-nivel-3.pdf) |
 

@@ -70,6 +70,21 @@ def validar(prog: dict, materias: dict) -> list[str]:
     for mid, n in duplicados:
         erros.append(f"topico em mais de um grupo: {mid} #{n}")
 
+    # Regra firme: materia nao se reparte entre dias.
+    dias_por_materia: dict[str, set] = {}
+    for g in prog["grupos"]:
+        for b in g["materias"]:
+            dias_por_materia.setdefault(b["id"], set()).add(g["dia"])
+    for mid, dias in sorted(dias_por_materia.items()):
+        if len(dias) > 1:
+            erros.append(f"materia repartida entre dias: {mid} aparece em {', '.join(sorted(dias))}")
+    for mid, m in materias.items():
+        for g in prog["grupos"]:
+            for b in g["materias"]:
+                if b["id"] == mid and len(b["topicos"]) != len(m["ementa"]):
+                    faltam = sorted({t["n"] for t in m["ementa"]} - set(b["topicos"]))
+                    erros.append(f"{mid}: grupo {g['id']} nao leva a materia inteira (faltam os topicos {', '.join(faltam)})")
+
     soma = sum(peso_do_grupo(g, materias) for g in prog["grupos"])
     total_edital = sum(m["itens_estimados"] for m in materias.values())
     if soma != total_edital:

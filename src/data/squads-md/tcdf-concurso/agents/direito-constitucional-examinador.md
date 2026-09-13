@@ -50,7 +50,7 @@ ementa_oficial:
       texto: "4 Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Federal e municípios"
     - topico: 5
       peso_estimado: 2
-      estuda_em: "Sexta-feira — Pessoal: Servidores e Previdência"
+      estuda_em: "Quarta-feira — Controle Externo e Organização do Estado"
       texto: "5 Administração pública: 5.1 disposições gerais; 5.2 servidores públicos"
     - topico: 6
       peso_estimado: 1
@@ -174,7 +174,7 @@ Em lote de Nivel 1, sao sempre 20 questoes de um unico topico.
 | **2** Aplicabilidade das normas constitucionais: 2.1 normas de eficácia plena, contida e limitada; normas program... | 1 | Quarta-feira — Controle Externo e Organização do Estado |
 | **3** Direitos e garantias fundamentais: 3.1 direitos e deveres individuais e coletivos, direitos sociais, direit... | 2 | Quarta-feira — Controle Externo e Organização do Estado |
 | **4** Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Fede... | 1 | Quarta-feira — Controle Externo e Organização do Estado |
-| **5** Administração pública: 5.1 disposições gerais; 5.2 servidores públicos | 2 | Sexta-feira — Pessoal: Servidores e Previdência |
+| **5** Administração pública: 5.1 disposições gerais; 5.2 servidores públicos | 2 | Quarta-feira — Controle Externo e Organização do Estado |
 | **6** Poder Executivo: 6.1 atribuições e responsabilidades do presidente da República | 1 | Quarta-feira — Controle Externo e Organização do Estado |
 | **7** Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições; 7.3 processo legislativo; 7.4 fiscalizaç... | 2 | Quarta-feira — Controle Externo e Organização do Estado |
 | **8** Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judiciário | 1 | Quarta-feira — Controle Externo e Organização do Estado |
