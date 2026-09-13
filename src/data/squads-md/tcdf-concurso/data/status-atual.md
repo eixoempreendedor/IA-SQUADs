@@ -12,8 +12,8 @@ Para registrar, adicione entradas em `scripts/progresso.json` e rode `python3 sc
 
 | Dia | Grupo | Peso | Topicos vencidos | % do peso vencido | Nivel 2 | Status |
 |---|---|---|---|---|---|---|
-| Seg | Direito Administrativo e Contratações | 32 | 0/16 | 0% | — | em Nivel 1 |
-| Ter | Orçamento e Tributação | 19 | 0/12 | 0% | — | em Nivel 1 |
+| Seg | Orçamento e Tributação | 19 | 0/12 | 0% | — | em Nivel 1 |
+| Ter | Direito Administrativo e Contratações | 32 | 0/16 | 0% | — | em Nivel 1 |
 | Qua | Controle Externo e Organização do Estado | 28 | 0/16 | 0% | — | em Nivel 1 |
 | Qui | Gestão e Dados | 20 | 0/14 | 0% | — | em Nivel 1 |
 | Sex | Servidores, Previdência e Direito Civil | 22 | 0/12 | 0% | — | em Nivel 1 |
@@ -27,7 +27,24 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 
 ## Topicos
 
-### Segunda-feira · Direito Administrativo e Contratações
+### Segunda-feira · Orçamento e Tributação
+
+| Materia | # | Topico | Peso | Status | Melhor lote |
+|---|---|---|---|---|---|
+| Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 pr... | 1 | — |  |
+| Administração Financeira e Orçamentária | 2 | Orçamento público no Brasil: 2.1 sistema de planejamento e de orçam... | 2 | — |  |
+| Administração Financeira e Orçamentária | 3 | Programação e execução orçamentária e financeira: 3.1 descentraliza... | 2 | — |  |
+| Administração Financeira e Orçamentária | 4 | Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 f... | 2 | — |  |
+| Administração Financeira e Orçamentária | 5 | Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 r... | 2 | — |  |
+| Administração Financeira e Orçamentária | 6 | Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabili... | 3 | — |  |
+| Administração Financeira e Orçamentária | 7 | Lei nº 4.320/1964 e suas alterações | 1 | — |  |
+| Administração Financeira e Orçamentária | 8 | Transferências voluntárias | 1 | — |  |
+| Administração Financeira e Orçamentária | 9 | Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento... | 1 | — |  |
+| Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | — |  |
+| Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário;... | 2 | — |  |
+| Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imp... | 1 | — |  |
+
+### Terça-feira · Direito Administrativo e Contratações
 
 | Materia | # | Topico | Peso | Status | Melhor lote |
 |---|---|---|---|---|---|
@@ -47,23 +64,6 @@ Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprov
 | Direito Administrativo | 14 | Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 | — |  |
 | Gestão de Contratos | 1 | Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 1... | 3 | — |  |
 | Gestão de Contratos | 2 | Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores... | 4 | — |  |
-
-### Terça-feira · Orçamento e Tributação
-
-| Materia | # | Topico | Peso | Status | Melhor lote |
-|---|---|---|---|---|---|
-| Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 pr... | 1 | — |  |
-| Administração Financeira e Orçamentária | 2 | Orçamento público no Brasil: 2.1 sistema de planejamento e de orçam... | 2 | — |  |
-| Administração Financeira e Orçamentária | 3 | Programação e execução orçamentária e financeira: 3.1 descentraliza... | 2 | — |  |
-| Administração Financeira e Orçamentária | 4 | Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 f... | 2 | — |  |
-| Administração Financeira e Orçamentária | 5 | Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 r... | 2 | — |  |
-| Administração Financeira e Orçamentária | 6 | Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabili... | 3 | — |  |
-| Administração Financeira e Orçamentária | 7 | Lei nº 4.320/1964 e suas alterações | 1 | — |  |
-| Administração Financeira e Orçamentária | 8 | Transferências voluntárias | 1 | — |  |
-| Administração Financeira e Orçamentária | 9 | Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento... | 1 | — |  |
-| Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | — |  |
-| Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário;... | 2 | — |  |
-| Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imp... | 1 | — |  |
 
 ### Quarta-feira · Controle Externo e Organização do Estado
 

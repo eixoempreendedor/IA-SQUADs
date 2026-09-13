@@ -279,8 +279,8 @@ integration_with_squad:
 
 | Dia | Grupo | Itens est. | Materias (topicos) |
 |---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14), Gestão de Contratos (1, 2) |
-| Terça-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9), Noções de Direito Tributário (1, 2, 3) |
+| Segunda-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9), Noções de Direito Tributário (1, 2, 3) |
+| Terça-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14), Gestão de Contratos (1, 2) |
 | Quarta-feira | **Controle Externo e Organização do Estado** | 28 | Direito Constitucional (1, 2, 3, 4, 5, 6, 7, 8, 9), Lei Orgânica do TCDF e Regimento Interno (1, 2), Lei Orgânica do Distrito Federal (1, 2, 3, 4, 5) |
 | Quinta-feira | **Gestão e Dados** | 20 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9), Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) |
 | Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1), Direito Previdenciário (1, 2, 3, 4, 5), Noções de Direito Civil (1, 2, 3, 4, 5, 6) |

@@ -64,10 +64,42 @@
   },
   "grupos": [
     {
-      "id": "g1-administrativo-contratacoes",
+      "id": "g2-orcamento-tributacao",
       "dia": "Segunda-feira",
+      "nome": "Orçamento e Tributação",
+      "tese": "Abertura leve de propósito: AFO (Lei 4.320, LRF e o Decreto distrital 32.598/2010) com o Direito Tributário, que no recorte do edital para na receita — exatamente onde a receita pública de AFO começa. São 19 itens, o dia mais curto da semana: serve para entrar no ritmo antes do dia pesado.",
+      "materias": [
+        {
+          "id": "administracao-financeira-orcamentaria",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "questoes_n2": 39
+        },
+        {
+          "id": "nocoes-direito-tributario",
+          "topicos": [
+            "1",
+            "2",
+            "3"
+          ],
+          "questoes_n2": 11
+        }
+      ]
+    },
+    {
+      "id": "g1-administrativo-contratacoes",
+      "dia": "Terça-feira",
       "nome": "Direito Administrativo e Contratações",
-      "tese": "A maior matéria do edital inteira, no mesmo dia da matéria que é a continuação dela: Gestão de Contratos detalha o tópico 12 de Direito Administrativo, com a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023. É o dia mais pesado da semana — por isso vem na segunda.",
+      "tese": "O dia mais pesado da semana, na terça, quando o ritmo já está montado: a maior matéria do edital inteira mais a matéria que é a continuação dela — Gestão de Contratos detalha o tópico 12 de Direito Administrativo, com a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023.",
       "materias": [
         {
           "id": "direito-administrativo",
@@ -94,38 +126,6 @@
           "topicos": [
             "1",
             "2"
-          ],
-          "questoes_n2": 11
-        }
-      ]
-    },
-    {
-      "id": "g2-orcamento-tributacao",
-      "dia": "Terça-feira",
-      "nome": "Orçamento e Tributação",
-      "tese": "O caminho do dinheiro público: AFO (Lei 4.320, LRF e o Decreto distrital 32.598/2010) com o Direito Tributário, que no recorte do edital para na receita — exatamente onde a receita pública de AFO começa. É o dia mais leve, de propósito: serve de respiro entre segunda e quarta.",
-      "materias": [
-        {
-          "id": "administracao-financeira-orcamentaria",
-          "topicos": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"
-          ],
-          "questoes_n2": 39
-        },
-        {
-          "id": "nocoes-direito-tributario",
-          "topicos": [
-            "1",
-            "2",
-            "3"
           ],
           "questoes_n2": 11
         }

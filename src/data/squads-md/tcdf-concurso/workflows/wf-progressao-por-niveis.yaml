@@ -55,11 +55,11 @@ workflow:
       observacao: "Grupo vencido libera tempo do seu dia para os grupos ainda pendentes"
 
   calendario:
-    segunda: "Direito Administrativo e Contratações — 50 questoes"
-    terca: "Orçamento, Finanças e Tributação — 50 questoes"
+    segunda: "Orçamento e Tributação — 50 questoes"
+    terca: "Direito Administrativo e Contratações — 50 questoes"
     quarta: "Controle Externo e Organização do Estado — 50 questoes"
-    quinta: "Governança, Gestão e Dados — 50 questoes"
-    sexta: "Pessoal: Servidores e Previdência — 50 questoes"
+    quinta: "Gestão e Dados — 50 questoes"
+    sexta: "Servidores, Previdência e Direito Civil — 50 questoes"
     sabado: "Instrumentais e Distrito Federal — 50 questoes"
     domingo: "Nivel 3 — 200 questoes dos topicos vencidos + relatorio semanal"
 

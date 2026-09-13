@@ -24,8 +24,8 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 
 | Dia | Grupo | Peso est. | Materias (topicos) |
 |---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) · Gestão de Contratos (1, 2) |
-| Terça-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) · Noções de Direito Tributário (1, 2, 3) |
+| Segunda-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) · Noções de Direito Tributário (1, 2, 3) |
+| Terça-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) · Gestão de Contratos (1, 2) |
 | Quarta-feira | **Controle Externo e Organização do Estado** | 28 | Direito Constitucional (1, 2, 3, 4, 5, 6, 7, 8, 9) · Lei Orgânica do TCDF e Regimento Interno (1, 2) · Lei Orgânica do Distrito Federal (1, 2, 3, 4, 5) |
 | Quinta-feira | **Gestão e Dados** | 20 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9) · Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) |
 | Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1) · Direito Previdenciário (1, 2, 3, 4, 5) · Noções de Direito Civil (1, 2, 3, 4, 5, 6) |
@@ -34,9 +34,38 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 
 ## Cada grupo em detalhe
 
-### Segunda-feira · Direito Administrativo e Contratações — 32 itens estimados
+### Segunda-feira · Orçamento e Tributação — 19 itens estimados
 
-*A maior matéria do edital inteira, no mesmo dia da matéria que é a continuação dela: Gestão de Contratos detalha o tópico 12 de Direito Administrativo, com a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023. É o dia mais pesado da semana — por isso vem na segunda.*
+*Abertura leve de propósito: AFO (Lei 4.320, LRF e o Decreto distrital 32.598/2010) com o Direito Tributário, que no recorte do edital para na receita — exatamente onde a receita pública de AFO começa. São 19 itens, o dia mais curto da semana: serve para entrar no ritmo antes do dia pesado.*
+
+| Materia | Topicos | Peso est. | Questoes no simulado |
+|---|---|---|---|
+| Administração Financeira e Orçamentária | 1, 2, 3, 4, 5, 6, 7, 8, 9 | 15 | **39** |
+| Noções de Direito Tributário | 1, 2, 3 | 4 | **11** |
+| **Total** | — | **19** | **50** |
+
+<details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>
+
+| Materia | # | Topico | Peso |
+|---|---|---|---|
+| Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 princípios orçamentários; 1.4 ciclo orçamentário; 1.... | 1 |
+| Administração Financeira e Orçamentária | 2 | Orçamento público no Brasil: 2.1 sistema de planejamento e de orçamento federal; 2.2 plano plurianual; 2.3 diretrizes... | 2 |
+| Administração Financeira e Orçamentária | 3 | Programação e execução orçamentária e financeira: 3.1 descentralização orçamentária e financeira; 3.2 acompanhamento... | 2 |
+| Administração Financeira e Orçamentária | 4 | Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 fontes; 4.4 dívida ativa | 2 |
+| Administração Financeira e Orçamentária | 5 | Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 restos a pagar; 5.4 despesas de exercícios anterior... | 2 |
+| Administração Financeira e Orçamentária | 6 | Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabilidade Fiscal) | 3 |
+| Administração Financeira e Orçamentária | 7 | Lei nº 4.320/1964 e suas alterações | 1 |
+| Administração Financeira e Orçamentária | 8 | Transferências voluntárias | 1 |
+| Administração Financeira e Orçamentária | 9 | Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento, finanças, patrimônio e contabilidade do Distrito... | 1 |
+| Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 |
+| Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributa... | 2 |
+| Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7... | 1 |
+
+</details>
+
+### Terça-feira · Direito Administrativo e Contratações — 32 itens estimados
+
+*O dia mais pesado da semana, na terça, quando o ritmo já está montado: a maior matéria do edital inteira mais a matéria que é a continuação dela — Gestão de Contratos detalha o tópico 12 de Direito Administrativo, com a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023.*
 
 | Materia | Topicos | Peso est. | Questoes no simulado |
 |---|---|---|---|
@@ -64,35 +93,6 @@ O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e regist
 | Direito Administrativo | 14 | Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 |
 | Gestão de Contratos | 1 | Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da S... | 3 |
 | Gestão de Contratos | 2 | Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do... | 4 |
-
-</details>
-
-### Terça-feira · Orçamento e Tributação — 19 itens estimados
-
-*O caminho do dinheiro público: AFO (Lei 4.320, LRF e o Decreto distrital 32.598/2010) com o Direito Tributário, que no recorte do edital para na receita — exatamente onde a receita pública de AFO começa. É o dia mais leve, de propósito: serve de respiro entre segunda e quarta.*
-
-| Materia | Topicos | Peso est. | Questoes no simulado |
-|---|---|---|---|
-| Administração Financeira e Orçamentária | 1, 2, 3, 4, 5, 6, 7, 8, 9 | 15 | **39** |
-| Noções de Direito Tributário | 1, 2, 3 | 4 | **11** |
-| **Total** | — | **19** | **50** |
-
-<details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>
-
-| Materia | # | Topico | Peso |
-|---|---|---|---|
-| Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 princípios orçamentários; 1.4 ciclo orçamentário; 1.... | 1 |
-| Administração Financeira e Orçamentária | 2 | Orçamento público no Brasil: 2.1 sistema de planejamento e de orçamento federal; 2.2 plano plurianual; 2.3 diretrizes... | 2 |
-| Administração Financeira e Orçamentária | 3 | Programação e execução orçamentária e financeira: 3.1 descentralização orçamentária e financeira; 3.2 acompanhamento... | 2 |
-| Administração Financeira e Orçamentária | 4 | Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 fontes; 4.4 dívida ativa | 2 |
-| Administração Financeira e Orçamentária | 5 | Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 restos a pagar; 5.4 despesas de exercícios anterior... | 2 |
-| Administração Financeira e Orçamentária | 6 | Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabilidade Fiscal) | 3 |
-| Administração Financeira e Orçamentária | 7 | Lei nº 4.320/1964 e suas alterações | 1 |
-| Administração Financeira e Orçamentária | 8 | Transferências voluntárias | 1 |
-| Administração Financeira e Orçamentária | 9 | Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento, finanças, patrimônio e contabilidade do Distrito... | 1 |
-| Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 |
-| Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributa... | 2 |
-| Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7... | 1 |
 
 </details>
 

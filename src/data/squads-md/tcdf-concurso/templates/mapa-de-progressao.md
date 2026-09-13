@@ -8,34 +8,34 @@ Status: `—` nao iniciado · `EM ESTUDO` · **`VENCIDO`** (>= 90% em 20 questoe
 
 | Dia | Grupo | Materia | # | Topico | Peso | Status | Data |
 |---|---|---|---|---|---|---|---|
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 1 | Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos | 1 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 2 | Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes | 1 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 3 | Ato administrativo: 3.1 conceito, requisitos, atributos, classifica... | 3 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 4 | Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 c... | 3 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 5 | Poderes da administração pública: 5.1 hierárquico, disciplinar, reg... | 2 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 6 | Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expres... | 2 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 7 | Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 respo... | 2 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 8 | Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 c... | 1 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 9 | Organização administrativa: 9.1 autarquias, fundações, empresas púb... | 2 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 10 | Controle da administração pública: 10.1 controle exercido pela admi... | 2 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 11 | Lei federal nº 9.784/1999 e suas alterações (processo administrativ... | 1 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 12 | Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/... | 3 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 13 | Lei nº 12.527/2011 (Lei de Acesso à Informação) | 1 |  |  |
-| Seg | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 14 | Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 |  |  |
-| Seg | Direito Administrativo e Contratações | 📑 Gestão de Contratos | 1 | Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 1... | 3 |  |  |
-| Seg | Direito Administrativo e Contratações | 📑 Gestão de Contratos | 2 | Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores... | 4 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 pr... | 1 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 2 | Orçamento público no Brasil: 2.1 sistema de planejamento e de orçam... | 2 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 3 | Programação e execução orçamentária e financeira: 3.1 descentraliza... | 2 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 4 | Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 f... | 2 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 5 | Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 r... | 2 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 6 | Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabili... | 3 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 7 | Lei nº 4.320/1964 e suas alterações | 1 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 8 | Transferências voluntárias | 1 |  |  |
-| Ter | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 9 | Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento... | 1 |  |  |
-| Ter | Orçamento e Tributação | 💰 Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 |  |  |
-| Ter | Orçamento e Tributação | 💰 Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário;... | 2 |  |  |
-| Ter | Orçamento e Tributação | 💰 Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imp... | 1 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 pr... | 1 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 2 | Orçamento público no Brasil: 2.1 sistema de planejamento e de orçam... | 2 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 3 | Programação e execução orçamentária e financeira: 3.1 descentraliza... | 2 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 4 | Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 f... | 2 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 5 | Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 r... | 2 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 6 | Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabili... | 3 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 7 | Lei nº 4.320/1964 e suas alterações | 1 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 8 | Transferências voluntárias | 1 |  |  |
+| Seg | Orçamento e Tributação | 📊 Administração Financeira e Orçamentária | 9 | Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento... | 1 |  |  |
+| Seg | Orçamento e Tributação | 💰 Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 |  |  |
+| Seg | Orçamento e Tributação | 💰 Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário;... | 2 |  |  |
+| Seg | Orçamento e Tributação | 💰 Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imp... | 1 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 1 | Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos | 1 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 2 | Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes | 1 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 3 | Ato administrativo: 3.1 conceito, requisitos, atributos, classifica... | 3 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 4 | Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 c... | 3 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 5 | Poderes da administração pública: 5.1 hierárquico, disciplinar, reg... | 2 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 6 | Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expres... | 2 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 7 | Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 respo... | 2 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 8 | Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 c... | 1 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 9 | Organização administrativa: 9.1 autarquias, fundações, empresas púb... | 2 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 10 | Controle da administração pública: 10.1 controle exercido pela admi... | 2 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 11 | Lei federal nº 9.784/1999 e suas alterações (processo administrativ... | 1 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 12 | Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/... | 3 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 13 | Lei nº 12.527/2011 (Lei de Acesso à Informação) | 1 |  |  |
+| Ter | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 14 | Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) | 1 |  |  |
+| Ter | Direito Administrativo e Contratações | 📑 Gestão de Contratos | 1 | Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 1... | 3 |  |  |
+| Ter | Direito Administrativo e Contratações | 📑 Gestão de Contratos | 2 | Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores... | 4 |  |  |
 | Qua | Controle Externo e Organização do Estado | 📜 Direito Constitucional | 1 | Constituição da República Federativa do Brasil de 1988: 1.1 princíp... | 1 |  |  |
 | Qua | Controle Externo e Organização do Estado | 📜 Direito Constitucional | 2 | Aplicabilidade das normas constitucionais: 2.1 normas de eficácia p... | 1 |  |  |
 | Qua | Controle Externo e Organização do Estado | 📜 Direito Constitucional | 3 | Direitos e garantias fundamentais: 3.1 direitos e deveres individua... | 2 |  |  |
@@ -100,8 +100,8 @@ Status: `—` nao iniciado · `EM ESTUDO` · **`VENCIDO`** (>= 90% em 20 questoe
 
 | Dia | Grupo | Peso | Topicos vencidos | Melhor resultado | Status |
 |---|---|---|---|---|---|
-| Segunda-feira | Direito Administrativo e Contratações | 32 | 0 / 16 |  | — |
-| Terça-feira | Orçamento e Tributação | 19 | 0 / 12 |  | — |
+| Segunda-feira | Orçamento e Tributação | 19 | 0 / 12 |  | — |
+| Terça-feira | Direito Administrativo e Contratações | 32 | 0 / 16 |  | — |
 | Quarta-feira | Controle Externo e Organização do Estado | 28 | 0 / 16 |  | — |
 | Quinta-feira | Gestão e Dados | 20 | 0 / 14 |  | — |
 | Sexta-feira | Servidores, Previdência e Direito Civil | 22 | 0 / 12 |  | — |

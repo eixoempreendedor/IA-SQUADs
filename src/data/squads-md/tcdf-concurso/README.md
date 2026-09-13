@@ -97,8 +97,8 @@ Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é re
 
 | Dia | Grupo | Peso est. | Materias (topicos) — cota no simulado de 50 |
 |---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) — 39q · Gestão de Contratos (1, 2) — 11q |
-| Terça-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) — 39q · Noções de Direito Tributário (1, 2, 3) — 11q |
+| Segunda-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) — 39q · Noções de Direito Tributário (1, 2, 3) — 11q |
+| Terça-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) — 39q · Gestão de Contratos (1, 2) — 11q |
 | Quarta-feira | **Controle Externo e Organização do Estado** | 28 | Direito Constitucional (1, 2, 3, 4, 5, 6, 7, 8, 9) — 21q · Lei Orgânica do TCDF e Regimento Interno (1, 2) — 18q · Lei Orgânica do Distrito Federal (1, 2, 3, 4, 5) — 11q |
 | Quinta-feira | **Gestão e Dados** | 20 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9) — 38q · Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) — 12q |
 | Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1) — 18q · Direito Previdenciário (1, 2, 3, 4, 5) — 18q · Noções de Direito Civil (1, 2, 3, 4, 5, 6) — 14q |
@@ -144,8 +144,8 @@ Um PDF por dia da semana, para imprimir: checklist com uma bolinha por topico e 
 
 | Dia | Arquivo |
 |---|---|
-| Segunda-feira | [`pdf/1-segunda-feira-direito-administrativo-e-contratacoes.pdf`](pdf/1-segunda-feira-direito-administrativo-e-contratacoes.pdf) |
-| Terça-feira | [`pdf/2-terca-feira-orcamento-e-tributacao.pdf`](pdf/2-terca-feira-orcamento-e-tributacao.pdf) |
+| Segunda-feira | [`pdf/1-segunda-feira-orcamento-e-tributacao.pdf`](pdf/1-segunda-feira-orcamento-e-tributacao.pdf) |
+| Terça-feira | [`pdf/2-terca-feira-direito-administrativo-e-contratacoes.pdf`](pdf/2-terca-feira-direito-administrativo-e-contratacoes.pdf) |
 | Quarta-feira | [`pdf/3-quarta-feira-controle-externo-e-organizacao-do-estado.pdf`](pdf/3-quarta-feira-controle-externo-e-organizacao-do-estado.pdf) |
 | Quinta-feira | [`pdf/4-quinta-feira-gestao-e-dados.pdf`](pdf/4-quinta-feira-gestao-e-dados.pdf) |
 | Sexta-feira | [`pdf/5-sexta-feira-servidores-previdencia-e-direito-civil.pdf`](pdf/5-sexta-feira-servidores-previdencia-e-direito-civil.pdf) |

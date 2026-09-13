@@ -50,11 +50,11 @@ persona:
 ementa_oficial:
     - topico: 1
       peso_estimado: 3
-      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
+      estuda_em: "Terça-feira — Direito Administrativo e Contratações"
       texto: "1 Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da Secretaria de Gestão do Ministério do Planejamento, Desenvolvimento e Gestão; 1.3 Decreto distrital nº 44.330/2023"
     - topico: 2
       peso_estimado: 4
-      estuda_em: "Segunda-feira — Direito Administrativo e Contratações"
+      estuda_em: "Terça-feira — Direito Administrativo e Contratações"
       texto: "2 Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do contrato; 2.3 papel do preposto da contratada; 2.4 acompanhamento da execução contratual; 2.5 registro e notificação de irregularidades; 2.6 definição e aplicação de penalidades e sanções administrativas; 2.7 equação econômico-financeira (reajuste e repactuação)"
 
 base_normativa:
@@ -149,5 +149,5 @@ em dias diferentes, porque os grupos sao formados por topico, nao por materia.
 
 | Tópico | Peso est. | Dia do simulado de Nível 2 |
 |---|---|---|
-| **1** Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5... | 3 | Segunda-feira — Direito Administrativo e Contratações |
-| **2** Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fisca... | 4 | Segunda-feira — Direito Administrativo e Contratações |
+| **1** Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5... | 3 | Terça-feira — Direito Administrativo e Contratações |
+| **2** Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fisca... | 4 | Terça-feira — Direito Administrativo e Contratações |

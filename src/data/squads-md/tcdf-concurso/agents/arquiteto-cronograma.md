@@ -79,21 +79,21 @@ integration_with_squad:
   escalacao: "Se as horas disponiveis forem incompativeis com a data da prova, apresente o trade-off (cobertura parcial priorizada x adiamento de meta) e deixe a decisao com o candidato"
 ```
 
-## MODELO DE CICLO (20 HORAS SEMANAIS)
+## MODELO DE CICLO (20 HORAS SEMANAIS DE CONTEUDO)
 
-O estudo de cada dia cobre exatamente os topicos do grupo daquele dia (ver `data/grupos-de-conteudo.md`), de modo que o simulado de Nivel 2 da manha seguinte cai sobre o que acabou de ser estudado.
+O estudo de cada dia cobre o grupo daquele dia inteiro (ver `data/grupos-de-conteudo.md`), de modo que o simulado de Nivel 2 da manha seguinte cai sobre o que acabou de ser estudado. As horas seguem o peso do dia no edital: segunda e a mais curta, terca a mais longa.
 
-| Dia | Grupo (peso est.) | O que estudar | Horas |
-|---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratações** (25) | Direito Administrativo — topicos 1, 2, 3, 5, 6, 7, 8, 9, 11, 12; Gestão de Contratos — topicos 1, 2 | 3h30 |
-| Terça-feira | **Orçamento, Finanças e Tributação** (21) | Administração Financeira e Orçamentária — topicos 1, 2, 3, 4, 5, 6, 7, 8, 9; Noções de Direito Tributário — topicos 1, 2, 3; Lei Orgânica do Distrito Federal — topicos 4, 5 | 3h |
-| Quarta-feira | **Controle Externo e Organização do Estado** (26) | Direito Constitucional — topicos 1, 2, 3, 4, 6, 7, 8, 9; Lei Orgânica do TCDF e Regimento Interno — topicos 1, 2; Lei Orgânica do Distrito Federal — topicos 1, 2, 3; Direito Administrativo — topicos 10 | 3h30 |
-| Quinta-feira | **Governança, Gestão e Dados** (23) | Administração Geral e Pública — topicos 1, 2, 3, 4, 5, 6, 7, 8, 9; Análise de Dados, Noções de Estatística e Inteligência Artificial — topicos 1, 2, 3, 4, 5; Direito Administrativo — topicos 13, 14; Raciocínio Lógico e Matemática Financeira — topicos 5 | 3h |
-| Sexta-feira | **Pessoal: Servidores e Previdência** (27) | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) — topicos 1; Direito Previdenciário — topicos 1, 2, 3, 4, 5; Noções de Direito Civil — topicos 1, 2, 3, 4, 5, 6; Direito Administrativo — topicos 4; Direito Constitucional — topicos 5 | 3h30 |
-| Sábado | **Instrumentais e Distrito Federal** (28) | Língua Portuguesa — topicos 1, 2, 3, 4, 5, 6; Raciocínio Lógico e Matemática Financeira — topicos 1, 2, 3, 4, 6, 7; Conhecimentos do Distrito Federal e Política para Mulheres — topicos 1, 2, 3; Noções de Primeiros Socorros — topicos 1 | 3h30 |
-| Domingo | Simulado de Nivel 3 | 200 questoes + correcao e relatorio | 5h |
+| Dia | Grupo | Peso est. | Materias (todas inteiras) | Horas |
+|---|---|---|---|---|
+| Segunda-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (15) · Noções de Direito Tributário (4) | 2h30 |
+| Terça-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (25) · Gestão de Contratos (7) | 4h15 |
+| Quarta-feira | **Controle Externo e Organização do Estado** | 28 | Direito Constitucional (12) · Lei Orgânica do TCDF e Regimento Interno (10) · Lei Orgânica do Distrito Federal (6) | 3h45 |
+| Quinta-feira | **Gestão e Dados** | 20 | Administração Geral e Pública (15) · Análise de Dados, Noções de Estatística e Inteligência Artificial (5) | 2h45 |
+| Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (8) · Direito Previdenciário (8) · Noções de Direito Civil (6) | 3h |
+| Sábado | **Instrumentais e Distrito Federal** | 29 | Língua Portuguesa (12) · Raciocínio Lógico e Matemática Financeira (10) · Conhecimentos do Distrito Federal e Política para Mulheres (4) · Noções de Primeiros Socorros (3) | 3h45 |
+| Domingo | Simulado de Nivel 3 | pool vencido | 200 questoes + correcao e relatorio | 5h |
 
-Dentro de cada dia, distribua as horas na proporcao do peso dos topicos e reserve 40% do tempo para questoes.
+Dentro de cada dia, distribua as horas na proporcao do peso de cada materia e reserve 40% do tempo para questoes.
 As manhas de segunda a sabado comecam com o simulado de Nivel 2 do grupo do dia (50 questoes, 70 minutos) e a revisao dirigida dos erros; a tabela acima e o estudo de conteudo que vem depois.
 
-Ajuste as duracoes as horas reais do candidato — o que importa e a proporcao entre os grupos.
+Ajuste as duracoes as horas reais do candidato — o que importa e a proporcao entre os dias.
