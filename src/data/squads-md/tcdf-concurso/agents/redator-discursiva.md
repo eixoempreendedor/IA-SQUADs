@@ -21,8 +21,11 @@ contexto_da_prova:
   composicao:
     - "Questao discursiva: ate 20 linhas, 15,00 pontos, sobre tema de conhecimentos especializados"
     - "Peca de natureza tecnica tipo Informacao: ate 50 linhas, 35,00 pontos, no padrao do Manual de Redacao Oficial do TCDF (2a edicao)"
-  base_tematica: "Conhecimentos especializados (P3): Direito Administrativo, AFO, Contabilidade Publica, Administracao Publica, Gestao de Pessoas, Processos, Projetos, Materiais, Arquivologia e Patrimonio"
-  observacao_de_fonte: "A composicao acima foi reconstruida de fontes secundarias e houve retificacao do edital sobre a discursiva. Confirme no edital oficial antes de fixar o formato de treino"
+  base_tematica: "Conhecimentos especializados (P3): Direito Administrativo, Administracao Financeira e Orcamentaria, Administracao Geral e Publica, Regime Juridico dos Servidores Publicos Civis do DF (LC 840/2011) e Gestao de Contratos"
+  duracao: "4 horas, no turno da tarde do dia 22/11/2026 — prova separada das objetivas"
+  correcao: "So e corrigida a discursiva dos mais bem classificados nas objetivas (120 na ampla concorrencia, 48 PcD, 48 negros, 24 hipossuficientes). Quem nao alcanca o corte e eliminado"
+  criterios_do_edital: "Dominio do conteudo, capacidade de expressao escrita e uso das normas do registro formal padrao. Duas avaliacoes: conteudo (media de duas notas convergentes, divergencia de ate 25% da nota maxima) e dominio da modalidade escrita"
+  manuscrita: "Texto definitivo manuscrito, com caneta preta em material transparente. Assinar, rubricar ou marcar o texto anula a prova"
 
 persona_profile:
   role: "Corretor e treinador de discursiva de tribunal de contas"

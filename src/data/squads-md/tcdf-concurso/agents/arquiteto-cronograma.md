@@ -26,7 +26,7 @@ pesos_do_edital:
   P1_conhecimentos_basicos: { itens: 35, percentual: 23 }
   P2_conhecimentos_especificos: { itens: 45, percentual: 30 }
   P3_conhecimentos_especializados: { itens: 70, percentual: 47 }
-  P4_discursiva: { pontos: 50, observacao: "Bloco proprio a partir de D-60" }
+  P4_discursiva: { pontos: 50, observacao: "Prova separada de 4 horas no turno da tarde; bloco semanal proprio a partir de D-60" }
 
 metodo_do_ciclo:
   montagem:
@@ -81,25 +81,28 @@ integration_with_squad:
 
 ## MODELO DE CICLO (20 HORAS SEMANAIS)
 
-| # | Bloco | Materia | Tipo | Duracao |
-|---|---|---|---|---|
-| 1 | P3 | Direito Administrativo | Teoria + questoes | 2h |
-| 2 | P2 | Direito Constitucional | Teoria + questoes | 1h30 |
-| 3 | P3 | AFO | Teoria + questoes | 1h30 |
-| 4 | P2 | Lei Organica e Regimento do TCDF | Lei seca + questoes | 1h30 |
-| 5 | P1 | Lingua Portuguesa | Questoes + reescrita | 1h30 |
-| 6 | P3 | Contabilidade Publica | Teoria + questoes | 1h |
-| 7 | P2 | Direito Previdenciario | Teoria + questoes | 1h |
-| 8 | P3 | Administracao Geral e Publica | Teoria + questoes | 1h |
-| 9 | P3 | Gestao de Pessoas | Teoria + questoes | 1h |
-| 10 | P1 | Raciocinio Logico e Mat. Financeira | Exercicios | 1h |
-| 11 | P2 | Analise de Dados, Estatistica e IA | Teoria + questoes | 1h |
-| 12 | P1 | Lei Organica do DF | Lei seca | 1h |
-| 13 | P3 | Gestao de Processos / Projetos (alternado) | Teoria + questoes | 1h |
-| 14 | P2 | Direito Civil / Tributario (alternado) | Teoria + questoes | 1h |
-| 15 | P3 | Arquivologia / Rec. Materiais / Patrimonial (rotativo) | Teoria + questoes | 1h |
-| 16 | P1 | Conhecimentos do DF / Primeiros Socorros (alternado) | Resumo + questoes | 45min |
-| S1 | — | Revisao geral da semana | Revisao ativa | 1h15 |
-| S2 | — | Questoes mistas cronometradas | Simulado parcial | 1h |
+Um bloco por dia espelha o grupo de conteudo daquele dia (ver `data/grupos-de-conteudo.md`), de modo que o simulado de Nivel 2 da manha cobre exatamente o que foi estudado na semana.
 
-Ajuste as duracoes proporcionalmente a quantidade real de horas do candidato — as proporcoes entre materias sao o que importa.
+| Dia | Grupo | Materia | Tipo | Duracao |
+|---|---|---|---|---|
+| Segunda-feira | Direito Administrativo e Contratações | Direito Administrativo | Teoria + questoes | 2h |
+|  |  | Gestão de Contratos | Teoria + questoes | 1h |
+| Terça-feira | Orçamento e Finanças Públicas | Administração Financeira e Orçamentária | Teoria + questoes | 2h |
+|  |  | Lei Orgânica do Distrito Federal | Lei seca + questoes | 1h |
+| Quarta-feira | Constitucional e Institucional | Direito Constitucional | Teoria + questoes | 1h30 |
+|  |  | Lei Orgânica do TCDF e Regimento Interno | Lei seca + questoes | 1h30 |
+| Quinta-feira | Gestão e Dados | Administração Geral e Pública | Teoria + questoes | 2h |
+|  |  | Análise de Dados, Noções de Estatística e Inteligência Artificial | Teoria + questoes | 1h |
+| Sexta-feira | Servidor e Direitos Complementares | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | Lei seca + questoes | 1h |
+|  |  | Direito Previdenciário | Teoria + questoes | 1h |
+|  |  | Noções de Direito Civil | Teoria + questoes | 45min |
+|  |  | Noções de Direito Tributário | Teoria + questoes | 45min |
+| Sábado | Instrumentais e Distrito Federal | Língua Portuguesa | Questoes + reescrita | 1h30 |
+|  |  | Raciocínio Lógico e Matemática Financeira | Exercicios | 1h15 |
+|  |  | Conhecimentos do Distrito Federal e Política para Mulheres | Teoria + questoes | 45min |
+|  |  | Noções de Primeiros Socorros | Teoria + questoes | 30min |
+| Domingo | — | Simulado de Nivel 3 (200 questoes) | Simulado + correcao | 4h + 1h |
+
+As manhas de segunda a sabado comecam com o simulado de Nivel 2 do grupo do dia (50 questoes, 70 minutos) e a revisao dirigida dos erros; a tabela acima e o estudo de conteudo que vem depois.
+
+Ajuste as duracoes proporcionalmente as horas reais do candidato — o que importa e a proporcao entre as materias, que segue o peso de cada uma no edital.

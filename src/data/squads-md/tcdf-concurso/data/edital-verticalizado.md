@@ -1,232 +1,174 @@
 # Edital verticalizado — Tribunal de Contas do Distrito Federal (TCDF) 2026
 
-> **Status da fonte: `NAO_VERIFICADO_NA_FONTE_OFICIAL`**
+> **Status da fonte: `VERIFICADO_NA_FONTE_OFICIAL`**
 >
-> O CDN do Cebraspe estava bloqueado pela politica de rede da sessao em que este squad foi gerado. A estrutura de provas e a lista de materias foram reconstruidas a partir de fontes secundarias (Cebraspe/TCDF, Estrategia, Gran, Nova Concursos, Folha Dirigida/Qconcursos). As ementas por materia sao ementas-padrao da banca para o tipo de cargo, NAO transcricoes do edital. Rode a task verticalizar-edital.md colando o texto oficial antes de confiar 100% no mapa.
+> Conteúdo programático transcrito do item 15 (Dos objetos de avaliação) do edital de abertura, já com as alterações do Edital nº 2 – TCDF/ANACE, de 29 de julho de 2026. Verificado em 13/9/2026.
 
 - **Cargo:** Analista Administrativo de Controle Externo — Área de Gestão — Serviços Técnico-Administrativos (ANACE)
 - **Banca:** Cebraspe
-- **Vagas:** 10 vagas imediatas + cadastro de reserva
-- **Remuneracao inicial:** R$ 14,9 mil
+- **Vagas:** 10 vagas imediatas (5 ampla concorrência, 2 PcD, 2 negros, 1 hipossuficiente) + cadastro de reserva
+- **Remuneracao inicial:** R$ 14.990,41 (Lei Distrital nº 7.860/2026)
 - **Escolaridade:** Nível superior em qualquer área de formação
-- **Provas:** 22/11/2026 — Brasília/DF — duracao 4 horas (objetivas)
-- **Formato:** Certo/Errado (C/E) com penalidade: cada erro anula um acerto
-- **Minimo global nas objetivas:** 45 pontos no conjunto das provas objetivas
+- **Provas:** 22/11/2026 — objetivas pela manhã, discursiva à tarde — duracao 4 horas para as provas objetivas e 4 horas para a prova discursiva
+- **Formato:** Certo/Errado: +1,00 ponto por acerto, -1,00 ponto por erro, 0,00 em branco ou marcação dupla
+- **Minimo global nas objetivas:** 45,00 pontos na soma de P1 + P2 + P3
 - **Edital:** https://cdn.cebraspe.org.br/concursos/tc_df_26_analista/arquivos/54FBB0AE18A245586A808B4DC3568C6D9070ADFA0584420F0DB9DC4198DBC0C6.html
 
 ## Estrutura das provas
 
 | Prova | Conteudo | Itens | Minimo |
 |---|---|---|---|
-| P1 | Conhecimentos Basicos | 35 | 7,00 pontos |
-| P2 | Conhecimentos Especificos | 45 | 13,00 pontos |
+| P1 | Conhecimentos Básicos | 35 | 7,00 pontos |
+| P2 | Conhecimentos Específicos | 45 | 13,00 pontos |
 | P3 | Conhecimentos Especializados | 70 | 21,00 pontos |
-| P4 | Prova Discursiva | — | 50,00 pontos no total: questao discursiva de ate 20 linhas (15,00) + peca tecnica tipo Informacao de ate 50 linhas (35,00), no padrao do Manual de Redacao Oficial do TCDF (2a edicao) |
+| P4 | Prova Discursiva | — | 50,00 pontos no total: questão discursiva de até 20 linhas (15,00) + peça de natureza técnica (Informação) de até 50 linhas (35,00), na estrutura do padrão unificado de apresentação de atos oficiais do Manual de Redação Oficial do TCDF (2ª edição) |
 
 ## Materias e trios de agentes
 
 | # | Materia | Bloco | Itens est. | Prioridade | Agentes |
 |---|---|---|---|---|---|
-| 1 | 📝 Lingua Portuguesa | P1 | 12 | alta | `lingua-portuguesa-professor` · `lingua-portuguesa-examinador` · `lingua-portuguesa-revisor` |
-| 2 | 🧮 Raciocinio Logico e Matematica Financeira | P1 | 8 | alta | `raciocinio-logico-matematica-financeira-professor` · `raciocinio-logico-matematica-financeira-examinador` · `raciocinio-logico-matematica-financeira-revisor` |
-| 3 | 🏛️ Lei Organica do Distrito Federal | P1 | 6 | alta | `lei-organica-df-professor` · `lei-organica-df-examinador` · `lei-organica-df-revisor` |
-| 4 | 🌆 Conhecimentos sobre o Distrito Federal e Politicas para Mulheres | P1 | 6 | media | `conhecimentos-df-politicas-mulheres-professor` · `conhecimentos-df-politicas-mulheres-examinador` · `conhecimentos-df-politicas-mulheres-revisor` |
-| 5 | 🚑 Nocoes de Primeiros Socorros | P1 | 3 | baixa | `nocoes-primeiros-socorros-professor` · `nocoes-primeiros-socorros-examinador` · `nocoes-primeiros-socorros-revisor` |
-| 6 | ⚖️ Lei Organica e Regimento Interno do TCDF | P2 | 10 | critica | `lei-organica-regimento-tcdf-professor` · `lei-organica-regimento-tcdf-examinador` · `lei-organica-regimento-tcdf-revisor` |
+| 1 | 📝 Língua Portuguesa | P1 | 12 | alta | `lingua-portuguesa-professor` · `lingua-portuguesa-examinador` · `lingua-portuguesa-revisor` |
+| 2 | 🏛️ Lei Orgânica do Distrito Federal | P1 | 6 | alta | `lei-organica-df-professor` · `lei-organica-df-examinador` · `lei-organica-df-revisor` |
+| 3 | 🌆 Conhecimentos do Distrito Federal e Política para Mulheres | P1 | 4 | media | `conhecimentos-df-politica-mulheres-professor` · `conhecimentos-df-politica-mulheres-examinador` · `conhecimentos-df-politica-mulheres-revisor` |
+| 4 | 🚑 Noções de Primeiros Socorros | P1 | 3 | baixa | `nocoes-primeiros-socorros-professor` · `nocoes-primeiros-socorros-examinador` · `nocoes-primeiros-socorros-revisor` |
+| 5 | 🧮 Raciocínio Lógico e Matemática Financeira | P1 | 10 | alta | `raciocinio-logico-matematica-financeira-professor` · `raciocinio-logico-matematica-financeira-examinador` · `raciocinio-logico-matematica-financeira-revisor` |
+| 6 | ⚖️ Lei Orgânica do TCDF e Regimento Interno | P2 | 10 | critica | `lei-organica-regimento-tcdf-professor` · `lei-organica-regimento-tcdf-examinador` · `lei-organica-regimento-tcdf-revisor` |
 | 7 | 📜 Direito Constitucional | P2 | 10 | critica | `direito-constitucional-professor` · `direito-constitucional-examinador` · `direito-constitucional-revisor` |
-| 8 | 🧓 Direito Previdenciario | P2 | 8 | alta | `direito-previdenciario-professor` · `direito-previdenciario-examinador` · `direito-previdenciario-revisor` |
-| 9 | 📕 Nocoes de Direito Civil | P2 | 6 | media | `nocoes-direito-civil-professor` · `nocoes-direito-civil-examinador` · `nocoes-direito-civil-revisor` |
-| 10 | 💰 Nocoes de Direito Tributario | P2 | 6 | media | `nocoes-direito-tributario-professor` · `nocoes-direito-tributario-examinador` · `nocoes-direito-tributario-revisor` |
-| 11 | 🤖 Analise de Dados, Nocoes de Estatistica e Inteligencia Artificial | P2 | 5 | alta | `analise-dados-estatistica-ia-professor` · `analise-dados-estatistica-ia-examinador` · `analise-dados-estatistica-ia-revisor` |
-| 12 | 🏢 Direito Administrativo | P3 | 14 | critica | `direito-administrativo-professor` · `direito-administrativo-examinador` · `direito-administrativo-revisor` |
-| 13 | 📊 Administracao Financeira e Orcamentaria (AFO) | P3 | 10 | critica | `administracao-financeira-orcamentaria-professor` · `administracao-financeira-orcamentaria-examinador` · `administracao-financeira-orcamentaria-revisor` |
-| 14 | 🏗️ Administracao Geral e Publica | P3 | 8 | alta | `administracao-geral-e-publica-professor` · `administracao-geral-e-publica-examinador` · `administracao-geral-e-publica-revisor` |
-| 15 | 👥 Gestao de Pessoas | P3 | 8 | alta | `gestao-de-pessoas-professor` · `gestao-de-pessoas-examinador` · `gestao-de-pessoas-revisor` |
-| 16 | 🔄 Gestao de Processos | P3 | 6 | media | `gestao-de-processos-professor` · `gestao-de-processos-examinador` · `gestao-de-processos-revisor` |
-| 17 | 📌 Gestao de Projetos | P3 | 6 | media | `gestao-de-projetos-professor` · `gestao-de-projetos-examinador` · `gestao-de-projetos-revisor` |
-| 18 | 📦 Administracao de Recursos Materiais | P3 | 5 | media | `administracao-recursos-materiais-professor` · `administracao-recursos-materiais-examinador` · `administracao-recursos-materiais-revisor` |
-| 19 | 🗂️ Arquivologia | P3 | 5 | media | `arquivologia-professor` · `arquivologia-examinador` · `arquivologia-revisor` |
-| 20 | 📒 Contabilidade Publica | P3 | 5 | alta | `contabilidade-publica-professor` · `contabilidade-publica-examinador` · `contabilidade-publica-revisor` |
-| 21 | 🏷️ Administracao Patrimonial | P3 | 3 | baixa | `administracao-patrimonial-professor` · `administracao-patrimonial-examinador` · `administracao-patrimonial-revisor` |
+| 8 | 🧓 Direito Previdenciário | P2 | 8 | alta | `direito-previdenciario-professor` · `direito-previdenciario-examinador` · `direito-previdenciario-revisor` |
+| 9 | 📕 Noções de Direito Civil | P2 | 6 | media | `nocoes-direito-civil-professor` · `nocoes-direito-civil-examinador` · `nocoes-direito-civil-revisor` |
+| 10 | 💰 Noções de Direito Tributário | P2 | 5 | media | `nocoes-direito-tributario-professor` · `nocoes-direito-tributario-examinador` · `nocoes-direito-tributario-revisor` |
+| 11 | 🤖 Análise de Dados, Noções de Estatística e Inteligência Artificial | P2 | 6 | alta | `analise-dados-estatistica-ia-professor` · `analise-dados-estatistica-ia-examinador` · `analise-dados-estatistica-ia-revisor` |
+| 12 | 🏢 Direito Administrativo | P3 | 22 | critica | `direito-administrativo-professor` · `direito-administrativo-examinador` · `direito-administrativo-revisor` |
+| 13 | 📊 Administração Financeira e Orçamentária | P3 | 16 | critica | `administracao-financeira-orcamentaria-professor` · `administracao-financeira-orcamentaria-examinador` · `administracao-financeira-orcamentaria-revisor` |
+| 14 | 🏗️ Administração Geral e Pública | P3 | 16 | critica | `administracao-geral-e-publica-professor` · `administracao-geral-e-publica-examinador` · `administracao-geral-e-publica-revisor` |
+| 15 | 👤 Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | P3 | 8 | alta | `regime-juridico-servidores-df-professor` · `regime-juridico-servidores-df-examinador` · `regime-juridico-servidores-df-revisor` |
+| 16 | 📑 Gestão de Contratos | P3 | 8 | alta | `gestao-de-contratos-professor` · `gestao-de-contratos-examinador` · `gestao-de-contratos-revisor` |
 
 ---
 
 ## Conteudo programatico por materia
 
-### 📝 Lingua Portuguesa
+### 📝 Língua Portuguesa
 
 `P1` · 12 itens estimados · prioridade **alta**
 
-*Maior bloco de P1 e disciplina com maior recorrencia historica em provas Cebraspe.*
+*Maior disciplina de P1 e a que mais rende: o edital cobra gramática aplicada a texto, não teoria gramatical solta.*
 
 **Ementa**
 
-1. Compreensao e interpretacao de textos de generos variados
-2. Reconhecimento de tipos e generos textuais
-3. Dominio da ortografia oficial
-4. Dominio dos mecanismos de coesao textual: emprego de elementos de referenciacao, substituicao e repeticao; conectores e outros elementos de sequenciacao textual; emprego de tempos e modos verbais
-5. Dominio da estrutura morfossintatica do periodo: emprego das classes de palavras; relacoes de coordenacao e de subordinacao entre oracoes e entre termos da oracao; emprego dos sinais de pontuacao; concordancia verbal e nominal; regencia verbal e nominal; emprego do sinal indicativo de crase; colocacao dos pronomes atonos
-6. Reescrita de frases e paragrafos do texto: substituicao de palavras ou de trechos de texto; retextualizacao de diferentes generos e niveis de formalidade
-7. Correspondencia oficial (Manual de Redacao da Presidencia da Republica e Manual de Redacao Oficial do TCDF): aspectos gerais, finalidade, adequacao da linguagem, uso dos pronomes de tratamento, fecho e identificacao do signatario
+1. 1 Compreensão e interpretação de textos de gêneros variados
+2. 2 Reconhecimento de tipos e gêneros textuais
+3. 3 Domínio da ortografia oficial
+4. 4 Domínio dos mecanismos de coesão textual: 4.1 emprego de elementos de referenciação, substituição e repetição, de conectores e de outros elementos de sequenciação textual; 4.2 emprego de tempos e modos verbais
+5. 5 Domínio da estrutura morfossintática do período: 5.1 emprego das classes de palavras; 5.2 relações de coordenação entre orações e entre termos da oração; 5.3 relações de subordinação entre orações e entre termos da oração; 5.4 emprego dos sinais de pontuação; 5.5 concordância verbal e nominal; 5.6 regência verbal e nominal; 5.7 emprego do sinal indicativo de crase; 5.8 colocação dos pronomes átonos
+6. 6 Reescrita de frases e parágrafos do texto: 6.1 significação das palavras; 6.2 substituição de palavras ou de trechos de texto; 6.3 reorganização da estrutura de orações e de períodos do texto; 6.4 reescrita de textos de diferentes gêneros e níveis de formalidade
 
 **Base normativa**
 
-- Manual de Redacao da Presidencia da Republica (3a edicao)
-- Manual de Redacao Oficial do TCDF (2a edicao)
-- Acordo Ortografico da Lingua Portuguesa vigente
+- Acordo Ortográfico da Língua Portuguesa vigente
 
 **Armadilhas tipicas da banca**
 
-- Item que troca 'o texto afirma' por 'depreende-se do texto' — a Cebraspe cobra inferencia valida, nao invencao
-- Reescrita que preserva a correcao gramatical mas altera o sentido original (item errado mesmo com gramatica impecavel)
-- Insercao/remocao de virgula em adjunto adverbial deslocado: quase sempre a chave e facultatividade x obrigatoriedade
-- Substituicao de voz ativa por passiva com mudanca de regencia ou de sujeito
-- Crase diante de palavra masculina, de verbo e de pronome — pegadinha classica
+- Redação oficial NÃO está no programa de Língua Portuguesa — mas o Manual de Redação Oficial do TCDF (2ª ed.) é exigido na peça da prova discursiva. Não confunda os dois escopos
+- Reescrita que preserva a correção gramatical mas altera o sentido original: item errado mesmo com gramática impecável
+- Item que troca 'o texto afirma' por 'depreende-se do texto' — a banca cobra inferência válida, não invenção
+- Vírgula em adjunto adverbial deslocado: a chave costuma ser facultatividade x obrigatoriedade
+- Crase diante de palavra masculina, de verbo e de pronome
 
 **Referencias**
 
-- Bechara — Moderna Gramatica Portuguesa
-- Cegalla — Novissima Gramatica da Lingua Portuguesa
-- Provas anteriores Cebraspe de tribunais de contas (TCU, TCE-RJ, TCE-RO)
+- Bechara — Moderna Gramática Portuguesa
+- Provas Cebraspe anteriores de tribunais de contas (TCU, TCE-RJ, TCE-RO)
 
 ---
 
-### 🧮 Raciocinio Logico e Matematica Financeira
-
-`P1` · 8 itens estimados · prioridade **alta**
-
-*Disciplina de alto retorno: conteudo finito, questoes objetivas e verificaveis por calculo.*
-
-**Ementa**
-
-1. Estruturas logicas; logica de argumentacao: analogias, inferencias, deducoes e conclusoes
-2. Logica sentencial (proposicional): proposicoes simples e compostas; tabelas-verdade; equivalencias; leis de De Morgan; diagramas logicos
-3. Logica de primeira ordem: quantificadores e negacao de proposicoes quantificadas
-4. Principios de contagem e probabilidade
-5. Operacoes com conjuntos
-6. Raciocinio logico envolvendo problemas aritmeticos, geometricos e matriciais
-7. Matematica financeira: juros simples e compostos; capitalizacao e desconto
-8. Taxas de juros: nominal, efetiva, equivalentes, proporcionais, real e aparente
-9. Rendas uniformes e variaveis; planos de amortizacao (SAC e Price)
-10. Calculo financeiro: custo real efetivo de operacoes de financiamento, emprestimo e investimento
-11. Avaliacao de alternativas de investimento: VPL e TIR
-
-**Armadilhas tipicas da banca**
-
-- Negacao de 'se P entao Q': a banca oferece 'se nao P entao nao Q' (invalido) em vez de 'P e nao Q'
-- Confundir taxa proporcional (juros simples) com taxa equivalente (juros compostos)
-- Item de probabilidade condicional apresentado como probabilidade simples
-- Arredondamento: a Cebraspe fornece valores tabelados; usar calculo aproximado muda o item de C para E
-- 'Pelo menos um' x 'exatamente um' em contagem
-
-**Referencias**
-
-- Vera Rocha / Sergio Carvalho — Raciocinio Logico para concursos
-- Hazzan & Pompeo — Matematica Financeira
-
----
-
-### 🏛️ Lei Organica do Distrito Federal
+### 🏛️ Lei Orgânica do Distrito Federal
 
 `P1` · 6 itens estimados · prioridade **alta**
 
-*Lei seca de alta previsibilidade — e a materia com melhor relacao acerto/hora de P1.*
+*Lei seca com recorte fechado em cinco tópicos: a melhor relação acerto por hora de estudo de todo o edital.*
 
 **Ementa**
 
-1. Dos fundamentos da organizacao dos Poderes e do Distrito Federal
-2. Da organizacao do Distrito Federal: competencias, Regioes Administrativas e Conselhos
-3. Da organizacao dos Poderes: Poder Legislativo (Camara Legislativa), Poder Executivo (Governador e Vice)
-4. Do processo legislativo distrital
-5. Da fiscalizacao contabil, financeira, orcamentaria, operacional e patrimonial — papel do TCDF
-6. Da Administracao Publica distrital: servidores publicos, principios e regime juridico
-7. Da tributacao e do orcamento no ambito do DF
-8. Da ordem economica e social; politicas publicas distritais
-9. Disposicoes gerais e transitorias
+1. 1 Fundamentos da organização dos poderes e do Distrito Federal
+2. 2 Organização do Distrito Federal
+3. 3 Organização dos poderes
+4. 4 Tributação e orçamento do Distrito Federal
+5. 5 Ordem econômica do Distrito Federal
 
 **Base normativa**
 
-- Lei Organica do Distrito Federal (LODF), com emendas ate a data do edital
+- Lei Orgânica do Distrito Federal, com as emendas vigentes
 
 **Armadilhas tipicas da banca**
 
-- Trocar quorum (maioria simples x absoluta x 2/3) — checagem obrigatoria em todo item
-- Atribuir a Camara Legislativa competencia privativa do Governador e vice-versa
-- Prazos processuais legislativos alterados em um ou dois dias
-- Confundir dispositivo da CF/88 aplicado por simetria com texto proprio da LODF
+- Quórum trocado (maioria simples x absoluta x dois terços) — confira em todo item
+- Atribuir à Câmara Legislativa competência privativa do Governador e vice-versa
+- Confundir dispositivo da CF/88 aplicado por simetria com texto próprio da LODF
+- O tópico 4 (tributação e orçamento) conversa direto com AFO: estude os dois no mesmo bloco
 
 **Referencias**
 
-- Texto atualizado da LODF no portal da Camara Legislativa do DF
-- Provas Cebraspe anteriores de orgaos do DF (SEEC-DF, PCDF, CLDF)
+- Texto atualizado da LODF no portal da Câmara Legislativa do DF
+- Provas Cebraspe de órgãos do DF
 
 ---
 
-### 🌆 Conhecimentos sobre o Distrito Federal e Politicas para Mulheres
+### 🌆 Conhecimentos do Distrito Federal e Política para Mulheres
 
-`P1` · 6 itens estimados · prioridade **media**
+`P1` · 4 itens estimados · prioridade **media**
 
-*Conteudo pouco cobrado historicamente — exige curadoria de fontes oficiais e atualidades locais.*
+*Poucos itens, mas com fontes nomeadas no edital (RIDE, Plano Distrital, Maria da Penha): é decoreba dirigida, não cultura geral.*
 
 **Ementa**
 
-1. Formacao historica de Brasilia e do Distrito Federal; construcao da nova capital e mudanca da capital federal
-2. Aspectos geograficos, demograficos e socioeconomicos do DF; Regioes Administrativas
-3. Patrimonio cultural e urbanistico: tombamento do conjunto urbanistico de Brasilia
-4. Organizacao politico-administrativa do DF e natureza juridica hibrida (competencias estaduais e municipais)
-5. Politicas publicas para mulheres no DF: legislacao distrital de protecao e promocao de direitos
-6. Enfrentamento a violencia contra a mulher: Lei Maria da Penha (Lei 11.340/2006) e Lei do Feminicidio (Lei 13.104/2015)
-7. Igualdade salarial e de criterios remuneratorios (Lei 14.611/2023)
-8. Rede de atendimento a mulher no DF e programas distritais
-9. Participacao da mulher no mercado de trabalho e no servico publico; equidade de genero na administracao publica
+1. 1 Domínio de tópicos atuais e relevantes acerca da realidade étnica, social, histórica, geográfica, cultural, política e econômica do Distrito Federal e da Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE) (Lei Complementar federal nº 94/1998 e Decreto federal nº 7.469/2011)
+2. 2 Plano Distrital de Política para Mulheres (2020–2023)
+3. 3 Lei Federal nº 11.340/2006 – Lei Maria da Penha
 
 **Base normativa**
 
-- Lei 11.340/2006 (Maria da Penha)
-- Lei 13.104/2015 (Feminicidio)
-- Lei 14.611/2023 (Igualdade salarial)
-- Legislacao distrital de politicas para mulheres
+- Lei Complementar federal nº 94/1998 (RIDE)
+- Decreto federal nº 7.469/2011
+- Plano Distrital de Política para Mulheres (2020–2023)
+- Lei federal nº 11.340/2006 — Lei Maria da Penha
 
 **Armadilhas tipicas da banca**
 
-- Datas e nomes da historia de Brasilia trocados sutilmente (inauguracao, plano piloto, concurso do Plano Piloto)
-- Medidas protetivas de urgencia: prazos e autoridade competente alterados
-- Confundir competencia distrital com competencia federal em politicas de genero
+- Municípios que compõem a RIDE: a banca inclui ou exclui um município para testar a lista
+- Medidas protetivas de urgência: prazos e autoridade competente alterados
+- Eixos e metas do Plano Distrital trocados entre si
+- Atualidades do DF: o comando pede 'tópicos atuais', então acompanhe o noticiário local até a véspera
 
 **Referencias**
 
-- Portal do GDF e da Secretaria da Mulher do DF
-- Codeplan — dados socioeconomicos do DF
+- Texto integral da Lei 11.340/2006
+- Plano Distrital de Política para Mulheres — Secretaria da Mulher do DF
+- Codeplan — dados socioeconômicos do DF e da RIDE
 
 ---
 
-### 🚑 Nocoes de Primeiros Socorros
+### 🚑 Noções de Primeiros Socorros
 
 `P1` · 3 itens estimados · prioridade **baixa**
 
-*Poucos itens, conteudo curto e protocolar — materia de 'varredura rapida' na reta final.*
+*Um único tópico no edital, com lista fechada de situações. Conteúdo de varredura rápida, alto acerto com pouco tempo.*
 
 **Ementa**
 
-1. Nocoes gerais de primeiros socorros: avaliacao da cena e da vitima, seguranca do socorrista
-2. Suporte basico de vida: parada cardiorrespiratoria, RCP e uso do DEA
-3. Obstrucao de vias aereas por corpo estranho (manobra de Heimlich)
-4. Hemorragias, ferimentos e curativos
-5. Queimaduras, fraturas, entorses e imobilizacao
-6. Desmaio, convulsao, crise hipoglicemica e choque
-7. Intoxicacoes e acidentes com animais peconhentos
-8. Transporte e remocao de vitimas; acionamento do SAMU/Bombeiros
+1. 1 Cuidados iniciais com a vítima, reconhecimento de situações de urgência e emergência, acionamento do socorro especializado e condutas básicas em casos de engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação
 
 **Base normativa**
 
-- Diretrizes da American Heart Association (AHA) vigentes
 - Protocolos do SAMU 192
+- Diretrizes da American Heart Association (AHA) vigentes
 
 **Armadilhas tipicas da banca**
 
-- Numeros de compressoes/ventilacoes e profundidade das compressoes trocados
-- Conduta proibida apresentada como correta (ex.: remover objeto encravado, furar bolhas de queimadura)
-- Ordem das etapas do atendimento invertida
+- Conduta proibida apresentada como correta (remover objeto encravado, furar bolha de queimadura, conter movimentos na convulsão)
+- Ordem das etapas do atendimento invertida (avaliar a cena antes de tocar a vítima)
+- Números de compressões e ventilações alterados
+- O edital lista sete situações: engasgo, sangramento, fratura, queimadura, desmaio, convulsão e intoxicação. Estude exatamente essas
 
 **Referencias**
 
@@ -235,44 +177,66 @@
 
 ---
 
-### ⚖️ Lei Organica e Regimento Interno do TCDF
+### 🧮 Raciocínio Lógico e Matemática Financeira
 
-`P2` · 10 itens estimados · prioridade **critica**
+`P1` · 10 itens estimados · prioridade **alta**
 
-*Legislacao institucional do proprio orgao: alta densidade de itens, lei seca e altissima previsibilidade.*
+*Conteúdo finito e verificável por cálculo: é onde se constrói a margem de segurança do mínimo de 7,00 pontos em P1.*
 
 **Ementa**
 
-1. Natureza, competencia e jurisdicao do TCDF
-2. Composicao, organizacao e funcionamento do Tribunal; Conselheiros, Conselheiros-Substitutos e Ministerio Publico de Contas
-3. Julgamento de contas: contas de governo x contas de gestao; parecer previo
-4. Tomada de contas e tomada de contas especial
-5. Fiscalizacao: auditorias, inspecoes, levantamentos, acompanhamentos e monitoramentos
-6. Atos sujeitos a registro: admissao de pessoal, aposentadorias, reformas e pensoes
-7. Sancoes e medidas cautelares: multas, debito, inabilitacao, declaracao de inidoneidade, afastamento e indisponibilidade de bens
-8. Recursos no processo de contas: reconsideracao, embargos de declaracao, revisao e agravo
-9. Sessoes, deliberacoes, quorum, decisoes e sumulas
-10. Denuncia e representacao; controle social e ouvidoria
-11. Relacao com a Camara Legislativa e com o sistema de controle interno do DF
+1. 1 Estruturas lógicas
+2. 2 Lógica de argumentação: 2.1 analogias, inferências, deduções e conclusões
+3. 3 Lógica sentencial (ou proposicional): 3.1 proposições simples e compostas; 3.2 tabelas-verdade; 3.3 equivalências; 3.4 leis de De Morgan; 3.5 diagramas lógicos
+4. 4 Lógica de primeira ordem
+5. 5 Princípios de contagem e probabilidade
+6. 6 Operações com conjuntos
+7. 7 Matemática financeira: 7.1 razão e proporção, porcentagem, juros simples e compostos, taxas de juros (nominal, efetiva, equivalente), sistemas de amortização e fluxo de caixa
+
+**Armadilhas tipicas da banca**
+
+- Negação de 'se P então Q': a banca oferece 'se não P então não Q' (inválido) em vez de 'P e não Q'
+- Taxa proporcional (juros simples) confundida com taxa equivalente (juros compostos)
+- Probabilidade condicional apresentada como probabilidade simples
+- 'Pelo menos um' x 'exatamente um' em contagem
+- Sistemas de amortização: SAC e Price com parcelas e saldos trocados
+
+**Referencias**
+
+- Sérgio Carvalho / Vera Rocha — Raciocínio Lógico
+- Hazzan & Pompeo — Matemática Financeira
+
+---
+
+### ⚖️ Lei Orgânica do TCDF e Regimento Interno
+
+`P2` · 10 itens estimados · prioridade **critica**
+
+*Legislação institucional com recorte cirúrgico no edital (Resolução 296/2016, arts. 1º a 116). Lei seca de altíssima previsibilidade.*
+
+**Ementa**
+
+1. 1 Lei Orgânica do TCDF: 1.1 natureza, competência e jurisdição; 1.2 composição; 1.3 Plenário e câmaras; 1.4 presidente, vice-presidente, conselheiros, auditores e Ministério Público; 1.5 serviços auxiliares do TCDF
+2. 2 Regimento Interno do TCDF: 2.1 Resolução nº 296/2016, títulos I, II e III (art. 1º a 116)
 
 **Base normativa**
 
-- Lei Complementar do DF 1/1994 — Lei Organica do TCDF
-- Regimento Interno do TCDF (Resolucao 38/1990 e alteracoes)
-- Resolucoes e sumulas do TCDF
+- Lei Complementar distrital nº 1/1994 — Lei Orgânica do TCDF
+- Resolução TCDF nº 296/2016 — Regimento Interno, títulos I, II e III (arts. 1º a 116)
 - CF/88, arts. 70 a 75
 
 **Armadilhas tipicas da banca**
 
-- Prazos recursais trocados (reconsideracao, embargos, revisao) — decore a tabela de prazos
-- Confundir competencia do Plenario com a do Relator ou das Camaras
-- Atribuir ao TCDF competencia para julgar contas do Governador (cabe parecer previo, quem julga e a CLDF)
-- Trocar 'pode' por 'deve' em hipoteses de cautelar e de sancao
+- O edital delimita o Regimento aos arts. 1º a 116: estudar além disso é tempo perdido, e a banca não cobra fora do recorte
+- Confundir competência do Plenário com a das câmaras ou a do relator
+- Atribuir ao TCDF o julgamento das contas do Governador (cabe parecer prévio; quem julga é a Câmara Legislativa)
+- Trocar 'pode' por 'deve' nas hipóteses de cautelar e de sanção
+- Papel dos auditores (conselheiros-substitutos) e do Ministério Público de Contas trocados
 
 **Referencias**
 
-- Portal do TCDF — legislacao e jurisprudencia
-- Analogia com a Lei 8.443/1992 (LOTCU) para entendimento sistemico
+- Portal do TCDF — legislação, Resolução 296/2016 e jurisprudência
+- Lei 8.443/1992 (LOTCU) como analogia sistêmica
 
 ---
 
@@ -280,618 +244,371 @@
 
 `P2` · 10 itens estimados · prioridade **critica**
 
-*Base de todo o controle externo e disciplina com maior peso doutrinario e jurisprudencial em P2.*
+*Base do controle externo e maior densidade doutrinária e jurisprudencial de P2. O tópico 7.4 (fiscalização contábil, financeira e orçamentária) é o coração do cargo.*
 
 **Ementa**
 
-1. Constituicao: conceito, classificacoes, aplicabilidade e interpretacao das normas constitucionais
-2. Poder constituinte originario, derivado e decorrente; reforma constitucional
-3. Direitos e garantias fundamentais: direitos e deveres individuais e coletivos, direitos sociais, nacionalidade, direitos politicos e partidos politicos
-4. Remedios constitucionais: habeas corpus, mandado de seguranca, mandado de injuncao, habeas data e acao popular
-5. Organizacao do Estado: organizacao politico-administrativa, Uniao, Estados, Distrito Federal e Municipios; reparticao de competencias; intervencao
-6. Administracao Publica na CF/88 (arts. 37 a 41): principios, servidores publicos, regime previdenciario
-7. Organizacao dos Poderes: Legislativo, processo legislativo, fiscalizacao contabil, financeira e orcamentaria; Executivo; Judiciario
-8. Tribunais de Contas: natureza, composicao, competencias e jurisprudencia do STF (arts. 70 a 75)
-9. Funcoes essenciais a Justica: Ministerio Publico, Advocacia Publica e Defensoria
-10. Controle de constitucionalidade: difuso e concentrado; ADI, ADC, ADPF e ADO
-11. Ordem social e ordem economica e financeira
-12. Financas publicas na CF/88; sistema tributario nacional (visao constitucional)
+1. 1 Constituição da República Federativa do Brasil de 1988: 1.1 princípios fundamentais
+2. 2 Aplicabilidade das normas constitucionais: 2.1 normas de eficácia plena, contida e limitada; normas programáticas; 2.2 emenda, reforma e revisão constitucional
+3. 3 Direitos e garantias fundamentais: 3.1 direitos e deveres individuais e coletivos, direitos sociais, direitos de nacionalidade, direitos políticos, partidos políticos
+4. 4 Organização político-administrativa do Estado: 4.1 Estado federal brasileiro, União, estados, Distrito Federal e municípios
+5. 5 Administração pública: 5.1 disposições gerais; 5.2 servidores públicos
+6. 6 Poder Executivo: 6.1 atribuições e responsabilidades do presidente da República
+7. 7 Poder Legislativo: 7.1 estrutura; 7.2 funcionamento e atribuições; 7.3 processo legislativo; 7.4 fiscalização contábil, financeira e orçamentária; 7.5 comissões parlamentares de inquérito
+8. 8 Poder Judiciário: 8.1 disposições gerais; 8.2 órgãos do Poder Judiciário
+9. 9 Funções essenciais à justiça: 9.1 Ministério Público; 9.2 advocacia pública; 9.3 Defensoria Pública
 
 **Base normativa**
 
-- Constituicao Federal de 1988 e emendas
-- Jurisprudencia do STF (sumulas vinculantes e informativos)
+- Constituição Federal de 1988 e emendas
+- Jurisprudência do STF (súmulas vinculantes e informativos)
 
 **Armadilhas tipicas da banca**
 
-- Sumula Vinculante 3 e o contraditorio nos processos do TCU: a banca adora a excecao (apreciacao de legalidade de aposentadoria)
-- Direitos fundamentais como absolutos — quase sempre item errado
-- Legitimados para ADI: trocar 'partido politico com representacao no Congresso' por 'qualquer partido'
-- Efeitos das decisoes em controle difuso x concentrado
-- Competencias concorrentes x privativas — lista da CF cobrada ao pe da letra
+- Controle de constitucionalidade NÃO está no programa — não gaste tempo com ADI, ADC e ADPF
+- Súmula Vinculante 3 e o contraditório nos processos de tribunal de contas: a banca cobra a exceção (apreciação da legalidade de aposentadoria)
+- Direito fundamental apresentado como absoluto costuma ser item errado
+- Normas de eficácia contida x limitada nos exemplos concretos
+- Competências da CF trocadas entre União, estados, DF e municípios
 
 **Referencias**
 
-- Gilmar Mendes e Paulo Branco — Curso de Direito Constitucional
 - Pedro Lenza — Direito Constitucional Esquematizado
-- Informativos do STF dos ultimos 24 meses
+- Gilmar Mendes e Paulo Branco — Curso de Direito Constitucional
+- Informativos do STF dos últimos 24 meses
 
 ---
 
-### 🧓 Direito Previdenciario
+### 🧓 Direito Previdenciário
 
 `P2` · 8 itens estimados · prioridade **alta**
 
-*Materia diretamente ligada ao registro de aposentadorias e pensoes pelo TCDF — uso pratico no cargo.*
+*O edital exige RGPS, RPPS, o RPPS do DF (LC 769/2008) e previdência complementar — exatamente os atos que o Tribunal registra.*
 
 **Ementa**
 
-1. Seguridade social: conceito, principios e organizacao constitucional
-2. Regime Geral de Previdencia Social (RGPS): segurados obrigatorios e facultativos, filiacao, inscricao, qualidade de segurado e periodo de graca
-3. Carencia, salario de contribuicao e salario de beneficio
-4. Beneficios do RGPS: aposentadorias, auxilios, salario-maternidade, pensao por morte
-5. Regime Proprio de Previdencia Social (RPPS): regras gerais, servidores do DF
-6. Reforma da Previdencia (EC 103/2019): regras de transicao, pedagio, idade minima e calculo de proventos
-7. Aposentadoria do servidor publico: voluntaria, por incapacidade permanente, compulsoria e especial
-8. Pensao por morte no RPPS: calculo, cotas e dependentes
-9. Abono de permanencia, acumulacao de proventos e teto remuneratorio
-10. Contagem reciproca de tempo de contribuicao e certidoes; averbacao
-11. Controle dos atos de aposentadoria e pensao pelos Tribunais de Contas
+1. 1 Seguridade social: 1.1 origem e evolução legislativa no Brasil; 1.2 conceito, organização e princípios constitucionais
+2. 2 Regime geral da previdência social – RGPS: Lei federal nº 8.212/1991 e Lei federal nº 8.213/1991
+3. 3 Regime próprio de previdência social dos servidores públicos – RPPS
+4. 4 Regime Próprio de Previdência Social do Distrito Federal – RPPS/DF: Lei Complementar distrital nº 769/2008
+5. 5 Previdência complementar: Lei Complementar federal nº 108/2001, Lei Complementar federal nº 109/2001 e Lei Complementar distrital nº 932/2017
 
 **Base normativa**
 
-- CF/88, arts. 40, 194 a 204
-- EC 103/2019 e emendas distritais correlatas
-- Lei 8.213/1991 e Lei 8.212/1991
-- Decreto 3.048/1999
-- Legislacao previdenciaria do DF (IPREV/DF)
+- CF/88, arts. 40 e 194 a 204, com a EC 103/2019
+- Leis federais nº 8.212/1991 e 8.213/1991
+- Lei Complementar distrital nº 769/2008 (RPPS/DF)
+- Leis Complementares federais nº 108/2001 e 109/2001 e LC distrital nº 932/2017
 
 **Armadilhas tipicas da banca**
 
-- Aplicar regra do RGPS ao RPPS (e vice-versa) — a banca mistura os regimes de proposito
-- Regras de transicao da EC 103: pontuacao e idade minima alteradas em 1 ou 2 unidades
-- Prazo decadencial para o Tribunal apreciar o ato de aposentadoria (Tema 445 do STF)
-- Confundir dependente preferencial com dependente equiparado
+- Aplicar regra do RGPS ao RPPS e vice-versa: a banca mistura os regimes de propósito
+- A LC distrital 769/2008 é fonte nomeada no edital — a maioria dos candidatos ignora e perde itens fáceis
+- Previdência complementar: confundir entidade fechada (LC 108) com aberta (LC 109)
+- Dependente preferencial x dependente equiparado
+- Regras de transição da EC 103/2019 com pontuação ou idade alteradas em uma unidade
 
 **Referencias**
 
-- Frederico Amado — Curso de Direito e Processo Previdenciario
-- Jurisprudencia do STF sobre EC 103/2019 e registro de aposentadorias
+- Frederico Amado — Curso de Direito e Processo Previdenciário
+- Texto integral da LC distrital 769/2008 e da LC distrital 932/2017
 
 ---
 
-### 📕 Nocoes de Direito Civil
+### 📕 Noções de Direito Civil
 
 `P2` · 6 itens estimados · prioridade **media**
 
-*Cobranca em nivel de nocoes: foco na parte geral e nos contratos que dialogam com a Administracao.*
+*Recorte curto e fechado: só a parte geral do Código Civil. Contratos, obrigações e responsabilidade civil ficaram de fora.*
 
 **Ementa**
 
-1. Lei de Introducao as Normas do Direito Brasileiro (LINDB), com enfase nos arts. 20 a 30 (decisoes sobre gestao publica)
-2. Pessoas naturais e juridicas: personalidade, capacidade, domicilio e desconsideracao da personalidade juridica
-3. Bens: classificacao e bens publicos
-4. Fatos, atos e negocios juridicos: elementos, defeitos, invalidade, condicao, termo e encargo
-5. Prescricao e decadencia
-6. Obrigacoes: modalidades, transmissao, adimplemento e inadimplemento, mora, juros e clausula penal
-7. Contratos: principios, formacao, vicios redibitorios, evicao, extincao; contratos em especie relevantes a Administracao (compra e venda, prestacao de servicos, fianca, locacao)
-8. Responsabilidade civil: subjetiva e objetiva, dano material, moral e lucros cessantes
+1. 1 Lei de Introdução às Normas do Direito Brasileiro
+2. 2 Pessoas: 2.1 pessoas naturais; 2.2 pessoas jurídicas; 2.3 domicílio
+3. 3 Bens
+4. 4 Fatos jurídicos: 4.1 negócio jurídico
+5. 5 Atos jurídicos lícitos e ilícitos
+6. 6 Prescrição e decadência
 
 **Base normativa**
 
-- Lei 10.406/2002 — Codigo Civil
-- Decreto-Lei 4.657/1942 — LINDB (arts. 20 a 30 incluidos pela Lei 13.655/2018)
+- Lei nº 10.406/2002 — Código Civil, parte geral (arts. 1º a 232)
+- Decreto-Lei nº 4.657/1942 — LINDB, incluídos os arts. 20 a 30 (Lei 13.655/2018)
 
 **Armadilhas tipicas da banca**
 
+- Obrigações, contratos e responsabilidade civil NÃO estão no programa: pare a parte geral
+- Os arts. 20 a 30 da LINDB são cobrados como direito público — decisão que impõe dever exige indicar consequências práticas
 - Prazos prescricionais do art. 206 trocados entre si
-- Confundir nulidade absoluta com anulabilidade (prazos e legitimados)
-- Ignorar que os arts. 20 a 30 da LINDB sao cobrados como direito publico — obrigacao de indicar consequencias praticas da decisao
-- Responsabilidade objetiva apresentada como regra geral no Codigo Civil
+- Nulidade absoluta x anulabilidade: prazos, legitimados e possibilidade de confirmação
+- Bens públicos (arts. 98 a 103) aparecem aqui e também em Direito Administrativo
 
 **Referencias**
 
-- Flavio Tartuce — Manual de Direito Civil
-- Carlos Roberto Goncalves — Direito Civil Esquematizado
+- Flávio Tartuce — Manual de Direito Civil (parte geral)
+- Texto da LINDB com a Lei 13.655/2018
 
 ---
 
-### 💰 Nocoes de Direito Tributario
+### 💰 Noções de Direito Tributário
 
-`P2` · 6 itens estimados · prioridade **media**
+`P2` · 5 itens estimados · prioridade **media**
 
-*Materia de lei seca (CTN + CF) com recorte previsivel: competencia, limitacoes e credito tributario.*
+*Recorte muito curto: para na definição das espécies tributárias. Crédito tributário e lançamento não foram cobrados.*
 
 **Ementa**
 
-1. Sistema Tributario Nacional: principios e limitacoes constitucionais ao poder de tributar
-2. Competencia tributaria: reparticao, indelegabilidade e reparticao de receitas tributarias
-3. Tributo: conceito, natureza juridica e especies (impostos, taxas, contribuicoes de melhoria, emprestimos compulsorios e contribuicoes especiais)
-4. Tributos de competencia do Distrito Federal (competencia cumulativa estadual e municipal)
-5. Legislacao tributaria: vigencia, aplicacao, interpretacao e integracao
-6. Obrigacao tributaria: principal e acessoria, fato gerador, sujeitos ativo e passivo, solidariedade, capacidade e domicilio
-7. Responsabilidade tributaria: por substituicao, por transferencia, de terceiros e por infracoes
-8. Credito tributario: constituicao, lancamento, suspensao da exigibilidade, extincao e exclusao
-9. Garantias e privilegios do credito tributario; administracao tributaria; divida ativa e certidoes
-10. Renuncia de receita e seu controle pelos Tribunais de Contas (LRF, art. 14)
+1. 1 Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário
+2. 2 Sistema Tributário Nacional: 2.1 princípios do direito tributário; 2.2 limitações constitucionais do poder de tributar da União, dos estados, do Distrito Federal e dos municípios; 2.3 repartição das receitas tributárias
+3. 3 Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imposto; 3.5 taxa; 3.6 contribuição de melhoria; 3.7 empréstimo compulsório; 3.8 contribuições
 
 **Base normativa**
 
 - CF/88, arts. 145 a 162
-- Lei 5.172/1966 — Codigo Tributario Nacional
-- LC 101/2000, art. 14 (renuncia de receita)
+- Lei nº 5.172/1966 — CTN, arts. 1º a 5º e 16 a 82
 
 **Armadilhas tipicas da banca**
 
-- Confundir hipoteses de suspensao (art. 151), extincao (art. 156) e exclusao (art. 175) — decore as tres listas
-- Anterioridade anual x nonagesimal: excecoes cobradas item a item
-- Imunidade apresentada como isencao
-- Responsabilidade do adquirente de fundo de comercio: integral x subsidiaria
+- Obrigação tributária, lançamento, crédito, suspensão, extinção e exclusão NÃO estão no programa
+- Anterioridade anual x nonagesimal: as exceções são cobradas item a item
+- Imunidade apresentada como isenção
+- Taxa cobrada sobre base de cálculo própria de imposto (vedação constitucional)
+- Repartição de receitas: o DF acumula competência estadual e municipal
 
 **Referencias**
 
-- Ricardo Alexandre — Direito Tributario
-- Sumulas do STF e do STJ em materia tributaria
+- Ricardo Alexandre — Direito Tributário (capítulos iniciais)
+- Súmulas do STF e do STJ sobre limitações ao poder de tributar
 
 ---
 
-### 🤖 Analise de Dados, Nocoes de Estatistica e Inteligencia Artificial
+### 🤖 Análise de Dados, Noções de Estatística e Inteligência Artificial
 
-`P2` · 5 itens estimados · prioridade **alta**
+`P2` · 6 itens estimados · prioridade **alta**
 
-*Materia nova no perfil de tribunais de contas: pouca concorrencia preparada, bibliografia enxuta e alto diferencial.*
+*Matéria nova, com Excel avançado, Power Query e IA generativa nomeados no edital. Pouquíssimos candidatos estudam isso — é diferencial puro.*
 
 **Ementa**
 
-1. Estatistica descritiva: tipos de variaveis, tabelas de frequencia, medidas de posicao e de dispersao, assimetria e curtose
-2. Probabilidade: conceitos basicos, variaveis aleatorias, distribuicoes discretas e continuas (binomial, Poisson, normal)
-3. Amostragem: tipos, erro amostral, intervalos de confianca e testes de hipoteses
-4. Correlacao e regressao linear simples
-5. Analise de dados aplicada ao controle: ciclo de vida do dado, qualidade de dados, ETL, cruzamento de bases e trilhas de auditoria
-6. Visualizacao de dados e storytelling com dados; indicadores e dashboards
-7. Governanca de dados, LGPD e uso de dados pessoais pela Administracao
-8. Inteligencia artificial: conceitos, aprendizado de maquina supervisionado e nao supervisionado, modelos de linguagem
-9. IA aplicada ao controle externo: deteccao de anomalias e fraudes, priorizacao de risco, automacao de analises
-10. Riscos, vieses, explicabilidade, transparencia algoritmica e uso etico de IA no setor publico
+1. 1 Fundamentos de análise de dados: 1.1 tipos de dados (estruturados e não estruturados; quantitativos e qualitativos); 1.2 produtos da análise de dados (base de dados, relatórios, planilhas e dashboards)
+2. 2 Estatística descritiva e análise exploratória de dados: 2.1 tabelas de distribuição de frequências, medidas de tendência central (média, mediana e moda) e medidas de dispersão (variância e desvio-padrão) voltadas à identificação de anomalias; 2.2 identificação de outliers e análise de séries históricas
+3. 3 Introdução à visualização de dados e storytelling: 3.1 tipos de gráficos (barras, pizza, linha, dispersão, histograma); 3.2 boas práticas para construção de gráficos; 3.3 princípios de narrativa com dados
+4. 4 Inteligência artificial generativa: 4.1 engenharia de prompt (contexto, persona, exemplos e estrutura de saída; encadeamento de prompt); 4.2 vieses cognitivos; 4.3 ética no uso de dados e inteligência artificial
+5. 5 Utilização de Excel (Microsoft 365) para análise de dados: 5.1 operação em Microsoft Excel avançado (Power Query para extração e tratamento de dados); 5.2 fórmulas lógicas, financeiras e de busca; 5.3 tabelas dinâmicas e tratamento de grandes bases relacionais
 
 **Base normativa**
 
-- Lei 13.709/2018 — LGPD
-- Lei 14.129/2021 — Governo Digital
-- Resolucoes e normativos sobre uso de IA na Administracao Publica
+- Documentação do Microsoft Excel (Microsoft 365) e do Power Query
+- Lei nº 13.709/2018 — LGPD (ética no uso de dados)
 
 **Armadilhas tipicas da banca**
 
-- Confundir correlacao com causalidade — item classico de C/E
-- Media x mediana em distribuicoes assimetricas
-- Afirmar que modelo de IA dispensa supervisao humana em decisao administrativa
-- Trocar aprendizado supervisionado por nao supervisionado nos exemplos (clusterizacao x classificacao)
+- Excel é cobrado na prática: PROCV/PROCX, SE, SOMASE, ÍNDICE+CORRESP, tabela dinâmica e etapas do Power Query. Decorar sintaxe importa
+- Correlação apresentada como causalidade
+- Média x mediana em distribuição assimétrica e na presença de outlier
+- Variância x desvio-padrão: unidade de medida trocada
+- Engenharia de prompt: encadeamento de prompt confundido com ajuste fino do modelo
+- Gráfico de pizza recomendado para série histórica ou para muitas categorias (má prática)
 
 **Referencias**
 
-- Bussab & Morettin — Estatistica Basica
-- Referencial de combate a fraude e corrupcao do TCU
-- Materiais de analise de dados do TCU/Atricon
+- Bussab & Morettin — Estatística Básica (capítulos de estatística descritiva)
+- Documentação oficial do Power Query
+- Materiais de análise de dados aplicada ao controle do TCU e da Atricon
 
 ---
 
 ### 🏢 Direito Administrativo
 
-`P3` · 14 itens estimados · prioridade **critica**
+`P3` · 22 itens estimados · prioridade **critica**
 
-*Maior bloco isolado da prova: o candidato que domina Direito Administrativo decide a aprovacao em P3.*
+*A maior matéria do edital, com 14 tópicos no bloco de maior peso. Sozinha vale mais do que toda a prova de conhecimentos básicos.*
 
 **Ementa**
 
-1. Estado, governo e administracao publica: conceitos, elementos e poderes
-2. Regime juridico-administrativo: principios expressos e implicitos; supremacia e indisponibilidade do interesse publico
-3. Organizacao administrativa: administracao direta e indireta, autarquias, fundacoes, empresas publicas e sociedades de economia mista; consorcios publicos; entidades paraestatais e terceiro setor
-4. Poderes administrativos: vinculado, discricionario, hierarquico, disciplinar, regulamentar e de policia; uso e abuso de poder
-5. Ato administrativo: conceito, requisitos, atributos, classificacao, especies, extincao, convalidacao, anulacao e revogacao; teoria dos motivos determinantes
-6. Processo administrativo (Lei 9.784/1999 e legislacao distrital): principios, fases, recursos, prescricao e anulacao
-7. Licitacoes e contratos administrativos (Lei 14.133/2021): principios, fases, modalidades, criterios de julgamento, contratacao direta, governanca das contratacoes, sancoes, nulidades, execucao contratual, alteracoes, equilibrio economico-financeiro e fiscalizacao
-8. Convenios, termos de fomento e colaboracao (Lei 13.019/2014)
-9. Servicos publicos: conceito, classificacao, delegacao, concessao, permissao e autorizacao (Leis 8.987/1995 e 11.079/2004)
-10. Agentes publicos: regime juridico, provimento, vacancia, direitos, deveres, responsabilidades e processo disciplinar; Lei 8.112/1990 e regime dos servidores do DF (Lei Complementar distrital)
-11. Responsabilidade civil do Estado: teorias, excludentes, dano moral e direito de regresso
-12. Controle da administracao publica: interno, externo, judicial e social; sistema de controle interno do DF
-13. Improbidade administrativa (Lei 8.429/1992 com alteracoes da Lei 14.230/2021)
-14. Lei de Acesso a Informacao (Lei 12.527/2011), Lei Anticorrupcao (Lei 12.846/2013) e LGPD na Administracao
-15. Bens publicos: classificacao, afetacao, uso por particulares, alienacao e imprescritibilidade
-16. Intervencao do Estado na propriedade: desapropriacao, servidao, requisicao, ocupacao temporaria e tombamento
+1. 1 Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos
+2. 2 Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes
+3. 3 Ato administrativo: 3.1 conceito, requisitos, atributos, classificação e espécies; 3.2 extinção do ato administrativo: cassação, anulação, revogação e convalidação; 3.3 decadência administrativa
+4. 4 Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, emprego e função pública (provimento, vacância, efetividade, estabilidade e vitaliciedade); 4.5 remuneração; 4.6 direitos e deveres; 4.7 responsabilidades; 4.8 sindicância e processo administrativo disciplinar
+5. 5 Poderes da administração pública: 5.1 hierárquico, disciplinar, regulamentar e de polícia; 5.2 uso e abuso do poder
+6. 6 Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expressos e implícitos da administração pública
+7. 7 Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 responsabilidade por ato comissivo; 7.3 responsabilidade por omissão; 7.4 requisitos para a demonstração da responsabilidade; 7.5 causas excludentes e atenuantes; 7.6 reparação do dano; 7.7 direito de regresso
+8. 8 Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 classificação; 8.4 princípios; 8.5 formas de prestação e meios de execução
+9. 9 Organização administrativa: 9.1 autarquias, fundações, empresas públicas e sociedades de economia mista; 9.2 entidades paraestatais e terceiro setor (serviços sociais autônomos, entidades de apoio, organizações sociais, organizações da sociedade civil de interesse público)
+10. 10 Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicial; 10.3 controle legislativo; 10.4 improbidade administrativa: Lei federal nº 8.429/1992
+11. 11 Lei federal nº 9.784/1999 e suas alterações (processo administrativo), aplicável ao Distrito Federal por força da Lei distrital nº 2.834/2001
+12. 12 Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/2021; 12.2 contratos administrativos; 12.3 Decreto distrital nº 44.330/2023
+13. 13 Lei nº 12.527/2011 (Lei de Acesso à Informação)
+14. 14 Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD)
 
 **Base normativa**
 
-- Lei 14.133/2021 — Nova Lei de Licitacoes e Contratos
-- Lei 9.784/1999 — Processo administrativo federal
-- Lei 8.112/1990 e regime juridico dos servidores do DF
-- Lei 8.429/1992 com a Lei 14.230/2021
-- Leis 12.527/2011, 12.846/2013, 13.019/2014, 8.987/1995 e 11.079/2004
+- Lei nº 14.133/2021 e Decreto distrital nº 44.330/2023
+- Lei nº 9.784/1999 c/c Lei distrital nº 2.834/2001
+- Lei nº 8.429/1992, com a Lei nº 14.230/2021
+- Leis nº 12.527/2011 e 13.709/2018
 
 **Armadilhas tipicas da banca**
 
-- Lei 14.133/2021: prazos, valores de dispensa e ordem das fases da licitacao trocados
-- Improbidade apos a Lei 14.230/2021 exige dolo — item que admite modalidade culposa esta errado
-- Atributos do ato administrativo: presuncao de legitimidade x autoexecutoriedade x imperatividade (nem todo ato tem todos)
-- Responsabilidade do Estado por omissao: objetiva x subjetiva conforme a jurisprudencia
-- Convalidacao de vicio de competencia exclusiva ou de objeto — nao cabe
+- O Decreto distrital 44.330/2023 é fonte nomeada e quase ninguém estuda: prazos e procedimentos distritais de contratação caem
+- Improbidade após a Lei 14.230/2021 exige dolo — item que admite modalidade culposa está errado
+- Atributos do ato administrativo: nem todo ato tem autoexecutoriedade e imperatividade
+- Responsabilidade do Estado por omissão: objetiva x subjetiva conforme a jurisprudência
+- Convalidação não alcança vício de competência exclusiva nem de objeto
+- Lei 9.784/1999 vale no DF por força de lei distrital — a banca testa exatamente essa amarração
 
 **Referencias**
 
 - Maria Sylvia Zanella Di Pietro — Direito Administrativo
 - Rafael Oliveira / Matheus Carvalho — Manual de Direito Administrativo
-- Jurisprudencia do STJ e do TCU sobre a Lei 14.133/2021
+- Jurisprudência do STJ e do TCU sobre a Lei 14.133/2021
 
 ---
 
-### 📊 Administracao Financeira e Orcamentaria (AFO)
+### 📊 Administração Financeira e Orçamentária
 
-`P3` · 10 itens estimados · prioridade **critica**
+`P3` · 16 itens estimados · prioridade **critica**
 
-*Nucleo tecnico do controle externo: orcamento publico e LRF sao cobrados com profundidade e exigem lei seca.*
+*Segunda maior matéria do bloco pesado e núcleo técnico do controle externo: Lei 4.320, LRF e o Decreto distrital 32.598/2010.*
 
 **Ementa**
 
-1. Orcamento publico: conceito, tipos, principios orcamentarios e ciclo orcamentario
-2. Orcamento na CF/88: PPA, LDO e LOA; processo legislativo orcamentario, emendas e vedacoes
-3. Orcamento impositivo e transferencias obrigatorias
-4. Receita publica: classificacao, estagios, receita corrente liquida, renuncia de receita e divida ativa
-5. Despesa publica: classificacao institucional, funcional, programatica e por natureza; estagios (empenho, liquidacao e pagamento); restos a pagar e despesas de exercicios anteriores
-6. Creditos adicionais: suplementares, especiais e extraordinarios; fontes de recursos
-7. Programacao e execucao orcamentaria e financeira; descentralizacao de creditos; contingenciamento
-8. Lei 4.320/1964: normas gerais de direito financeiro, exercicio financeiro e demonstracoes
-9. Lei de Responsabilidade Fiscal (LC 101/2000): planejamento, metas fiscais, limites de despesa com pessoal e de endividamento, transparencia, prestacao de contas e sancoes
-10. Relatorio Resumido de Execucao Orcamentaria (RREO) e Relatorio de Gestao Fiscal (RGF)
-11. Regime de adiantamento (suprimento de fundos)
-12. Fiscalizacao e controle da execucao orcamentaria pelos Tribunais de Contas
+1. 1 Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 princípios orçamentários; 1.4 ciclo orçamentário; 1.5 processo orçamentário
+2. 2 Orçamento público no Brasil: 2.1 sistema de planejamento e de orçamento federal; 2.2 plano plurianual; 2.3 diretrizes orçamentárias; 2.4 orçamento anual; 2.5 sistema e processo de orçamentação; 2.6 classificações orçamentárias; 2.7 estrutura programática; 2.8 créditos ordinários e adicionais
+3. 3 Programação e execução orçamentária e financeira: 3.1 descentralização orçamentária e financeira; 3.2 acompanhamento da execução; 3.3 sistemas de informações; 3.4 alterações orçamentárias
+4. 4 Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 fontes; 4.4 dívida ativa
+5. 5 Despesa pública: 5.1 conceito e classificações; 5.2 estágios; 5.3 restos a pagar; 5.4 despesas de exercícios anteriores; 5.5 dívida flutuante e fundada; 5.6 suprimento de fundos
+6. 6 Lei Complementar nº 101/2000 e suas alterações (Lei de Responsabilidade Fiscal)
+7. 7 Lei nº 4.320/1964 e suas alterações
+8. 8 Transferências voluntárias
+9. 9 Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento, finanças, patrimônio e contabilidade do Distrito Federal)
 
 **Base normativa**
 
+- Lei nº 4.320/1964
+- Lei Complementar nº 101/2000 — LRF
+- Decreto distrital nº 32.598/2010
 - CF/88, arts. 165 a 169
-- Lei 4.320/1964
-- LC 101/2000 — Lei de Responsabilidade Fiscal
-- Manual de Contabilidade Aplicada ao Setor Publico (MCASP) vigente
-- LDO e LOA do Distrito Federal do exercicio corrente
 
 **Armadilhas tipicas da banca**
 
-- Limites da LRF (prudencial, de alerta e maximo) e os percentuais por Poder — memorize a tabela
-- Credito extraordinario x especial: pressupostos e instrumento de abertura (MP x lei)
-- Estagios da despesa fora de ordem ou fusao de empenho com liquidacao
-- Confundir principio da exclusividade com o da universalidade
-- Receita corrente liquida: o que entra e o que se deduz
+- O Decreto distrital 32.598/2010 é fonte nomeada: nota de empenho, liquidação e ordem de pagamento no DF têm regras próprias
+- Limites da LRF (alerta, prudencial e máximo) e percentuais por Poder
+- Crédito extraordinário x especial: pressupostos e instrumento de abertura
+- Estágios da despesa fora de ordem, ou empenho fundido com liquidação
+- Dívida flutuante x fundada
+- Transferências voluntárias: requisitos do art. 25 da LRF
 
 **Referencias**
 
-- Augustinho Paludo — Orcamento Publico, AFO e LRF
-- Sergio Mendes — Administracao Financeira e Orcamentaria
-- MCASP — Secretaria do Tesouro Nacional
+- Augustinho Paludo — Orçamento Público, AFO e LRF
+- Sérgio Mendes — Administração Financeira e Orçamentária
+- Texto integral do Decreto distrital 32.598/2010
 
 ---
 
-### 🏗️ Administracao Geral e Publica
+### 🏗️ Administração Geral e Pública
+
+`P3` · 16 itens estimados · prioridade **critica**
+
+*Matéria guarda-chuva: absorve governança, ferramentas da administração, modelagem de processos, gestão por competências e gestão de projetos num único programa.*
+
+**Ementa**
+
+1. 1 Evolução da administração: 1.1 perspectiva clássica (administração científica, organizações burocráticas); 1.2 perspectiva humanista (movimento das relações humanas, perspectiva dos recursos humanos, abordagem das ciências comportamentais); 1.3 ciência administrativa (pensamento sistêmico, teoria da contingência)
+2. 2 Evolução da administração do setor público brasileiro: 2.1 estrutura organizacional do Estado: três poderes; 2.2 formas de administração pública
+3. 3 Administração pública patrimonialista: 3.1 administração pública burocrática; 3.2 administração pública gerencial
+4. 4 Governança: 4.1 princípios da governança pública (capacidade de resposta, integridade, confiabilidade, melhoria regulatória, transparência, prestação de contas e responsabilidades); 4.2 práticas e mecanismos de governança pública (liderança, estratégia, controle)
+5. 5 Funções administrativas: planejamento, organização, direção e controle
+6. 6 Ferramentas da administração: 6.1 análise SWOT; 6.2 matriz GUT; 6.3 5W2H; 6.4 ciclo PDCA; 6.5 mapas estratégicos; 6.6 benchmarking; 6.7 fatores críticos de sucesso
+7. 7 Modelagem de processos: 7.1 propósito da modelagem de processos; 7.2 notações: BPMN, cadeia de processos orientada a eventos (EPC), IDEF0, cadeia de valor
+8. 8 Gestão de pessoas por competências: 8.1 conhecimentos, habilidades e atitudes (CHA); 8.2 matriz de competência; 8.3 avaliação participativa por objetivo (APPO); 8.4 liderança; 8.5 motivação
+9. 9 Gestão de projetos e portfólios: 9.1 padrões de referência em gerenciamento de projetos (PMBOK, Prince, Scrum e métodos ágeis); 9.2 cronogramas (decomposição de escopo, sequenciamento de atividades, estimativa de esforço e duração, alocação de pessoas); 9.3 Kanban
+
+**Base normativa**
+
+- Referencial Básico de Governança Organizacional do TCU
+- Decreto nº 9.203/2017 (política de governança)
+- Guia PMBOK e Guia Scrum
+- BPM CBOK (notações de modelagem)
+
+**Armadilhas tipicas da banca**
+
+- Os seis princípios de governança do edital estão nomeados um a um: capacidade de resposta, integridade, confiabilidade, melhoria regulatória, transparência e prestação de contas. Decore a lista fechada
+- Notações: EPC e IDEF0 quase nunca são estudadas e estão no programa
+- APPO (avaliação participativa por objetivos) é cobrada pelo nome — não confunda com avaliação 360
+- Herzberg: fatores higiênicos não motivam, apenas evitam insatisfação
+- Matriz GUT: gravidade, urgência e tendência com pesos trocados
+- Prince2 aparece ao lado de PMBOK e Scrum — estude ao menos a estrutura de princípios, temas e processos
+
+**Referencias**
+
+- Chiavenato — Introdução à Teoria Geral da Administração
+- Paludo — Administração Pública
+- Referencial Básico de Governança — TCU
+- Guia PMBOK e Scrum Guide
+
+---
+
+### 👤 Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011)
 
 `P3` · 8 itens estimados · prioridade **alta**
 
-*Materia conceitual e ampla — o risco esta em estudar sem recorte; a delimitacao por autores classicos resolve.*
+*Uma lei inteira cobrada como matéria autônoma. Lei seca pura, altíssima previsibilidade, e é o estatuto que vai reger a sua própria vida funcional.*
 
 **Ementa**
 
-1. Evolucao da administracao: abordagens classica, humanistica, burocratica, estruturalista, comportamental, sistemica e contingencial
-2. Funcoes administrativas: planejamento, organizacao, direcao e controle
-3. Planejamento estrategico: missao, visao, valores, analise SWOT, BSC, objetivos e indicadores
-4. Estrutura organizacional: departamentalizacao, centralizacao x descentralizacao, delegacao, amplitude de controle e organograma
-5. Evolucao da administracao publica no Brasil: patrimonialismo, burocracia, gerencialismo (NPM) e governanca publica
-6. Reformas administrativas brasileiras; DASP; Decreto-Lei 200/1967; Plano Diretor da Reforma do Aparelho do Estado (1995)
-7. Governanca publica: principios, mecanismos (lideranca, estrategia e controle), Decreto 9.203/2017 e Referencial Basico de Governanca do TCU
-8. Gestao de riscos e controles internos: COSO, ISO 31000, tres linhas de defesa
-9. Accountability, transparencia, integridade e compliance no setor publico
-10. Politicas publicas: ciclo, formulacao, implementacao, monitoramento e avaliacao
-11. Qualidade no servico publico, inovacao e gestao para resultados; governo digital
-12. Etica no servico publico e conflito de interesses
+1. 1 Lei Complementar nº 840/2011 (regime jurídico dos servidores públicos civis do Distrito Federal, das autarquias e das fundações públicas distritais)
 
 **Base normativa**
 
-- Decreto-Lei 200/1967
-- Decreto 9.203/2017 — Politica de Governanca da Administracao Publica Federal
-- Referencial Basico de Governanca Organizacional do TCU
-- Lei 14.129/2021 — Governo Digital
+- Lei Complementar distrital nº 840/2011, com as alterações vigentes
 
 **Armadilhas tipicas da banca**
 
-- Atribuir a Taylor ideias de Fayol (e vice-versa) na administracao cientifica x classica
-- Confundir eficiencia, eficacia e efetividade nos exemplos
-- Tres linhas de defesa: trocar o papel da segunda com o da terceira linha
-- Gerencialismo apresentado como substituicao total da burocracia
+- Não estude pela Lei 8.112/1990: prazos, licenças e penalidades da LC 840/2011 divergem em vários pontos
+- Prazos de estágio probatório, de prescrição da ação disciplinar e de sindicância
+- Hipóteses de demissão e de cassação de aposentadoria: lista fechada
+- Licenças e afastamentos: quais são remunerados e quais contam como tempo de serviço
+- Acumulação de cargos e regras de posse, exercício e vacância
 
 **Referencias**
 
-- Chiavenato — Introducao a Teoria Geral da Administracao
-- Paludo — Administracao Publica
-- Referencial Basico de Governanca — TCU
+- Texto integral da LC distrital nº 840/2011
+- Jurisprudência do TCDF sobre atos de pessoal
 
 ---
 
-### 👥 Gestao de Pessoas
+### 📑 Gestão de Contratos
 
 `P3` · 8 itens estimados · prioridade **alta**
 
-*Alta densidade conceitual com cobranca recorrente de competencias, desempenho e comportamento organizacional.*
+*Matéria autônoma e muito prática: fiscalização contratual, sanções e reequilíbrio econômico-financeiro, com a IN 5/2017 e o decreto distrital nomeados.*
 
 **Ementa**
 
-1. Evolucao da gestao de pessoas: de departamento pessoal a gestao estrategica
-2. Gestao por competencias: mapeamento, gaps, trilhas e desenvolvimento
-3. Recrutamento e selecao no setor publico; concurso publico e provimento
-4. Treinamento, desenvolvimento e educacao corporativa (TD&E); avaliacao de resultados de treinamento
-5. Gestao de desempenho: metodos de avaliacao, avaliacao 360 graus, feedback e erros de avaliacao
-6. Motivacao e satisfacao no trabalho: Maslow, Herzberg, McClelland, Vroom, teoria da equidade e da fixacao de objetivos
-7. Lideranca: teorias de tracos, comportamentais, situacionais e contemporaneas
-8. Comunicacao organizacional, negociacao e administracao de conflitos
-9. Clima e cultura organizacional; comportamento organizacional; poder e politica nas organizacoes
-10. Equipes de trabalho, trabalho remoto e gestao da mudanca
-11. Qualidade de vida no trabalho, saude e seguranca; assedio e diversidade
-12. Gestao do conhecimento e retencao de talentos na administracao publica
+1. 1 Legislação aplicável à contratação de bens e serviços: 1.1 Lei nº 14.133/2021; 1.2 Instrução Normativa nº 5/2017 da Secretaria de Gestão do Ministério do Planejamento, Desenvolvimento e Gestão; 1.3 Decreto distrital nº 44.330/2023
+2. 2 Elaboração e fiscalização de contratos: 2.1 cláusulas e indicadores de nível de serviço; 2.2 papel do fiscalizador do contrato; 2.3 papel do preposto da contratada; 2.4 acompanhamento da execução contratual; 2.5 registro e notificação de irregularidades; 2.6 definição e aplicação de penalidades e sanções administrativas; 2.7 equação econômico-financeira (reajuste e repactuação)
 
 **Base normativa**
 
-- Decreto 9.991/2019 (PNDP) como referencia de desenvolvimento de pessoas
-- Normativos de gestao de pessoas do GDF/TCDF
+- Lei nº 14.133/2021
+- Instrução Normativa SEGES/MP nº 5/2017
+- Decreto distrital nº 44.330/2023
 
 **Armadilhas tipicas da banca**
 
-- Herzberg: fatores higienicos nao motivam, apenas evitam insatisfacao — item invertido e classico
-- Confundir clima (percepcao, mutavel) com cultura (valores, estavel)
-- Lideranca situacional de Hersey e Blanchard: trocar o estilo indicado para o nivel de maturidade
-- Avaliacao 360 apresentada como isenta de vieses
+- Reajuste x repactuação x revisão (reequilíbrio): a banca troca os três conceitos e os pressupostos de cada um
+- Papel do fiscal x do gestor do contrato x do preposto da contratada
+- IN 5/2017 é norma federal cobrada expressamente: IMR (instrumento de medição de resultado) e modelos de gestão caem
+- Sanções da Lei 14.133/2021: advertência, multa, impedimento e declaração de inidoneidade, com prazos e autoridades distintos
+- Sobreposição com Direito Administrativo tópico 12: estude os dois juntos para não repetir esforço
 
 **Referencias**
 
-- Chiavenato — Gestao de Pessoas
-- Robbins — Comportamento Organizacional
-- Idalberto Chiavenato e Dutra — gestao por competencias
-
----
-
-### 🔄 Gestao de Processos
-
-`P3` · 6 itens estimados · prioridade **media**
-
-*Conteudo enxuto e muito padronizado (BPM CBOK) — otimo custo-beneficio de estudo.*
-
-**Ementa**
-
-1. Conceitos de processo, cadeia de valor e visao por processos x visao funcional
-2. Tipos de processos: primarios, de suporte e gerenciais
-3. Ciclo de vida BPM: planejamento, analise, desenho, implementacao, monitoramento e refinamento
-4. Modelagem de processos: AS-IS e TO-BE; notacao BPMN (eventos, atividades, gateways, raias)
-5. Analise e melhoria: gargalos, desperdicios, automacao e redesenho
-6. Indicadores de desempenho de processos: eficiencia, eficacia, tempo de ciclo e SLA
-7. Escritorio de processos e maturidade em BPM
-8. Ferramentas da qualidade: PDCA, DMAIC, Ishikawa, 5W2H, Pareto, matriz GUT
-9. Lean, Six Sigma e melhoria continua aplicados ao setor publico
-10. Gestao de processos e gestao de riscos: controles embutidos no processo
-
-**Base normativa**
-
-- BPM CBOK — ABPMP
-- Norma BPMN 2.0
-
-**Armadilhas tipicas da banca**
-
-- Trocar gateway exclusivo (XOR) por paralelo (AND) na descricao de fluxo
-- Confundir eficiencia (uso de recursos) com eficacia (resultado)
-- Afirmar que o TO-BE deve ser modelado antes do AS-IS
-- Apresentar automacao como sinonimo de melhoria de processo
-
-**Referencias**
-
-- ABPMP — BPM CBOK v4
-- Paulo Sordi — Gestao por Processos
-
----
-
-### 📌 Gestao de Projetos
-
-`P3` · 6 itens estimados · prioridade **media**
-
-*PMBOK e metodos ageis: conteudo estavel, com itens decorativos de areas, grupos e artefatos.*
-
-**Ementa**
-
-1. Conceitos: projeto, programa, portfolio, operacoes e escritorio de projetos (PMO)
-2. Ciclo de vida do projeto e partes interessadas
-3. PMBOK: grupos de processos (iniciacao, planejamento, execucao, monitoramento e controle, encerramento)
-4. Areas de conhecimento: integracao, escopo, cronograma, custos, qualidade, recursos, comunicacoes, riscos, aquisicoes e partes interessadas
-5. Principios e dominios de desempenho do PMBOK 7a edicao
-6. Documentos: termo de abertura, plano de gerenciamento, EAP, matriz de responsabilidades e registro de riscos
-7. Cronograma: caminho critico, PERT/CPM, marcos e nivelamento de recursos
-8. Gerenciamento de custos e analise de valor agregado (EVA/GVA): VP, VA, CR, IDP, IDC
-9. Gerenciamento de riscos do projeto: identificacao, analise qualitativa e quantitativa, respostas
-10. Metodos ageis: manifesto agil, Scrum (papeis, eventos e artefatos), Kanban e hibridos
-11. Gestao de projetos no setor publico: contratacoes, restricoes orcamentarias e governanca de projetos
-
-**Base normativa**
-
-- PMBOK 6a e 7a edicoes — PMI
-- Guia Scrum
-- Referencial de gestao de projetos aplicavel a administracao publica
-
-**Armadilhas tipicas da banca**
-
-- Valor agregado: IDP/IDC maior que 1 significa adiantado/abaixo do custo — a banca inverte
-- Scrum: atribuir ao Scrum Master responsabilidades do Product Owner
-- EAP decompondo atividades (a EAP decompoe entregas, nao atividades)
-- Confundir programa (projetos relacionados) com portfolio (alinhamento estrategico)
-
-**Referencias**
-
-- PMI — Guia PMBOK
-- Scrum Guide 2020
-- Ricardo Vargas — Gerenciamento de Projetos
-
----
-
-### 📦 Administracao de Recursos Materiais
-
-`P3` · 5 itens estimados · prioridade **media**
-
-*Materia calculavel (lote economico, curva ABC, estoque de seguranca) — acerto previsivel com pratica.*
-
-**Ementa**
-
-1. Conceitos de recursos materiais, logistica e cadeia de suprimentos
-2. Classificacao de materiais: codificacao, catalogacao, especificacao e padronizacao
-3. Gestao de estoques: niveis, ponto de pedido, estoque de seguranca, lote economico de compra e giro de estoque
-4. Curva ABC e criticidade XYZ
-5. Compras no setor publico: planejamento da contratacao, ETP, termo de referencia, pesquisa de precos e registro de precos
-6. Recebimento, armazenagem, movimentacao e distribuicao de materiais
-7. Inventario fisico: tipos, periodicidade e conciliacao com a contabilidade
-8. Almoxarifado: layout, arranjo fisico, seguranca e controle
-9. Gestao patrimonial de bens moveis: tombamento, carga, transferencia, baixa e desfazimento
-10. Sustentabilidade nas contratacoes e logistica reversa
-
-**Base normativa**
-
-- Lei 14.133/2021 (planejamento das contratacoes e sistema de registro de precos)
-- Normativos distritais de material e patrimonio
-- IN SEGES aplicaveis por analogia
-
-**Armadilhas tipicas da banca**
-
-- Curva ABC: classe A e a de maior valor, nao a de maior quantidade
-- Formula do lote economico com dados trocados (custo de pedido x custo de manutencao)
-- Confundir inventario rotativo com anual
-- Afirmar que estoque de seguranca elimina risco de ruptura
-
-**Referencias**
-
-- Marco Aurelio Dias — Administracao de Materiais
-- Ballou — Logistica Empresarial
-
----
-
-### 🗂️ Arquivologia
-
-`P3` · 5 itens estimados · prioridade **media**
-
-*Materia de definicoes e legislacao especifica: alta taxa de acerto com revisao curta e frequente.*
-
-**Ementa**
-
-1. Conceitos fundamentais de arquivologia: arquivo, documento, informacao, fundo e principios (proveniencia e ordem original)
-2. Ciclo vital dos documentos e teoria das tres idades: corrente, intermediario e permanente
-3. Classificacao de arquivos: quanto a entidade mantenedora, a natureza e a extensao
-4. Valor primario e secundario; documentos ostensivos e sigilosos
-5. Gestao de documentos: producao, utilizacao e destinacao
-6. Protocolo: recebimento, registro, autuacao, classificacao, distribuicao, tramitacao e expedicao
-7. Instrumentos de gestao: plano de classificacao e tabela de temporalidade e destinacao
-8. Avaliacao e destinacao de documentos; comissao permanente de avaliacao
-9. Arranjo, descricao e instrumentos de pesquisa; NOBRADE
-10. Preservacao, conservacao e restauracao de documentos
-11. Documentos digitais: gestao arquivistica, e-ARQ Brasil, repositorios confiaveis e preservacao digital
-12. Legislacao arquivistica e acesso a informacao
-
-**Base normativa**
-
-- Lei 8.159/1991 — Politica Nacional de Arquivos
-- Lei 12.527/2011 — Lei de Acesso a Informacao
-- Resolucoes do CONARQ; e-ARQ Brasil; NOBRADE
-- Decreto 10.278/2020 (digitalizacao)
-
-**Armadilhas tipicas da banca**
-
-- Trocar valor primario (administrativo) por secundario (historico) nos exemplos
-- Afirmar que documento de arquivo intermediario ja pode ser eliminado sem tabela de temporalidade
-- Confundir arranjo (permanente) com classificacao (corrente)
-- Prazos e graus de sigilo da LAI alterados (ultrassecreto 25 anos, secreto 15, reservado 5)
-
-**Referencias**
-
-- Marilena Leite Paes — Arquivo: teoria e pratica
-- Dicionario Brasileiro de Terminologia Arquivistica — Arquivo Nacional
-
----
-
-### 📒 Contabilidade Publica
-
-`P3` · 5 itens estimados · prioridade **alta**
-
-*Materia tecnica de maior dificuldade percebida: dominar MCASP e as demonstracoes gera vantagem competitiva.*
-
-**Ementa**
-
-1. Contabilidade aplicada ao setor publico: conceito, objeto, campo de atuacao e usuarios
-2. Normas Brasileiras de Contabilidade Aplicadas ao Setor Publico (NBC TSP) e convergencia as IPSAS
-3. Regimes contabeis: competencia, caixa e o regime misto da Lei 4.320/1964
-4. Plano de Contas Aplicado ao Setor Publico (PCASP): estrutura e natureza das contas
-5. Subsistemas de informacao: orcamentario, patrimonial, de custos e de compensacao
-6. Variacoes patrimoniais qualitativas e quantitativas
-7. Registros contabeis da receita e da despesa: previsao, arrecadacao, fixacao, empenho, liquidacao e pagamento
-8. Restos a pagar processados e nao processados; despesas de exercicios anteriores; suprimento de fundos
-9. Demonstracoes contabeis aplicadas ao setor publico: balanco orcamentario, balanco financeiro, balanco patrimonial, DVP e DFC
-10. Notas explicativas e consolidacao das contas publicas
-11. Sistema de custos no setor publico
-12. Prestacao e tomada de contas; analise das contas pelo Tribunal de Contas
-
-**Base normativa**
-
-- Lei 4.320/1964
-- MCASP vigente — STN
-- NBC TSP do CFC
-- LC 101/2000
-
-**Armadilhas tipicas da banca**
-
-- Balanco financeiro x balanco orcamentario: o que entra em cada um (restos a pagar e transferencias financeiras)
-- Variacao patrimonial qualitativa apresentada como aumentativa ou diminutiva
-- Inscricao de restos a pagar nao processados sem liquidacao — cuidado com o estagio
-- Classificar depreciacao como variacao qualitativa (e quantitativa diminutiva)
-
-**Referencias**
-
-- MCASP — Secretaria do Tesouro Nacional
-- Sergio Mendes / Joao Eudes Bezerra Filho — Contabilidade Publica
-
----
-
-### 🏷️ Administracao Patrimonial
-
-`P3` · 3 itens estimados · prioridade **baixa**
-
-*Poucos itens e forte sobreposicao com recursos materiais e contabilidade — estudar em bloco com elas.*
-
-**Ementa**
-
-1. Patrimonio publico: conceito, composicao e classificacao dos bens publicos
-2. Bens de uso comum, de uso especial e dominicais; afetacao e desafetacao
-3. Incorporacao de bens: aquisicao, doacao, permuta, producao interna e cessao
-4. Tombamento patrimonial, registro, plaqueteamento e carga patrimonial
-5. Movimentacao, cessao de uso, comodato e transferencia de bens
-6. Depreciacao, amortizacao, exaustao e reavaliacao de bens publicos
-7. Inventario patrimonial e conciliacao contabil
-8. Desfazimento de bens: alienacao, doacao, inservibilidade, leilao e baixa
-9. Responsabilidade do agente publico pela guarda e uso do patrimonio; tomada de contas especial por dano ao erario
-10. Controle e fiscalizacao patrimonial pelo Tribunal de Contas
-
-**Base normativa**
-
-- Lei 14.133/2021 (alienacao de bens)
-- Lei 4.320/1964 e MCASP (registro patrimonial)
-- Codigo Civil, arts. 98 a 103 (bens publicos)
-- Normativos distritais de patrimonio
-
-**Armadilhas tipicas da banca**
-
-- Bens dominicais podem ser alienados; de uso comum e especial exigem desafetacao — item invertido e comum
-- Confundir depreciacao (bens moveis) com amortizacao (intangiveis) e exaustao (recursos naturais)
-- Afirmar que bem publico pode ser adquirido por usucapiao
-- Trocar a autoridade competente para autorizar o desfazimento
-
-**Referencias**
-
-- MCASP — capitulo de patrimonio
-- Di Pietro — bens publicos
+- Lei 14.133/2021 comentada
+- Instrução Normativa SEGES/MP nº 5/2017 e anexos
+- Decreto distrital nº 44.330/2023
 
 ---
 

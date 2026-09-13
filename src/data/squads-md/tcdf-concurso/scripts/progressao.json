@@ -39,7 +39,7 @@
         "quando": "Domingo de manha, cronometrado",
         "meta": 0.9,
         "composicao": "Proporcional ao peso de cada materia vencida no edital (itens da materia / soma dos itens das materias vencidas) x 200",
-        "inicio": "Quando o pool de materias vencidas somar pelo menos 30 itens do edital (~20% da prova). Antes disso, rode um simulado reduzido proporcional, com minimo de 50 questoes",
+        "inicio": "Quando o pool de matérias vencidas somar pelo menos 30 itens do edital (~20% da prova). Antes disso, rode um simulado reduzido proporcional, com mínimo de 50 questões",
         "aprovado_gera": "Materia confirmada no pool; segue em manutencao semanal sem voltar ao Nivel 2",
         "reprovado_gera": "Materia abaixo da meta entra em observacao: revisao dirigida na semana e novo lote de Nivel 2 no dia do seu grupo",
         "regressao": "Materia que ficar abaixo de 0,90 no Nivel 3 por 2 domingos seguidos, ou abaixo de 0,80 em um unico domingo, volta para o Nivel 2 e reentra no dia do seu grupo"
@@ -60,43 +60,38 @@
     {
       "id": "g1-administrativo-contratacoes",
       "dia": "Segunda-feira",
-      "nome": "Direito Administrativo e Contratacoes",
-      "tese": "O maior bloco isolado da prova (14 itens) no mesmo dia da materia que compartilha a Lei 14.133/2021 com ele.",
-      "itens_edital": 19,
+      "nome": "Direito Administrativo e Contratações",
+      "tese": "A maior matéria do edital (22 itens) no mesmo dia da matéria que compartilha com ela a Lei 14.133/2021 e o Decreto distrital 44.330/2023.",
+      "itens_edital": 30,
       "materias": [
         {
           "id": "direito-administrativo",
-          "itens": 14,
+          "itens": 22,
           "questoes_n2": 37
         },
         {
-          "id": "administracao-recursos-materiais",
-          "itens": 5,
+          "id": "gestao-de-contratos",
+          "itens": 8,
           "questoes_n2": 13
         }
       ]
     },
     {
-      "id": "g2-financas-publicas",
-      "dia": "Terca-feira",
-      "nome": "Financas Publicas",
-      "tese": "AFO, Contabilidade Publica e Patrimonio falam a mesma lingua: Lei 4.320, MCASP e LRF. Estudar separado e retrabalho.",
-      "itens_edital": 18,
+      "id": "g2-orcamento-financas",
+      "dia": "Terça-feira",
+      "nome": "Orçamento e Finanças Públicas",
+      "tese": "AFO com o tópico 4 da LODF (tributação e orçamento do DF): o mesmo assunto na norma geral e na norma distrital.",
+      "itens_edital": 22,
       "materias": [
         {
           "id": "administracao-financeira-orcamentaria",
-          "itens": 10,
-          "questoes_n2": 28
+          "itens": 16,
+          "questoes_n2": 36
         },
         {
-          "id": "contabilidade-publica",
-          "itens": 5,
+          "id": "lei-organica-df",
+          "itens": 6,
           "questoes_n2": 14
-        },
-        {
-          "id": "administracao-patrimonial",
-          "itens": 3,
-          "questoes_n2": 8
         }
       ]
     },
@@ -104,130 +99,95 @@
       "id": "g3-constitucional-institucional",
       "dia": "Quarta-feira",
       "nome": "Constitucional e Institucional",
-      "tese": "CF arts. 70 a 75, Lei Organica do TCDF e LODF sao o mesmo assunto visto de tres alturas: controle externo no DF.",
-      "itens_edital": 26,
+      "tese": "CF arts. 70 a 75 e a Lei Orgânica do TCDF são o mesmo objeto em duas alturas: o controle externo e o tribunal que o exerce.",
+      "itens_edital": 20,
       "materias": [
         {
           "id": "direito-constitucional",
           "itens": 10,
-          "questoes_n2": 19
+          "questoes_n2": 25
         },
         {
           "id": "lei-organica-regimento-tcdf",
           "itens": 10,
-          "questoes_n2": 19
-        },
-        {
-          "id": "lei-organica-df",
-          "itens": 6,
-          "questoes_n2": 12
+          "questoes_n2": 25
         }
       ]
     },
     {
-      "id": "g4-gestao-publica",
+      "id": "g4-gestao-e-dados",
       "dia": "Quinta-feira",
-      "nome": "Gestao Publica",
-      "tese": "Governanca, pessoas, processos e projetos formam o nucleo gerencial de P3 e se cobram com o mesmo vocabulario.",
-      "itens_edital": 28,
+      "nome": "Gestão e Dados",
+      "tese": "Administração Geral e Pública absorve governança, processos, pessoas e projetos; Análise de Dados é o ferramental que sustenta tudo isso.",
+      "itens_edital": 22,
       "materias": [
         {
           "id": "administracao-geral-e-publica",
-          "itens": 8,
-          "questoes_n2": 14
+          "itens": 16,
+          "questoes_n2": 36
         },
         {
-          "id": "gestao-de-pessoas",
-          "itens": 8,
-          "questoes_n2": 14
-        },
-        {
-          "id": "gestao-de-processos",
+          "id": "analise-dados-estatistica-ia",
           "itens": 6,
-          "questoes_n2": 11
-        },
-        {
-          "id": "gestao-de-projetos",
-          "itens": 6,
-          "questoes_n2": 11
+          "questoes_n2": 14
         }
       ]
     },
     {
-      "id": "g5-direitos-complementares",
+      "id": "g5-servidor-direitos",
       "dia": "Sexta-feira",
-      "nome": "Direitos Complementares",
-      "tese": "Previdenciario, Civil e Tributario: os tres direitos de P2 que sustentam os atos de pessoal e de receita analisados pelo Tribunal.",
-      "itens_edital": 20,
+      "nome": "Servidor e Direitos Complementares",
+      "tese": "LC 840/2011 e Direito Previdenciário são o mesmo servidor em dois momentos; Civil e Tributário fecham o que resta de P2.",
+      "itens_edital": 27,
       "materias": [
+        {
+          "id": "regime-juridico-servidores-df",
+          "itens": 8,
+          "questoes_n2": 15
+        },
         {
           "id": "direito-previdenciario",
           "itens": 8,
-          "questoes_n2": 20
+          "questoes_n2": 15
         },
         {
           "id": "nocoes-direito-civil",
           "itens": 6,
-          "questoes_n2": 15
+          "questoes_n2": 11
         },
         {
           "id": "nocoes-direito-tributario",
-          "itens": 6,
-          "questoes_n2": 15
+          "itens": 5,
+          "questoes_n2": 9
         }
       ]
     },
     {
-      "id": "g6-instrumentais-complementares",
-      "dia": "Sabado",
-      "nome": "Instrumentais e Complementares",
-      "tese": "Materias de treino e de varredura. Alternam em semanas A e B porque exigem constancia, nao volume de uma vez.",
-      "itens_edital": 39,
-      "rotacao": "quinzenal",
-      "variantes": [
+      "id": "g6-instrumentais-df",
+      "dia": "Sábado",
+      "nome": "Instrumentais e Distrito Federal",
+      "tese": "Todo o bloco de conhecimentos básicos que sobra: matérias de treino constante e de varredura, com peso real de 29 itens.",
+      "itens_edital": 29,
+      "materias": [
         {
-          "id": "A",
-          "nome": "Instrumentais",
-          "semanas": "impares",
-          "materias": [
-            {
-              "id": "lingua-portuguesa",
-              "itens": 12,
-              "questoes_n2": 30
-            },
-            {
-              "id": "raciocinio-logico-matematica-financeira",
-              "itens": 8,
-              "questoes_n2": 20
-            }
-          ]
+          "id": "lingua-portuguesa",
+          "itens": 12,
+          "questoes_n2": 21
         },
         {
-          "id": "B",
-          "nome": "Complementares",
-          "semanas": "pares",
-          "materias": [
-            {
-              "id": "conhecimentos-df-politicas-mulheres",
-              "itens": 6,
-              "questoes_n2": 16
-            },
-            {
-              "id": "analise-dados-estatistica-ia",
-              "itens": 5,
-              "questoes_n2": 13
-            },
-            {
-              "id": "arquivologia",
-              "itens": 5,
-              "questoes_n2": 13
-            },
-            {
-              "id": "nocoes-primeiros-socorros",
-              "itens": 3,
-              "questoes_n2": 8
-            }
-          ]
+          "id": "raciocinio-logico-matematica-financeira",
+          "itens": 10,
+          "questoes_n2": 17
+        },
+        {
+          "id": "conhecimentos-df-politica-mulheres",
+          "itens": 4,
+          "questoes_n2": 7
+        },
+        {
+          "id": "nocoes-primeiros-socorros",
+          "itens": 3,
+          "questoes_n2": 5
         }
       ]
     }

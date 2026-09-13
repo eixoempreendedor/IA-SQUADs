@@ -19,7 +19,6 @@ EDITAL = RAIZ / "scripts" / "edital.json"
 AGENTS_DIR = RAIZ / "agents"
 
 AGENTES_CORE = [
-    "reitor-tcdf.md",
     "estrategista-cebraspe.md",
     "arquiteto-cronograma.md",
     "redator-discursiva.md",
@@ -549,7 +548,7 @@ def gerar_squad_yaml(edital: dict, agentes: list) -> str:
     desc = (
         f"Squad de {len(agentes)} agentes para aprovacao no concurso de Analista Administrativo de "
         f"Controle Externo do TCDF (Cebraspe 2026): 3 agentes (professor, examinador e revisor) para "
-        f"cada uma das {len(mats)} materias do edital, mais {len(AGENTES_CORE)} agentes de coordenacao."
+        f"cada uma das {len(mats)} materias do edital, mais {len(AGENTES_CORE) + 1} agentes de coordenacao."
     )
     sq = [
         "# GERADO por scripts/gerar_agentes.py — nao edite a mao",
@@ -595,6 +594,182 @@ def gerar_squad_yaml(edital: dict, agentes: list) -> str:
     return "\n".join(sq) + "\n"
 
 
+# --------------------------------------------------------------------------
+# REITOR (orquestrador) — gerado para que o mapa de roteamento nunca fique velho
+# --------------------------------------------------------------------------
+def reitor(edital: dict, prog: dict | None = None) -> str:
+    c = edital["concurso"]
+    mats = edital["materias"]
+
+    rot = []
+    for m in mats:
+        rot += [
+            f"    - materia: {m['id']}",
+            f"      nome: {y(m['nome'])}",
+            f"      bloco: {m['bloco']}",
+            f"      itens_estimados: {m['itens_estimados']}",
+            f"      prioridade: {m['prioridade']}",
+            "      agentes:",
+            f"        aprender: {m['id']}-professor",
+            f"        treinar: {m['id']}-examinador",
+            f"        revisar: {m['id']}-revisor",
+        ]
+
+    tabela = ["| Materia | Bloco | Itens est. | Prioridade | Trio de agentes |", "|---|---|---|---|---|"]
+    for m in mats:
+        tabela.append(
+            f"| {m['icone']} {m['nome']} | {m['bloco']} | {m['itens_estimados']} | {m['prioridade']} | "
+            f"`{m['id']}-professor` · `{m['id']}-examinador` · `{m['id']}-revisor` |"
+        )
+
+    provas = "\n".join(
+        f"    - id: {p['id']}\n      nome: {y(p['nome'])}\n      itens: {p['itens']}\n      minimo: {y(p['minimo'])}"
+        for p in c["provas"]
+    )
+
+    dias = ""
+    if prog:
+        linhas = ["| Dia | Grupo | Itens | Materias |", "|---|---|---|---|"]
+        nomes = {m["id"]: m["nome"] for m in mats}
+        for g in prog["grupos"]:
+            lista = ", ".join(nomes[x["id"]] for x in g["materias"])
+            linhas.append(f"| {g['dia']} | **{g['nome']}** | {g['itens_edital']} | {lista} |")
+        linhas.append("| Domingo | **Nivel 3 — simulado geral (200 questoes)** | pool vencido | Todas as materias vencidas |")
+        dias = "\n".join(linhas)
+
+    pesos = []
+    for p in c["provas"]:
+        if p["itens"]:
+            pesos.append(f"| {p['id']} — {p['nome']} | {p['itens']} | {p['itens'] / 150:.0%} | {p['minimo']} |")
+
+    return f"""# Reitor TCDF — Orquestrador do Squad de Aprovacao
+
+> ACTIVATION-NOTICE: Voce e o Reitor TCDF, o orquestrador do squad de preparacao para o concurso de Analista Administrativo de Controle Externo do TCDF. Voce nao ensina materia: voce diagnostica a demanda, escolhe o agente certo entre os {len(mats) * 3} especialistas de materia e os 5 agentes transversais, e integra os resultados em um plano coerente de aprovacao.
+
+## COMPLETE AGENT DEFINITION
+
+```yaml
+agent:
+  name: "Reitor TCDF"
+  id: reitor-tcdf
+  title: "Orquestrador do TCDF Concurso Squad"
+  icon: "🎓"
+  tier: 0
+  squad: tcdf-concurso
+  sub_group: "Orquestracao"
+  whenToUse: "Ponto de entrada padrao do squad. Use quando a demanda envolve mais de uma materia, quando o candidato nao sabe por onde comecar, quando precisa de diagnostico geral, ou quando nenhum especialista e obviamente o mais adequado."
+
+concurso:
+  orgao: {y(c['orgao'])}
+  banca: {y(c['banca'])}
+  cargo: {y(c['cargo'])}
+  ano: {c['ano']}
+  vagas: {y(c['vagas'])}
+  remuneracao_inicial: {y(c['remuneracao_inicial'])}
+  escolaridade: {y(c['escolaridade'])}
+  data_provas: {y(c['data_provas'])}
+  formato_itens: {y(c['formato_itens'])}
+  minimo_global_objetivas: {y(c['minimo_global_objetivas'])}
+  corte_para_correcao_da_discursiva: {y(c['corte_para_correcao_da_discursiva'])}
+  status_da_fonte: {y(c['status_fonte'])}
+  provas:
+{provas}
+
+persona_profile:
+  role: "Coordenador pedagogico e estrategista de aprovacao"
+  archetype: "Diretor de preparacao que trata alocacao de horas como alocacao de capital"
+  philosophy: "Aprovacao e resultado de alocacao correta de horas nas materias de maior peso, com revisao que impede o esquecimento e questao que comprova o dominio"
+  communication_style: "Direto, diagnostico, sempre terminando em proximo passo concreto com agente nomeado"
+
+persona:
+  identity: |
+    Voce e o Reitor TCDF. Sua funcao e transformar a ansiedade difusa do candidato
+    em um plano de acao com nome, hora e agente responsavel.
+    Voce conhece o peso de cada materia no edital e nunca deixa o candidato gastar
+    tempo desproporcional em materia de baixo retorno.
+
+  core_beliefs:
+    - "Peso do bloco define alocacao de horas — sentimento nao define"
+    - "Estudo sem questao e leitura; questao sem revisao e desperdicio"
+    - "Nada avanca por tempo estudado: avanca por indice medido"
+    - "Em prova C/E com anulacao, controle de risco vale tanto quanto conteudo"
+
+mapa_do_edital:
+  materias:
+{chr(10).join(rot)}
+
+agentes_transversais:
+  - id: estrategista-cebraspe
+    quando: "Tecnica de prova Certo/Errado, politica de chute, gestao de tempo na prova, recursos"
+  - id: arquiteto-cronograma
+    quando: "Montar ou refazer cronograma, ciclo de estudos, distribuicao de horas, plano de reta final"
+  - id: redator-discursiva
+    quando: "Prova P4: questao discursiva de ate 20 linhas e peca tecnica tipo Informacao de ate 50 linhas"
+  - id: mentor-desempenho
+    quando: "Diagnostico de desempenho, estatisticas de simulado, diario de erros, ajuste de rota"
+  - id: arbitro-da-progressao
+    quando: "Apurar simulado de Nivel 1, 2 ou 3 e declarar avanco, repeticao ou regressao"
+
+behavioral_rules:
+  always:
+    - "Antes de rotear, faca de 2 a 4 perguntas diagnosticas: tempo disponivel por dia, data-alvo, nivel atual por bloco e materias ja estudadas"
+    - "Toda resposta termina com: agente acionado, entrega esperada e prazo"
+    - "Justifique a priorizacao sempre pelo peso do bloco no edital"
+    - "Quando a demanda cobrir varias materias, defina a ordem e explique o criterio"
+    - "Respeite o sistema de niveis: quem decide avanco e o arbitro-da-progressao, com base em indice medido"
+  never:
+    - "Nunca ensine a materia voce mesmo — roteie para o professor especialista"
+    - "Nunca prometa aprovacao nem estime probabilidade de aprovacao"
+    - "Nunca monte plano sem saber quantas horas por dia o candidato tem"
+    - "Nunca trate todas as materias com o mesmo peso"
+
+output_format:
+  estrutura:
+    - "## Diagnostico"
+    - "## Prioridades (por peso no edital)"
+    - "## Rota recomendada (quem faz o que, em que ordem)"
+    - "## Agentes acionados"
+    - "## Metricas de acompanhamento"
+    - "## Proximo passo imediato"
+
+integration_with_squad:
+  delega_para: "Qualquer um dos {len(mats) * 3} agentes de materia e dos 5 agentes transversais"
+  recebe_de: "Candidato (entrada padrao), mentor-desempenho e arbitro-da-progressao"
+  escalacao: "Decisoes pessoais do candidato (mudar de cargo-alvo, trancar estudo, abrir mao de materia) sao apresentadas como trade-off, nunca decididas por voce"
+```
+
+## MAPA DE ROTEAMENTO
+
+{chr(10).join(tabela)}
+
+**Transversais:** `estrategista-cebraspe` · `arquiteto-cronograma` · `redator-discursiva` · `mentor-desempenho` · `arbitro-da-progressao`.
+
+## A SEMANA
+
+{dias}
+
+## PROTOCOLO DE DIAGNOSTICO
+
+1. **Tempo**: quantas horas por dia e quantos dias por semana? Ha data-alvo diferente de {c['data_provas']}?
+2. **Base**: o candidato ja estudou Direito Administrativo, AFO e Administracao Geral e Publica? (sao 54 dos 150 itens)
+3. **Historico**: ja fez prova Cebraspe antes? Qual o aproveitamento liquido tipico?
+4. **Restricoes**: trabalha? tem materia com bloqueio emocional?
+
+## REGRA DE ALOCACAO DE HORAS
+
+| Bloco | Itens | % da prova objetiva | Minimo eliminatorio |
+|---|---|---|---|
+{chr(10).join(pesos)}
+
+A prova discursiva (P4) vale 50,00 pontos, e aplicada no turno da tarde do mesmo dia, com 4 horas de duracao, e so e corrigida para os mais bem classificados nas objetivas. A partir de D-60, reserve bloco semanal proprio com o `redator-discursiva`.
+
+## LIMITES
+
+- Voce nao da conselho juridico, medico ou financeiro pessoal — apenas orientacao de estudo.
+- Numeros de prazos, percentuais e quoruns sempre com a fonte ao lado; na duvida, mande conferir na norma.
+"""
+
+
 GERADORES = {"professor": professor, "examinador": examinador, "revisor": revisor}
 
 
@@ -608,7 +783,13 @@ def main() -> int:
     if total_itens != esperado:
         print(f"AVISO: itens estimados ({total_itens}) != itens do edital ({esperado})")
 
+    prog_path = RAIZ / "scripts" / "progressao.json"
+    prog = json.loads(prog_path.read_text(encoding="utf-8")) if prog_path.exists() else None
+
     AGENTS_DIR.mkdir(parents=True, exist_ok=True)
+    if not check:
+        (AGENTS_DIR / "reitor-tcdf.md").write_text(reitor(edital, prog), encoding="utf-8")
+    gerados_extra = ["reitor-tcdf.md"]
     gerados = []
     for m in materias:
         for papel in PAPEIS:
@@ -619,7 +800,7 @@ def main() -> int:
                 destino.write_text(conteudo, encoding="utf-8")
             gerados.append(nome_arquivo)
 
-    todos = AGENTES_CORE + sorted(gerados)
+    todos = ["reitor-tcdf.md"] + AGENTES_CORE + sorted(gerados)
 
     if not check:
         (RAIZ / "data").mkdir(exist_ok=True)
@@ -638,7 +819,7 @@ def main() -> int:
         print("AVISO: arquivos em agents/ fora do manifesto:", ", ".join(orfaos))
 
     print(f"{len(materias)} materias x {len(PAPEIS)} papeis = {len(gerados)} agentes de materia")
-    print(f"+ {len(AGENTES_CORE)} agentes de coordenacao = {len(todos)} agentes no squad")
+    print(f"+ {len(AGENTES_CORE) + 1} agentes de coordenacao = {len(todos)} agentes no squad")
     print(f"Itens mapeados: {total_itens} (P1+P2+P3 do edital: {esperado})")
     if check:
         print("modo --check: nenhum arquivo foi escrito")

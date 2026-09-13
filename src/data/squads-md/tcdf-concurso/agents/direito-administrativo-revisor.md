@@ -19,7 +19,7 @@ agent:
 
 contexto_da_prova:
   bloco: "P3 — Conhecimentos Especializados"
-  itens_estimados: 14
+  itens_estimados: 22
   prioridade: "critica"
 
 persona_profile:
@@ -30,36 +30,34 @@ persona_profile:
   communication_style: "Objetivo, em blocos curtos, sempre em formato de recuperacao ativa (pergunta antes da resposta)"
 
 ementa_oficial:
-    - "Estado, governo e administracao publica: conceitos, elementos e poderes"
-    - "Regime juridico-administrativo: principios expressos e implicitos; supremacia e indisponibilidade do interesse publico"
-    - "Organizacao administrativa: administracao direta e indireta, autarquias, fundacoes, empresas publicas e sociedades de economia mista; consorcios publicos; entidades paraestatais e terceiro setor"
-    - "Poderes administrativos: vinculado, discricionario, hierarquico, disciplinar, regulamentar e de policia; uso e abuso de poder"
-    - "Ato administrativo: conceito, requisitos, atributos, classificacao, especies, extincao, convalidacao, anulacao e revogacao; teoria dos motivos determinantes"
-    - "Processo administrativo (Lei 9.784/1999 e legislacao distrital): principios, fases, recursos, prescricao e anulacao"
-    - "Licitacoes e contratos administrativos (Lei 14.133/2021): principios, fases, modalidades, criterios de julgamento, contratacao direta, governanca das contratacoes, sancoes, nulidades, execucao contratual, alteracoes, equilibrio economico-financeiro e fiscalizacao"
-    - "Convenios, termos de fomento e colaboracao (Lei 13.019/2014)"
-    - "Servicos publicos: conceito, classificacao, delegacao, concessao, permissao e autorizacao (Leis 8.987/1995 e 11.079/2004)"
-    - "Agentes publicos: regime juridico, provimento, vacancia, direitos, deveres, responsabilidades e processo disciplinar; Lei 8.112/1990 e regime dos servidores do DF (Lei Complementar distrital)"
-    - "Responsabilidade civil do Estado: teorias, excludentes, dano moral e direito de regresso"
-    - "Controle da administracao publica: interno, externo, judicial e social; sistema de controle interno do DF"
-    - "Improbidade administrativa (Lei 8.429/1992 com alteracoes da Lei 14.230/2021)"
-    - "Lei de Acesso a Informacao (Lei 12.527/2011), Lei Anticorrupcao (Lei 12.846/2013) e LGPD na Administracao"
-    - "Bens publicos: classificacao, afetacao, uso por particulares, alienacao e imprescritibilidade"
-    - "Intervencao do Estado na propriedade: desapropriacao, servidao, requisicao, ocupacao temporaria e tombamento"
+    - "1 Estado, governo e administração pública: 1.1 conceitos; 1.2 elementos"
+    - "2 Direito administrativo: 2.1 conceito; 2.2 objeto; 2.3 fontes"
+    - "3 Ato administrativo: 3.1 conceito, requisitos, atributos, classificação e espécies; 3.2 extinção do ato administrativo: cassação, anulação, revogação e convalidação; 3.3 decadência administrativa"
+    - "4 Agentes públicos: 4.1 disposições constitucionais aplicáveis; 4.2 conceito; 4.3 espécies; 4.4 cargo, emprego e função pública (provimento, vacância, efetividade, estabilidade e vitaliciedade); 4.5 remuneração; 4.6 direitos e deveres; 4.7 responsabilidades; 4.8 sindicância e processo administrativo disciplinar"
+    - "5 Poderes da administração pública: 5.1 hierárquico, disciplinar, regulamentar e de polícia; 5.2 uso e abuso do poder"
+    - "6 Regime jurídico-administrativo: 6.1 conceito; 6.2 princípios expressos e implícitos da administração pública"
+    - "7 Responsabilidade civil do Estado: 7.1 evolução histórica; 7.2 responsabilidade por ato comissivo; 7.3 responsabilidade por omissão; 7.4 requisitos para a demonstração da responsabilidade; 7.5 causas excludentes e atenuantes; 7.6 reparação do dano; 7.7 direito de regresso"
+    - "8 Serviços públicos: 8.1 conceito; 8.2 elementos constitutivos; 8.3 classificação; 8.4 princípios; 8.5 formas de prestação e meios de execução"
+    - "9 Organização administrativa: 9.1 autarquias, fundações, empresas públicas e sociedades de economia mista; 9.2 entidades paraestatais e terceiro setor (serviços sociais autônomos, entidades de apoio, organizações sociais, organizações da sociedade civil de interesse público)"
+    - "10 Controle da administração pública: 10.1 controle exercido pela administração pública; 10.2 controle judicial; 10.3 controle legislativo; 10.4 improbidade administrativa: Lei federal nº 8.429/1992"
+    - "11 Lei federal nº 9.784/1999 e suas alterações (processo administrativo), aplicável ao Distrito Federal por força da Lei distrital nº 2.834/2001"
+    - "12 Licitações e contratos administrativos: 12.1 Lei federal nº 14.133/2021; 12.2 contratos administrativos; 12.3 Decreto distrital nº 44.330/2023"
+    - "13 Lei nº 12.527/2011 (Lei de Acesso à Informação)"
+    - "14 Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD)"
 
 pontos_de_decoreba_obrigatoria:
-    - "Lei 14.133/2021 — Nova Lei de Licitacoes e Contratos"
-    - "Lei 9.784/1999 — Processo administrativo federal"
-    - "Lei 8.112/1990 e regime juridico dos servidores do DF"
-    - "Lei 8.429/1992 com a Lei 14.230/2021"
-    - "Leis 12.527/2011, 12.846/2013, 13.019/2014, 8.987/1995 e 11.079/2004"
+    - "Lei nº 14.133/2021 e Decreto distrital nº 44.330/2023"
+    - "Lei nº 9.784/1999 c/c Lei distrital nº 2.834/2001"
+    - "Lei nº 8.429/1992, com a Lei nº 14.230/2021"
+    - "Leis nº 12.527/2011 e 13.709/2018"
 
 erros_recorrentes_a_monitorar:
-    - "Lei 14.133/2021: prazos, valores de dispensa e ordem das fases da licitacao trocados"
-    - "Improbidade apos a Lei 14.230/2021 exige dolo — item que admite modalidade culposa esta errado"
-    - "Atributos do ato administrativo: presuncao de legitimidade x autoexecutoriedade x imperatividade (nem todo ato tem todos)"
-    - "Responsabilidade do Estado por omissao: objetiva x subjetiva conforme a jurisprudencia"
-    - "Convalidacao de vicio de competencia exclusiva ou de objeto — nao cabe"
+    - "O Decreto distrital 44.330/2023 é fonte nomeada e quase ninguém estuda: prazos e procedimentos distritais de contratação caem"
+    - "Improbidade após a Lei 14.230/2021 exige dolo — item que admite modalidade culposa está errado"
+    - "Atributos do ato administrativo: nem todo ato tem autoexecutoriedade e imperatividade"
+    - "Responsabilidade do Estado por omissão: objetiva x subjetiva conforme a jurisprudência"
+    - "Convalidação não alcança vício de competência exclusiva nem de objeto"
+    - "Lei 9.784/1999 vale no DF por força de lei distrital — a banca testa exatamente essa amarração"
 
 metodo:
   repeticao_espacada:
@@ -129,5 +127,5 @@ integration_with_squad:
 
 ### Peso desta materia no ciclo
 
-Direito Administrativo vale cerca de **14 itens** (P3) e esta classificada como **critica**.
+Direito Administrativo vale cerca de **22 itens** (P3) e esta classificada como **critica**.
 Use isso para decidir a frequencia: materia critica entra no ciclo semanalmente; materia de prioridade baixa, quinzenalmente.

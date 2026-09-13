@@ -15,7 +15,7 @@ transversais:
 
 materias:
   - id: lingua-portuguesa
-    nome: "Lingua Portuguesa"
+    nome: "Língua Portuguesa"
     bloco: P1
     itens_estimados: 12
     prioridade: alta
@@ -24,18 +24,8 @@ materias:
       aprender: lingua-portuguesa-professor
       treinar: lingua-portuguesa-examinador
       revisar: lingua-portuguesa-revisor
-  - id: raciocinio-logico-matematica-financeira
-    nome: "Raciocinio Logico e Matematica Financeira"
-    bloco: P1
-    itens_estimados: 8
-    prioridade: alta
-    icone: "🧮"
-    agentes:
-      aprender: raciocinio-logico-matematica-financeira-professor
-      treinar: raciocinio-logico-matematica-financeira-examinador
-      revisar: raciocinio-logico-matematica-financeira-revisor
   - id: lei-organica-df
-    nome: "Lei Organica do Distrito Federal"
+    nome: "Lei Orgânica do Distrito Federal"
     bloco: P1
     itens_estimados: 6
     prioridade: alta
@@ -44,18 +34,18 @@ materias:
       aprender: lei-organica-df-professor
       treinar: lei-organica-df-examinador
       revisar: lei-organica-df-revisor
-  - id: conhecimentos-df-politicas-mulheres
-    nome: "Conhecimentos sobre o Distrito Federal e Politicas para Mulheres"
+  - id: conhecimentos-df-politica-mulheres
+    nome: "Conhecimentos do Distrito Federal e Política para Mulheres"
     bloco: P1
-    itens_estimados: 6
+    itens_estimados: 4
     prioridade: media
     icone: "🌆"
     agentes:
-      aprender: conhecimentos-df-politicas-mulheres-professor
-      treinar: conhecimentos-df-politicas-mulheres-examinador
-      revisar: conhecimentos-df-politicas-mulheres-revisor
+      aprender: conhecimentos-df-politica-mulheres-professor
+      treinar: conhecimentos-df-politica-mulheres-examinador
+      revisar: conhecimentos-df-politica-mulheres-revisor
   - id: nocoes-primeiros-socorros
-    nome: "Nocoes de Primeiros Socorros"
+    nome: "Noções de Primeiros Socorros"
     bloco: P1
     itens_estimados: 3
     prioridade: baixa
@@ -64,8 +54,18 @@ materias:
       aprender: nocoes-primeiros-socorros-professor
       treinar: nocoes-primeiros-socorros-examinador
       revisar: nocoes-primeiros-socorros-revisor
+  - id: raciocinio-logico-matematica-financeira
+    nome: "Raciocínio Lógico e Matemática Financeira"
+    bloco: P1
+    itens_estimados: 10
+    prioridade: alta
+    icone: "🧮"
+    agentes:
+      aprender: raciocinio-logico-matematica-financeira-professor
+      treinar: raciocinio-logico-matematica-financeira-examinador
+      revisar: raciocinio-logico-matematica-financeira-revisor
   - id: lei-organica-regimento-tcdf
-    nome: "Lei Organica e Regimento Interno do TCDF"
+    nome: "Lei Orgânica do TCDF e Regimento Interno"
     bloco: P2
     itens_estimados: 10
     prioridade: critica
@@ -85,7 +85,7 @@ materias:
       treinar: direito-constitucional-examinador
       revisar: direito-constitucional-revisor
   - id: direito-previdenciario
-    nome: "Direito Previdenciario"
+    nome: "Direito Previdenciário"
     bloco: P2
     itens_estimados: 8
     prioridade: alta
@@ -95,7 +95,7 @@ materias:
       treinar: direito-previdenciario-examinador
       revisar: direito-previdenciario-revisor
   - id: nocoes-direito-civil
-    nome: "Nocoes de Direito Civil"
+    nome: "Noções de Direito Civil"
     bloco: P2
     itens_estimados: 6
     prioridade: media
@@ -105,9 +105,9 @@ materias:
       treinar: nocoes-direito-civil-examinador
       revisar: nocoes-direito-civil-revisor
   - id: nocoes-direito-tributario
-    nome: "Nocoes de Direito Tributario"
+    nome: "Noções de Direito Tributário"
     bloco: P2
-    itens_estimados: 6
+    itens_estimados: 5
     prioridade: media
     icone: "💰"
     agentes:
@@ -115,9 +115,9 @@ materias:
       treinar: nocoes-direito-tributario-examinador
       revisar: nocoes-direito-tributario-revisor
   - id: analise-dados-estatistica-ia
-    nome: "Analise de Dados, Nocoes de Estatistica e Inteligencia Artificial"
+    nome: "Análise de Dados, Noções de Estatística e Inteligência Artificial"
     bloco: P2
-    itens_estimados: 5
+    itens_estimados: 6
     prioridade: alta
     icone: "🤖"
     agentes:
@@ -127,7 +127,7 @@ materias:
   - id: direito-administrativo
     nome: "Direito Administrativo"
     bloco: P3
-    itens_estimados: 14
+    itens_estimados: 22
     prioridade: critica
     icone: "🏢"
     agentes:
@@ -135,9 +135,9 @@ materias:
       treinar: direito-administrativo-examinador
       revisar: direito-administrativo-revisor
   - id: administracao-financeira-orcamentaria
-    nome: "Administracao Financeira e Orcamentaria (AFO)"
+    nome: "Administração Financeira e Orçamentária"
     bloco: P3
-    itens_estimados: 10
+    itens_estimados: 16
     prioridade: critica
     icone: "📊"
     agentes:
@@ -145,82 +145,32 @@ materias:
       treinar: administracao-financeira-orcamentaria-examinador
       revisar: administracao-financeira-orcamentaria-revisor
   - id: administracao-geral-e-publica
-    nome: "Administracao Geral e Publica"
+    nome: "Administração Geral e Pública"
     bloco: P3
-    itens_estimados: 8
-    prioridade: alta
+    itens_estimados: 16
+    prioridade: critica
     icone: "🏗️"
     agentes:
       aprender: administracao-geral-e-publica-professor
       treinar: administracao-geral-e-publica-examinador
       revisar: administracao-geral-e-publica-revisor
-  - id: gestao-de-pessoas
-    nome: "Gestao de Pessoas"
+  - id: regime-juridico-servidores-df
+    nome: "Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011)"
     bloco: P3
     itens_estimados: 8
     prioridade: alta
-    icone: "👥"
+    icone: "👤"
     agentes:
-      aprender: gestao-de-pessoas-professor
-      treinar: gestao-de-pessoas-examinador
-      revisar: gestao-de-pessoas-revisor
-  - id: gestao-de-processos
-    nome: "Gestao de Processos"
+      aprender: regime-juridico-servidores-df-professor
+      treinar: regime-juridico-servidores-df-examinador
+      revisar: regime-juridico-servidores-df-revisor
+  - id: gestao-de-contratos
+    nome: "Gestão de Contratos"
     bloco: P3
-    itens_estimados: 6
-    prioridade: media
-    icone: "🔄"
-    agentes:
-      aprender: gestao-de-processos-professor
-      treinar: gestao-de-processos-examinador
-      revisar: gestao-de-processos-revisor
-  - id: gestao-de-projetos
-    nome: "Gestao de Projetos"
-    bloco: P3
-    itens_estimados: 6
-    prioridade: media
-    icone: "📌"
-    agentes:
-      aprender: gestao-de-projetos-professor
-      treinar: gestao-de-projetos-examinador
-      revisar: gestao-de-projetos-revisor
-  - id: administracao-recursos-materiais
-    nome: "Administracao de Recursos Materiais"
-    bloco: P3
-    itens_estimados: 5
-    prioridade: media
-    icone: "📦"
-    agentes:
-      aprender: administracao-recursos-materiais-professor
-      treinar: administracao-recursos-materiais-examinador
-      revisar: administracao-recursos-materiais-revisor
-  - id: arquivologia
-    nome: "Arquivologia"
-    bloco: P3
-    itens_estimados: 5
-    prioridade: media
-    icone: "🗂️"
-    agentes:
-      aprender: arquivologia-professor
-      treinar: arquivologia-examinador
-      revisar: arquivologia-revisor
-  - id: contabilidade-publica
-    nome: "Contabilidade Publica"
-    bloco: P3
-    itens_estimados: 5
+    itens_estimados: 8
     prioridade: alta
-    icone: "📒"
+    icone: "📑"
     agentes:
-      aprender: contabilidade-publica-professor
-      treinar: contabilidade-publica-examinador
-      revisar: contabilidade-publica-revisor
-  - id: administracao-patrimonial
-    nome: "Administracao Patrimonial"
-    bloco: P3
-    itens_estimados: 3
-    prioridade: baixa
-    icone: "🏷️"
-    agentes:
-      aprender: administracao-patrimonial-professor
-      treinar: administracao-patrimonial-examinador
-      revisar: administracao-patrimonial-revisor
+      aprender: gestao-de-contratos-professor
+      treinar: gestao-de-contratos-examinador
+      revisar: gestao-de-contratos-revisor

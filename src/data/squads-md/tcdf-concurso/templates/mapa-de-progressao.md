@@ -6,27 +6,22 @@ Status: `—` nao iniciado · `N1` temas em andamento · `N1 OK` todos os temas 
 
 | Dia | Grupo | Materia | Itens | Temas vencidos (N1) | Melhor N2 | Status | Ultimo N3 |
 |---|---|---|---|---|---|---|---|
-| Segunda-feira | Direito Administrativo e Contratacoes | 🏢 Direito Administrativo | 14 | 0 / 16 |  | — |  |
-| Segunda-feira | Direito Administrativo e Contratacoes | 📦 Administracao de Recursos Materiais | 5 | 0 / 10 |  | — |  |
-| Terca-feira | Financas Publicas | 📊 Administracao Financeira e Orcamentaria (AFO) | 10 | 0 / 12 |  | — |  |
-| Terca-feira | Financas Publicas | 📒 Contabilidade Publica | 5 | 0 / 12 |  | — |  |
-| Terca-feira | Financas Publicas | 🏷️ Administracao Patrimonial | 3 | 0 / 10 |  | — |  |
-| Quarta-feira | Constitucional e Institucional | 📜 Direito Constitucional | 10 | 0 / 12 |  | — |  |
-| Quarta-feira | Constitucional e Institucional | ⚖️ Lei Organica e Regimento Interno do TCDF | 10 | 0 / 11 |  | — |  |
-| Quarta-feira | Constitucional e Institucional | 🏛️ Lei Organica do Distrito Federal | 6 | 0 / 9 |  | — |  |
-| Quinta-feira | Gestao Publica | 🏗️ Administracao Geral e Publica | 8 | 0 / 12 |  | — |  |
-| Quinta-feira | Gestao Publica | 👥 Gestao de Pessoas | 8 | 0 / 12 |  | — |  |
-| Quinta-feira | Gestao Publica | 🔄 Gestao de Processos | 6 | 0 / 10 |  | — |  |
-| Quinta-feira | Gestao Publica | 📌 Gestao de Projetos | 6 | 0 / 11 |  | — |  |
-| Sexta-feira | Direitos Complementares | 🧓 Direito Previdenciario | 8 | 0 / 11 |  | — |  |
-| Sexta-feira | Direitos Complementares | 📕 Nocoes de Direito Civil | 6 | 0 / 8 |  | — |  |
-| Sexta-feira | Direitos Complementares | 💰 Nocoes de Direito Tributario | 6 | 0 / 10 |  | — |  |
-| Sabado | Instrumentais e Complementares (A) | 📝 Lingua Portuguesa | 12 | 0 / 7 |  | — |  |
-| Sabado | Instrumentais e Complementares (A) | 🧮 Raciocinio Logico e Matematica Financeira | 8 | 0 / 11 |  | — |  |
-| Sabado | Instrumentais e Complementares (B) | 🌆 Conhecimentos sobre o Distrito Federal e Politicas para Mulheres | 6 | 0 / 9 |  | — |  |
-| Sabado | Instrumentais e Complementares (B) | 🤖 Analise de Dados, Nocoes de Estatistica e Inteligencia Artificial | 5 | 0 / 10 |  | — |  |
-| Sabado | Instrumentais e Complementares (B) | 🗂️ Arquivologia | 5 | 0 / 12 |  | — |  |
-| Sabado | Instrumentais e Complementares (B) | 🚑 Nocoes de Primeiros Socorros | 3 | 0 / 8 |  | — |  |
+| Segunda-feira | Direito Administrativo e Contratações | 🏢 Direito Administrativo | 22 | 0 / 14 |  | — |  |
+| Segunda-feira | Direito Administrativo e Contratações | 📑 Gestão de Contratos | 8 | 0 / 2 |  | — |  |
+| Terça-feira | Orçamento e Finanças Públicas | 📊 Administração Financeira e Orçamentária | 16 | 0 / 9 |  | — |  |
+| Terça-feira | Orçamento e Finanças Públicas | 🏛️ Lei Orgânica do Distrito Federal | 6 | 0 / 5 |  | — |  |
+| Quarta-feira | Constitucional e Institucional | 📜 Direito Constitucional | 10 | 0 / 9 |  | — |  |
+| Quarta-feira | Constitucional e Institucional | ⚖️ Lei Orgânica do TCDF e Regimento Interno | 10 | 0 / 2 |  | — |  |
+| Quinta-feira | Gestão e Dados | 🏗️ Administração Geral e Pública | 16 | 0 / 9 |  | — |  |
+| Quinta-feira | Gestão e Dados | 🤖 Análise de Dados, Noções de Estatística e Inteligência Artificial | 6 | 0 / 5 |  | — |  |
+| Sexta-feira | Servidor e Direitos Complementares | 👤 Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | 8 | 0 / 1 |  | — |  |
+| Sexta-feira | Servidor e Direitos Complementares | 🧓 Direito Previdenciário | 8 | 0 / 5 |  | — |  |
+| Sexta-feira | Servidor e Direitos Complementares | 📕 Noções de Direito Civil | 6 | 0 / 6 |  | — |  |
+| Sexta-feira | Servidor e Direitos Complementares | 💰 Noções de Direito Tributário | 5 | 0 / 3 |  | — |  |
+| Sábado | Instrumentais e Distrito Federal | 📝 Língua Portuguesa | 12 | 0 / 6 |  | — |  |
+| Sábado | Instrumentais e Distrito Federal | 🧮 Raciocínio Lógico e Matemática Financeira | 10 | 0 / 7 |  | — |  |
+| Sábado | Instrumentais e Distrito Federal | 🌆 Conhecimentos do Distrito Federal e Política para Mulheres | 4 | 0 / 3 |  | — |  |
+| Sábado | Instrumentais e Distrito Federal | 🚑 Noções de Primeiros Socorros | 3 | 0 / 1 |  | — |  |
 
 ## Pool do Nivel 3
 

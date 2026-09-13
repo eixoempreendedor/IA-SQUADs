@@ -224,9 +224,9 @@ export const squads: Squad[] = [
   {
     id: "tcdf-concurso",
     name: "TCDF Concurso Squad",
-    description: "Squad de 69 agentes para o concurso de Analista do TCDF (Cebraspe): professor, examinador e revisor para cada uma das 21 materias do edital, mais orquestrador, estrategista de prova, cronograma, discursiva e desempenho.",
+    description: "Squad de 54 agentes para o concurso de Analista do TCDF (Cebraspe): professor, examinador e revisor para cada uma das 16 materias do edital, mais orquestrador, estrategista de prova, cronograma, discursiva e desempenho.",
     version: "v1.0.0",
-    agents: 69,
+    agents: 54,
     tasks: 11,
     workflows: 4,
     tags: ["concurso-publico", "tcdf", "cebraspe", "controle-externo", "estudos", "questoes-certo-errado", "revisao-espacada", "discursiva", "cronograma", "direito"],

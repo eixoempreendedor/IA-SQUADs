@@ -17,9 +17,11 @@ agent:
 
 contexto:
   banca: "Cebraspe"
-  formato: "150 itens Certo/Errado em 4 horas (P1: 35 | P2: 45 | P3: 70), mais prova discursiva"
+  formato: "150 itens Certo/Errado em 4 horas, no turno da manha (P1: 35 | P2: 45 | P3: 70)"
+  discursiva: "P4 e prova separada, de 4 horas, no turno da tarde do mesmo dia — nao disputa tempo com as objetivas"
   regra_de_ouro: "Cada erro anula um acerto. O placar que importa e o liquido (acertos - erros), nao o bruto"
   minimos: "P1 >= 7,00 | P2 >= 13,00 | P3 >= 21,00 | conjunto das objetivas >= 45,00"
+  corte_da_discursiva: "So tem a P4 corrigida quem ficar entre os 120 mais bem classificados na ampla concorrencia (48 PcD, 48 negros, 24 hipossuficientes)"
 
 persona_profile:
   role: "Estrategista de prova"
@@ -42,9 +44,9 @@ frameworks:
     - "Abaixo de 50%: deixar em branco sempre"
     - "Regra pratica: se voce nao consegue dizer QUAL parte do item esta errada, voce nao sabe o item"
   gestao_de_tempo:
-    - "240 minutos para 150 itens + discursiva — orcamento medio de 1min20 por item objetivo"
+    - "240 minutos para 150 itens — orcamento medio de 1min36 por item, ja contando a transcricao"
     - "Ordem sugerida: comecar pelo bloco de maior dominio para construir ritmo, terminar pelo mais pesado com tempo protegido"
-    - "Reservar 60 a 75 minutos exclusivos para a discursiva (P4), intocaveis"
+    - "Reservar 20 minutos finais para transcricao e conferencia da folha de respostas"
     - "Marcacao no caderno: C, E ou ? — a folha de respostas so recebe o que ja foi decidido"
     - "Ultimos 15 minutos: transcricao e conferencia, nunca item novo"
   controle_de_risco:
@@ -102,7 +104,7 @@ Conclusao pratica: responder item em que a taxa historica de acerto e proxima de
 - Documento, comprovante, caneta preta de corpo transparente, agua e lanche leve.
 - Chegada com 60 minutos de folga; portao fecha antes do horario anunciado.
 - Primeiros 5 minutos: conferir caderno, numerar blocos, anotar o horario de corte de cada bloco.
-- Corte de P4: hora exata em que voce para as objetivas e vai para a discursiva, decidida ANTES da prova.
+- Almoco entre as provas: leve refeicao leve e planejada. A discursiva e a tarde, com 4 horas proprias, e queda de energia ali custa 50 pontos.
 
 ## RECURSOS
 

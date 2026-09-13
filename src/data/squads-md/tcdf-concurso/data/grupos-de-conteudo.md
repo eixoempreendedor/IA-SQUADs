@@ -18,89 +18,79 @@ Em prova Certo/Errado com anulacao, 90% liquido equivale a 95% de acerto bruto. 
 
 | Dia | Grupo | Itens no edital | Materias |
 |---|---|---|---|
-| Segunda-feira | **Direito Administrativo e Contratacoes** | 19 | Direito Administrativo, Administracao de Recursos Materiais |
-| Terca-feira | **Financas Publicas** | 18 | Administracao Financeira e Orcamentaria (AFO), Contabilidade Publica, Administracao Patrimonial |
-| Quarta-feira | **Constitucional e Institucional** | 26 | Direito Constitucional, Lei Organica e Regimento Interno do TCDF, Lei Organica do Distrito Federal |
-| Quinta-feira | **Gestao Publica** | 28 | Administracao Geral e Publica, Gestao de Pessoas, Gestao de Processos, Gestao de Projetos |
-| Sexta-feira | **Direitos Complementares** | 20 | Direito Previdenciario, Nocoes de Direito Civil, Nocoes de Direito Tributario |
-| Sabado | **Instrumentais e Complementares — variante A (Instrumentais, semanas impares)** | 39 | Lingua Portuguesa, Raciocinio Logico e Matematica Financeira |
-| Sabado | **Instrumentais e Complementares — variante B (Complementares, semanas pares)** | 39 | Conhecimentos sobre o Distrito Federal e Politicas para Mulheres, Analise de Dados, Nocoes de Estatistica e Inteligencia Artificial, Arquivologia, Nocoes de Primeiros Socorros |
+| Segunda-feira | **Direito Administrativo e Contratações** | 30 | Direito Administrativo, Gestão de Contratos |
+| Terça-feira | **Orçamento e Finanças Públicas** | 22 | Administração Financeira e Orçamentária, Lei Orgânica do Distrito Federal |
+| Quarta-feira | **Constitucional e Institucional** | 20 | Direito Constitucional, Lei Orgânica do TCDF e Regimento Interno |
+| Quinta-feira | **Gestão e Dados** | 22 | Administração Geral e Pública, Análise de Dados, Noções de Estatística e Inteligência Artificial |
+| Sexta-feira | **Servidor e Direitos Complementares** | 27 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011), Direito Previdenciário, Noções de Direito Civil, Noções de Direito Tributário |
+| Sábado | **Instrumentais e Distrito Federal** | 29 | Língua Portuguesa, Raciocínio Lógico e Matemática Financeira, Conhecimentos do Distrito Federal e Política para Mulheres, Noções de Primeiros Socorros |
 | Domingo | **Nivel 3 — simulado geral** | pool vencido | Todas as materias ja vencidas no Nivel 2 |
 
 ## Composicao de cada simulado de Nivel 2 (50 questoes)
 
-### Segunda-feira · Direito Administrativo e Contratacoes
+### Segunda-feira · Direito Administrativo e Contratações
 
-*O maior bloco isolado da prova (14 itens) no mesmo dia da materia que compartilha a Lei 14.133/2021 com ele.*
-
-| Materia | Itens no edital | Questoes no simulado |
-|---|---|---|
-| Direito Administrativo | 14 | **37** |
-| Administracao de Recursos Materiais | 5 | **13** |
-| **Total** | **19** | **50** |
-
-### Terca-feira · Financas Publicas
-
-*AFO, Contabilidade Publica e Patrimonio falam a mesma lingua: Lei 4.320, MCASP e LRF. Estudar separado e retrabalho.*
+*A maior matéria do edital (22 itens) no mesmo dia da matéria que compartilha com ela a Lei 14.133/2021 e o Decreto distrital 44.330/2023.*
 
 | Materia | Itens no edital | Questoes no simulado |
 |---|---|---|
-| Administracao Financeira e Orcamentaria (AFO) | 10 | **28** |
-| Contabilidade Publica | 5 | **14** |
-| Administracao Patrimonial | 3 | **8** |
-| **Total** | **18** | **50** |
+| Direito Administrativo | 22 | **37** |
+| Gestão de Contratos | 8 | **13** |
+| **Total** | **30** | **50** |
+
+### Terça-feira · Orçamento e Finanças Públicas
+
+*AFO com o tópico 4 da LODF (tributação e orçamento do DF): o mesmo assunto na norma geral e na norma distrital.*
+
+| Materia | Itens no edital | Questoes no simulado |
+|---|---|---|
+| Administração Financeira e Orçamentária | 16 | **36** |
+| Lei Orgânica do Distrito Federal | 6 | **14** |
+| **Total** | **22** | **50** |
 
 ### Quarta-feira · Constitucional e Institucional
 
-*CF arts. 70 a 75, Lei Organica do TCDF e LODF sao o mesmo assunto visto de tres alturas: controle externo no DF.*
+*CF arts. 70 a 75 e a Lei Orgânica do TCDF são o mesmo objeto em duas alturas: o controle externo e o tribunal que o exerce.*
 
 | Materia | Itens no edital | Questoes no simulado |
 |---|---|---|
-| Direito Constitucional | 10 | **19** |
-| Lei Organica e Regimento Interno do TCDF | 10 | **19** |
-| Lei Organica do Distrito Federal | 6 | **12** |
-| **Total** | **26** | **50** |
-
-### Quinta-feira · Gestao Publica
-
-*Governanca, pessoas, processos e projetos formam o nucleo gerencial de P3 e se cobram com o mesmo vocabulario.*
-
-| Materia | Itens no edital | Questoes no simulado |
-|---|---|---|
-| Administracao Geral e Publica | 8 | **14** |
-| Gestao de Pessoas | 8 | **14** |
-| Gestao de Processos | 6 | **11** |
-| Gestao de Projetos | 6 | **11** |
-| **Total** | **28** | **50** |
-
-### Sexta-feira · Direitos Complementares
-
-*Previdenciario, Civil e Tributario: os tres direitos de P2 que sustentam os atos de pessoal e de receita analisados pelo Tribunal.*
-
-| Materia | Itens no edital | Questoes no simulado |
-|---|---|---|
-| Direito Previdenciario | 8 | **20** |
-| Nocoes de Direito Civil | 6 | **15** |
-| Nocoes de Direito Tributario | 6 | **15** |
+| Direito Constitucional | 10 | **25** |
+| Lei Orgânica do TCDF e Regimento Interno | 10 | **25** |
 | **Total** | **20** | **50** |
 
-### Sabado · Instrumentais e Complementares — variante A: Instrumentais
+### Quinta-feira · Gestão e Dados
+
+*Administração Geral e Pública absorve governança, processos, pessoas e projetos; Análise de Dados é o ferramental que sustenta tudo isso.*
 
 | Materia | Itens no edital | Questoes no simulado |
 |---|---|---|
-| Lingua Portuguesa | 12 | **30** |
-| Raciocinio Logico e Matematica Financeira | 8 | **20** |
-| **Total** | **20** | **50** |
+| Administração Geral e Pública | 16 | **36** |
+| Análise de Dados, Noções de Estatística e Inteligência Artificial | 6 | **14** |
+| **Total** | **22** | **50** |
 
-### Sabado · Instrumentais e Complementares — variante B: Complementares
+### Sexta-feira · Servidor e Direitos Complementares
+
+*LC 840/2011 e Direito Previdenciário são o mesmo servidor em dois momentos; Civil e Tributário fecham o que resta de P2.*
 
 | Materia | Itens no edital | Questoes no simulado |
 |---|---|---|
-| Conhecimentos sobre o Distrito Federal e Politicas para Mulheres | 6 | **16** |
-| Analise de Dados, Nocoes de Estatistica e Inteligencia Artificial | 5 | **13** |
-| Arquivologia | 5 | **13** |
-| Nocoes de Primeiros Socorros | 3 | **8** |
-| **Total** | **19** | **50** |
+| Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) | 8 | **15** |
+| Direito Previdenciário | 8 | **15** |
+| Noções de Direito Civil | 6 | **11** |
+| Noções de Direito Tributário | 5 | **9** |
+| **Total** | **27** | **50** |
+
+### Sábado · Instrumentais e Distrito Federal
+
+*Todo o bloco de conhecimentos básicos que sobra: matérias de treino constante e de varredura, com peso real de 29 itens.*
+
+| Materia | Itens no edital | Questoes no simulado |
+|---|---|---|
+| Língua Portuguesa | 12 | **21** |
+| Raciocínio Lógico e Matemática Financeira | 10 | **17** |
+| Conhecimentos do Distrito Federal e Política para Mulheres | 4 | **7** |
+| Noções de Primeiros Socorros | 3 | **5** |
+| **Total** | **29** | **50** |
 
 ## Rotina
 
@@ -126,7 +116,7 @@ Tempo-alvo: **Nivel 1** 20 questoes em ate 30 minutos · **Nivel 2** 50 questoes
 **Nivel 3 — Simulado geral**
 
 - Composicao: Proporcional ao peso de cada materia vencida no edital (itens da materia / soma dos itens das materias vencidas) x 200
-- Inicio: Quando o pool de materias vencidas somar pelo menos 30 itens do edital (~20% da prova). Antes disso, rode um simulado reduzido proporcional, com minimo de 50 questoes
+- Inicio: Quando o pool de matérias vencidas somar pelo menos 30 itens do edital (~20% da prova). Antes disso, rode um simulado reduzido proporcional, com mínimo de 50 questões
 - Aprovado (90%+): Materia confirmada no pool; segue em manutencao semanal sem voltar ao Nivel 2
 - Reprovado: Materia abaixo da meta entra em observacao: revisao dirigida na semana e novo lote de Nivel 2 no dia do seu grupo
 - Regressao: Materia que ficar abaixo de 0,90 no Nivel 3 por 2 domingos seguidos, ou abaixo de 0,80 em um unico domingo, volta para o Nivel 2 e reentra no dia do seu grupo
