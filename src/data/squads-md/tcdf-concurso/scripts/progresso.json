@@ -1,0 +1,6 @@
+{
+  "_comentario": "Registro de resultados de simulados. Cada entrada e um lote apurado. O arquivo e a memoria do sistema: scripts/gerar_status.py le daqui e escreve data/status-atual.md.",
+  "candidato": "Luiz Fernando",
+  "criterio": "bruto >= 0,90 (acertos / total); branco conta como nao-acerto",
+  "registros": []
+}

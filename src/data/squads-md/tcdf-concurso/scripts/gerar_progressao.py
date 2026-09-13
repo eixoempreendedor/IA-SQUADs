@@ -85,8 +85,13 @@ def doc_grupos(prog: dict, materias: dict) -> str:
         "",
         "> GERADO por `scripts/gerar_progressao.py` a partir de `scripts/progressao.json`. Nao edite a mao.",
         "",
-        f"Fonte das questoes: **{s['fonte_das_questoes']}**. "
-        f"Criterio: **{crit['metrica']}** = `{crit['formula']}` >= **{crit['meta']:.0%}**.",
+        f"Fonte das questoes: **{s['fonte_das_questoes']}**.",
+        "",
+        f"**Criterio de avanco: {crit['metrica']} >= {crit['meta']:.0%}** — `{crit['formula']}`. "
+        f"{crit['regra_do_branco']}",
+        "",
+        f"**Metrica de acompanhamento ({crit['metrica_secundaria']['nome']}):** "
+        f"`{crit['metrica_secundaria']['formula']}` — {crit['metrica_secundaria']['uso']}",
         "",
         crit["observacao"],
         "",

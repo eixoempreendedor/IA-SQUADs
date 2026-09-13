@@ -9,7 +9,7 @@ workflow:
   estimated_duration: "ciclo semanal continuo ate a prova"
   description: |
     Sistema de avanco por desempenho medido em simulados do Gran Cursos.
-    Nada avanca por tempo estudado: avanca por indice liquido de 90%.
+    Nada avanca por tempo estudado: avanca por 90% de acerto bruto, com o liquido apurado ao lado como projecao da prova real.
     Nivel 1 (topico, 20 questoes) -> Nivel 2 (grupo do dia, 50 questoes) -> Nivel 3 (domingo, 200 questoes).
     Os grupos sao formados por TOPICOS do edital: uma materia pode aparecer em mais de um dia.
 
@@ -27,7 +27,7 @@ workflow:
       action: apurar
       input: lote_20
       creates: topico_vencido_ou_reforco
-      regra: ">= 90% liquido = topico vencido"
+      regra: ">= 90% bruto (18/20) = topico vencido"
     - agent: "<materia>-revisor"
       action: revisao-do-dia
       condition: "topico reprovado ou revisao espacada agendada"
@@ -37,7 +37,7 @@ workflow:
       creates: grupo_vencido_ou_repeticao
       quando: "manha do dia fixo do grupo"
       pre_requisito: "70% do peso dos topicos do grupo vencido no Nivel 1"
-      regra: ">= 90% liquido = grupo vencido e entra no pool do Nivel 3"
+      regra: ">= 90% bruto (45/50) = grupo vencido e entra no pool do Nivel 3"
     - agent: arbitro-da-progressao
       action: simulado-nivel-3
       creates: apuracao_dominical
@@ -67,5 +67,5 @@ workflow:
     - "Topicos vencidos / 87 topicos do edital"
     - "Grupos vencidos (0 a 6)"
     - "Peso somado no pool do Nivel 3 (meta: 150)"
-    - "Liquido do domingo, total e por materia"
+    - "Bruto e liquido do domingo, total e por grupo"
     - "Regressoes por mes (indicador de aprovacao superficial no Nivel 2)"

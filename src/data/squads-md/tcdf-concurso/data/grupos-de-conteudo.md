@@ -2,9 +2,13 @@
 
 > GERADO por `scripts/gerar_progressao.py` a partir de `scripts/progressao.json`. Nao edite a mao.
 
-Fonte das questoes: **Gran Cursos (banco de questoes)**. Criterio: **liquido** = `(acertos - erros) / total de questoes do lote` >= **90%**.
+Fonte das questoes: **Gran Cursos (banco de questoes)**.
 
-Em prova Certo/Errado com anulacao, 90% liquido equivale a 95% de acerto bruto. Se o banco do Gran for de multipla escolha (sem anulacao), use liquido = bruto e mantenha a meta em 0,90.
+**Criterio de avanco: bruto >= 90%** — `acertos / total de questões do lote`. Questão deixada em branco conta como não-acerto no denominador. O lote precisa ser respondido inteiro — senão bastaria responder só o que se sabe para bater a meta.
+
+**Metrica de acompanhamento (líquido):** `(acertos - erros) / total de questões do lote` — Acompanhamento obrigatório, mas NÃO decide avanço. É o placar que a prova real usa: cada erro anula um acerto (edital, subitem 9.11.2).
+
+O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e registrado ao lado, porque é ele que projeta a nota real: 90% bruto em um lote equivale a 80% líquido na régua da prova.
 
 **Como os grupos sao formados:** Os grupos são formados por TÓPICOS, não por matérias. Uma matéria pode aparecer em mais de um dia quando o edital espalha o mesmo assunto por programas diferentes (Direito Administrativo aparece em quatro dias, Constitucional e LODF em dois). Cada tópico do edital pertence a exatamente um grupo — sem sobreposição e sem lacuna.
 

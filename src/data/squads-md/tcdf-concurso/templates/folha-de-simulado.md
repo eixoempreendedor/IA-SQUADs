@@ -14,11 +14,14 @@ Use `C`, `E` ou `?`. So transcreva para o gabarito o que estiver decidido.
 ## Placar
 
 ```
-Itens respondidos: ____
+Total do lote: ____   (responda o lote inteiro: branco conta como erro no criterio)
 Acertos: ____    Erros: ____    Brancos: ____
-Liquido = acertos - erros = ____
-Aproveitamento liquido = liquido / itens do bloco = ____%
+
+BRUTO  = acertos / total                 = ____%   <- decide o avanco (meta 90%)
+LIQUIDO = (acertos - erros) / total      = ____%   <- projeta a nota real da prova
 ```
+
+Meta por lote: **18/20** (Nivel 1) · **45/50** (Nivel 2) · **180/200** (Nivel 3).
 
 ## Projecao contra o edital
 

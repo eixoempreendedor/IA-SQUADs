@@ -79,7 +79,11 @@ Minimo global nas objetivas: **45,00 pontos na soma de P1 + P2 + P3**. Só é co
 
 ## Progressao por niveis (90% para avancar)
 
-O estudo avanca por **resultado medido**, nao por tempo estudado. Questoes do **Gran Cursos (banco de questoes)**, criterio de **90% liquido** (`(acertos - erros) / total de questoes do lote`).
+O estudo avanca por **resultado medido**, nao por tempo estudado. Questoes do **Gran Cursos (banco de questoes)**.
+
+**Avanca com 90% bruto** (`acertos / total de questões do lote`). Questão deixada em branco conta como não-acerto no denominador. O lote precisa ser respondido inteiro — senão bastaria responder só o que se sabe para bater a meta.
+
+O **líquido** (`(acertos - erros) / total de questões do lote`) e apurado sempre ao lado, mas nao decide avanco: ele e o placar da prova real, em que cada erro anula um acerto.
 
 | Nivel | Unidade | Questoes | Quando | Aprovado gera |
 |---|---|---|---|---|
@@ -101,7 +105,9 @@ Os grupos são formados por TÓPICOS, não por matérias. Uma matéria pode apar
 | Sábado | **Instrumentais e Distrito Federal** | 28 | Língua Portuguesa (1, 2, 3, 4, 5, 6) — 21q · Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 6, 7) — 16q · Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3) — 7q · Noções de Primeiros Socorros (1) — 6q |
 | Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |
 
-Composicao completa, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). Acompanhamento: [`templates/mapa-de-progressao.md`](templates/mapa-de-progressao.md).
+Composicao completa, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). Estado atual, apurado dos simulados ja feitos: [`data/status-atual.md`](data/status-atual.md).
+
+Para registrar um simulado, acrescente uma linha em `scripts/progresso.json` e rode `python3 scripts/gerar_status.py` — ele recalcula topicos vencidos, prontidao de cada grupo, pool do Nivel 3 e a composicao do proximo simulado de domingo.
 
 Para mudar grupos, cotas, meta ou metrica, edite `scripts/progressao.json` e rode `python3 scripts/gerar_progressao.py`.
 
@@ -143,6 +149,7 @@ Os 48 agentes de materia e o `reitor-tcdf` sao **gerados** a partir de `scripts/
 ```bash
 python3 scripts/gerar_agentes.py        # agentes, squad.yaml, data/
 python3 scripts/gerar_progressao.py     # grupos de conteudo e mapa de progressao
+python3 scripts/gerar_status.py         # status atual a partir dos simulados registrados
 python3 scripts/gerar_readme.py         # este README
 python3 scripts/sync_app_registry.py    # registra o squad em squads.ts e agents.ts
 ```
@@ -166,6 +173,7 @@ tcdf-concurso/
 └── scripts/
     ├── edital.json             # FONTE DA VERDADE do conteudo
     ├── progressao.json         # FONTE DA VERDADE dos grupos e niveis
+    ├── progresso.json          # registro dos simulados feitos (memoria do sistema)
     └── *.py                    # geradores
 ```
 

@@ -82,8 +82,12 @@ def main() -> int:
 
     linhas += ["## Progressao por niveis (90% para avancar)", "",
                f"O estudo avanca por **resultado medido**, nao por tempo estudado. Questoes do "
-               f"**{prog['sistema']['fonte_das_questoes']}**, criterio de **{crit['meta']:.0%} {crit['metrica']}** "
-               f"(`{crit['formula']}`).", "",
+               f"**{prog['sistema']['fonte_das_questoes']}**.", "",
+               f"**Avanca com {crit['meta']:.0%} {crit['metrica']}** (`{crit['formula']}`). "
+               f"{crit['regra_do_branco']}", "",
+               f"O **{crit['metrica_secundaria']['nome']}** (`{crit['metrica_secundaria']['formula']}`) e apurado "
+               "sempre ao lado, mas nao decide avanco: ele e o placar da prova real, em que cada erro anula "
+               "um acerto.", "",
                "| Nivel | Unidade | Questoes | Quando | Aprovado gera |", "|---|---|---|---|---|"]
     for n in prog["sistema"]["niveis"]:
         linhas.append(f"| **{n['nivel']} — {n['nome']}** | {n['unidade']} | {n['questoes']} | {n['quando']} | {n['aprovado_gera']} |")
@@ -106,7 +110,10 @@ def main() -> int:
         linhas.append(f"| {g['dia']} | **{g['nome']}** | {peso_grupo(g)} | {lista} |")
     linhas += ["| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |", "",
                "Composicao completa, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). "
-               "Acompanhamento: [`templates/mapa-de-progressao.md`](templates/mapa-de-progressao.md).", "",
+               "Estado atual, apurado dos simulados ja feitos: [`data/status-atual.md`](data/status-atual.md).", "",
+               "Para registrar um simulado, acrescente uma linha em `scripts/progresso.json` e rode "
+               "`python3 scripts/gerar_status.py` — ele recalcula topicos vencidos, prontidao de cada grupo, "
+               "pool do Nivel 3 e a composicao do proximo simulado de domingo.", "",
                "Para mudar grupos, cotas, meta ou metrica, edite `scripts/progressao.json` e rode "
                "`python3 scripts/gerar_progressao.py`.", "",
                "## Como usar", "", "```",
@@ -137,6 +144,7 @@ def main() -> int:
                "`scripts/edital.json`; os grupos e niveis, a partir de `scripts/progressao.json`.", "", "```bash",
                "python3 scripts/gerar_agentes.py        # agentes, squad.yaml, data/",
                "python3 scripts/gerar_progressao.py     # grupos de conteudo e mapa de progressao",
+               "python3 scripts/gerar_status.py         # status atual a partir dos simulados registrados",
                "python3 scripts/gerar_readme.py         # este README",
                "python3 scripts/sync_app_registry.py    # registra o squad em squads.ts e agents.ts",
                "```", "",
@@ -155,6 +163,7 @@ def main() -> int:
                "└── scripts/",
                "    ├── edital.json             # FONTE DA VERDADE do conteudo",
                "    ├── progressao.json         # FONTE DA VERDADE dos grupos e niveis",
+               "    ├── progresso.json          # registro dos simulados feitos (memoria do sistema)",
                "    └── *.py                    # geradores", "```", "",
                "## Limites", "",
                "- Os agentes nao substituem a leitura do edital oficial nem do material de aula.",

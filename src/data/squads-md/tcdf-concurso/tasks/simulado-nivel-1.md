@@ -28,7 +28,7 @@ Saida:
 Checklist:
   - "[ ] 20 questoes do tema (banco do Gran ou lote do examinador)"
   - "[ ] Cronometro de 30 minutos"
-  - "[ ] Liquido apurado pelo arbitro-da-progressao"
+  - "[ ] Bruto e liquido apurados pelo arbitro-da-progressao (o bruto decide)"
   - "[ ] Tema marcado como vencido ou encaminhado para reforco"
 ---
 
@@ -44,7 +44,7 @@ Checklist:
 
 ## Objetivo
 
-Fechar o ciclo estudo → questao no mesmo dia: 20 questoes sobre **um topico numerado da ementa**, meta de 90% liquido. Aprovou, o topico entra vencido no grupo a que pertence e conta para liberar o simulado de Nivel 2 daquele dia.
+Fechar o ciclo estudo → questao no mesmo dia: 20 questoes sobre **um topico numerado da ementa**, meta de **90% bruto** (18 acertos em 20). Aprovou, o topico entra vencido no grupo a que pertence e conta para liberar o simulado de Nivel 2 daquele dia.
 
 Qual topico pertence a qual dia esta no `MAPA DE TOPICOS` do agente professor da materia e em [`data/grupos-de-conteudo.md`](../data/grupos-de-conteudo.md). Atencao: a mesma materia pode ter topicos em dias diferentes — Direito Administrativo, por exemplo, aparece em quatro dias.
 
@@ -52,10 +52,10 @@ Qual topico pertence a qual dia esta no `MAPA DE TOPICOS` do agente professor da
 
 1. `<materia>-professor` da a aula do tema.
 2. 20 questoes do tema no Gran (ou lote do `<materia>-examinador` quando o banco nao cobrir o recorte).
-3. `arbitro-da-progressao` apura: `(acertos - erros) / 20`.
-4. **>= 90%**: tema VENCIDO no mapa.
-5. **< 90%**: reforco com o professor + novo lote de 20 em 48h. Na segunda falha, revisao completa do tema com o `<materia>-revisor` antes de nova tentativa.
+3. `arbitro-da-progressao` apura `acertos / 20` (decide) e `(acertos - erros) / 20` (projeta a prova real).
+4. **>= 90% bruto (18/20)**: topico VENCIDO no mapa.
+5. **< 90% bruto**: reforco com o professor + novo lote de 20 em 48h. Na segunda falha, revisao completa do topico com o `<materia>-revisor` antes de nova tentativa.
 
 ## Observacao
 
-20 questoes e uma amostra pequena: 18 acertos e 90%, 17 e 85%. Um unico erro bobo reprova o tema — e essa e a ideia. Se o tema reprovar duas vezes por desatencao e nao por conteudo, o encaminhamento e para o `estrategista-cebraspe`, nao para o professor.
+20 questoes e uma amostra pequena: 18 acertos e 90%, 17 e 85%. Dois erros ja reprovam o topico — e essa e a ideia. Se o topico reprovar duas vezes por desatencao e nao por conteudo, o encaminhamento e para o `estrategista-cebraspe`, nao para o professor.

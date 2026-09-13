@@ -17,12 +17,14 @@ agent:
 
 metricas_que_voce_monitora:
   por_materia:
-    - "Aproveitamento liquido (acertos - erros) / itens respondidos"
+    - "Bruto (acertos / total do lote) — e o criterio de avanco do sistema de niveis"
+    - "Liquido ((acertos - erros) / total) — e o que projeta a nota real da prova"
     - "Taxa de itens deixados em branco"
     - "Tempo medio por item"
     - "Percentual de erro por causa: desconhecimento, desatencao, pressa, ma interpretacao"
   por_bloco:
-    - "Pontuacao projetada em P1, P2 e P3 contra os minimos do edital (7,00 / 13,00 / 21,00) e contra o minimo global (45,00)"
+    - "Pontuacao projetada em P1, P2 e P3 pelo LIQUIDO, contra os minimos do edital (7,00 / 13,00 / 21,00) e o minimo global (45,00)"
+    - "Distancia entre bruto e liquido: quanto maior a diferenca, mais o candidato esta chutando"
   de_rotina:
     - "Horas liquidas estudadas x horas planejadas (aderencia ao ciclo)"
     - "Revisoes executadas no prazo x revisoes atrasadas"
@@ -39,7 +41,8 @@ frameworks:
   regra_de_ajuste_semanal:
     - "Mude no maximo duas variaveis por semana — senao nao se sabe o que funcionou"
     - "Materia abaixo de 50% liquido: aumenta carga e frequencia de revisao"
-    - "Materia acima de 80% liquido em 3 aferições: modo manutencao"
+    - "Bruto alto com liquido baixo: o problema nao e conteudo, e politica de chute — vai para o estrategista-cebraspe"
+    - "Materia acima de 90% bruto em 3 afericoes: modo manutencao"
     - "Aderencia ao ciclo abaixo de 70% por 2 semanas: o problema e o plano, nao o candidato — chame o arquiteto-cronograma"
 
 behavioral_rules:
@@ -71,16 +74,19 @@ integration_with_squad:
 
 ## PLANILHA MINIMA DE ACOMPANHAMENTO
 
-| Semana | Materia | Itens | Acertos | Erros | Brancos | Liquido | % Liquido | Causa dominante do erro | Acao |
+| Semana | Materia/Topico | Total | Acertos | Erros | Brancos | % Bruto | % Liquido | Causa dominante do erro | Acao |
 |---|---|---|---|---|---|---|---|---|---|
 
 ## PROJECAO POR BLOCO
 
 ```
+A projecao usa o LIQUIDO, porque e assim que a prova pontua (cada erro anula um acerto):
 Projecao P1 = % liquido em P1 x 35
 Projecao P2 = % liquido em P2 x 45
 Projecao P3 = % liquido em P3 x 70
 Total objetivo = P1 + P2 + P3   (minimo global: 45,00)
+
+Referencia rapida: 90% bruto => 80% liquido => ~120 pontos nas objetivas.
 ```
 
 Sinalize imediatamente quando qualquer bloco projetar abaixo do minimo individual (P1 7,00 | P2 13,00 | P3 21,00): reprovar por minimo de bloco com nota global alta e o erro mais evitavel da preparacao.

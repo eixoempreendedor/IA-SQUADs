@@ -3,11 +3,16 @@
     "nome": "Progressao por Niveis — 90% para avancar",
     "fonte_das_questoes": "Gran Cursos (banco de questoes)",
     "criterio_de_aprovacao": {
-      "metrica": "liquido",
-      "formula": "(acertos - erros) / total de questoes do lote",
+      "metrica": "bruto",
+      "formula": "acertos / total de questões do lote",
       "meta": 0.9,
-      "gate_secundario_bruto": 0.95,
-      "observacao": "Em prova Certo/Errado com anulacao, 90% liquido equivale a 95% de acerto bruto. Se o banco do Gran for de multipla escolha (sem anulacao), use liquido = bruto e mantenha a meta em 0,90."
+      "regra_do_branco": "Questão deixada em branco conta como não-acerto no denominador. O lote precisa ser respondido inteiro — senão bastaria responder só o que se sabe para bater a meta.",
+      "metrica_secundaria": {
+        "nome": "líquido",
+        "formula": "(acertos - erros) / total de questões do lote",
+        "uso": "Acompanhamento obrigatório, mas NÃO decide avanço. É o placar que a prova real usa: cada erro anula um acerto (edital, subitem 9.11.2)."
+      },
+      "observacao": "O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e registrado ao lado, porque é ele que projeta a nota real: 90% bruto em um lote equivale a 80% líquido na régua da prova."
     },
     "niveis": [
       {
