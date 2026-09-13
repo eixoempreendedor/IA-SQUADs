@@ -38,12 +38,30 @@ def liquido(r: dict) -> float:
     return (r["acertos"] - r.get("erros", r["total"] - r["acertos"] - r.get("brancos", 0))) / r["total"] if r["total"] else 0.0
 
 
+def carregar_gran() -> tuple[dict, dict]:
+    """(materia, topico) -> [aulas do curso]; e quais dessas aulas estao marcadas na plataforma."""
+    arq = RAIZ / "scripts" / "gran.json"
+    if not arq.exists():
+        return {}, {}
+    gran = json.loads(arq.read_text(encoding="utf-8"))
+    aulas, marcadas = {}, {}
+    for mid, lista in gran["materias"].items():
+        for a in lista:
+            for n in a["topicos"]:
+                aulas.setdefault((mid, n), []).append(a["aula"])
+                if a.get("marcado_na_plataforma"):
+                    marcadas.setdefault((mid, n), []).append(a["aula"])
+    return aulas, marcadas
+
+
 def main() -> int:
     ed = json.loads((RAIZ / "scripts" / "edital.json").read_text(encoding="utf-8"))
     prog = json.loads((RAIZ / "scripts" / "progressao.json").read_text(encoding="utf-8"))
     reg = json.loads((RAIZ / "scripts" / "progresso.json").read_text(encoding="utf-8"))
     mats = {m["id"]: m for m in ed["materias"]}
     registros = reg["registros"]
+    estudados = {(e["materia"], str(e["topico"])) for e in reg.get("estudados", [])}
+    aulas_gran, marcadas_gran = carregar_gran()
 
     # ---- Nivel 1: status por topico ----
     n1 = {}
@@ -54,7 +72,7 @@ def main() -> int:
     def status_topico(chave):
         lotes = n1.get(chave)
         if not lotes:
-            return "—", None
+            return ("PRONTO P/ N1" if chave in estudados else "—"), None
         melhor = max(lotes, key=bruto)
         if bruto(melhor) >= META:
             return "VENCIDO", melhor
@@ -84,7 +102,8 @@ def main() -> int:
         peso_total = peso_venc = 0
         n_top = n_venc = 0
         linhas = [f"### {g['dia']} · {g['nome']}", "",
-                  "| Materia | # | Topico | Peso | Status | Melhor lote |", "|---|---|---|---|---|---|"]
+                  "| Materia | # | Topico | Peso | Aula Gran | Marcado | Status | Melhor lote |",
+                  "|---|---|---|---|---|---|---|---|"]
         for b in g["materias"]:
             info = mats[b["id"]]
             pesos = {t["n"]: t["peso"] for t in info["ementa"]}
@@ -96,9 +115,12 @@ def main() -> int:
                 if st == "VENCIDO":
                     peso_venc += pesos[n]
                     n_venc += 1
-                marca = {"VENCIDO": "**VENCIDO**", "REFORCO": "REFORCO", "REVISAR": "REVISAR"}.get(st, "—")
+                marca = {"VENCIDO": "**VENCIDO**", "REFORCO": "REFORCO", "REVISAR": "REVISAR",
+                         "PRONTO P/ N1": "pronto p/ N1"}.get(st, "—")
                 lote = f"{melhor['acertos']}/{melhor['total']} ({bruto(melhor):.0%})" if melhor else ""
-                linhas.append(f"| {info['nome']} | {n} | {curto(textos[n])} | {pesos[n]} | {marca} | {lote} |")
+                ag = ", ".join(str(x) for x in aulas_gran.get((b["id"], n), [])) or "—"
+                mg = "sim" if (b["id"], n) in marcadas_gran else ""
+                linhas.append(f"| {info['nome']} | {n} | {curto(textos[n])} | {pesos[n]} | {ag} | {mg} | {marca} | {lote} |")
         pct = peso_venc / peso_total if peso_total else 0
         lotes2 = n2.get(g["id"], [])
         melhor2 = max(lotes2, key=bruto) if lotes2 else None
@@ -141,6 +163,28 @@ def main() -> int:
         for c in cotas:
             out.append(f"| {c[0]} | {c[1]} | {c[2]} | {c[3]} | **{c[4]}** |")
         out += [f"| **Total** | | | **{pool_peso}** | **{sum(c[4] for c in cotas)}** |", ""]
+
+    # fila de trabalho: o que ja foi estudado e ainda nao passou pelo lote de 20
+    fila = []
+    for g in prog["grupos"]:
+        for b in g["materias"]:
+            info = mats[b["id"]]
+            pz = {t["n"]: t["peso"] for t in info["ementa"]}
+            tx = {t["n"]: t["texto"] for t in info["ementa"]}
+            for n in b["topicos"]:
+                if status_topico((b["id"], n))[0] == "PRONTO P/ N1":
+                    fila.append((g["dia"], info["nome"], n, curto(tx[n]), pz[n],
+                                 ", ".join(str(x) for x in aulas_gran.get((b["id"], n), []))))
+    out += ["## Fila do Nivel 1 — topicos ja estudados, aguardando o lote de 20", ""]
+    if fila:
+        out += [f"{len(fila)} lotes de 20 questoes = {len(fila) * 20} questoes.", "",
+                "| Dia | Materia | # | Topico | Peso | Aula Gran |", "|---|---|---|---|---|---|"]
+        out += [f"| {d[:3]} | {m} | {n} | {t} | {p} | {a} |" for d, m, n, t, p, a in
+                sorted(fila, key=lambda f: -f[4])]
+    else:
+        out += ["Nada na fila: nenhum topico foi declarado estudado ainda "
+                "(preencha `estudados` em `scripts/progresso.json`).", ""]
+    out += [""]
 
     out += detalhe
     (RAIZ / "data" / "status-atual.md").write_text("\n".join(out) + "\n", encoding="utf-8")

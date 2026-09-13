@@ -85,8 +85,9 @@ def partes(texto: str):
     return numero, resto.strip(), []
 
 
-def linha_topico(numero, titulo, peso, com_campo=True, q_n2=None):
-    esquerda = [Bolinha(), Paragraph(f"<b>{numero}.</b> {titulo}", TOPICO)]
+def linha_topico(numero, titulo, peso, com_campo=True, q_n2=None, aulas=None):
+    marca = f" <font size=7 color='#6d28d9'>[Gran {', '.join(str(a) for a in aulas)}]</font>" if aulas else ""
+    esquerda = [Bolinha(), Paragraph(f"<b>{numero}.</b> {titulo}{marca}", TOPICO)]
     direita = f"peso {peso} · N2: {q_n2}q<br/>N1: ____ / 20" if com_campo else f"peso {peso}"
     t = Table([[esquerda[0], esquerda[1], Paragraph(direita, NOTA)]],
               colWidths=[7 * mm, 119 * mm, 32 * mm])
@@ -178,7 +179,8 @@ def documento(caminho: Path, titulo: str, subtitulo: str, rodape: str):
     return doc
 
 
-def pdf_do_grupo(grupo, mats, ordem, sistema, outros):
+def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None):
+    gran = gran or {}
     r = cotas.resumo(grupo, mats)
     peso_total, n_top = r["peso"], r["topicos"]
     lote, meta = r["total"], r["meta"]
@@ -215,7 +217,9 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros):
     hist.append(Paragraph("CHECKLIST DE CONTEÚDO", SECAO))
     hist.append(Paragraph(
         "Bolinha grande = tópico do edital (unidade de Nível 1: 20 questões, meta 18/20). "
-        "Bolinha pequena = subtópico. Marque o subtópico quando estudar; marque o tópico só quando o lote de 20 passar.",
+        "Bolinha pequena = subtópico. Marque o subtópico quando estudar; marque o tópico só quando o lote de 20 passar. "
+        "<font color='#6d28d9'>[Gran N]</font> = número da aula no curso que cobre aquele tópico — o curso fatia e "
+        "reordena o programa, então a numeração das aulas não é a do edital.",
         NOTA))
 
     for b in grupo["materias"]:
@@ -233,7 +237,9 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros):
         for n in b["topicos"]:
             t = textos[n]
             numero, titulo, subs = partes(t["texto"])
-            bloco = [linha_topico(numero or n, titulo, t["peso"], q_n2=r["por_topico"][(b["id"], n)])]
+            bloco = [linha_topico(numero or n, titulo, t["peso"],
+                                  q_n2=r["por_topico"][(b["id"], n)],
+                                  aulas=gran.get((b["id"], n)))]
             for s in subs:
                 bloco.append(linha_sub(s))
             for s in t.get("subtopicos_sugeridos", []):
@@ -314,6 +320,20 @@ def pdf_domingo(prog, mats, total_edital):
     return arq
 
 
+def aulas_do_gran() -> dict:
+    """(materia, topico) -> [numeros das aulas do curso que cobrem o topico]."""
+    arq = RAIZ / "scripts" / "gran.json"
+    if not arq.exists():
+        return {}
+    gran = json.loads(arq.read_text(encoding="utf-8"))
+    mapa: dict = {}
+    for mid, aulas in gran["materias"].items():
+        for a in aulas:
+            for n in a["topicos"]:
+                mapa.setdefault((mid, n), []).append(a["aula"])
+    return mapa
+
+
 def main() -> int:
     ed = json.loads((RAIZ / "scripts" / "edital.json").read_text(encoding="utf-8"))
     prog = json.loads((RAIZ / "scripts" / "progressao.json").read_text(encoding="utf-8"))
@@ -325,10 +345,11 @@ def main() -> int:
         (b["id"], n): g["dia"]
         for g in prog["grupos"] for b in g["materias"] for n in b["topicos"]
     }
+    gran = aulas_do_gran()
 
     SAIDA.mkdir(exist_ok=True)
     for i, g in enumerate(prog["grupos"], 1):
-        arq, peso, n_top = pdf_do_grupo(g, mats, i, prog["sistema"], onde_estuda)
+        arq, peso, n_top = pdf_do_grupo(g, mats, i, prog["sistema"], onde_estuda, gran)
         print(f"{arq.name}: {n_top} topicos, peso {peso}")
     arq = pdf_domingo(prog, mats, total_edital)
     print(f"{arq.name}: registro geral do Nivel 3")
