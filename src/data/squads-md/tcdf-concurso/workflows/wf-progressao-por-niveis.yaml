@@ -10,7 +10,7 @@ workflow:
   description: |
     Sistema de avanco por desempenho medido em simulados do Gran Cursos.
     Nada avanca por tempo estudado: avanca por 90% de acerto bruto, com o liquido apurado ao lado como projecao da prova real.
-    Nivel 1 (topico, 20 questoes) -> Nivel 2 (grupo do dia, 50 questoes) -> Nivel 3 (domingo, 200 questoes).
+    Nivel 1 (topico, 20 questoes) -> Nivel 2 (grupo do dia, 50 ou 60 questoes) -> Nivel 3 (domingo, 200 questoes).
     Os grupos sao formados por TOPICOS do edital: uma materia pode aparecer em mais de um dia.
 
   type: cyclical
@@ -37,7 +37,7 @@ workflow:
       creates: grupo_vencido_ou_repeticao
       quando: "manha do dia fixo do grupo"
       pre_requisito: "70% do peso dos topicos do grupo vencido no Nivel 1"
-      regra: ">= 90% bruto (45/50) = grupo vencido e entra no pool do Nivel 3"
+      regra: ">= 90% bruto (45/50 ou 54/60, conforme o grupo) = grupo vencido e entra no pool do Nivel 3"
     - agent: arbitro-da-progressao
       action: simulado-nivel-3
       creates: apuracao_dominical
@@ -55,17 +55,18 @@ workflow:
       observacao: "Grupo vencido libera tempo do seu dia para os grupos ainda pendentes"
 
   calendario:
-    segunda: "Orçamento e Tributação — 50 questoes"
-    terca: "Direito Administrativo e Contratações — 50 questoes"
-    quarta: "Controle Externo e Organização do Estado — 50 questoes"
-    quinta: "Gestão e Dados — 50 questoes"
-    sexta: "Servidores, Previdência e Direito Civil — 50 questoes"
-    sabado: "Instrumentais e Distrito Federal — 50 questoes"
+    segunda: "Orçamento e Tributação — 50 questoes (meta 45)"
+    terca: "Direito Administrativo e Contratações — 60 questoes (meta 54)"
+    quarta: "Controle Externo e Organização do Estado — 60 questoes (meta 54)"
+    quinta: "Gestão e Dados — 50 questoes (meta 45)"
+    sexta: "Servidores, Previdência e Direito Civil — 50 questoes (meta 45)"
+    sabado: "Instrumentais e Distrito Federal — 60 questoes (meta 54)"
     domingo: "Nivel 3 — 200 questoes dos topicos vencidos + relatorio semanal"
 
   metricas:
     - "Topicos vencidos / 87 topicos do edital"
     - "Grupos vencidos (0 a 6)"
     - "Peso somado no pool do Nivel 3 (meta: 150)"
+    - "Questoes por semana contra o teto de 450"
     - "Bruto e liquido do domingo, total e por grupo"
     - "Regressoes por mes (indicador de aprovacao superficial no Nivel 2)"

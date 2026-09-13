@@ -18,6 +18,7 @@ import re
 import unicodedata
 from pathlib import Path
 
+import cotas
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
@@ -84,11 +85,11 @@ def partes(texto: str):
     return numero, resto.strip(), []
 
 
-def linha_topico(numero, titulo, peso, com_campo=True):
+def linha_topico(numero, titulo, peso, com_campo=True, q_n2=None):
     esquerda = [Bolinha(), Paragraph(f"<b>{numero}.</b> {titulo}", TOPICO)]
-    direita = f"peso {peso}   N1: ____ / 20" if com_campo else f"peso {peso}"
+    direita = f"peso {peso} · N2: {q_n2}q<br/>N1: ____ / 20" if com_campo else f"peso {peso}"
     t = Table([[esquerda[0], esquerda[1], Paragraph(direita, NOTA)]],
-              colWidths=[7 * mm, 121 * mm, 30 * mm])
+              colWidths=[7 * mm, 119 * mm, 32 * mm])
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 0),
@@ -178,11 +179,10 @@ def documento(caminho: Path, titulo: str, subtitulo: str, rodape: str):
 
 
 def pdf_do_grupo(grupo, mats, ordem, sistema, outros):
-    peso_total = 0
-    for b in grupo["materias"]:
-        p = {t["n"]: t["peso"] for t in mats[b["id"]]["ementa"]}
-        peso_total += sum(p[n] for n in b["topicos"])
-    n_top = sum(len(b["topicos"]) for b in grupo["materias"])
+    r = cotas.resumo(grupo, mats)
+    peso_total, n_top = r["peso"], r["topicos"]
+    lote, meta = r["total"], r["meta"]
+    minutos = 70 if lote == 50 else 85
 
     arq = SAIDA / f"{ordem}-{slug(grupo['dia'])}-{slug(grupo['nome'])}.pdf"
     doc = documento(arq, grupo["dia"].upper(), grupo["nome"],
@@ -191,21 +191,25 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros):
 
     hist.append(caixa(
         f"<b>{grupo['nome']}</b> — {peso_total} itens estimados do edital · {n_top} tópicos<br/>"
-        f"<b>Simulado de Nível 2 deste dia:</b> 50 questões · meta <b>45/50 (90% bruto)</b> · 70 minutos, pela manhã<br/>"
+        f"<b>Simulado de Nível 2 deste dia:</b> {lote} questões · meta <b>{meta}/{lote} (90% bruto)</b> · "
+        f"{minutos} minutos, pela manhã<br/>"
         f"<font size=8 color='#6b7280'>{grupo['tese']}</font>"))
     hist.append(Spacer(1, 7))
 
-    cotas = " · ".join(f"{mats[b['id']]['nome']}: <b>{b['questoes_n2']}q</b>" for b in grupo["materias"])
-    hist.append(Paragraph("COMPOSIÇÃO DAS 50 QUESTÕES", SECAO))
-    hist.append(Paragraph(cotas, CORPO))
+    composicao = " · ".join(f"{mats[b['id']]['nome']}: <b>{r['por_materia'][b['id']]}q</b>" for b in grupo["materias"])
+    hist.append(Paragraph(f"COMPOSIÇÃO DAS {lote} QUESTÕES", SECAO))
+    hist.append(Paragraph(composicao, CORPO))
+    hist.append(Paragraph(
+        f"Cada tópico entra com pelo menos {cotas.COTA_MINIMA} questões — a coluna <i>N2</i> do checklist diz "
+        "quantas cabem a cada um. Monte o lote no Gran seguindo essa distribuição.", NOTA))
     hist.append(Spacer(1, 9))
 
     hist.append(Paragraph("REGISTRO DOS SIMULADOS DESTE DIA", SECAO))
     hist.append(Paragraph(
-        "Nível 2 = 50 questões do grupo. Anote também os lotes de Nível 1 (20 questões de um tópico) na linha do tópico. "
-        "Branco conta como erro: responda o lote inteiro.", NOTA))
+        f"Nível 2 = {lote} questões do grupo (meta {meta}). Anote também os lotes de Nível 1 (20 questões de um "
+        "tópico, meta 18) na linha do tópico. Branco conta como erro: responda o lote inteiro.", NOTA))
     hist.append(Spacer(1, 4))
-    hist.append(tabela_registro())
+    hist.append(tabela_registro(linhas=8))
     hist.append(Spacer(1, 12))
 
     hist.append(Paragraph("CHECKLIST DE CONTEÚDO", SECAO))
@@ -219,7 +223,7 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros):
         textos = {t["n"]: t for t in info["ementa"]}
         hist.append(Paragraph(
             f"{info['nome']} <font size=8 color='#6b7280'>· {info['bloco']} · "
-            f"{b['questoes_n2']} questões no simulado</font>", MATERIA))
+            f"{r['por_materia'][b['id']]} questões no simulado</font>", MATERIA))
         fora = [t["n"] for t in info["ementa"] if t["n"] not in b["topicos"]]
         if fora:
             onde = sorted({outros[(info["id"], n)] for n in fora})
@@ -229,7 +233,7 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros):
         for n in b["topicos"]:
             t = textos[n]
             numero, titulo, subs = partes(t["texto"])
-            bloco = [linha_topico(numero or n, titulo, t["peso"])]
+            bloco = [linha_topico(numero or n, titulo, t["peso"], q_n2=r["por_topico"][(b["id"], n)])]
             for s in subs:
                 bloco.append(linha_sub(s))
             for s in t.get("subtopicos_sugeridos", []):

@@ -9,6 +9,8 @@ from __future__ import annotations
 import json
 import re
 import unicodedata
+
+import cotas
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
@@ -101,22 +103,17 @@ def main() -> int:
         linhas.append(f"| **{n['nivel']} — {n['nome']}** | {n['unidade']} | {n['questoes']} | {n['quando']} | {n['aprovado_gera']} |")
     linhas += ["", "### Grupos de conteudo (seg a sab)", "",
                f"{prog['sistema']['estrutura_dos_grupos']}", "",
-               "| Dia | Grupo | Peso est. | Materias (topicos) — cota no simulado de 50 |", "|---|---|---|---|"]
-
-    def peso_grupo(g):
-        total = 0
-        for b in g["materias"]:
-            pesos = {t["n"]: t["peso"] for t in nomes[b["id"]]["ementa"]}
-            total += sum(pesos[n] for n in b["topicos"])
-        return total
-
+               "| Dia | Grupo | Peso est. | Simulado | Materias — cota |", "|---|---|---|---|---|"]
     for g in prog["grupos"]:
-        lista = " · ".join(
-            f"{nomes[b['id']]['nome']} ({', '.join(b['topicos'])}) — {b['questoes_n2']}q"
-            for b in g["materias"]
-        )
-        linhas.append(f"| {g['dia']} | **{g['nome']}** | {peso_grupo(g)} | {lista} |")
-    linhas += ["| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |", "",
+        r = cotas.resumo(g, nomes)
+        lista = " · ".join(f"{nomes[b['id']]['nome']} {r['por_materia'][b['id']]}q" for b in g["materias"])
+        linhas.append(f"| {g['dia']} | **{g['nome']}** | {r['peso']} | **{r['total']}q** (meta {r['meta']}) | {lista} |")
+    linhas += ["| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200q (meta 180) | proporcional ao peso dos topicos vencidos |", "",
+               f"Tamanho do lote de Nivel 2: {prog['sistema']['dimensionamento_do_nivel_2']['regra'].lower()}, "
+               f"com piso de {prog['sistema']['dimensionamento_do_nivel_2']['cota_minima_por_topico']} questoes por topico. "
+               f"Teto de **{prog['sistema']['teto_semanal']['questoes']} questoes por semana** — acima disso o "
+               "`arquiteto-cronograma` corta primeiro a manutencao dos grupos ja vencidos, nunca o Nivel 1 do "
+               "conteudo novo.", "",
                "Composicao completa, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). "
                "Estado atual, apurado dos simulados ja feitos: [`data/status-atual.md`](data/status-atual.md).", "",
                "Para registrar um simulado, acrescente uma linha em `scripts/progresso.json` e rode "

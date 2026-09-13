@@ -29,8 +29,8 @@
         "nivel": 2,
         "nome": "Grupo de conteudo",
         "unidade": "Um dos 6 grupos de conteúdo (conjunto de tópicos de matérias diferentes que se estudam juntos)",
-        "questoes": 50,
-        "quando": "Manha do dia fixo do grupo, antes de qualquer conteudo novo",
+        "questoes": "50 ou 60, conforme o número de tópicos do grupo",
+        "quando": "Manhã do dia fixo do grupo, antes de qualquer conteúdo novo",
         "meta": 0.9,
         "pre_requisito": "Pelo menos 70% do peso dos tópicos do grupo já vencido no Nível 1",
         "aprovado_gera": "Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal",
@@ -57,10 +57,31 @@
     },
     "tempo_alvo": {
       "nivel_1": "20 questoes em ate 30 minutos",
-      "nivel_2": "50 questoes em ate 70 minutos",
+      "nivel_2": "50 questões em até 70 minutos; 60 questões em até 85 minutos",
       "nivel_3": "200 questoes em ate 4 horas (ritmo real de prova)"
     },
-    "estrutura_dos_grupos": "Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é repartida entre dias. Os grupos reúnem matérias que compartilham norma ou vocabulário, de modo que estudar uma adianta a outra. Dentro do dia, a unidade de Nível 1 continua sendo o tópico numerado do edital."
+    "estrutura_dos_grupos": "Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é repartida entre dias. Os grupos reúnem matérias que compartilham norma ou vocabulário, de modo que estudar uma adianta a outra. Dentro do dia, a unidade de Nível 1 continua sendo o tópico numerado do edital.",
+    "dimensionamento_do_nivel_2": {
+      "regra": "Lote de 50 questões para grupos com até 14 tópicos e de 60 para grupos com 15 ou mais, de modo que todo dia fique entre 3,5 e 4,5 questões por tópico",
+      "meta": "90% bruto: 45/50 ou 54/60",
+      "cota_minima_por_topico": 2,
+      "por_que": "Sem piso por tópico, um tópico de peso 1 recebia menos de duas questões e o grupo podia ser aprovado sem que ele fosse testado de verdade. O piso custa poucas questões e fecha essa brecha.",
+      "calculo": "Cada tópico recebe o piso; o restante é distribuído na proporção do peso, por maior resto, fechando o total exato"
+    },
+    "teto_semanal": {
+      "questoes": 450,
+      "por_que": "Com os seis grupos ativos, Nível 2 (330) + Nível 1 (~100) + Nível 3 (200) passa de 600 questões por semana, o que soma cerca de 24 horas só de resolução e correção. Acima de 450 o plano deixa de ser sustentável e o risco vira abandono, não reprovação.",
+      "ordem_de_corte": [
+        "1. Manutenção quinzenal dos grupos já vencidos (adia para a semana seguinte)",
+        "2. Segundo lote de Nível 1 no mesmo dia (fica um tópico novo por dia)",
+        "3. Simulado de domingo reduzido a 150 questões, mantida a proporção do pool"
+      ],
+      "nunca_cortar": [
+        "O lote de Nível 1 do tópico estudado no dia",
+        "O simulado de Nível 2 de um grupo ainda pendente"
+      ],
+      "observacao": "O teto só morde quando os seis grupos estiverem ativos. No começo o pré-requisito de 70% segura a carga, e cada grupo aprovado cai para manutenção quinzenal, devolvendo espaço."
+    }
   },
   "grupos": [
     {
@@ -81,8 +102,7 @@
             "7",
             "8",
             "9"
-          ],
-          "questoes_n2": 39
+          ]
         },
         {
           "id": "nocoes-direito-tributario",
@@ -90,8 +110,7 @@
             "1",
             "2",
             "3"
-          ],
-          "questoes_n2": 11
+          ]
         }
       ]
     },
@@ -118,16 +137,14 @@
             "12",
             "13",
             "14"
-          ],
-          "questoes_n2": 39
+          ]
         },
         {
           "id": "gestao-de-contratos",
           "topicos": [
             "1",
             "2"
-          ],
-          "questoes_n2": 11
+          ]
         }
       ]
     },
@@ -149,16 +166,14 @@
             "7",
             "8",
             "9"
-          ],
-          "questoes_n2": 21
+          ]
         },
         {
           "id": "lei-organica-regimento-tcdf",
           "topicos": [
             "1",
             "2"
-          ],
-          "questoes_n2": 18
+          ]
         },
         {
           "id": "lei-organica-df",
@@ -168,8 +183,7 @@
             "3",
             "4",
             "5"
-          ],
-          "questoes_n2": 11
+          ]
         }
       ]
     },
@@ -191,8 +205,7 @@
             "7",
             "8",
             "9"
-          ],
-          "questoes_n2": 38
+          ]
         },
         {
           "id": "analise-dados-estatistica-ia",
@@ -202,8 +215,7 @@
             "3",
             "4",
             "5"
-          ],
-          "questoes_n2": 12
+          ]
         }
       ]
     },
@@ -217,8 +229,7 @@
           "id": "regime-juridico-servidores-df",
           "topicos": [
             "1"
-          ],
-          "questoes_n2": 18
+          ]
         },
         {
           "id": "direito-previdenciario",
@@ -228,8 +239,7 @@
             "3",
             "4",
             "5"
-          ],
-          "questoes_n2": 18
+          ]
         },
         {
           "id": "nocoes-direito-civil",
@@ -240,8 +250,7 @@
             "4",
             "5",
             "6"
-          ],
-          "questoes_n2": 14
+          ]
         }
       ]
     },
@@ -260,8 +269,7 @@
             "4",
             "5",
             "6"
-          ],
-          "questoes_n2": 21
+          ]
         },
         {
           "id": "raciocinio-logico-matematica-financeira",
@@ -273,8 +281,7 @@
             "5",
             "6",
             "7"
-          ],
-          "questoes_n2": 17
+          ]
         },
         {
           "id": "conhecimentos-df-politica-mulheres",
@@ -282,15 +289,13 @@
             "1",
             "2",
             "3"
-          ],
-          "questoes_n2": 7
+          ]
         },
         {
           "id": "nocoes-primeiros-socorros",
           "topicos": [
             "1"
-          ],
-          "questoes_n2": 5
+          ]
         }
       ]
     }

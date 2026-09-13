@@ -88,22 +88,24 @@ O **líquido** (`(acertos - erros) / total de questões do lote`) e apurado semp
 | Nivel | Unidade | Questoes | Quando | Aprovado gera |
 |---|---|---|---|---|
 | **1 — Tema** | Um tópico numerado da ementa oficial (ex.: Direito Administrativo, tópico 3 — Ato administrativo) | 20 | Logo apos estudar o tema, no mesmo dia | Tópico marcado como VENCIDO e liberado para compor o simulado de Nível 2 do grupo a que ele pertence |
-| **2 — Grupo de conteudo** | Um dos 6 grupos de conteúdo (conjunto de tópicos de matérias diferentes que se estudam juntos) | 50 | Manha do dia fixo do grupo, antes de qualquer conteudo novo | Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal |
+| **2 — Grupo de conteudo** | Um dos 6 grupos de conteúdo (conjunto de tópicos de matérias diferentes que se estudam juntos) | 50 ou 60, conforme o número de tópicos do grupo | Manhã do dia fixo do grupo, antes de qualquer conteúdo novo | Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal |
 | **3 — Simulado geral** | Todos os tópicos dos grupos já vencidos no Nível 2 | 200 | Domingo de manha, cronometrado | Grupo confirmado no pool; segue em manutenção semanal sem voltar ao Nível 2 |
 
 ### Grupos de conteudo (seg a sab)
 
 Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é repartida entre dias. Os grupos reúnem matérias que compartilham norma ou vocabulário, de modo que estudar uma adianta a outra. Dentro do dia, a unidade de Nível 1 continua sendo o tópico numerado do edital.
 
-| Dia | Grupo | Peso est. | Materias (topicos) — cota no simulado de 50 |
-|---|---|---|---|
-| Segunda-feira | **Orçamento e Tributação** | 19 | Administração Financeira e Orçamentária (1, 2, 3, 4, 5, 6, 7, 8, 9) — 39q · Noções de Direito Tributário (1, 2, 3) — 11q |
-| Terça-feira | **Direito Administrativo e Contratações** | 32 | Direito Administrativo (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) — 39q · Gestão de Contratos (1, 2) — 11q |
-| Quarta-feira | **Controle Externo e Organização do Estado** | 28 | Direito Constitucional (1, 2, 3, 4, 5, 6, 7, 8, 9) — 21q · Lei Orgânica do TCDF e Regimento Interno (1, 2) — 18q · Lei Orgânica do Distrito Federal (1, 2, 3, 4, 5) — 11q |
-| Quinta-feira | **Gestão e Dados** | 20 | Administração Geral e Pública (1, 2, 3, 4, 5, 6, 7, 8, 9) — 38q · Análise de Dados, Noções de Estatística e Inteligência Artificial (1, 2, 3, 4, 5) — 12q |
-| Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) (1) — 18q · Direito Previdenciário (1, 2, 3, 4, 5) — 18q · Noções de Direito Civil (1, 2, 3, 4, 5, 6) — 14q |
-| Sábado | **Instrumentais e Distrito Federal** | 29 | Língua Portuguesa (1, 2, 3, 4, 5, 6) — 21q · Raciocínio Lógico e Matemática Financeira (1, 2, 3, 4, 5, 6, 7) — 17q · Conhecimentos do Distrito Federal e Política para Mulheres (1, 2, 3) — 7q · Noções de Primeiros Socorros (1) — 5q |
-| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |
+| Dia | Grupo | Peso est. | Simulado | Materias — cota |
+|---|---|---|---|---|
+| Segunda-feira | **Orçamento e Tributação** | 19 | **50q** (meta 45) | Administração Financeira e Orçamentária 39q · Noções de Direito Tributário 11q |
+| Terça-feira | **Direito Administrativo e Contratações** | 32 | **60q** (meta 54) | Direito Administrativo 51q · Gestão de Contratos 9q |
+| Quarta-feira | **Controle Externo e Organização do Estado** | 28 | **60q** (meta 54) | Direito Constitucional 30q · Lei Orgânica do TCDF e Regimento Interno 14q · Lei Orgânica do Distrito Federal 16q |
+| Quinta-feira | **Gestão e Dados** | 20 | **50q** (meta 45) | Administração Geral e Pública 35q · Análise de Dados, Noções de Estatística e Inteligência Artificial 15q |
+| Sexta-feira | **Servidores, Previdência e Direito Civil** | 22 | **50q** (meta 45) | Regime Jurídico dos Servidores Públicos Civis do DF (LC 840/2011) 12q · Direito Previdenciário 20q · Noções de Direito Civil 18q |
+| Sábado | **Instrumentais e Distrito Federal** | 29 | **60q** (meta 54) | Língua Portuguesa 23q · Raciocínio Lógico e Matemática Financeira 23q · Conhecimentos do Distrito Federal e Política para Mulheres 10q · Noções de Primeiros Socorros 4q |
+| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200q (meta 180) | proporcional ao peso dos topicos vencidos |
+
+Tamanho do lote de Nivel 2: lote de 50 questões para grupos com até 14 tópicos e de 60 para grupos com 15 ou mais, de modo que todo dia fique entre 3,5 e 4,5 questões por tópico, com piso de 2 questoes por topico. Teto de **450 questoes por semana** — acima disso o `arquiteto-cronograma` corta primeiro a manutencao dos grupos ja vencidos, nunca o Nivel 1 do conteudo novo.
 
 Composicao completa, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). Estado atual, apurado dos simulados ja feitos: [`data/status-atual.md`](data/status-atual.md).
 

@@ -20,10 +20,11 @@ import re
 import sys
 from pathlib import Path
 
+import cotas
+
 RAIZ = Path(__file__).resolve().parent.parent
 PROG = RAIZ / "scripts" / "progressao.json"
 EDITAL = RAIZ / "scripts" / "edital.json"
-QUESTOES_N2 = 50
 
 
 def curto(texto: str, limite: int = 90) -> str:
@@ -48,9 +49,17 @@ def validar(prog: dict, materias: dict) -> list[str]:
     erros: list[str] = []
     vistos: list[tuple[str, str]] = []
     for g in prog["grupos"]:
-        total_q = sum(b["questoes_n2"] for b in g["materias"])
-        if total_q != QUESTOES_N2:
-            erros.append(f"{g['id']}: cotas somam {total_q} questoes, esperado {QUESTOES_N2}")
+        try:
+            r = cotas.resumo(g, materias)
+        except (ValueError, KeyError) as e:
+            erros.append(f"{g['id']}: nao foi possivel calcular as cotas ({e})")
+            r = None
+        if r:
+            if sum(r["por_topico"].values()) != r["total"]:
+                erros.append(f"{g['id']}: cotas por topico somam {sum(r['por_topico'].values())}, esperado {r['total']}")
+            magros = [f"{mid} #{n} ({q}q)" for (mid, n), q in r["por_topico"].items() if q < cotas.COTA_MINIMA]
+            if magros:
+                erros.append(f"{g['id']}: topicos abaixo do piso de {cotas.COTA_MINIMA} questoes: " + ", ".join(magros))
         for b in g["materias"]:
             if b["id"] not in materias:
                 erros.append(f"{g['id']}: materia inexistente '{b['id']}'")
@@ -123,19 +132,23 @@ def doc_grupos(prog: dict, materias: dict) -> str:
             f"{n['quando']} | {n['meta']:.0%} | {n['aprovado_gera']} |"
         )
 
-    out += ["", "## A semana", "", "| Dia | Grupo | Peso est. | Materias (topicos) |", "|---|---|---|---|"]
+    out += ["", "## A semana", "",
+            "| Dia | Grupo | Peso est. | Topicos | Simulado | Meta | Materias |", "|---|---|---|---|---|---|---|"]
     for g in prog["grupos"]:
-        lista = " · ".join(
-            f"{materias[b['id']]['nome']} ({', '.join(b['topicos'])})" for b in g["materias"]
-        )
-        out.append(f"| {g['dia']} | **{g['nome']}** | {peso_do_grupo(g, materias)} | {lista} |")
-    out.append("| Domingo | **Nivel 3 — simulado geral** | pool vencido | 200 questoes proporcionais ao peso dos topicos vencidos |")
+        r = cotas.resumo(g, materias)
+        lista = " · ".join(materias[b["id"]]["nome"] for b in g["materias"])
+        out.append(f"| {g['dia']} | **{g['nome']}** | {r['peso']} | {r['topicos']} | "
+                   f"**{r['total']}q** | {r['meta']}/{r['total']} | {lista} |")
+    out.append("| Domingo | **Nivel 3 — simulado geral** | pool vencido | — | 200q | 180/200 | "
+               "proporcional ao peso dos topicos vencidos |")
     out.append("")
 
     out += ["## Cada grupo em detalhe", ""]
     for g in prog["grupos"]:
+        r = cotas.resumo(g, materias)
         out += [
-            f"### {g['dia']} · {g['nome']} — {peso_do_grupo(g, materias)} itens estimados",
+            f"### {g['dia']} · {g['nome']} — {r['peso']} itens estimados · simulado de {r['total']} questoes "
+            f"(meta {r['meta']})",
             "",
             f"*{g['tese']}*",
             "",
@@ -145,22 +158,38 @@ def doc_grupos(prog: dict, materias: dict) -> str:
         for b in g["materias"]:
             out.append(
                 f"| {materias[b['id']]['nome']} | {', '.join(b['topicos'])} | "
-                f"{peso_do_bloco(b, materias)} | **{b['questoes_n2']}** |"
+                f"{peso_do_bloco(b, materias)} | **{r['por_materia'][b['id']]}** |"
             )
         out += [
-            f"| **Total** | — | **{peso_do_grupo(g, materias)}** | **{sum(b['questoes_n2'] for b in g['materias'])}** |",
+            f"| **Total** | — | **{r['peso']}** | **{r['total']}** |",
             "",
             "<details><summary>Topicos deste dia, um a um (cada um e uma unidade de Nivel 1)</summary>",
             "",
-            "| Materia | # | Topico | Peso |",
-            "|---|---|---|---|",
+            "| Materia | # | Topico | Peso | Questoes no simulado |",
+            "|---|---|---|---|---|",
         ]
         for b in g["materias"]:
             textos = {t["n"]: t["texto"] for t in materias[b["id"]]["ementa"]}
-            p = pesos(materias[b["id"]])
+            pz = pesos(materias[b["id"]])
             for n in b["topicos"]:
-                out.append(f"| {materias[b['id']]['nome']} | {n} | {curto(textos[n], 120)} | {p[n]} |")
+                out.append(f"| {materias[b['id']]['nome']} | {n} | {curto(textos[n], 110)} | {pz[n]} | "
+                           f"{r['por_topico'][(b['id'], n)]} |")
         out += ["", "</details>", ""]
+
+    dim = s.get("dimensionamento_do_nivel_2", {})
+    teto = s.get("teto_semanal", {})
+    if dim:
+        out += ["## Tamanho do simulado de Nivel 2", "",
+                f"{dim['regra']}. Meta: **{dim['meta']}**.", "",
+                f"Piso de **{dim['cota_minima_por_topico']} questoes por topico**. {dim['por_que']}", "",
+                f"{dim['calculo']}.", ""]
+    if teto:
+        out += ["## Teto semanal", "",
+                f"**{teto['questoes']} questoes por semana.** {teto['por_que']}", "",
+                "Ordem de corte quando estourar:", ""]
+        out += [f"- {x}" for x in teto["ordem_de_corte"]]
+        out += ["", "Nunca cortar:", ""] + [f"- {x}" for x in teto["nunca_cortar"]]
+        out += ["", teto["observacao"], ""]
 
     out += [
         "## Rotina",

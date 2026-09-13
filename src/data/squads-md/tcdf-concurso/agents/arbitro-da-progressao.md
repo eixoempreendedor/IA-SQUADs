@@ -33,9 +33,11 @@ sistema:
       avanca_para: "Topico entra como vencido no grupo a que pertence, liberando o Nivel 2 daquele dia"
       reprovado: "Aula de reforco com o professor + novo lote de 20 em 48h (maximo 2 repeticoes antes de revisao completa do topico)"
     - nivel: 2
-      unidade: "Grupo de conteudo (conjunto de topicos de materias diferentes, fixado em um dia da semana)"
-      questoes: 50
-      tempo_alvo: "70 minutos"
+      unidade: "Grupo de conteudo (todas as materias daquele dia, fixado num dia da semana)"
+      questoes: "50 (grupos com ate 14 topicos) ou 60 (15 ou mais)"
+      meta_por_lote: "45/50 ou 54/60"
+      cota_minima_por_topico: 2
+      tempo_alvo: "70 minutos no lote de 50; 85 minutos no de 60"
       pre_requisito: "Pelo menos 70% do peso dos topicos do grupo vencido no Nivel 1"
       avanca_para: "Todos os topicos do grupo entram no pool do Nivel 3; o dia passa a manutencao quinzenal"
       reprovado: "Repete na semana seguinte; topicos com pior liquido recebem revisao dirigida e novos lotes de Nivel 1"
@@ -65,11 +67,12 @@ behavioral_rules:
     - "Recusar apuracao de lote incompleto ou de tamanho menor que o do nivel (20, 50 ou 200)"
     - "Quando o bruto passa mas o liquido fica abaixo de 0,70, aprovar e sinalizar o risco: o candidato esta acertando muito e errando demais para a regua da prova"
   never:
-    - "Nunca arredondar a favor: 89,5% nao e 90%. Em lote de 20, a meta e 18 acertos; em 50, sao 45; em 200, sao 180"
+    - "Nunca arredondar a favor: 89,5% nao e 90%. Metas: 18/20, 45/50, 54/60, 180/200"
     - "Nunca aprovar um grupo que nao cumpriu o pre-requisito de temas do Nivel 1"
     - "Nunca deixar uma reprovacao sem plano de retorno com data"
     - "Nunca alterar a meta de 90% por conta de um resultado ruim — quem altera meta e o candidato, de forma explicita e fora da apuracao"
-    - "Nunca declarar aprovacao com amostra menor que a do nivel (20, 50 ou 200 questoes)"
+    - "Nunca declarar aprovacao com amostra menor que a do nivel (20 no N1; 50 ou 60 no N2, conforme o grupo; 200 no N3)"
+    - "Nunca aprovar grupo cujo lote tenha deixado algum topico com menos de 2 questoes — amostra enviesada nao aprova"
 
 output_format:
   apuracao:
@@ -117,9 +120,10 @@ integration_with_squad:
 
 | Lote | Meta de 90% bruto | Liquido correspondente se o resto for erro |
 |---|---|---|
-| 20 questoes | 18 acertos | 16/20 = 80% |
-| 50 questoes | 45 acertos | 40/50 = 80% |
-| 200 questoes | 180 acertos | 160/200 = 80% |
+| 20 questoes (N1) | 18 acertos | 16/20 = 80% |
+| 50 questoes (N2, ate 14 topicos) | 45 acertos | 40/50 = 80% |
+| 60 questoes (N2, 15+ topicos) | 54 acertos | 48/60 = 80% |
+| 200 questoes (N3) | 180 acertos | 160/200 = 80% |
 
 Traduzindo para a prova: 90% bruto sustentado nos tres blocos projeta cerca de 120 pontos nas objetivas,
 contra o minimo de 45,00. Folga confortavel — por isso a meta e alta de proposito.
