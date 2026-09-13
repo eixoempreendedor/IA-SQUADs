@@ -32,6 +32,7 @@ CORE = [
     ("arquiteto-cronograma", "Arquiteto de Cronograma", "🗓️", "Ciclo de estudos e reta final"),
     ("redator-discursiva", "Redator da Discursiva", "✍️", "Prova P4 e peca tecnica Informacao"),
     ("mentor-desempenho", "Mentor de Desempenho", "📈", "Diagnostico, metricas e ajuste de rota"),
+    ("arbitro-da-progressao", "Arbitro da Progressao", "⚖️", "Sistema de niveis: 90% para avancar"),
 ]
 
 

@@ -24,6 +24,7 @@ AGENTES_CORE = [
     "arquiteto-cronograma.md",
     "redator-discursiva.md",
     "mentor-desempenho.md",
+    "arbitro-da-progressao.md",
 ]
 
 PAPEIS = ["professor", "examinador", "revisor"]
@@ -548,7 +549,7 @@ def gerar_squad_yaml(edital: dict, agentes: list) -> str:
     desc = (
         f"Squad de {len(agentes)} agentes para aprovacao no concurso de Analista Administrativo de "
         f"Controle Externo do TCDF (Cebraspe 2026): 3 agentes (professor, examinador e revisor) para "
-        f"cada uma das {len(mats)} materias do edital, mais 5 agentes de coordenacao."
+        f"cada uma das {len(mats)} materias do edital, mais {len(AGENTES_CORE)} agentes de coordenacao."
     )
     sq = [
         "# GERADO por scripts/gerar_agentes.py — nao edite a mao",

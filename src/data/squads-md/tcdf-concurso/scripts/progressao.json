@@ -1,0 +1,235 @@
+{
+  "sistema": {
+    "nome": "Progressao por Niveis — 90% para avancar",
+    "fonte_das_questoes": "Gran Cursos (banco de questoes)",
+    "criterio_de_aprovacao": {
+      "metrica": "liquido",
+      "formula": "(acertos - erros) / total de questoes do lote",
+      "meta": 0.9,
+      "gate_secundario_bruto": 0.95,
+      "observacao": "Em prova Certo/Errado com anulacao, 90% liquido equivale a 95% de acerto bruto. Se o banco do Gran for de multipla escolha (sem anulacao), use liquido = bruto e mantenha a meta em 0,90."
+    },
+    "niveis": [
+      {
+        "nivel": 1,
+        "nome": "Tema",
+        "unidade": "Um topico da ementa da materia (ex.: Titulo 1 de Direito Constitucional, Ato Administrativo)",
+        "questoes": 20,
+        "quando": "Logo apos estudar o tema, no mesmo dia",
+        "meta": 0.9,
+        "aprovado_gera": "Tema marcado como VENCIDO e liberado para compor o simulado de Nivel 2 do grupo",
+        "reprovado_gera": "Aula de reforco com o professor da materia + 20 questoes novas em 48h (maximo 2 repeticoes antes de revisao completa do tema)"
+      },
+      {
+        "nivel": 2,
+        "nome": "Grupo de conteudo",
+        "unidade": "Um dos 6 grupos de conteudo (seg a sab)",
+        "questoes": 50,
+        "quando": "Manha do dia fixo do grupo, antes de qualquer conteudo novo",
+        "meta": 0.9,
+        "pre_requisito": "Pelo menos 70% dos temas do grupo ja vencidos no Nivel 1",
+        "aprovado_gera": "Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal",
+        "reprovado_gera": "Grupo permanece no Nivel 2 e repete na semana seguinte; as materias com pior liquido recebem revisao dirigida e novos lotes de Nivel 1 nos temas fracos"
+      },
+      {
+        "nivel": 3,
+        "nome": "Simulado geral",
+        "unidade": "Todas as materias ja vencidas no Nivel 2",
+        "questoes": 200,
+        "quando": "Domingo de manha, cronometrado",
+        "meta": 0.9,
+        "composicao": "Proporcional ao peso de cada materia vencida no edital (itens da materia / soma dos itens das materias vencidas) x 200",
+        "inicio": "Quando o pool de materias vencidas somar pelo menos 30 itens do edital (~20% da prova). Antes disso, rode um simulado reduzido proporcional, com minimo de 50 questoes",
+        "aprovado_gera": "Materia confirmada no pool; segue em manutencao semanal sem voltar ao Nivel 2",
+        "reprovado_gera": "Materia abaixo da meta entra em observacao: revisao dirigida na semana e novo lote de Nivel 2 no dia do seu grupo",
+        "regressao": "Materia que ficar abaixo de 0,90 no Nivel 3 por 2 domingos seguidos, ou abaixo de 0,80 em um unico domingo, volta para o Nivel 2 e reentra no dia do seu grupo"
+      }
+    ],
+    "rotina_diaria": {
+      "manha": "Simulado de Nivel 2 do grupo do dia (50 questoes, cronometrado) + revisao dirigida dos erros",
+      "tarde_noite": "Estudo de tema novo com o professor da materia + 20 questoes de Nivel 1 do tema estudado",
+      "domingo": "Simulado de Nivel 3 (200 questoes) pela manha + relatorio semanal do mentor-desempenho a tarde"
+    },
+    "tempo_alvo": {
+      "nivel_1": "20 questoes em ate 30 minutos",
+      "nivel_2": "50 questoes em ate 70 minutos",
+      "nivel_3": "200 questoes em ate 4 horas (ritmo real de prova)"
+    }
+  },
+  "grupos": [
+    {
+      "id": "g1-administrativo-contratacoes",
+      "dia": "Segunda-feira",
+      "nome": "Direito Administrativo e Contratacoes",
+      "tese": "O maior bloco isolado da prova (14 itens) no mesmo dia da materia que compartilha a Lei 14.133/2021 com ele.",
+      "itens_edital": 19,
+      "materias": [
+        {
+          "id": "direito-administrativo",
+          "itens": 14,
+          "questoes_n2": 37
+        },
+        {
+          "id": "administracao-recursos-materiais",
+          "itens": 5,
+          "questoes_n2": 13
+        }
+      ]
+    },
+    {
+      "id": "g2-financas-publicas",
+      "dia": "Terca-feira",
+      "nome": "Financas Publicas",
+      "tese": "AFO, Contabilidade Publica e Patrimonio falam a mesma lingua: Lei 4.320, MCASP e LRF. Estudar separado e retrabalho.",
+      "itens_edital": 18,
+      "materias": [
+        {
+          "id": "administracao-financeira-orcamentaria",
+          "itens": 10,
+          "questoes_n2": 28
+        },
+        {
+          "id": "contabilidade-publica",
+          "itens": 5,
+          "questoes_n2": 14
+        },
+        {
+          "id": "administracao-patrimonial",
+          "itens": 3,
+          "questoes_n2": 8
+        }
+      ]
+    },
+    {
+      "id": "g3-constitucional-institucional",
+      "dia": "Quarta-feira",
+      "nome": "Constitucional e Institucional",
+      "tese": "CF arts. 70 a 75, Lei Organica do TCDF e LODF sao o mesmo assunto visto de tres alturas: controle externo no DF.",
+      "itens_edital": 26,
+      "materias": [
+        {
+          "id": "direito-constitucional",
+          "itens": 10,
+          "questoes_n2": 19
+        },
+        {
+          "id": "lei-organica-regimento-tcdf",
+          "itens": 10,
+          "questoes_n2": 19
+        },
+        {
+          "id": "lei-organica-df",
+          "itens": 6,
+          "questoes_n2": 12
+        }
+      ]
+    },
+    {
+      "id": "g4-gestao-publica",
+      "dia": "Quinta-feira",
+      "nome": "Gestao Publica",
+      "tese": "Governanca, pessoas, processos e projetos formam o nucleo gerencial de P3 e se cobram com o mesmo vocabulario.",
+      "itens_edital": 28,
+      "materias": [
+        {
+          "id": "administracao-geral-e-publica",
+          "itens": 8,
+          "questoes_n2": 14
+        },
+        {
+          "id": "gestao-de-pessoas",
+          "itens": 8,
+          "questoes_n2": 14
+        },
+        {
+          "id": "gestao-de-processos",
+          "itens": 6,
+          "questoes_n2": 11
+        },
+        {
+          "id": "gestao-de-projetos",
+          "itens": 6,
+          "questoes_n2": 11
+        }
+      ]
+    },
+    {
+      "id": "g5-direitos-complementares",
+      "dia": "Sexta-feira",
+      "nome": "Direitos Complementares",
+      "tese": "Previdenciario, Civil e Tributario: os tres direitos de P2 que sustentam os atos de pessoal e de receita analisados pelo Tribunal.",
+      "itens_edital": 20,
+      "materias": [
+        {
+          "id": "direito-previdenciario",
+          "itens": 8,
+          "questoes_n2": 20
+        },
+        {
+          "id": "nocoes-direito-civil",
+          "itens": 6,
+          "questoes_n2": 15
+        },
+        {
+          "id": "nocoes-direito-tributario",
+          "itens": 6,
+          "questoes_n2": 15
+        }
+      ]
+    },
+    {
+      "id": "g6-instrumentais-complementares",
+      "dia": "Sabado",
+      "nome": "Instrumentais e Complementares",
+      "tese": "Materias de treino e de varredura. Alternam em semanas A e B porque exigem constancia, nao volume de uma vez.",
+      "itens_edital": 39,
+      "rotacao": "quinzenal",
+      "variantes": [
+        {
+          "id": "A",
+          "nome": "Instrumentais",
+          "semanas": "impares",
+          "materias": [
+            {
+              "id": "lingua-portuguesa",
+              "itens": 12,
+              "questoes_n2": 30
+            },
+            {
+              "id": "raciocinio-logico-matematica-financeira",
+              "itens": 8,
+              "questoes_n2": 20
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "nome": "Complementares",
+          "semanas": "pares",
+          "materias": [
+            {
+              "id": "conhecimentos-df-politicas-mulheres",
+              "itens": 6,
+              "questoes_n2": 16
+            },
+            {
+              "id": "analise-dados-estatistica-ia",
+              "itens": 5,
+              "questoes_n2": 13
+            },
+            {
+              "id": "arquivologia",
+              "itens": 5,
+              "questoes_n2": 13
+            },
+            {
+              "id": "nocoes-primeiros-socorros",
+              "itens": 3,
+              "questoes_n2": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

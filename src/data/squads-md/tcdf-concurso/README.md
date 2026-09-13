@@ -1,8 +1,8 @@
 # TCDF Concurso Squad 🎓
 
-**68 agentes de IA para aprovacao no concurso de Analista Administrativo de Controle Externo do TCDF (Cebraspe, 2026).**
+**69 agentes de IA para aprovacao no concurso de Analista Administrativo de Controle Externo do TCDF (Cebraspe, 2026).**
 
-Sao **3 agentes para cada uma das 21 materias do edital** — um professor, um examinador e um revisor — mais **5 agentes de coordenacao** que cuidam de estrategia de prova, cronograma, discursiva e desempenho.
+Sao **3 agentes para cada uma das 21 materias do edital** — um professor, um examinador e um revisor — mais **6 agentes de coordenacao** que cuidam de estrategia de prova, cronograma, discursiva, desempenho e progressao por niveis.
 
 | | |
 |---|---|
@@ -51,6 +51,7 @@ Minimo global nas objetivas: **45 pontos no conjunto das provas objetivas**.
 | 🗓️ `arquiteto-cronograma` | Ciclo de estudos ponderado pelo edital, revisoes embutidas, plano de reta final |
 | ✍️ `redator-discursiva` | P4: questao discursiva e peca tecnica tipo Informacao, com espelho de correcao |
 | 📈 `mentor-desempenho` | Metricas, diario de erros, projecao por bloco e ajuste de rota semanal |
+| ⚖️ `arbitro-da-progressao` | Apura cada simulado, aplica o criterio de 90% e declara avanco, repeticao ou regressao |
 
 ## Mapa completo das materias
 
@@ -78,6 +79,35 @@ Minimo global nas objetivas: **45 pontos no conjunto das provas objetivas**.
 | 📒 **Contabilidade Publica** | P3 | 5 | alta | `contabilidade-publica-professor` | `contabilidade-publica-examinador` | `contabilidade-publica-revisor` |
 | 🏷️ **Administracao Patrimonial** | P3 | 3 | baixa | `administracao-patrimonial-professor` | `administracao-patrimonial-examinador` | `administracao-patrimonial-revisor` |
 
+## Progressao por niveis (90% para avancar)
+
+O estudo avanca por **resultado medido**, nao por tempo estudado. Questoes vindas do banco do **Gran Cursos**, criterio de **90% liquido** em todos os niveis.
+
+| Nivel | Unidade | Questoes | Quando | Aprovado gera |
+|---|---|---|---|---|
+| **1 — Tema** | Um topico da ementa (ex.: Ato Administrativo) | 20 | Logo apos estudar o tema | Tema vencido, conta para liberar o Nivel 2 |
+| **2 — Grupo** | Um dos 6 grupos de conteudo | 50 | Manha do dia fixo do grupo | Grupo vencido, entra no pool do Nivel 3 |
+| **3 — Geral** | Pool de materias vencidas | 200 | Domingo de manha | Materia confirmada; abaixo da meta, regride |
+
+### Grupos de conteudo (seg a sab)
+
+| Dia | Grupo | Itens no edital | Materias |
+|---|---|---|---|
+| Segunda | Direito Administrativo e Contratacoes | 19 | Direito Administrativo · Recursos Materiais |
+| Terca | Financas Publicas | 18 | AFO · Contabilidade Publica · Adm. Patrimonial |
+| Quarta | Constitucional e Institucional | 26 | Direito Constitucional · Lei Organica e RI do TCDF · LODF |
+| Quinta | Gestao Publica | 28 | Adm. Geral e Publica · Gestao de Pessoas · Processos · Projetos |
+| Sexta | Direitos Complementares | 20 | Previdenciario · Civil · Tributario |
+| Sabado | Instrumentais (semana A) / Complementares (semana B) | 39 | A: Portugues · RLM — B: DF e Politicas para Mulheres · Dados/Estatistica/IA · Arquivologia · Primeiros Socorros |
+
+Composicao de cada simulado, regras de avanco e de regressao: [`data/grupos-de-conteudo.md`](data/grupos-de-conteudo.md). Acompanhamento: [`templates/mapa-de-progressao.md`](templates/mapa-de-progressao.md). Fluxo completo: [`wf-progressao-por-niveis`](workflows/wf-progressao-por-niveis.yaml).
+
+Para mudar grupos, cotas, meta ou metrica, edite `scripts/progressao.json` e rode:
+
+```bash
+python3 scripts/gerar_progressao.py
+```
+
 ## Como usar
 
 ```
@@ -98,14 +128,15 @@ Se voce usa os arquivos direto no Claude Code ou em outra ferramenta de agentes,
 | [`wf-primeira-semana`](workflows/wf-primeira-semana.yaml) | Voce esta comecando agora |
 | [`wf-ciclo-semanal`](workflows/wf-ciclo-semanal.yaml) | Rotina padrao de uma semana |
 | [`wf-reta-final`](workflows/wf-reta-final.yaml) | Ultimos 60 dias |
+| [`wf-progressao-por-niveis`](workflows/wf-progressao-por-niveis.yaml) | Sistema de 90% para avancar (Nivel 1 → 2 → 3) |
 
 ## Tasks
 
-`diagnosticar-e-rotear` · `montar-plano-de-estudos` · `aula-de-topico` · `gerar-simulado` · `revisao-do-dia` · `corrigir-discursiva` · `diagnostico-de-erros` · `verticalizar-edital`
+`diagnosticar-e-rotear` · `montar-plano-de-estudos` · `aula-de-topico` · `gerar-simulado` · `revisao-do-dia` · `corrigir-discursiva` · `diagnostico-de-erros` · `verticalizar-edital` · `simulado-nivel-1` · `simulado-nivel-2` · `simulado-nivel-3`
 
 ## Templates
 
-[`diario-de-erros.md`](templates/diario-de-erros.md) · [`folha-de-simulado.md`](templates/folha-de-simulado.md) · [`flashcards.md`](templates/flashcards.md)
+[`mapa-de-progressao.md`](templates/mapa-de-progressao.md) · [`diario-de-erros.md`](templates/diario-de-erros.md) · [`folha-de-simulado.md`](templates/folha-de-simulado.md) · [`flashcards.md`](templates/flashcards.md)
 
 ## Regenerar os agentes
 
@@ -116,7 +147,7 @@ python3 scripts/gerar_agentes.py          # regenera agents/, data/ e squad.yaml
 python3 scripts/gerar_agentes.py --check  # so valida, nao escreve
 ```
 
-Os 5 agentes de coordenacao sao escritos a mao e **nao** sao sobrescritos (estao em `AGENTES_CORE` no script).
+Os 6 agentes de coordenacao sao escritos a mao e **nao** sao sobrescritos (estao em `AGENTES_CORE` no script).
 
 Para adicionar uma materia: acrescente um objeto em `materias` no `edital.json` (id, nome, bloco, icone, itens_estimados, prioridade, peso_justificativa, ementa, base_normativa, armadilhas, referencias) e rode o gerador — os 3 agentes nascem prontos.
 
@@ -126,17 +157,21 @@ Para adicionar uma materia: acrescente um objeto em `materias` no `edital.json` 
 tcdf-concurso/
 ├── squad.yaml                  # manifesto (gerado)
 ├── README.md
-├── agents/                     # 68 agentes (.md)
-├── tasks/                      # 8 tasks
-├── workflows/                  # 3 workflows
+├── agents/                     # 69 agentes (.md)
+├── tasks/                      # 11 tasks
+├── workflows/                  # 4 workflows
 ├── checklists/                 # qualidade de item e peca Informacao
 ├── templates/                  # diario de erros, folha de simulado, flashcards
 ├── data/
 │   ├── edital-verticalizado.md # edital legivel (gerado)
+│   ├── grupos-de-conteudo.md   # grupos seg-sab e niveis (gerado)
 │   └── routing-catalog.yaml    # roteamento materia -> agentes (gerado)
 └── scripts/
-    ├── edital.json             # FONTE DA VERDADE
-    └── gerar_agentes.py        # gerador
+    ├── edital.json             # FONTE DA VERDADE do conteudo
+    ├── progressao.json         # FONTE DA VERDADE dos grupos e niveis
+    ├── gerar_agentes.py        # gera agentes, squad.yaml e data/
+    ├── gerar_progressao.py     # gera os documentos do sistema de niveis
+    └── sync_app_registry.py    # registra o squad no app
 ```
 
 ## Limites

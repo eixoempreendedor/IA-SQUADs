@@ -1,0 +1,70 @@
+# Progressao por niveis — sistema de 90% para avancar
+# Ciclo completo: tema -> grupo -> simulado geral
+
+workflow:
+  id: wf-progressao-por-niveis
+  name: "Progressao por Niveis (90%)"
+  trigger: "*progressao"
+  entry_agent: arbitro-da-progressao
+  estimated_duration: "ciclo semanal continuo ate a prova"
+  description: |
+    Sistema de avanco por desempenho medido em simulados do Gran Cursos.
+    Nada avanca por tempo estudado: avanca por indice liquido de 90%.
+    Nivel 1 (tema, 20 questoes) -> Nivel 2 (grupo do dia, 50 questoes) -> Nivel 3 (domingo, 200 questoes).
+
+  type: cyclical
+  sequence:
+    - agent: "<materia>-professor"
+      action: aula-de-topico
+      creates: tema_estudado
+      quando: "tarde/noite, seg a sab"
+    - agent: "<materia>-examinador"
+      action: simulado-nivel-1
+      creates: lote_20
+      quando: "logo apos a aula, mesmo dia"
+    - agent: arbitro-da-progressao
+      action: apurar
+      input: lote_20
+      creates: tema_vencido_ou_reforco
+      regra: ">= 90% liquido = tema vencido"
+    - agent: "<materia>-revisor"
+      action: revisao-do-dia
+      condition: "tema reprovado ou revisao espacada agendada"
+      creates: reforco
+    - agent: arbitro-da-progressao
+      action: simulado-nivel-2
+      creates: grupo_vencido_ou_repeticao
+      quando: "manha do dia fixo do grupo"
+      pre_requisito: "70% dos temas do grupo vencidos no Nivel 1"
+      regra: ">= 90% liquido = grupo vencido e entra no pool do Nivel 3"
+    - agent: arbitro-da-progressao
+      action: simulado-nivel-3
+      creates: apuracao_dominical
+      quando: "domingo de manha"
+      regra: "composicao proporcional ao peso das materias vencidas; regressao abaixo de 90% em 2 domingos ou 80% em 1"
+    - agent: mentor-desempenho
+      action: diagnostico-de-erros
+      input: apuracao_dominical
+      creates: relatorio_semanal
+      quando: "domingo a tarde"
+    - agent: arquiteto-cronograma
+      action: montar-plano-de-estudos
+      input: relatorio_semanal
+      creates: ciclo_da_semana_seguinte
+      observacao: "Grupo vencido libera tempo do seu dia para os grupos ainda pendentes"
+
+  calendario:
+    segunda: "G1 — Direito Administrativo e Contratacoes (50 questoes)"
+    terca: "G2 — Financas Publicas (50 questoes)"
+    quarta: "G3 — Constitucional e Institucional (50 questoes)"
+    quinta: "G4 — Gestao Publica (50 questoes)"
+    sexta: "G5 — Direitos Complementares (50 questoes)"
+    sabado: "G6 — Instrumentais (semana A) / Complementares (semana B) (50 questoes)"
+    domingo: "Nivel 3 — 200 questoes das materias vencidas + relatorio semanal"
+
+  metricas:
+    - "Temas vencidos / temas totais por materia"
+    - "Grupos vencidos (0 a 6)"
+    - "Itens do edital no pool do Nivel 3 (meta: 150)"
+    - "Liquido do domingo, total e por materia"
+    - "Regressoes por mes (indicador de aprovacao superficial no Nivel 2)"

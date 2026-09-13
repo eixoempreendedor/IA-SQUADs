@@ -279,6 +279,7 @@ export const agents: Agent[] = [
   { id: "arquiteto-cronograma", name: "Arquiteto de Cronograma", icon: "🗓️", title: "Ciclo de estudos e reta final", squadId: "tcdf-concurso", squadName: "TCDF Concurso Squad" },
   { id: "redator-discursiva", name: "Redator da Discursiva", icon: "✍️", title: "Prova P4 e peca tecnica Informacao", squadId: "tcdf-concurso", squadName: "TCDF Concurso Squad" },
   { id: "mentor-desempenho", name: "Mentor de Desempenho", icon: "📈", title: "Diagnostico, metricas e ajuste de rota", squadId: "tcdf-concurso", squadName: "TCDF Concurso Squad" },
+  { id: "arbitro-da-progressao", name: "Arbitro da Progressao", icon: "⚖️", title: "Sistema de niveis: 90% para avancar", squadId: "tcdf-concurso", squadName: "TCDF Concurso Squad" },
   { id: "lingua-portuguesa-professor", name: "Professor de Lingua Portuguesa", icon: "📝", title: "Teoria e aulas de Lingua Portuguesa (P1)", squadId: "tcdf-concurso", squadName: "TCDF Concurso Squad" },
   { id: "lingua-portuguesa-examinador", name: "Examinador de Lingua Portuguesa", icon: "🎯", title: "Itens Certo/Errado de Lingua Portuguesa (P1)", squadId: "tcdf-concurso", squadName: "TCDF Concurso Squad" },
   { id: "lingua-portuguesa-revisor", name: "Revisor de Lingua Portuguesa", icon: "🔁", title: "Revisao espacada de Lingua Portuguesa (P1)", squadId: "tcdf-concurso", squadName: "TCDF Concurso Squad" },

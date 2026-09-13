@@ -2,7 +2,7 @@
 name: tcdf-concurso
 version: "1.0.0"
 short-title: "TCDF Concurso Squad"
-description: "Squad de 68 agentes para aprovacao no concurso de Analista Administrativo de Controle Externo do TCDF (Cebraspe 2026): 3 agentes (professor, examinador e revisor) para cada uma das 21 materias do edital, mais 5 agentes de coordenacao."
+description: "Squad de 69 agentes para aprovacao no concurso de Analista Administrativo de Controle Externo do TCDF (Cebraspe 2026): 3 agentes (professor, examinador e revisor) para cada uma das 21 materias do edital, mais 6 agentes de coordenacao."
 author: "IA SQUADs"
 license: MIT
 slashPrefix: "tcdf"
@@ -30,6 +30,7 @@ components:
     - arquiteto-cronograma.md
     - redator-discursiva.md
     - mentor-desempenho.md
+    - arbitro-da-progressao.md
     - administracao-financeira-orcamentaria-examinador.md
     - administracao-financeira-orcamentaria-professor.md
     - administracao-financeira-orcamentaria-revisor.md
@@ -101,10 +102,14 @@ components:
     - gerar-simulado.md
     - montar-plano-de-estudos.md
     - revisao-do-dia.md
+    - simulado-nivel-1.md
+    - simulado-nivel-2.md
+    - simulado-nivel-3.md
     - verticalizar-edital.md
   workflows:
     - wf-ciclo-semanal.yaml
     - wf-primeira-semana.yaml
+    - wf-progressao-por-niveis.yaml
     - wf-reta-final.yaml
   checklists:
     - peca-informacao.md
