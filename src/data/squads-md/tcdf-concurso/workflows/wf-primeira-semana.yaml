@@ -1,0 +1,40 @@
+# Onboarding — primeira semana de quem esta comecando agora
+
+workflow:
+  id: wf-primeira-semana
+  name: "Primeira Semana no Squad"
+  trigger: "*comecar"
+  entry_agent: reitor-tcdf
+  estimated_duration: "7 dias"
+  description: |
+    Caminho de entrada para quem nunca estudou para o TCDF. Objetivo da semana:
+    sair com diagnostico, cronograma e primeiro contato com as materias de maior peso.
+
+  type: sequential
+  sequence:
+    - agent: reitor-tcdf
+      action: diagnosticar-e-rotear
+      creates: diagnostico_inicial
+    - agent: estrategista-cebraspe
+      action: explicar-formato
+      creates: entendimento_do_formato
+      description: "Como funciona prova C/E com anulacao, minimos por bloco e politica de chute"
+    - agent: arquiteto-cronograma
+      action: montar-plano-de-estudos
+      creates: primeiro_ciclo
+    - agent: direito-administrativo-professor
+      action: aula-de-topico
+      creates: aula_1
+      description: "Maior bloco isolado da prova (14 itens estimados) — comeca por aqui"
+    - agent: lei-organica-regimento-tcdf-professor
+      action: aula-de-topico
+      creates: aula_2
+      description: "Legislacao institucional: alta previsibilidade e retorno rapido"
+    - agent: "<materia>-examinador"
+      action: gerar-simulado
+      creates: diagnostico_de_base
+      description: "Lote flash de 10 itens por materia iniciada"
+    - agent: mentor-desempenho
+      action: diagnostico-de-erros
+      creates: linha_de_base
+      description: "Linha de base contra a qual toda a evolucao sera medida"

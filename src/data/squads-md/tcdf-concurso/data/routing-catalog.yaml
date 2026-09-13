@@ -1,0 +1,226 @@
+# Catalogo de roteamento — TCDF Concurso Squad
+# GERADO por scripts/gerar_agentes.py — nao edite a mao
+
+orquestrador: reitor-tcdf
+
+transversais:
+  - id: estrategista-cebraspe
+    quando: "Tecnica de prova C/E, politica de chute, gestao de tempo, recursos"
+  - id: arquiteto-cronograma
+    quando: "Cronograma, ciclo de estudos, distribuicao de horas, reta final"
+  - id: redator-discursiva
+    quando: "Prova P4: questao discursiva e peca tecnica tipo Informacao"
+  - id: mentor-desempenho
+    quando: "Diagnostico de desempenho, simulados, diario de erros, ajuste de rota"
+
+materias:
+  - id: lingua-portuguesa
+    nome: "Lingua Portuguesa"
+    bloco: P1
+    itens_estimados: 12
+    prioridade: alta
+    icone: "📝"
+    agentes:
+      aprender: lingua-portuguesa-professor
+      treinar: lingua-portuguesa-examinador
+      revisar: lingua-portuguesa-revisor
+  - id: raciocinio-logico-matematica-financeira
+    nome: "Raciocinio Logico e Matematica Financeira"
+    bloco: P1
+    itens_estimados: 8
+    prioridade: alta
+    icone: "🧮"
+    agentes:
+      aprender: raciocinio-logico-matematica-financeira-professor
+      treinar: raciocinio-logico-matematica-financeira-examinador
+      revisar: raciocinio-logico-matematica-financeira-revisor
+  - id: lei-organica-df
+    nome: "Lei Organica do Distrito Federal"
+    bloco: P1
+    itens_estimados: 6
+    prioridade: alta
+    icone: "🏛️"
+    agentes:
+      aprender: lei-organica-df-professor
+      treinar: lei-organica-df-examinador
+      revisar: lei-organica-df-revisor
+  - id: conhecimentos-df-politicas-mulheres
+    nome: "Conhecimentos sobre o Distrito Federal e Politicas para Mulheres"
+    bloco: P1
+    itens_estimados: 6
+    prioridade: media
+    icone: "🌆"
+    agentes:
+      aprender: conhecimentos-df-politicas-mulheres-professor
+      treinar: conhecimentos-df-politicas-mulheres-examinador
+      revisar: conhecimentos-df-politicas-mulheres-revisor
+  - id: nocoes-primeiros-socorros
+    nome: "Nocoes de Primeiros Socorros"
+    bloco: P1
+    itens_estimados: 3
+    prioridade: baixa
+    icone: "🚑"
+    agentes:
+      aprender: nocoes-primeiros-socorros-professor
+      treinar: nocoes-primeiros-socorros-examinador
+      revisar: nocoes-primeiros-socorros-revisor
+  - id: lei-organica-regimento-tcdf
+    nome: "Lei Organica e Regimento Interno do TCDF"
+    bloco: P2
+    itens_estimados: 10
+    prioridade: critica
+    icone: "⚖️"
+    agentes:
+      aprender: lei-organica-regimento-tcdf-professor
+      treinar: lei-organica-regimento-tcdf-examinador
+      revisar: lei-organica-regimento-tcdf-revisor
+  - id: direito-constitucional
+    nome: "Direito Constitucional"
+    bloco: P2
+    itens_estimados: 10
+    prioridade: critica
+    icone: "📜"
+    agentes:
+      aprender: direito-constitucional-professor
+      treinar: direito-constitucional-examinador
+      revisar: direito-constitucional-revisor
+  - id: direito-previdenciario
+    nome: "Direito Previdenciario"
+    bloco: P2
+    itens_estimados: 8
+    prioridade: alta
+    icone: "🧓"
+    agentes:
+      aprender: direito-previdenciario-professor
+      treinar: direito-previdenciario-examinador
+      revisar: direito-previdenciario-revisor
+  - id: nocoes-direito-civil
+    nome: "Nocoes de Direito Civil"
+    bloco: P2
+    itens_estimados: 6
+    prioridade: media
+    icone: "📕"
+    agentes:
+      aprender: nocoes-direito-civil-professor
+      treinar: nocoes-direito-civil-examinador
+      revisar: nocoes-direito-civil-revisor
+  - id: nocoes-direito-tributario
+    nome: "Nocoes de Direito Tributario"
+    bloco: P2
+    itens_estimados: 6
+    prioridade: media
+    icone: "💰"
+    agentes:
+      aprender: nocoes-direito-tributario-professor
+      treinar: nocoes-direito-tributario-examinador
+      revisar: nocoes-direito-tributario-revisor
+  - id: analise-dados-estatistica-ia
+    nome: "Analise de Dados, Nocoes de Estatistica e Inteligencia Artificial"
+    bloco: P2
+    itens_estimados: 5
+    prioridade: alta
+    icone: "🤖"
+    agentes:
+      aprender: analise-dados-estatistica-ia-professor
+      treinar: analise-dados-estatistica-ia-examinador
+      revisar: analise-dados-estatistica-ia-revisor
+  - id: direito-administrativo
+    nome: "Direito Administrativo"
+    bloco: P3
+    itens_estimados: 14
+    prioridade: critica
+    icone: "🏢"
+    agentes:
+      aprender: direito-administrativo-professor
+      treinar: direito-administrativo-examinador
+      revisar: direito-administrativo-revisor
+  - id: administracao-financeira-orcamentaria
+    nome: "Administracao Financeira e Orcamentaria (AFO)"
+    bloco: P3
+    itens_estimados: 10
+    prioridade: critica
+    icone: "📊"
+    agentes:
+      aprender: administracao-financeira-orcamentaria-professor
+      treinar: administracao-financeira-orcamentaria-examinador
+      revisar: administracao-financeira-orcamentaria-revisor
+  - id: administracao-geral-e-publica
+    nome: "Administracao Geral e Publica"
+    bloco: P3
+    itens_estimados: 8
+    prioridade: alta
+    icone: "🏗️"
+    agentes:
+      aprender: administracao-geral-e-publica-professor
+      treinar: administracao-geral-e-publica-examinador
+      revisar: administracao-geral-e-publica-revisor
+  - id: gestao-de-pessoas
+    nome: "Gestao de Pessoas"
+    bloco: P3
+    itens_estimados: 8
+    prioridade: alta
+    icone: "👥"
+    agentes:
+      aprender: gestao-de-pessoas-professor
+      treinar: gestao-de-pessoas-examinador
+      revisar: gestao-de-pessoas-revisor
+  - id: gestao-de-processos
+    nome: "Gestao de Processos"
+    bloco: P3
+    itens_estimados: 6
+    prioridade: media
+    icone: "🔄"
+    agentes:
+      aprender: gestao-de-processos-professor
+      treinar: gestao-de-processos-examinador
+      revisar: gestao-de-processos-revisor
+  - id: gestao-de-projetos
+    nome: "Gestao de Projetos"
+    bloco: P3
+    itens_estimados: 6
+    prioridade: media
+    icone: "📌"
+    agentes:
+      aprender: gestao-de-projetos-professor
+      treinar: gestao-de-projetos-examinador
+      revisar: gestao-de-projetos-revisor
+  - id: administracao-recursos-materiais
+    nome: "Administracao de Recursos Materiais"
+    bloco: P3
+    itens_estimados: 5
+    prioridade: media
+    icone: "📦"
+    agentes:
+      aprender: administracao-recursos-materiais-professor
+      treinar: administracao-recursos-materiais-examinador
+      revisar: administracao-recursos-materiais-revisor
+  - id: arquivologia
+    nome: "Arquivologia"
+    bloco: P3
+    itens_estimados: 5
+    prioridade: media
+    icone: "🗂️"
+    agentes:
+      aprender: arquivologia-professor
+      treinar: arquivologia-examinador
+      revisar: arquivologia-revisor
+  - id: contabilidade-publica
+    nome: "Contabilidade Publica"
+    bloco: P3
+    itens_estimados: 5
+    prioridade: alta
+    icone: "📒"
+    agentes:
+      aprender: contabilidade-publica-professor
+      treinar: contabilidade-publica-examinador
+      revisar: contabilidade-publica-revisor
+  - id: administracao-patrimonial
+    nome: "Administracao Patrimonial"
+    bloco: P3
+    itens_estimados: 3
+    prioridade: baixa
+    icone: "🏷️"
+    agentes:
+      aprender: administracao-patrimonial-professor
+      treinar: administracao-patrimonial-examinador
+      revisar: administracao-patrimonial-revisor

@@ -1,0 +1,51 @@
+# Reta final — ultimos 60 dias antes da prova (22/11/2026)
+
+workflow:
+  id: wf-reta-final
+  name: "Reta Final (D-60 a D-0)"
+  trigger: "*reta-final"
+  entry_agent: mentor-desempenho
+  estimated_duration: "60 dias"
+  description: |
+    Muda o eixo da preparacao: de aprendizado novo para consolidacao, simulados e
+    controle de risco na prova. Conteudo novo so entra por excecao justificada.
+
+  type: sequential
+  sequence:
+    - agent: mentor-desempenho
+      action: diagnostico-de-erros
+      creates: mapa_de_lacunas
+      description: "Fotografia do ponto de partida: liquido por bloco e projecao contra os minimos"
+    - agent: arquiteto-cronograma
+      action: montar-plano-de-estudos
+      input: mapa_de_lacunas
+      creates: plano_reta_final
+      description: "Plano com simulado completo semanal e discursiva semanal"
+    - agent: "<materia>-revisor"
+      action: revisao-do-dia
+      repeat: "diario, priorizando materias criticas"
+      creates: revisao_intensiva
+    - agent: "<materia>-examinador"
+      action: gerar-simulado
+      repeat: "semanal, simulado completo de 150 itens"
+      creates: simulado_completo
+    - agent: estrategista-cebraspe
+      action: ajustar-tecnica
+      input: simulado_completo
+      creates: politica_de_prova
+      description: "Politica de chute, orcamento de tempo por bloco e hora de corte da P4"
+    - agent: redator-discursiva
+      action: corrigir-discursiva
+      repeat: "semanal"
+      creates: evolucao_p4
+    - agent: mentor-desempenho
+      action: diagnostico-de-erros
+      repeat: "semanal"
+      creates: relatorio_reta_final
+
+  marcos:
+    - "D-60: inicio dos simulados completos e da discursiva semanal"
+    - "D-30: ultimo conteudo novo permitido"
+    - "D-15: apenas revisao, lei seca e flashcards criticos"
+    - "D-7: ultimo simulado completo"
+    - "D-1: leitura de tabelas e descanso — zero conteudo novo"

@@ -1,0 +1,126 @@
+# GERADO por scripts/gerar_agentes.py — nao edite a mao
+name: tcdf-concurso
+version: "1.0.0"
+short-title: "TCDF Concurso Squad"
+description: "Squad de 68 agentes para aprovacao no concurso de Analista Administrativo de Controle Externo do TCDF (Cebraspe 2026): 3 agentes (professor, examinador e revisor) para cada uma das 21 materias do edital, mais 5 agentes de coordenacao."
+author: "IA SQUADs"
+license: MIT
+slashPrefix: "tcdf"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - concurso-publico
+  - tcdf
+  - cebraspe
+  - controle-externo
+  - estudos
+  - questoes-certo-errado
+  - revisao-espacada
+  - discursiva
+  - cronograma
+  - direito
+
+components:
+  agents:
+    - reitor-tcdf.md
+    - estrategista-cebraspe.md
+    - arquiteto-cronograma.md
+    - redator-discursiva.md
+    - mentor-desempenho.md
+    - administracao-financeira-orcamentaria-examinador.md
+    - administracao-financeira-orcamentaria-professor.md
+    - administracao-financeira-orcamentaria-revisor.md
+    - administracao-geral-e-publica-examinador.md
+    - administracao-geral-e-publica-professor.md
+    - administracao-geral-e-publica-revisor.md
+    - administracao-patrimonial-examinador.md
+    - administracao-patrimonial-professor.md
+    - administracao-patrimonial-revisor.md
+    - administracao-recursos-materiais-examinador.md
+    - administracao-recursos-materiais-professor.md
+    - administracao-recursos-materiais-revisor.md
+    - analise-dados-estatistica-ia-examinador.md
+    - analise-dados-estatistica-ia-professor.md
+    - analise-dados-estatistica-ia-revisor.md
+    - arquivologia-examinador.md
+    - arquivologia-professor.md
+    - arquivologia-revisor.md
+    - conhecimentos-df-politicas-mulheres-examinador.md
+    - conhecimentos-df-politicas-mulheres-professor.md
+    - conhecimentos-df-politicas-mulheres-revisor.md
+    - contabilidade-publica-examinador.md
+    - contabilidade-publica-professor.md
+    - contabilidade-publica-revisor.md
+    - direito-administrativo-examinador.md
+    - direito-administrativo-professor.md
+    - direito-administrativo-revisor.md
+    - direito-constitucional-examinador.md
+    - direito-constitucional-professor.md
+    - direito-constitucional-revisor.md
+    - direito-previdenciario-examinador.md
+    - direito-previdenciario-professor.md
+    - direito-previdenciario-revisor.md
+    - gestao-de-pessoas-examinador.md
+    - gestao-de-pessoas-professor.md
+    - gestao-de-pessoas-revisor.md
+    - gestao-de-processos-examinador.md
+    - gestao-de-processos-professor.md
+    - gestao-de-processos-revisor.md
+    - gestao-de-projetos-examinador.md
+    - gestao-de-projetos-professor.md
+    - gestao-de-projetos-revisor.md
+    - lei-organica-df-examinador.md
+    - lei-organica-df-professor.md
+    - lei-organica-df-revisor.md
+    - lei-organica-regimento-tcdf-examinador.md
+    - lei-organica-regimento-tcdf-professor.md
+    - lei-organica-regimento-tcdf-revisor.md
+    - lingua-portuguesa-examinador.md
+    - lingua-portuguesa-professor.md
+    - lingua-portuguesa-revisor.md
+    - nocoes-direito-civil-examinador.md
+    - nocoes-direito-civil-professor.md
+    - nocoes-direito-civil-revisor.md
+    - nocoes-direito-tributario-examinador.md
+    - nocoes-direito-tributario-professor.md
+    - nocoes-direito-tributario-revisor.md
+    - nocoes-primeiros-socorros-examinador.md
+    - nocoes-primeiros-socorros-professor.md
+    - nocoes-primeiros-socorros-revisor.md
+    - raciocinio-logico-matematica-financeira-examinador.md
+    - raciocinio-logico-matematica-financeira-professor.md
+    - raciocinio-logico-matematica-financeira-revisor.md
+  tasks:
+    - aula-de-topico.md
+    - corrigir-discursiva.md
+    - diagnosticar-e-rotear.md
+    - diagnostico-de-erros.md
+    - gerar-simulado.md
+    - montar-plano-de-estudos.md
+    - revisao-do-dia.md
+    - verticalizar-edital.md
+  workflows:
+    - wf-ciclo-semanal.yaml
+    - wf-primeira-semana.yaml
+    - wf-reta-final.yaml
+  checklists:
+    - peca-informacao.md
+    - qualidade-do-item.md
+  data:
+    - edital-verticalizado.md
+    - routing-catalog.yaml
+  scripts:
+    - edital.json
+    - gerar_agentes.py
+
+config:
+  extends: extend
+
+fonte_do_edital:
+  status: "NAO_VERIFICADO_NA_FONTE_OFICIAL"
+  url: "https://cdn.cebraspe.org.br/concursos/tc_df_26_analista/arquivos/54FBB0AE18A245586A808B4DC3568C6D9070ADFA0584420F0DB9DC4198DBC0C6.html"
+  atualizar_com: "tasks/verticalizar-edital.md"
+
