@@ -239,7 +239,10 @@ def main():
         painel[f"D{lin}"] = mats[mid]["itens_estimados"]
         painel[f"E{lin}"] = f'=COUNTIF({aba}!E5:L5,"S")'
         painel[f"F{lin}"] = f'=COUNT({aba}!C{p["reg_ini"]}:C{p["reg_fim"]})'
-        painel[f"G{lin}"] = f'=IFERROR(MAX({aba}!F{p["reg_ini"]}:F{p["reg_fim"]}),"")'
+        # MAX de um intervalo vazio devolve 0, e 16 linhas de "0,0%" sem lote
+        # nenhum registrado poluem o painel. Sem lote, a celula fica vazia.
+        painel[f"G{lin}"] = (f'=IF(COUNT({aba}!C{p["reg_ini"]}:C{p["reg_fim"]})=0,"",'
+                             f'MAX({aba}!F{p["reg_ini"]}:F{p["reg_fim"]}))')
         painel[f"H{lin}"] = (f'=IFERROR(INDEX({aba}!F{p["reg_ini"]}:F{p["reg_fim"]},'
                              f'COUNT({aba}!C{p["reg_ini"]}:C{p["reg_fim"]})),"")')
         for i in range(8):
