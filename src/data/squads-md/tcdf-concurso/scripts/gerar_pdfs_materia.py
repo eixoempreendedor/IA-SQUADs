@@ -8,6 +8,10 @@ Duas folhas em pe (A4 retrato):
   O nome do filtro vai escrito a mao, em pe, no cabecalho da coluna; as bolinhas
   marcadas dizem o que aquele filtro esta sorteando.
 
+  A ultima coluna e fixa: GERAL N2. A bolina grande dela marca o conteudo que ja
+  venceu — o que sai da fila de estudo e passa a entrar no filtro geral, aquele
+  que alimenta os simulados de grupo e as revisoes de tudo que ja esta vencido.
+
   FOLHA 2 — REGISTRO DOS SIMULADOS. Uma linha por lote resolvido: filtro, data,
   total, acertos, erros, bruto, liquido e veredito.
 
@@ -39,7 +43,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "scripts"))
 
 from gerar_pdfs import (  # noqa: E402
-    CABECA, CELULA, CLARO, DESTAQUE, LINHA, NOTA, SECAO,
+    CABECA, CELULA, CINZA, CLARO, DESTAQUE, FUNDO, LINHA, NOTA, SECAO,
     Bolinha, documento, partes, slug,
 )
 from gerar_status import ler_progresso  # noqa: E402
@@ -70,6 +74,7 @@ LAYOUTS = [(1, c) for c in (12.0, 11.0, 10.0, 9.2, 8.6, 8.0, 7.6, 7.2,
                             6.9, 6.6, 6.3, 6.0, 5.8)]
 
 MINI = CABECA.clone("mini", fontSize=6, leading=7)
+USO = NOTA.clone("uso", fontSize=7, leading=8.6)
 LINHAS_DO_HISTORICO = 12
 
 
@@ -78,13 +83,25 @@ class Medidas:
 
     def __init__(self, colunas: int, escala: float):
         self.colunas, self.escala = colunas, escala
-        self.l_filtro = min(7 * mm, max(5.6 * mm, 0.62 * mm * escala))
+        self.l_filtro = min(7 * mm, max(5.2 * mm, 0.62 * mm * escala))
         self.l_aula = max(9 * mm, 0.85 * mm * escala)
         self.l_coluna = (LARGURA_UTIL - CALHA) / 2 if colunas == 2 else LARGURA_UTIL
-        self.l_texto = self.l_coluna - self.l_aula - N_FILTROS * self.l_filtro
-        self.larguras = [self.l_texto, self.l_aula] + [self.l_filtro] * N_FILTROS
-        self.raio = min(2.3 * mm, self.l_filtro * 0.28)
+        # A coluna do GERAL N2 e mais larga e leva a bolina: ela decide se o
+        # conteudo entrou no bolo que os simulados de grupo e as revisoes usam.
+        self.l_geral = min(11 * mm, max(7.6 * mm, 0.95 * mm * escala))
+        self.l_texto = (self.l_coluna - self.l_aula - N_FILTROS * self.l_filtro
+                        - self.l_geral)
+        self.larguras = ([self.l_texto, self.l_aula] + [self.l_filtro] * N_FILTROS
+                         + [self.l_geral])
+        # O raio tambem acompanha o corpo: a bolinha e o piso da altura da linha
+        # (um circulo de 3 mm nao cabe em linha de 2,7 mm), entao raio fixo trava a
+        # folha e faz reduzir a fonte nao adiantar nada.
+        self.raio = min(2.3 * mm, self.l_filtro * 0.28, max(1.05 * mm, 0.19 * mm * escala))
         self.padding = max(PADDING_MINIMO, escala * 0.14)
+        # A bolina e maior que as outras, mas nunca a ponto de esticar a linha:
+        # numa materia de 55 linhas, meio milimetro a mais por linha custa a folha.
+        self.raio_geral = min(3.4 * mm, self.l_geral * 0.34, self.raio * 1.5,
+                              (escala * 1.2 + 2 * self.padding) / 2 * 0.95)
         item = CELULA.clone("item", fontSize=escala, leading=escala * 1.2)
         self.topico = item.clone("topico", fontName="Helvetica-Bold")
         self.sub = item.clone("sub", fontSize=escala - 0.4, leading=escala * 1.17,
@@ -108,6 +125,28 @@ class CaixaDoFiltro(Flowable):
         c.setDash()
 
 
+class RotuloGeral(Flowable):
+    """Cabecalho da coluna fixa: GERAL N2 escrito em pe, ja impresso."""
+
+    def __init__(self, largura):
+        super().__init__()
+        self.width, self.height = largura - 1.2 * mm, H_CAIXA - 2 * mm
+
+    def draw(self):
+        c = self.canv
+        c.setFillColor(FUNDO)
+        c.setStrokeColor(DESTAQUE)
+        c.setLineWidth(0.6)
+        c.rect(0, 0, self.width, self.height, stroke=1, fill=1)
+        c.setFillColor(DESTAQUE)
+        c.setFont("Helvetica-Bold", 7)
+        c.saveState()
+        c.translate(self.width / 2 + 2.5, 3)
+        c.rotate(90)
+        c.drawString(0, 0, "GERAL N2")
+        c.restoreState()
+
+
 def aulas_da_materia(gran: dict, mid: str) -> dict[str, list[int]]:
     saida: dict[str, list[int]] = {}
     for a in gran["materias"].get(mid, []):
@@ -117,20 +156,25 @@ def aulas_da_materia(gran: dict, mid: str) -> dict[str, list[int]]:
 
 
 def linhas_da_materia(materia, aulas, estado):
-    """[(e_topico, texto, aula, bolinha_cheia)] na ordem da ementa."""
+    """[(e_topico, texto, aula, estudado, vencido)] na ordem da ementa.
+
+    `vencido` so e lido na linha do topico: e o topico inteiro que vence, num lote
+    de 20, e e ele que entra ou nao no filtro GERAL N2.
+    """
     saida = []
     for t in materia["ementa"]:
         n = t["n"]
         numero, titulo, subs = partes(t["texto"])
         e = estado["estudo"].get((materia["id"], n), {})
+        venceu = (materia["id"], n) in estado["vencidos"]
         vistos = set(e.get("subtopicos", []))
         ag = ", ".join(str(x) for x in aulas.get(n, [])) or "—"
         saida.append((True, f"<b>{numero or n}.</b> {titulo}", ag,
-                      bool(e) and e.get("completo", True)))
+                      bool(e) and e.get("completo", True), venceu))
         for s in subs:
-            saida.append((False, s, "", s.split()[0] in vistos))
+            saida.append((False, s, "", s.split()[0] in vistos, venceu))
         for s in t.get("subtopicos_sugeridos", []):
-            saida.append((False, f"{s} <font size=5.5>(sugerido)</font>", "", False))
+            saida.append((False, f"{s} <font size=5.5>(sugerido)</font>", "", False, venceu))
     return saida
 
 
@@ -156,19 +200,25 @@ def partir(linhas, m: Medidas):
 
 
 def tabela_coluna(linhas, m: Medidas, respiro=0.0):
-    caixas = ["", ""] + [CaixaDoFiltro(m.l_filtro) for _ in range(N_FILTROS)]
+    caixas = ["", ""] + [CaixaDoFiltro(m.l_filtro) for _ in range(N_FILTROS)] + \
+             [RotuloGeral(m.l_geral)]
     rotulos = [Paragraph("TÓPICO E SUBTÓPICO DO EDITAL", MINI), Paragraph("AULA", MINI)] + \
-              [Paragraph(f"F{i}", MINI) for i in range(1, N_FILTROS + 1)]
+              [Paragraph(f"F{i}", MINI) for i in range(1, N_FILTROS + 1)] + \
+              [Paragraph("VENCI", MINI)]
     dados, marcas, zebra = [caixas, rotulos], [], []
 
-    for i, (e_topico, texto, aula, cheia) in enumerate(linhas):
+    for i, (e_topico, texto, aula, cheia, venceu) in enumerate(linhas):
         if e_topico and len(dados) > 2:
             marcas.append(("LINEABOVE", (0, len(dados)), (-1, len(dados)), 0.5, CLARO))
         if i % 2:
             zebra.append(("BACKGROUND", (0, len(dados)), (-1, len(dados)), ZEBRA))
         dados.append([Paragraph(texto, m.topico if e_topico else m.sub),
                       Paragraph(aula, m.aula)] +
-                     [Bolinha(raio=m.raio, cheia=cheia) for _ in range(N_FILTROS)])
+                     [Bolinha(raio=m.raio, cheia=cheia) for _ in range(N_FILTROS)] +
+                     # A bolina so existe na linha do topico: quem vence e o topico
+                     # inteiro, num lote de 20 — subtopico sozinho nao fecha nada.
+                     [Bolinha(raio=m.raio_geral, cor=DESTAQUE, espessura=1.1, cheia=venceu)
+                      if e_topico else ""])
 
     t = Table(dados, colWidths=m.larguras,
               rowHeights=[H_CAIXA, 5 * mm] + [None] * len(linhas), hAlign="LEFT")
@@ -183,18 +233,24 @@ def tabela_coluna(linhas, m: Medidas, respiro=0.0):
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
         ("TOPPADDING", (0, 2), (-1, -1), m.padding + respiro),
         ("BOTTOMPADDING", (0, 2), (-1, -1), m.padding + respiro),
+        # Celula vazia herda o corpo padrao da tabela (10pt) e infla a linha
+        # inteira; nas linhas de subtopico isso custava 1,4 mm cada.
+        ("FONTSIZE", (0, 2), (-1, -1), m.escala),
+        ("LEADING", (0, 2), (-1, -1), m.escala * 1.2),
         ("LINEBEFORE", (2, 1), (2, -1), 0.7, CLARO),
+        ("LINEBEFORE", (-1, 0), (-1, -1), 1.0, DESTAQUE),
         ("BOX", (0, 1), (-1, -1), 0.7, CLARO),
-    ] + zebra + marcas))
+    ] + zebra + marcas + [("BACKGROUND", (-1, 2), (-1, -1), FUNDO)]))
     return t
 
 
 def nota_de_uso():
     return Paragraph(
         "Escreva o nome do filtro em pé na caixa tracejada e marque a bolinha de cada tópico e "
-        "subtópico que ele sorteia — a coluna vira o retrato do filtro, e linha sem bolinha "
-        "nenhuma é conteúdo que filtro nenhum testa. <b>AULA</b> = videoaula do Gran que cobre o "
-        "tópico (o curso reordena o programa, não segue a numeração do edital).", NOTA)
+        "subtópico que ele sorteia — linha sem bolinha nenhuma é conteúdo que filtro nenhum testa. "
+        "A bolina roxa do <b><font color='#6d28d9'>GERAL N2</font></b> é a matéria vencida: marque "
+        "quando o tópico fechar 18/20 e passar a entrar no filtro geral, o dos simulados de grupo e "
+        "das revisões. <b>AULA</b> = videoaula do Gran (o curso reordena o programa).", USO)
 
 
 def pauta(linhas_pautadas: int):

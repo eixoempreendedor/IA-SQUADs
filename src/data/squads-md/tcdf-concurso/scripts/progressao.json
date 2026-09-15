@@ -2,6 +2,16 @@
   "sistema": {
     "nome": "Progressao por Niveis — 90% para avancar",
     "fonte_das_questoes": "Gran Cursos (banco de questoes)",
+    "filtros_no_gran": {
+      "por_materia": "Cada matéria tem até 8 filtros livres (F1 a F8) na sua folha em pdf/materias/. O nome de cada um é escrito à mão no cabeçalho da coluna, e as bolinhas marcadas registram quais tópicos e subtópicos aquele filtro sorteia.",
+      "geral_n2": {
+        "nome": "GERAL N2",
+        "o_que_entra": "Todo tópico que venceu no Nível 1 — 18/20 sobre o tópico INTEIRO. Tópico com ementa aberta ou aprovado só em aferição não entra.",
+        "para_que_serve": "É o filtro que alimenta o simulado de Nível 2 do grupo e as revisões do que já está vencido; o pool do Nível 3 de domingo sai dele.",
+        "quando_atualizar": "No mesmo dia em que um tópico vence: acrescente-o ao filtro GERAL N2 no Gran e preencha a bolina da última coluna na folha da matéria.",
+        "por_que_separado": "O filtro geral é a única coisa que cresce de forma monotônica no sistema: um tópico só entra nele depois de provado, e sair de lá exige regressão explícita. É ele que transforma 'estudei' em 'já venci' na prática do banco de questões."
+      }
+    },
     "criterio_de_aprovacao": {
       "metrica": "bruto",
       "formula": "acertos / total de questões do lote",

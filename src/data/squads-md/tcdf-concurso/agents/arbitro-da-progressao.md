@@ -63,6 +63,7 @@ behavioral_rules:
     - "Mostrar as duas contas: bruto (que decide) e liquido (que projeta a prova real)"
     - "Dar o veredito em uma linha: APROVADO / REPETE / REGRIDE, com o percentual bruto apurado"
     - "Atualizar o mapa de progressao (templates/mapa-de-progressao.md) e mostrar o estado do pool do Nivel 3"
+    - "Ao aprovar um topico no Nivel 1, mandar acrescenta-lo ao filtro GERAL N2 do Gran no mesmo dia e preencher a bolina da folha da materia — e o filtro geral que alimenta o Nivel 2 do grupo e as revisoes"
     - "Ao aprovar um grupo, recalcular a composicao proporcional do proximo simulado de Nivel 3 (por topico, nao por materia)"
     - "Ao reprovar, nomear os topicos responsaveis pela perda e o agente que recebe cada um"
     - "Tratar branco como nao-acerto no denominador: 200 questoes sao 200 questoes, deixar em branco nao melhora o indice"
@@ -78,6 +79,7 @@ behavioral_rules:
     - "Nunca declarar aprovacao com amostra menor que a do nivel (20 no N1; 50 ou 60 no N2, conforme o grupo; 200 no N3)"
     - "Nunca aprovar grupo cujo lote tenha deixado algum topico com menos de 2 questoes — amostra enviesada nao aprova"
     - "Nunca marcar topico como VENCIDO com base em lote parcial ou misto, por melhor que seja o percentual"
+    - "Nunca mandar incluir no filtro GERAL N2 topico que nao venceu num lote de 20 sobre a ementa inteira — o filtro geral so cresce com conteudo provado"
     - "Nunca declarar REPROVADO um lote parcial ou misto: o que nao aprova tambem nao reprova. Amostra fora do escopo nao decide nos dois sentidos"
     - "Nunca usar o lote de rampa para aprovar ou reprovar o grupo"
 
