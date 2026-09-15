@@ -293,8 +293,7 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None, estado=None):
         "é o conteúdo visto; a segunda (VENCI) só é marcada quando o lote de 20 questões daquele tópico fecha em "
         "18/20 — e esse lote só vale com o <b>tópico inteiro</b> estudado, todos os subtópicos marcados. Ver a "
         "aula não vence o tópico, e lote sobre meio tópico é aferição, não tentativa. As bolinhas menores são os "
-        "subtópicos: elas dizem quando o tópico fechou. Bolinhas já preenchidas nesta folha são o que você "
-        "declarou em <i>scripts/progresso.json</i>. "
+        "subtópicos: elas dizem quando o tópico fechou. "
         "<font color='#6d28d9'>[Gran N]</font> = número da aula no curso que cobre aquele tópico — o curso fatia e "
         "reordena o programa, então a numeração das aulas não é a do edital.",
         NOTA))
@@ -315,15 +314,12 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None, estado=None):
         for n in b["topicos"]:
             t = textos[n]
             numero, titulo, subs = partes(t["texto"])
-            e = estado["estudo"].get((b["id"], n), {})
-            vistos = set(e.get("subtopicos", []))
+            # Nenhuma bolinha sai marcada: a folha impressa e para a caneta.
             bloco = [linha_topico(numero or n, titulo, t["peso"],
                                   q_n2=r["por_topico"][(b["id"], n)],
-                                  aulas=gran.get((b["id"], n)),
-                                  estudado=(b["id"], n) in estado["tocados"],
-                                  vencido=(b["id"], n) in estado["vencidos"])]
+                                  aulas=gran.get((b["id"], n)))]
             for s in subs:
-                bloco.append(linha_sub(s, cheia=s.split()[0] in vistos if not e.get("completo") else bool(e)))
+                bloco.append(linha_sub(s))
             for s in t.get("subtopicos_sugeridos", []):
                 bloco.append(linha_sub(f"{s} <font size=7>(subdivisão sugerida)</font>", sugerido=True))
             hist.append(KeepTogether(bloco))

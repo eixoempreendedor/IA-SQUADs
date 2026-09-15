@@ -46,8 +46,6 @@ from gerar_pdfs import (  # noqa: E402
     CABECA, CELULA, CLARO, DESTAQUE, FUNDO, LINHA, SECAO,
     Bolinha, documento, partes, slug,
 )
-from gerar_status import ler_progresso  # noqa: E402
-
 SAIDA = RAIZ / "pdf" / "materias"
 PAGINA = A4
 MARGEM = 12 * mm
@@ -154,26 +152,23 @@ def aulas_da_materia(gran: dict, mid: str) -> dict[str, list[int]]:
     return saida
 
 
-def linhas_da_materia(materia, aulas, estado):
-    """[(e_topico, texto, aula, estudado, vencido)] na ordem da ementa.
+def linhas_da_materia(materia, aulas):
+    """[(e_topico, texto, aula)] na ordem da ementa.
 
-    `vencido` so e lido na linha do topico: e o topico inteiro que vence, num lote
-    de 20, e e ele que entra ou nao no filtro GERAL N2.
+    Nenhuma bolinha sai marcada. A bolinha de uma coluna diz que AQUELE FILTRO
+    sorteia aquele topico — e decisao de quem monta o filtro, nao um registro do
+    que ja foi estudado. Folha impressa sai limpa, para a caneta.
     """
     saida = []
     for t in materia["ementa"]:
         n = t["n"]
         numero, titulo, subs = partes(t["texto"])
-        e = estado["estudo"].get((materia["id"], n), {})
-        venceu = (materia["id"], n) in estado["vencidos"]
-        vistos = set(e.get("subtopicos", []))
         ag = ", ".join(str(x) for x in aulas.get(n, [])) or "—"
-        saida.append((True, f"<b>{numero or n}.</b> {titulo}", ag,
-                      bool(e) and e.get("completo", True), venceu))
+        saida.append((True, f"<b>{numero or n}.</b> {titulo}", ag))
         for s in subs:
-            saida.append((False, s, "", s.split()[0] in vistos, venceu))
+            saida.append((False, s, ""))
         for s in t.get("subtopicos_sugeridos", []):
-            saida.append((False, f"{s} <font size=5.5>(sugerido)</font>", "", False, venceu))
+            saida.append((False, f"{s} <font size=5.5>(sugerido)</font>", ""))
     return saida
 
 
@@ -206,17 +201,17 @@ def tabela_coluna(linhas, m: Medidas, respiro=0.0):
               [Paragraph("VENCI", MINI)]
     dados, marcas, zebra = [caixas, rotulos], [], []
 
-    for i, (e_topico, texto, aula, cheia, venceu) in enumerate(linhas):
+    for i, (e_topico, texto, aula) in enumerate(linhas):
         if e_topico and len(dados) > 2:
             marcas.append(("LINEABOVE", (0, len(dados)), (-1, len(dados)), 0.5, CLARO))
         if i % 2:
             zebra.append(("BACKGROUND", (0, len(dados)), (-1, len(dados)), ZEBRA))
         dados.append([Paragraph(texto, m.topico if e_topico else m.sub),
                       Paragraph(aula, m.aula)] +
-                     [Bolinha(raio=m.raio, cheia=cheia) for _ in range(N_FILTROS)] +
+                     [Bolinha(raio=m.raio) for _ in range(N_FILTROS)] +
                      # A bolina so existe na linha do topico: quem vence e o topico
                      # inteiro, num lote de 20 — subtopico sozinho nao fecha nada.
-                     [Bolinha(raio=m.raio_geral, cor=DESTAQUE, espessura=1.1, cheia=venceu)
+                     [Bolinha(raio=m.raio_geral, cor=DESTAQUE, espessura=1.1)
                       if e_topico else ""])
 
     t = Table(dados, colWidths=m.larguras,
@@ -402,9 +397,9 @@ def historico_que_cabe() -> int:
     return 6
 
 
-def pdf_da_materia(materia, gran, estado, dia):
+def pdf_da_materia(materia, gran, dia):
     aulas = aulas_da_materia(gran, materia["id"])
-    linhas = linhas_da_materia(materia, aulas, estado)
+    linhas = linhas_da_materia(materia, aulas)
     m, respiro, pautadas, coube = layout_da_materia(linhas)
     arq = SAIDA / f"{slug(materia['nome'])}.pdf"
     doc = doc_em_branco(str(arq), materia, dia)
@@ -417,7 +412,6 @@ def main() -> int:
     prog = json.loads((RAIZ / "scripts" / "progressao.json").read_text(encoding="utf-8"))
     gran = json.loads((RAIZ / "scripts" / "gran.json").read_text(encoding="utf-8"))
     mats = {m["id"]: m for m in ed["materias"]}
-    estado = ler_progresso(mats)
     dia = {b["id"]: g["dia"] for g in prog["grupos"] for b in g["materias"]}
 
     global LINHAS_DO_HISTORICO
@@ -432,7 +426,7 @@ def main() -> int:
             print(f"materia desconhecida: {mid}")
             return 1
         arq, n, m, respiro, pautadas, paginas, coube = pdf_da_materia(
-            mats[mid], gran, estado, dia.get(mid, "—"))
+            mats[mid], gran, dia.get(mid, "—"))
         ok = coube and paginas == 2
         problemas += 0 if ok else 1
         print(f"{arq.name}: {n} linhas · {m.colunas} coluna(s) · corpo {m.escala}pt · "
