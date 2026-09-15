@@ -43,7 +43,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "scripts"))
 
 from gerar_pdfs import (  # noqa: E402
-    CABECA, CELULA, CINZA, CLARO, DESTAQUE, FUNDO, LINHA, NOTA, SECAO,
+    CABECA, CELULA, CLARO, DESTAQUE, FUNDO, LINHA, SECAO,
     Bolinha, documento, partes, slug,
 )
 from gerar_status import ler_progresso  # noqa: E402
@@ -74,7 +74,6 @@ LAYOUTS = [(1, c) for c in (12.0, 11.0, 10.0, 9.2, 8.6, 8.0, 7.6, 7.2,
                             6.9, 6.6, 6.3, 6.0, 5.8)]
 
 MINI = CABECA.clone("mini", fontSize=6, leading=7)
-USO = NOTA.clone("uso", fontSize=7, leading=8.6)
 LINHAS_DO_HISTORICO = 12
 
 
@@ -231,6 +230,7 @@ def tabela_coluna(linhas, m: Medidas, respiro=0.0):
         ("LEFTPADDING", (0, 0), (0, -1), 3),
         ("LEFTPADDING", (1, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (0, -1), 4),
         ("TOPPADDING", (0, 2), (-1, -1), m.padding + respiro),
         ("BOTTOMPADDING", (0, 2), (-1, -1), m.padding + respiro),
         # Celula vazia herda o corpo padrao da tabela (10pt) e infla a linha
@@ -244,13 +244,51 @@ def tabela_coluna(linhas, m: Medidas, respiro=0.0):
     return t
 
 
-def nota_de_uso():
-    return Paragraph(
-        "Escreva o nome do filtro em pé na caixa tracejada e marque a bolinha de cada tópico e "
-        "subtópico que ele sorteia — linha sem bolinha nenhuma é conteúdo que filtro nenhum testa. "
-        "A bolina roxa do <b><font color='#6d28d9'>GERAL N2</font></b> é a matéria vencida: marque "
-        "quando o tópico fechar 18/20 e passar a entrar no filtro geral, o dos simulados de grupo e "
-        "das revisões. <b>AULA</b> = videoaula do Gran (o curso reordena o programa).", USO)
+def rodape_do_geral(m: Medidas, n_topicos: int):
+    """Pe da coluna GERAL N2: o filtro geral desta materia e o estado dele.
+
+    A coluna diz, topico a topico, o que ja venceu; este rodape diz o que fazer
+    com isso — qual e o filtro no Gran que junta esses topicos e de onde saem os
+    simulados de grupo e as revisoes gerais.
+    """
+    corpo = CELULA.clone("rodapegeral", fontSize=max(6.6, m.escala - 0.6),
+                         leading=max(8.4, m.escala * 1.15))
+    titulo = Paragraph(
+        "FILTRO GERAL N2 — junta os tópicos já vencidos desta matéria; é dele que saem os "
+        "simulados de grupo e as revisões", CABECA)
+    linha_a = Paragraph(
+        "Nome do filtro no Gran: _______________________________________ &nbsp;·&nbsp; "
+        f"Tópicos já dentro dele: ______ de {n_topicos} &nbsp;·&nbsp; "
+        "Atualizado em ______/______/__________", corpo)
+    linha_b = Paragraph(
+        "Última rodada deste filtro: ______/______/______ &nbsp;·&nbsp; Questões ________ "
+        "&nbsp;·&nbsp; Acertos ________ &nbsp;·&nbsp; Erros ________ &nbsp;·&nbsp; "
+        "% bruto ________ &nbsp;·&nbsp; a matéria inteira venceu?", corpo)
+
+    dados = [[titulo] + [""] * N_FILTROS + [Paragraph("TUDO", MINI)],
+             [linha_a] + [""] * N_FILTROS + [Bolinha(raio=m.raio_geral, cor=DESTAQUE,
+                                                     espessura=1.1)],
+             [linha_b] + [""] * N_FILTROS + [""]]
+    larguras = [sum(m.larguras[:2])] + m.larguras[2:]
+    t = Table(dados, colWidths=larguras, hAlign="LEFT")
+    t.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), DESTAQUE),
+        ("BACKGROUND", (0, 1), (-1, -1), FUNDO),
+        ("SPAN", (0, 0), (-2, 0)),
+        ("SPAN", (0, 1), (-2, 1)),
+        ("SPAN", (0, 2), (-2, 2)),
+        ("SPAN", (-1, 1), (-1, 2)),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("ALIGN", (-1, 0), (-1, -1), "CENTER"),
+        ("LEFTPADDING", (0, 0), (0, -1), 5),
+        ("LEFTPADDING", (1, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 1), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 1), (-1, -1), 3),
+        ("LINEBEFORE", (-1, 0), (-1, -1), 1.0, DESTAQUE),
+        ("BOX", (0, 0), (-1, -1), 0.8, CLARO),
+    ]))
+    return t
 
 
 def pauta(linhas_pautadas: int):
@@ -269,7 +307,7 @@ def pauta(linhas_pautadas: int):
     return t
 
 
-def folha_do_mapa(linhas, m: Medidas, respiro=0.0, linhas_pautadas=0):
+def folha_do_mapa(linhas, m: Medidas, respiro=0.0, linhas_pautadas=0, n_topicos=0):
     esq, dir_ = partir(linhas, m)
     corpo = tabela_coluna(esq, m, respiro)
     if dir_:
@@ -284,7 +322,8 @@ def folha_do_mapa(linhas, m: Medidas, respiro=0.0, linhas_pautadas=0):
             ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
         ]))
         corpo = lado
-    saida = [nota_de_uso(), Spacer(1, 5), corpo]
+    saida = [corpo, Spacer(1, 3),
+             rodape_do_geral(m, n_topicos or sum(1 for x in linhas if x[0]))]
     if linhas_pautadas:
         saida += [Spacer(1, 10), pauta(linhas_pautadas)]
     return saida
@@ -310,12 +349,6 @@ def tabela_registro(linhas):
 def folha_do_registro(linhas_do_historico=None):
     return [
         Paragraph("REGISTRO DOS SIMULADOS DESTA MATÉRIA", SECAO),
-        Paragraph(
-            "Uma linha por lote resolvido. <b>Bruto</b> = acertos ÷ total, é ele que decide o "
-            "avanço; <b>líquido</b> = (acertos − erros) ÷ total, é a régua da prova, onde cada erro "
-            "anula um acerto. Branco conta como erro: responda o lote inteiro. Em <i>filtro</i>, "
-            "repita o nome que você escreveu na coluna da folha 1; no <i>veredito</i>, anote se o "
-            "lote foi tentativa oficial de Nível 1 (tópico inteiro, 20 questões) ou aferição.", NOTA),
         Spacer(1, 4),
         tabela_registro(linhas_do_historico or LINHAS_DO_HISTORICO),
     ]
