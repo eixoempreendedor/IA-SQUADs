@@ -159,8 +159,10 @@ def main() -> int:
                "vencida: o topico que fechou 18/20 sobre a ementa inteira sai da fila de estudo e passa a entrar no "
                "filtro geral do Gran — o que alimenta o simulado de Nivel 2 do grupo e as revisoes de tudo que ja "
                "esta vencido. Ela so aparece na linha do topico, porque e o topico inteiro que vence; subtopico "
-               "sozinho nao fecha nada. No pe da folha, a mesma coluna fecha num bloco do filtro geral: nome dele "
-               "no Gran, quantos topicos ja entraram, quando foi atualizado e o resultado da ultima rodada.", "",
+               "sozinho nao fecha nada.", "",
+               "No pe da folha, **cada coluna de filtro fecha com uma bolona**: aquele filtro bateu a meta e pode "
+               "ser jogado dentro do GERAL N2. A ultima bolona e a materia inteira, e ao lado fica a ficha do filtro "
+               "geral — quantos topicos ja entraram nele, quando foi atualizado e o resultado da ultima rodada.", "",
                "A materia inteira cabe na folha 1 qualquer que seja o tamanho dela. O corpo do texto encolhe so o "
                "quanto for preciso — as curtas saem em 12pt e o que sobra vira pauta de anotacao; Direito "
                "Administrativo, a maior, fecha em 7,6pt com os 14 topicos e os 41 subtopicos.", "",

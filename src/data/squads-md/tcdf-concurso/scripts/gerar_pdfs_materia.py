@@ -245,47 +245,51 @@ def tabela_coluna(linhas, m: Medidas, respiro=0.0):
 
 
 def rodape_do_geral(m: Medidas, n_topicos: int):
-    """Pe da coluna GERAL N2: o filtro geral desta materia e o estado dele.
+    """Pe da folha: uma bolona embaixo de cada coluna de filtro.
 
-    A coluna diz, topico a topico, o que ja venceu; este rodape diz o que fazer
-    com isso — qual e o filtro no Gran que junta esses topicos e de onde saem os
-    simulados de grupo e as revisoes gerais.
+    A coluna diz, topico a topico, o que aquele filtro sorteia. A bolona do pe
+    fecha a coluna: aquele filtro ja bateu a meta e pode ser jogado no GERAL N2,
+    o filtro unico que junta a materia vencida e alimenta os simulados de grupo e
+    as revisoes gerais. A ultima coluna e a materia inteira.
     """
     corpo = CELULA.clone("rodapegeral", fontSize=max(6.6, m.escala - 0.6),
                          leading=max(8.4, m.escala * 1.15))
     titulo = Paragraph(
-        "FILTRO GERAL N2 — junta os tópicos já vencidos desta matéria; é dele que saem os "
-        "simulados de grupo e as revisões", CABECA)
-    linha_a = Paragraph(
-        "Nome do filtro no Gran: _______________________________________ &nbsp;·&nbsp; "
-        f"Tópicos já dentro dele: ______ de {n_topicos} &nbsp;·&nbsp; "
-        "Atualizado em ______/______/__________", corpo)
-    linha_b = Paragraph(
-        "Última rodada deste filtro: ______/______/______ &nbsp;·&nbsp; Questões ________ "
-        "&nbsp;·&nbsp; Acertos ________ &nbsp;·&nbsp; Erros ________ &nbsp;·&nbsp; "
-        "% bruto ________ &nbsp;·&nbsp; a matéria inteira venceu?", corpo)
+        "ESTE FILTRO JÁ VENCEU? Bateu 90%, marque a bolona e jogue o filtro dentro do "
+        "<b>GERAL N2</b> — o filtro único da matéria vencida, de onde saem os simulados de grupo "
+        "e as revisões", CABECA)
+    ficha = Paragraph(
+        f"GERAL N2 · tópicos já dentro dele: ______ de {n_topicos} &nbsp;·&nbsp; "
+        "atualizado em ______/______/__________ &nbsp;·&nbsp; última rodada: "
+        "______/______/______ &nbsp;·&nbsp; questões ________ &nbsp;·&nbsp; acertos ________ "
+        "&nbsp;·&nbsp; % bruto ________", corpo)
+    raio = min(2.4 * mm, m.l_filtro * 0.36)
 
-    dados = [[titulo] + [""] * N_FILTROS + [Paragraph("TUDO", MINI)],
-             [linha_a] + [""] * N_FILTROS + [Bolinha(raio=m.raio_geral, cor=DESTAQUE,
-                                                     espessura=1.1)],
-             [linha_b] + [""] * N_FILTROS + [""]]
+    dados = [
+        [titulo] + [""] * N_FILTROS + [Paragraph("TUDO", MINI)],
+        [Paragraph("<b>Entra no GERAL N2  →</b>", corpo)] +
+        [Bolinha(raio=raio, cor=DESTAQUE, espessura=1.1) for _ in range(N_FILTROS)] +
+        [Bolinha(raio=raio, cor=DESTAQUE, espessura=1.4)],
+        [ficha] + [""] * N_FILTROS + [""],
+    ]
     larguras = [sum(m.larguras[:2])] + m.larguras[2:]
     t = Table(dados, colWidths=larguras, hAlign="LEFT")
     t.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, 0), DESTAQUE),
         ("BACKGROUND", (0, 1), (-1, -1), FUNDO),
         ("SPAN", (0, 0), (-2, 0)),
-        ("SPAN", (0, 1), (-2, 1)),
-        ("SPAN", (0, 2), (-2, 2)),
-        ("SPAN", (-1, 1), (-1, 2)),
+        ("SPAN", (0, 2), (-1, 2)),
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-        ("ALIGN", (-1, 0), (-1, -1), "CENTER"),
+        ("ALIGN", (0, 1), (0, 1), "RIGHT"),
+        ("ALIGN", (1, 0), (-1, -1), "CENTER"),
         ("LEFTPADDING", (0, 0), (0, -1), 5),
         ("LEFTPADDING", (1, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-        ("TOPPADDING", (0, 1), (-1, -1), 3),
-        ("BOTTOMPADDING", (0, 1), (-1, -1), 3),
+        ("RIGHTPADDING", (0, 1), (0, 1), 6),
+        ("TOPPADDING", (0, 1), (-1, -1), 3.5),
+        ("BOTTOMPADDING", (0, 1), (-1, -1), 3.5),
         ("LINEBEFORE", (-1, 0), (-1, -1), 1.0, DESTAQUE),
+        ("LINEBELOW", (0, 1), (-1, 1), 0.5, CLARO),
         ("BOX", (0, 0), (-1, -1), 0.8, CLARO),
     ]))
     return t
