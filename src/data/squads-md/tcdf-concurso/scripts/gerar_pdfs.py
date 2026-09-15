@@ -167,8 +167,8 @@ def tabela_registro(titulo_extra="", linhas=10, escopo=False, rotulo_escopo="Gru
     return t
 
 
-def caixa(texto_html, fundo=FUNDO, borda=DESTAQUE):
-    t = Table([[Paragraph(texto_html, CORPO)]], colWidths=[158 * mm])
+def caixa(texto_html, fundo=FUNDO, borda=DESTAQUE, largura=158 * mm):
+    t = Table([[Paragraph(texto_html, CORPO)]], colWidths=[largura])
     t.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, -1), fundo),
         ("BOX", (0, 0), (-1, -1), 0.8, borda),
@@ -180,9 +180,9 @@ def caixa(texto_html, fundo=FUNDO, borda=DESTAQUE):
     return t
 
 
-def documento(caminho: Path, titulo: str, subtitulo: str, rodape: str):
+def documento(caminho: Path, titulo: str, subtitulo: str, rodape: str, margem=26 * mm):
     doc = BaseDocTemplate(str(caminho), pagesize=A4,
-                          leftMargin=26 * mm, rightMargin=26 * mm,
+                          leftMargin=margem, rightMargin=margem,
                           topMargin=30 * mm, bottomMargin=18 * mm,
                           title=titulo, author="TCDF Concurso Squad")
 
@@ -192,16 +192,16 @@ def documento(caminho: Path, titulo: str, subtitulo: str, rodape: str):
         canvas.rect(0, A4[1] - 20 * mm, A4[0], 20 * mm, stroke=0, fill=1)
         canvas.setFillColor(colors.white)
         canvas.setFont("Helvetica-Bold", 13)
-        canvas.drawString(26 * mm, A4[1] - 13.5 * mm, titulo)
+        canvas.drawString(margem, A4[1] - 13.5 * mm, titulo)
         canvas.setFont("Helvetica", 8.5)
-        canvas.drawRightString(A4[0] - 26 * mm, A4[1] - 13 * mm, subtitulo)
+        canvas.drawRightString(A4[0] - margem, A4[1] - 13 * mm, subtitulo)
         canvas.setFillColor(CINZA)
         canvas.setFont("Helvetica", 7.5)
-        canvas.drawString(26 * mm, 11 * mm, rodape)
-        canvas.drawRightString(A4[0] - 26 * mm, 11 * mm, f"pág. {canvas.getPageNumber()}")
+        canvas.drawString(margem, 11 * mm, rodape)
+        canvas.drawRightString(A4[0] - margem, 11 * mm, f"pág. {canvas.getPageNumber()}")
         canvas.setStrokeColor(LINHA)
         canvas.setLineWidth(0.4)
-        canvas.line(26 * mm, 14 * mm, A4[0] - 26 * mm, 14 * mm)
+        canvas.line(margem, 14 * mm, A4[0] - margem, 14 * mm)
         canvas.restoreState()
 
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="corpo")

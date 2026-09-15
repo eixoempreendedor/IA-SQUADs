@@ -149,6 +149,18 @@ def main() -> int:
         linhas.append(f"| {g['dia']} | [`pdf/{nome_pdf}`](pdf/{nome_pdf}) |")
     linhas += ["| Domingo | [`pdf/7-domingo-nivel-3.pdf`](pdf/7-domingo-nivel-3.pdf) |", "",
                "Gerados por `python3 scripts/gerar_pdfs.py` — mudou grupo ou ementa, e so rodar de novo.", "",
+               "### Uma folha por materia: a ementa cruzada com os filtros do Gran", "",
+               f"Em [`pdf/materias/`](pdf/materias/), um PDF por materia ({len(mats)} no total). Cada topico e cada "
+               "subtopico do edital em uma linha, com a aula do curso ao lado e oito colunas de bolinhas. O nome de "
+               "cada filtro montado no Gran e escrito em pe no cabecalho da coluna; as bolinhas marcadas dizem o que "
+               "aquele filtro sorteia. No pe das mesmas colunas entra o resultado do ultimo lote de cada filtro, e "
+               "abaixo o registro corrido (filtro, data, total, acertos, erros, bruto e liquido).", "",
+               "A folha responde a pergunta que o mapa por dia nao responde: **qual pedaco da ementa cada filtro "
+               "esta realmente cobrindo** — e, por eliminacao, o que nenhum filtro esta testando.", "",
+               "```bash",
+               "python3 scripts/gerar_pdfs_materia.py                      # todas as materias",
+               "python3 scripts/gerar_pdfs_materia.py direito-administrativo",
+               "```", "",
                "## Templates", "",
                "[`mapa-de-progressao.md`](templates/mapa-de-progressao.md) · "
                "[`diario-de-erros.md`](templates/diario-de-erros.md) · "
@@ -161,6 +173,7 @@ def main() -> int:
                "python3 scripts/gerar_progressao.py     # grupos de conteudo e mapa de progressao",
                "python3 scripts/gerar_status.py         # status atual a partir dos simulados registrados",
                "python3 scripts/gerar_pdfs.py           # os 7 PDFs de checklist (pdf/)",
+               "python3 scripts/gerar_pdfs_materia.py   # um PDF por materia: ementa x filtros (pdf/materias/)",
                "python3 scripts/gerar_readme.py         # este README",
                "python3 scripts/sync_app_registry.py    # registra o squad em squads.ts e agents.ts",
                "```", "",
