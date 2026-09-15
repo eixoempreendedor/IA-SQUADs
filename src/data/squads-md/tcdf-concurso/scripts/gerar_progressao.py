@@ -206,6 +206,7 @@ def doc_grupos(prog: dict, materias: dict) -> str:
     for n in s["niveis"]:
         out += [f"**Nivel {n['nivel']} — {n['nome']}**", ""]
         for chave, rotulo in [
+            ("escopo_do_lote", "Escopo do lote"),
             ("pre_requisito", "Pre-requisito"),
             ("composicao", "Composicao"),
             ("inicio", "Inicio"),
@@ -215,6 +216,15 @@ def doc_grupos(prog: dict, materias: dict) -> str:
         ]:
             if n.get(chave):
                 out.append(f"- {rotulo}: {n[chave]}")
+        if n.get("afericao_diagnostica"):
+            a = n["afericao_diagnostica"]
+            out += ["- Afericao diagnostica: " + a["o_que_e"] + " " + a["para_que_serve"] +
+                    " " + a["o_que_nao_faz"] + " (" + a["como_registrar"] + ")"]
+        if n.get("modo_rampa"):
+            r = n["modo_rampa"]
+            out += ["- Modo rampa (" + r["quando"] + "): " + r["o_que_e"] +
+                    " Meta de " + f"{r['meta']:.0%}" + ", mas nao decide o grupo. " + r["por_que"] +
+                    " " + r["saida_do_modo"]]
         out.append("")
     return "\n".join(out) + "\n"
 
@@ -230,7 +240,8 @@ def mapa(prog: dict, materias: dict) -> str:
         "Cada linha e uma unidade de Nivel 1 (20 questoes, 90% para vencer). Quando todos os topicos de um dia "
         "estiverem vencidos, o grupo daquele dia esta pronto para o simulado de Nivel 2.",
         "",
-        "Status: `—` nao iniciado · `EM ESTUDO` · **`VENCIDO`** (>= 90% em 20 questoes) · `REFORCO` (reprovou uma vez) "
+        "Status: `—` nao iniciado · `EM ESTUDO` (ementa do topico ainda aberta) · `PRONTO P/ N1` (topico inteiro estudado, "
+        "aguardando o lote) · **`VENCIDO`** (>= 90% em 20 questoes sobre o topico inteiro) · `REFORCO` (reprovou uma vez) "
         "· `REVISAR` (reprovou duas vezes)",
         "",
         "| Dia | Grupo | Materia | # | Topico | Peso | Status | Data |",

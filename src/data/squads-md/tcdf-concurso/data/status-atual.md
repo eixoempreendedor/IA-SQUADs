@@ -4,20 +4,31 @@
 
 Criterio de avanco: **bruto >= 90%** · branco conta como nao-acerto.
 
-Nenhum simulado registrado ainda.
-
-Para registrar, adicione entradas em `scripts/progresso.json` e rode `python3 scripts/gerar_status.py`.
+Só fecha topico o lote que cobre **um topico inteiro** e tem o tamanho do nivel (20 no Nivel 1). Lote parcial ou misto entra como **afericao** — mede e orienta, nao marca VENCIDO nem queima tentativa.
 
 ## Grupos
 
-| Dia | Grupo | Peso | Topicos vencidos | % do peso vencido | Nivel 2 | Status |
-|---|---|---|---|---|---|---|
-| Seg | Orçamento e Tributação | 19 | 0/12 | 0% | — | em Nivel 1 |
-| Ter | Direito Administrativo e Contratações | 32 | 0/16 | 0% | — | em Nivel 1 |
-| Qua | Controle Externo e Organização do Estado | 28 | 0/16 | 0% | — | em Nivel 1 |
-| Qui | Gestão e Dados | 20 | 0/14 | 0% | — | em Nivel 1 |
-| Sex | Servidores, Previdência e Direito Civil | 22 | 0/12 | 0% | — | em Nivel 1 |
-| Sáb | Instrumentais e Distrito Federal | 29 | 0/17 | 0% | — | em Nivel 1 |
+| Dia | Grupo | Peso | Topicos vencidos | % do peso vencido | Manha do dia | Nivel 2 | Status |
+|---|---|---|---|---|---|---|---|
+| Seg | Orçamento e Tributação | 19 | 0/12 | 0% | rampa: 12q | — | em Nivel 1 |
+| Ter | Direito Administrativo e Contratações | 32 | 0/16 | 0% | sem rampa (nada estudado) | — | em Nivel 1 |
+| Qua | Controle Externo e Organização do Estado | 28 | 0/16 | 0% | sem rampa (nada estudado) | — | em Nivel 1 |
+| Qui | Gestão e Dados | 20 | 0/14 | 0% | sem rampa (nada estudado) | — | em Nivel 1 |
+| Sex | Servidores, Previdência e Direito Civil | 22 | 0/12 | 0% | sem rampa (nada estudado) | — | em Nivel 1 |
+| Sáb | Instrumentais e Distrito Federal | 29 | 0/17 | 0% | sem rampa (nada estudado) | — | em Nivel 1 |
+
+## Modo rampa — a manha dos grupos que ainda nao chegaram a 70%
+
+Mesmo rito, mesmo cronometro, mesma meta de 90% — mas so com os topicos ja estudados (~4 questoes por topico, minimo de 10). **Nao aprova nem reprova o grupo**: produz a lista de reforco do dia. Quando o grupo passa dos 70% do peso vencido, a manha vira o simulado oficial de 50 ou 60 questoes.
+
+### Segunda-feira · Orçamento e Tributação — 12 questoes (0% do peso vencido)
+
+| Materia | # | Topico | Estudado | Questoes |
+|---|---|---|---|---|
+| Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do... | 1.1, 1.2 | **5** |
+| Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do... | 2.1 (parcial) | **4** |
+| Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas o... | 1.1, 1.2 (parcial) | **3** |
+| **Total** | | | | **12** |
 
 ## Nivel 3 — pool do domingo
 
@@ -25,10 +36,29 @@ Grupos vencidos: **0/6** · peso no pool: **0** de 150 (0% do edital)
 
 Nenhum grupo vencido ainda: o simulado de domingo comeca no primeiro grupo aprovado no Nivel 2.
 
-## Fila do Nivel 1 — topicos ja estudados, aguardando o lote de 20
+## Fila do Nivel 1 — topicos completos, aguardando o lote de 20
 
-Nada na fila: nenhum topico foi declarado estudado ainda (preencha `estudados` em `scripts/progresso.json`).
+1 lotes de 20 questoes = 20 questoes.
 
+| Dia | Materia | # | Topico | Peso | Aula Gran |
+|---|---|---|---|---|---|
+| Seg | Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | 2, 3 |
+
+## Em estudo — topicos abertos (falta parte da ementa)
+
+Estes nao entram no lote de 20 enquanto nao fecharem: o lote de Nivel 1 cobre o topico inteiro.
+
+| Dia | Materia | # | Topico | Peso | Ja visto | Falta |
+|---|---|---|---|---|---|---|
+| Seg | Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do... | 2 | 2.1 | Faltam 2.2 limitacoes constitucionais ao poder de tributar e 2.3 reparticao das receitas tributarias. |
+| Seg | Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas o... | 1 | 1.1, 1.2 | Faltam 1.3 principios orcamentarios, 1.4 ciclo orcamentario e 1.5 processo orcamentario. |
+
+## Afericoes diagnosticas — medem, nao decidem
+
+| Data | Materia | Topico(s) | Escopo | Placar | Bruto | Liquido |
+|---|---|---|---|---|---|---|
+| 2026-09-15 | Administração Financeira e Orçamentária | 1 | parcial | 18/21 | 85.7% | 71.4% |
+| 2026-09-15 | Noções de Direito Tributário | 1, 2 | misto | 21/24 | 87.5% | 75.0% |
 
 ## Topicos
 
@@ -36,7 +66,7 @@ Nada na fila: nenhum topico foi declarado estudado ainda (preencha `estudados` e
 
 | Materia | # | Topico | Peso | Aula Gran | Marcado | Status | Melhor lote |
 |---|---|---|---|---|---|---|---|
-| Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 pr... | 1 | 1, 3, 6 |  | — |  |
+| Administração Financeira e Orçamentária | 1 | Orçamento público: 1.1 conceito; 1.2 técnicas orçamentárias; 1.3 pr... | 1 | 1, 3, 6 |  | em estudo | 18/21 (86% bruto · 71% liq.) · afericao |
 | Administração Financeira e Orçamentária | 2 | Orçamento público no Brasil: 2.1 sistema de planejamento e de orçam... | 2 | 2, 4, 5, 8 |  | — |  |
 | Administração Financeira e Orçamentária | 3 | Programação e execução orçamentária e financeira: 3.1 descentraliza... | 2 | 9 |  | — |  |
 | Administração Financeira e Orçamentária | 4 | Receita pública: 4.1 conceito e classificações; 4.2 estágios; 4.3 f... | 2 | 7 |  | — |  |
@@ -45,8 +75,8 @@ Nada na fila: nenhum topico foi declarado estudado ainda (preencha `estudados` e
 | Administração Financeira e Orçamentária | 7 | Lei nº 4.320/1964 e suas alterações | 1 | 8 |  | — |  |
 | Administração Financeira e Orçamentária | 8 | Transferências voluntárias | 1 | 10 |  | — |  |
 | Administração Financeira e Orçamentária | 9 | Decreto distrital nº 32.598/2010 (normas de planejamento, orçamento... | 1 | 11 |  | — |  |
-| Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | 2, 3 |  | — |  |
-| Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário;... | 2 | 2, 4, 5, 7 |  | — |  |
+| Noções de Direito Tributário | 1 | Direito tributário: 1.1 conceito; 1.2 fontes do direito tributário | 1 | 2, 3 |  | pronto p/ N1 | 21/24 (88% bruto · 75% liq.) · afericao |
+| Noções de Direito Tributário | 2 | Sistema Tributário Nacional: 2.1 princípios do direito tributário;... | 2 | 2, 4, 5, 7 |  | em estudo | 21/24 (88% bruto · 75% liq.) · afericao |
 | Noções de Direito Tributário | 3 | Tributo: 3.1 conceito; 3.2 natureza jurídica; 3.3 espécies; 3.4 imp... | 1 | 6, 7 |  | — |  |
 
 ### Terça-feira · Direito Administrativo e Contratações

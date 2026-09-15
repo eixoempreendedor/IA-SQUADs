@@ -16,6 +16,7 @@ from __future__ import annotations
 import json
 import re
 import unicodedata
+import sys
 from pathlib import Path
 
 import cotas
@@ -31,6 +32,9 @@ from reportlab.platypus import (
 
 RAIZ = Path(__file__).resolve().parent.parent
 SAIDA = RAIZ / "pdf"
+sys.path.insert(0, str(RAIZ / "scripts"))
+
+from gerar_status import ler_progresso  # noqa: E402
 
 TINTA = colors.HexColor("#1a1a1a")
 CINZA = colors.HexColor("#6b7280")
@@ -55,9 +59,9 @@ CELULA = ParagraphStyle("celula", fontName="Helvetica", fontSize=8, leading=10, 
 class Bolinha(Flowable):
     """Checkbox circular, desenhada para nao depender de glifo de fonte."""
 
-    def __init__(self, raio=2.3 * mm, espessura=0.7, cor=colors.HexColor("#9ca3af")):
+    def __init__(self, raio=2.3 * mm, espessura=0.7, cor=colors.HexColor("#9ca3af"), cheia=False):
         super().__init__()
-        self.raio, self.espessura, self.cor = raio, espessura, cor
+        self.raio, self.espessura, self.cor, self.cheia = raio, espessura, cor, cheia
         self.width = self.height = raio * 2
 
     def draw(self):
@@ -65,6 +69,10 @@ class Bolinha(Flowable):
         c.setStrokeColor(self.cor)
         c.setLineWidth(self.espessura)
         c.circle(self.raio, self.raio - 0.6 * mm, self.raio, stroke=1, fill=0)
+        if self.cheia:
+            # Marcada ja na impressao: o que o candidato declarou em progresso.json
+            c.setFillColor(self.cor)
+            c.circle(self.raio, self.raio - 0.6 * mm, self.raio - 0.85, stroke=0, fill=1)
 
 
 def slug(texto: str) -> str:
@@ -85,12 +93,13 @@ def partes(texto: str):
     return numero, resto.strip(), []
 
 
-def linha_topico(numero, titulo, peso, com_campo=True, q_n2=None, aulas=None):
+def linha_topico(numero, titulo, peso, com_campo=True, q_n2=None, aulas=None,
+                 estudado=False, vencido=False):
     marca = f" <font size=7 color='#6d28d9'>[Gran {', '.join(str(a) for a in aulas)}]</font>" if aulas else ""
     direita = f"peso {peso} · N2: {q_n2}q<br/>N1: ____ / 20" if com_campo else f"peso {peso}"
     t = Table([[
-        Bolinha(cor=colors.HexColor("#c4b5fd")),
-        Bolinha(),
+        Bolinha(cor=colors.HexColor("#c4b5fd"), cheia=estudado),
+        Bolinha(cheia=vencido),
         Paragraph(f"<b>{numero}.</b> {titulo}{marca}", TOPICO),
         Paragraph(direita, NOTA),
     ]], colWidths=[6.5 * mm, 7 * mm, 112.5 * mm, 32 * mm])
@@ -123,9 +132,10 @@ def legenda_bolinhas():
     return t
 
 
-def linha_sub(texto, sugerido=False):
+def linha_sub(texto, sugerido=False, cheia=False):
     estilo = SUB if not sugerido else ParagraphStyle("subsug", parent=SUB, textColor=CINZA)
-    t = Table([[Bolinha(raio=1.7 * mm, cor=CLARO), Paragraph(texto, estilo)]],
+    cor = colors.HexColor("#c4b5fd") if cheia else CLARO
+    t = Table([[Bolinha(raio=1.7 * mm, cor=cor, cheia=cheia), Paragraph(texto, estilo)]],
               colWidths=[13.5 * mm, 144.5 * mm])
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -138,11 +148,11 @@ def linha_sub(texto, sugerido=False):
     return t
 
 
-def tabela_registro(titulo_extra="", linhas=10, escopo=False):
+def tabela_registro(titulo_extra="", linhas=10, escopo=False, rotulo_escopo="Grupo / escopo"):
     cabecalho = ["Data", "Total", "Acertos", "Erros", "% Bruto", "% Líq.", "Veredito"]
     larguras = [22 * mm, 16 * mm, 18 * mm, 16 * mm, 20 * mm, 18 * mm, 48 * mm]
     if escopo:
-        cabecalho.insert(1, "Grupo / escopo")
+        cabecalho.insert(1, rotulo_escopo)
         larguras = [20 * mm, 40 * mm, 14 * mm, 16 * mm, 14 * mm, 18 * mm, 16 * mm, 20 * mm]
     dados = [[Paragraph(c, CABECA) for c in cabecalho]] + [[""] * len(cabecalho) for _ in range(linhas)]
     t = Table(dados, colWidths=larguras, rowHeights=[7 * mm] + [7.5 * mm] * linhas, repeatRows=1)
@@ -199,8 +209,9 @@ def documento(caminho: Path, titulo: str, subtitulo: str, rodape: str):
     return doc
 
 
-def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None):
+def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None, estado=None):
     gran = gran or {}
+    estado = estado or {"tocados": set(), "completos": set(), "fracoes": {}, "vencidos": set(), "estudo": {}}
     r = cotas.resumo(grupo, mats)
     peso_total, n_top = r["peso"], r["topicos"]
     lote, meta = r["total"], r["meta"]
@@ -218,6 +229,39 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None):
         f"<font size=8 color='#6b7280'>{grupo['tese']}</font>"))
     hist.append(Spacer(1, 7))
 
+    # A manha so vira simulado oficial quando 70% do peso do grupo esta vencido.
+    # Antes disso o dia roda o lote de rampa, com os topicos ja estudados.
+    do_grupo = [(b["id"], n) for b in grupo["materias"] for n in b["topicos"]]
+    pesos_top = {(b["id"], n): {t["n"]: t["peso"] for t in mats[b["id"]]["ementa"]}[n]
+                 for b in grupo["materias"] for n in b["topicos"]}
+    peso_venc = sum(p for k, p in pesos_top.items() if k in estado["vencidos"])
+    pct = peso_venc / peso_total if peso_total else 0
+    rampa = cotas.cotas_da_rampa(grupo, mats, estado["tocados"], estado["fracoes"]) if pct < 0.70 else {}
+
+    if pct < 0.70:
+        q_rampa = sum(rampa.values())
+        if q_rampa:
+            itens = "<br/>".join(
+                f"&nbsp;&nbsp;{mats[mid]['nome']}, tópico {n} — <b>{q}q</b> "
+                f"<font size=7.5 color='#6b7280'>({', '.join(estado['estudo'][(mid, n)].get('subtopicos', [])) or 'tópico inteiro'}"
+                f"{'' if estado['estudo'][(mid, n)].get('completo', True) else ', parcial'})</font>"
+                for (mid, n), q in sorted(rampa.items(), key=lambda kv: -kv[1]))
+            corpo = (f"<b>A MANHÃ DE HOJE: LOTE DE RAMPA — {q_rampa} QUESTÕES</b><br/>"
+                     f"O grupo tem <b>{pct:.0%}</b> do peso vencido; o simulado oficial de {lote} questões só "
+                     f"decide a partir de 70%. Até lá a manhã roda só o que já foi estudado:<br/>{itens}<br/>"
+                     "<font size=8 color='#6b7280'>Mesma meta de 90% e mesmo cronômetro, mas este lote "
+                     "<b>não aprova nem reprova o grupo</b>: ele aponta o reforço do dia. A rampa cresce sozinha "
+                     "a cada tópico novo estudado.</font>")
+        else:
+            corpo = (f"<b>A MANHÃ DE HOJE: NADA AINDA</b><br/>"
+                     f"Nenhum tópico deste grupo foi declarado estudado, então não há lote de rampa. "
+                     f"A manhã começa a rodar no primeiro tópico estudado; o simulado oficial de {lote} questões "
+                     f"entra quando o grupo passar de 70% do peso vencido.<br/>"
+                     "<font size=8 color='#6b7280'>Declare o que estudou em scripts/progresso.json "
+                     "e rode scripts/gerar_pdfs.py para esta folha sair com a rampa do dia.</font>")
+        hist.append(caixa(corpo, fundo=colors.HexColor("#fffbeb"), borda=colors.HexColor("#b45309")))
+        hist.append(Spacer(1, 7))
+
     composicao = " · ".join(f"{mats[b['id']]['nome']}: <b>{r['por_materia'][b['id']]}q</b>" for b in grupo["materias"])
     hist.append(Paragraph(f"COMPOSIÇÃO DAS {lote} QUESTÕES", SECAO))
     hist.append(Paragraph(composicao, CORPO))
@@ -228,17 +272,22 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None):
 
     hist.append(Paragraph("REGISTRO DOS SIMULADOS DESTE DIA", SECAO))
     hist.append(Paragraph(
-        f"Nível 2 = {lote} questões do grupo (meta {meta}). Anote também os lotes de Nível 1 (20 questões de um "
-        "tópico, meta 18) na linha do tópico. Branco conta como erro: responda o lote inteiro.", NOTA))
+        f"Na coluna <i>escopo</i>, diga o que o lote cobriu: <b>N2</b> ({lote} questões do grupo, meta {meta}), "
+        "<b>rampa</b> (só os tópicos já estudados), <b>N1 tópico N</b> (20 questões de um tópico inteiro, meta 18) "
+        "ou <b>aferição</b> (parte de um tópico, ou vários tópicos juntos). Só N2 e N1 decidem avanço — rampa e "
+        "aferição medem e orientam. Branco conta como erro: responda o lote inteiro.", NOTA))
     hist.append(Spacer(1, 4))
-    hist.append(tabela_registro(linhas=8))
+    hist.append(tabela_registro(linhas=8, escopo=True, rotulo_escopo="Escopo"))
     hist.append(Spacer(1, 12))
 
     hist.append(Paragraph("CHECKLIST DE CONTEÚDO", SECAO))
     hist.append(Paragraph(
         "Cada tópico do edital tem <b>duas marcações</b>: a primeira bolinha (<font color='#6d28d9'>ESTUDEI</font>) "
         "é o conteúdo visto; a segunda (VENCI) só é marcada quando o lote de 20 questões daquele tópico fecha em "
-        "18/20. Ver a aula não vence o tópico. As bolinhas menores são os subtópicos, para acompanhar o estudo. "
+        "18/20 — e esse lote só vale com o <b>tópico inteiro</b> estudado, todos os subtópicos marcados. Ver a "
+        "aula não vence o tópico, e lote sobre meio tópico é aferição, não tentativa. As bolinhas menores são os "
+        "subtópicos: elas dizem quando o tópico fechou. Bolinhas já preenchidas nesta folha são o que você "
+        "declarou em <i>scripts/progresso.json</i>. "
         "<font color='#6d28d9'>[Gran N]</font> = número da aula no curso que cobre aquele tópico — o curso fatia e "
         "reordena o programa, então a numeração das aulas não é a do edital.",
         NOTA))
@@ -259,11 +308,15 @@ def pdf_do_grupo(grupo, mats, ordem, sistema, outros, gran=None):
         for n in b["topicos"]:
             t = textos[n]
             numero, titulo, subs = partes(t["texto"])
+            e = estado["estudo"].get((b["id"], n), {})
+            vistos = set(e.get("subtopicos", []))
             bloco = [linha_topico(numero or n, titulo, t["peso"],
                                   q_n2=r["por_topico"][(b["id"], n)],
-                                  aulas=gran.get((b["id"], n)))]
+                                  aulas=gran.get((b["id"], n)),
+                                  estudado=(b["id"], n) in estado["tocados"],
+                                  vencido=(b["id"], n) in estado["vencidos"])]
             for s in subs:
-                bloco.append(linha_sub(s))
+                bloco.append(linha_sub(s, cheia=s.split()[0] in vistos if not e.get("completo") else bool(e)))
             for s in t.get("subtopicos_sugeridos", []):
                 bloco.append(linha_sub(f"{s} <font size=7>(subdivisão sugerida)</font>", sugerido=True))
             hist.append(KeepTogether(bloco))
@@ -368,10 +421,11 @@ def main() -> int:
         for g in prog["grupos"] for b in g["materias"] for n in b["topicos"]
     }
     gran = aulas_do_gran()
+    estado = ler_progresso(mats)
 
     SAIDA.mkdir(exist_ok=True)
     for i, g in enumerate(prog["grupos"], 1):
-        arq, peso, n_top = pdf_do_grupo(g, mats, i, prog["sistema"], onde_estuda, gran)
+        arq, peso, n_top = pdf_do_grupo(g, mats, i, prog["sistema"], onde_estuda, gran, estado)
         print(f"{arq.name}: {n_top} topicos, peso {peso}")
     arq = pdf_domingo(prog, mats, total_edital)
     print(f"{arq.name}: registro geral do Nivel 3")

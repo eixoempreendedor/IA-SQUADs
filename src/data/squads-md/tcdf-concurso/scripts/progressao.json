@@ -20,6 +20,13 @@
         "nome": "Tema",
         "unidade": "Um tópico numerado da ementa oficial (ex.: Direito Administrativo, tópico 3 — Ato administrativo)",
         "questoes": 20,
+        "escopo_do_lote": "O lote de Nível 1 cobre UM tópico numerado INTEIRO — todos os seus subtópicos. Lote que cobre só parte do tópico, ou que mistura tópicos diferentes num placar só, não é tentativa de Nível 1: entra como AFERIÇÃO DIAGNÓSTICA.",
+        "afericao_diagnostica": {
+          "o_que_e": "Lote parcial, misto ou menor que 20 questões, resolvido durante o estudo.",
+          "para_que_serve": "Medir o entendimento do que acabou de ser estudado e apontar o reforço do dia.",
+          "o_que_nao_faz": "Não marca o tópico como VENCIDO, não conta para o pré-requisito de 70% do grupo e não queima tentativa — nem quando fica abaixo de 90%.",
+          "como_registrar": "Em scripts/progresso.json com \"gate\": false e \"escopo\": \"parcial\" ou \"misto\"."
+        },
         "quando": "Logo apos estudar o tema, no mesmo dia",
         "meta": 0.9,
         "aprovado_gera": "Tópico marcado como VENCIDO e liberado para compor o simulado de Nível 2 do grupo a que ele pertence",
@@ -33,6 +40,15 @@
         "quando": "Manhã do dia fixo do grupo, antes de qualquer conteúdo novo",
         "meta": 0.9,
         "pre_requisito": "Pelo menos 70% do peso dos tópicos do grupo já vencido no Nível 1",
+        "modo_rampa": {
+          "quando": "Enquanto o grupo não alcança os 70% de peso vencido no Nível 1 — inclusive na primeira semana, quando o grupo está em 0%.",
+          "o_que_e": "A manhã do dia do grupo roda mesmo assim, mas com um lote de rampa: só os tópicos do grupo já estudados, cerca de 4 questões por tópico, mínimo de 10 e teto no tamanho do lote oficial do grupo.",
+          "meta": 0.9,
+          "vale_como_gate": false,
+          "por_que": "Um lote de 50 questões sobre um grupo estudado pela metade mede sorteio, não domínio: reprovaria o grupo por conteúdo que ainda nem foi visto. A rampa preserva o rito da manhã e o hábito do cronômetro, e cresce sozinha à medida que os tópicos são estudados.",
+          "o_que_produz": "Lista de reforço do dia e a ordem dos próximos lotes de Nível 1 do grupo. Não aprova nem reprova o grupo.",
+          "saida_do_modo": "No primeiro dia em que o grupo passa dos 70% de peso vencido, a manhã volta a ser o simulado oficial de 50 ou 60 questões, que aí sim decide."
+        },
         "aprovado_gera": "Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal",
         "reprovado_gera": "Grupo permanece no Nivel 2 e repete na semana seguinte; as materias com pior liquido recebem revisao dirigida e novos lotes de Nivel 1 nos temas fracos"
       },
@@ -51,13 +67,13 @@
       }
     ],
     "rotina_diaria": {
-      "manha": "Simulado de Nivel 2 do grupo do dia (50 questoes, cronometrado) + revisao dirigida dos erros",
+      "manha": "Simulado de Nivel 2 do grupo do dia, cronometrado, + revisao dirigida dos erros. Enquanto o grupo nao chega a 70% de peso vencido, roda o lote de rampa (so os topicos ja estudados), que treina e orienta mas nao decide o grupo.",
       "tarde_noite": "Estudo de tema novo com o professor da materia + 20 questoes de Nivel 1 do tema estudado",
       "domingo": "Simulado de Nivel 3 (200 questoes) pela manha + relatorio semanal do mentor-desempenho a tarde"
     },
     "tempo_alvo": {
       "nivel_1": "20 questoes em ate 30 minutos",
-      "nivel_2": "50 questões em até 70 minutos; 60 questões em até 85 minutos",
+      "nivel_2": "50 questões em até 70 minutos; 60 questões em até 85 minutos; lote de rampa em até 1,4 minuto por questão",
       "nivel_3": "200 questoes em ate 4 horas (ritmo real de prova)"
     },
     "estrutura_dos_grupos": "Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é repartida entre dias. Os grupos reúnem matérias que compartilham norma ou vocabulário, de modo que estudar uma adianta a outra. Dentro do dia, a unidade de Nível 1 continua sendo o tópico numerado do edital.",

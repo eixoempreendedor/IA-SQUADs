@@ -254,24 +254,27 @@ O teto só morde quando os seis grupos estiverem ativos. No começo o pré-requi
 
 ## Rotina
 
-- **Manha (seg a sab):** Simulado de Nivel 2 do grupo do dia (50 questoes, cronometrado) + revisao dirigida dos erros
+- **Manha (seg a sab):** Simulado de Nivel 2 do grupo do dia, cronometrado, + revisao dirigida dos erros. Enquanto o grupo nao chega a 70% de peso vencido, roda o lote de rampa (so os topicos ja estudados), que treina e orienta mas nao decide o grupo.
 - **Tarde/noite (seg a sab):** Estudo de tema novo com o professor da materia + 20 questoes de Nivel 1 do tema estudado
 - **Domingo:** Simulado de Nivel 3 (200 questoes) pela manha + relatorio semanal do mentor-desempenho a tarde
 
-Tempo-alvo: **Nivel 1** 20 questoes em ate 30 minutos · **Nivel 2** 50 questões em até 70 minutos; 60 questões em até 85 minutos · **Nivel 3** 200 questoes em ate 4 horas (ritmo real de prova)
+Tempo-alvo: **Nivel 1** 20 questoes em ate 30 minutos · **Nivel 2** 50 questões em até 70 minutos; 60 questões em até 85 minutos; lote de rampa em até 1,4 minuto por questão · **Nivel 3** 200 questoes em ate 4 horas (ritmo real de prova)
 
 ## Regras de avanco e regressao
 
 **Nivel 1 — Tema**
 
+- Escopo do lote: O lote de Nível 1 cobre UM tópico numerado INTEIRO — todos os seus subtópicos. Lote que cobre só parte do tópico, ou que mistura tópicos diferentes num placar só, não é tentativa de Nível 1: entra como AFERIÇÃO DIAGNÓSTICA.
 - Aprovado (90%+): Tópico marcado como VENCIDO e liberado para compor o simulado de Nível 2 do grupo a que ele pertence
 - Reprovado: Aula de reforco com o professor da materia + 20 questoes novas em 48h (maximo 2 repeticoes antes de revisao completa do tema)
+- Afericao diagnostica: Lote parcial, misto ou menor que 20 questões, resolvido durante o estudo. Medir o entendimento do que acabou de ser estudado e apontar o reforço do dia. Não marca o tópico como VENCIDO, não conta para o pré-requisito de 70% do grupo e não queima tentativa — nem quando fica abaixo de 90%. (Em scripts/progresso.json com "gate": false e "escopo": "parcial" ou "misto".)
 
 **Nivel 2 — Grupo de conteudo**
 
 - Pre-requisito: Pelo menos 70% do peso dos tópicos do grupo já vencido no Nível 1
 - Aprovado (90%+): Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal
 - Reprovado: Grupo permanece no Nivel 2 e repete na semana seguinte; as materias com pior liquido recebem revisao dirigida e novos lotes de Nivel 1 nos temas fracos
+- Modo rampa (Enquanto o grupo não alcança os 70% de peso vencido no Nível 1 — inclusive na primeira semana, quando o grupo está em 0%.): A manhã do dia do grupo roda mesmo assim, mas com um lote de rampa: só os tópicos do grupo já estudados, cerca de 4 questões por tópico, mínimo de 10 e teto no tamanho do lote oficial do grupo. Meta de 90%, mas nao decide o grupo. Um lote de 50 questões sobre um grupo estudado pela metade mede sorteio, não domínio: reprovaria o grupo por conteúdo que ainda nem foi visto. A rampa preserva o rito da manhã e o hábito do cronômetro, e cresce sozinha à medida que os tópicos são estudados. No primeiro dia em que o grupo passa dos 70% de peso vencido, a manhã volta a ser o simulado oficial de 50 ou 60 questões, que aí sim decide.
 
 **Nivel 3 — Simulado geral**
 

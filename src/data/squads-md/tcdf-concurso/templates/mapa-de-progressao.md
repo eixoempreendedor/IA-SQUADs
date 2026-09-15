@@ -4,7 +4,7 @@
 
 Cada linha e uma unidade de Nivel 1 (20 questoes, 90% para vencer). Quando todos os topicos de um dia estiverem vencidos, o grupo daquele dia esta pronto para o simulado de Nivel 2.
 
-Status: `—` nao iniciado · `EM ESTUDO` · **`VENCIDO`** (>= 90% em 20 questoes) · `REFORCO` (reprovou uma vez) · `REVISAR` (reprovou duas vezes)
+Status: `—` nao iniciado · `EM ESTUDO` (ementa do topico ainda aberta) · `PRONTO P/ N1` (topico inteiro estudado, aguardando o lote) · **`VENCIDO`** (>= 90% em 20 questoes sobre o topico inteiro) · `REFORCO` (reprovou uma vez) · `REVISAR` (reprovou duas vezes)
 
 | Dia | Grupo | Materia | # | Topico | Peso | Status | Data |
 |---|---|---|---|---|---|---|---|
