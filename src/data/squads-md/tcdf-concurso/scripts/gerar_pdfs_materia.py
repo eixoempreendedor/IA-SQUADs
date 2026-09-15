@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
 """Gera um PDF por materia: a ementa inteira cruzada com os filtros do Gran.
 
-Duas folhas, em paisagem:
+Duas folhas em pe (A4 retrato):
 
   FOLHA 1 — MAPA DA EMENTA x FILTROS. Cada topico e cada subtopico do edital em
   uma linha, com a aula do curso ao lado e uma bolinha em cada coluna de filtro.
   O nome do filtro vai escrito a mao, em pe, no cabecalho da coluna; as bolinhas
   marcadas dizem o que aquele filtro esta sorteando.
 
-  FOLHA 2 — REGISTRO DOS SIMULADOS. O placar de cada filtro (nome, data, total,
-  acertos, erros, bruto) e o historico corrido: filtro, data, total, acertos,
-  erros, bruto, liquido e veredito.
+  FOLHA 2 — REGISTRO DOS SIMULADOS. Uma linha por lote resolvido: filtro, data,
+  total, acertos, erros, bruto, liquido e veredito.
 
-O layout se ajusta ao tamanho da materia: materia pequena sai em uma coluna
-larga e corpo grande; materia grande sai em duas colunas, com o corpo reduzido
-so o quanto for preciso para fechar em UMA folha. O que sobra de altura vira
-respiro entre as linhas, de modo que a folha fique cheia em qualquer caso —
-espaco em branco entre as linhas e onde a caneta trabalha.
+A materia inteira cabe na folha 1, qualquer que seja o tamanho dela: o corpo do
+texto encolhe so o quanto for preciso, e o que sobra de altura vira respiro
+entre as linhas e, depois, pauta de anotacao — folha cheia em qualquer caso.
 
 Uso:
     python3 scripts/gerar_pdfs_materia.py                      # todas as materias
@@ -32,7 +29,7 @@ from io import BytesIO
 from pathlib import Path
 
 from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4, landscape
+from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.platypus import Flowable, PageBreak, Paragraph, Spacer, Table, TableStyle
@@ -42,32 +39,35 @@ RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "scripts"))
 
 from gerar_pdfs import (  # noqa: E402
-    CABECA, CELULA, CLARO, DESTAQUE, FUNDO, LINHA, NOTA, SECAO,
+    CABECA, CELULA, CLARO, DESTAQUE, LINHA, NOTA, SECAO,
     Bolinha, documento, partes, slug,
 )
 from gerar_status import ler_progresso  # noqa: E402
 
 SAIDA = RAIZ / "pdf" / "materias"
-PAGINA = landscape(A4)
+PAGINA = A4
 MARGEM = 12 * mm
-FAIXA = 16 * mm
-TOPO = 23 * mm
-BASE = 12 * mm
+FAIXA = 14 * mm
+TOPO = 20 * mm
+BASE = 10 * mm
 CALHA = 7 * mm
 
 N_FILTROS = 8
 LARGURA_UTIL = PAGINA[0] - 2 * MARGEM
 ALTURA_UTIL = PAGINA[1] - TOPO - BASE
 
-PADDING = 1.2
+# O respiro minimo entre as linhas acompanha o corpo: em 12pt sobra folga, em
+# 7pt cada ponto fixo de padding custa 2 mm de folha ao longo de 55 linhas.
+PADDING_MINIMO = 0.8
 PADDING_MAXIMO = 6.0
-H_CAIXA = 18 * mm
+H_CAIXA = 15 * mm
 ZEBRA = colors.HexColor("#fafafa")
 
-# Layouts tentados em ordem de preferencia: primeiro a coluna unica com corpo
-# grande (materias curtas), depois duas colunas apertando o corpo (as longas).
-LAYOUTS = [(1, c) for c in (12.0, 11.0, 10.0, 9.2, 8.4)] + \
-          [(2, c) for c in (9.2, 8.6, 8.0, 7.6, 7.2, 6.9, 6.6, 6.3, 6.0)]
+# Corpos tentados, do mais confortavel ao mais apertado. Em retrato a coluna
+# unica e a unica opcao: partir a folha em duas deixaria 45 mm de texto, estreito
+# demais para o enunciado de um subtopico.
+LAYOUTS = [(1, c) for c in (12.0, 11.0, 10.0, 9.2, 8.6, 8.0, 7.6, 7.2,
+                            6.9, 6.6, 6.3, 6.0, 5.8)]
 
 MINI = CABECA.clone("mini", fontSize=6, leading=7)
 LINHAS_DO_HISTORICO = 12
@@ -78,12 +78,13 @@ class Medidas:
 
     def __init__(self, colunas: int, escala: float):
         self.colunas, self.escala = colunas, escala
-        self.l_filtro = max(5.6 * mm, 0.62 * mm * escala)
+        self.l_filtro = min(7 * mm, max(5.6 * mm, 0.62 * mm * escala))
         self.l_aula = max(9 * mm, 0.85 * mm * escala)
         self.l_coluna = (LARGURA_UTIL - CALHA) / 2 if colunas == 2 else LARGURA_UTIL
         self.l_texto = self.l_coluna - self.l_aula - N_FILTROS * self.l_filtro
         self.larguras = [self.l_texto, self.l_aula] + [self.l_filtro] * N_FILTROS
         self.raio = min(2.3 * mm, self.l_filtro * 0.28)
+        self.padding = max(PADDING_MINIMO, escala * 0.14)
         item = CELULA.clone("item", fontSize=escala, leading=escala * 1.2)
         self.topico = item.clone("topico", fontName="Helvetica-Bold")
         self.sub = item.clone("sub", fontSize=escala - 0.4, leading=escala * 1.17,
@@ -140,7 +141,7 @@ def altura_estimada(linha, m: Medidas) -> float:
     corpo = m.escala if e_topico else m.escala - 0.4
     util = m.l_texto - 3 - (0 if e_topico else m.escala * 0.9)
     n = max(1, math.ceil(stringWidth(texto, fonte, corpo) / util))
-    return n * corpo * 1.2 + 2 * PADDING
+    return n * corpo * 1.2 + 2 * m.padding
 
 
 def partir(linhas, m: Medidas):
@@ -180,8 +181,8 @@ def tabela_coluna(linhas, m: Medidas, respiro=0.0):
         ("LEFTPADDING", (0, 0), (0, -1), 3),
         ("LEFTPADDING", (1, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-        ("TOPPADDING", (0, 2), (-1, -1), PADDING + respiro),
-        ("BOTTOMPADDING", (0, 2), (-1, -1), PADDING + respiro),
+        ("TOPPADDING", (0, 2), (-1, -1), m.padding + respiro),
+        ("BOTTOMPADDING", (0, 2), (-1, -1), m.padding + respiro),
         ("LINEBEFORE", (2, 1), (2, -1), 0.7, CLARO),
         ("BOX", (0, 1), (-1, -1), 0.7, CLARO),
     ] + zebra + marcas))
@@ -190,11 +191,10 @@ def tabela_coluna(linhas, m: Medidas, respiro=0.0):
 
 def nota_de_uso():
     return Paragraph(
-        "Escreva o nome de cada filtro que você montar no Gran em pé, na caixa tracejada da coluna, "
-        "e marque a bolinha de cada tópico e subtópico que ele está sorteando — a coluna vira o "
-        "retrato do filtro. Linha sem nenhuma bolinha marcada é conteúdo que filtro nenhum está "
-        "testando. <b>AULA</b> = número da videoaula do Gran que cobre o tópico (o curso fatia e "
-        "reordena o programa, então não segue a numeração do edital).", NOTA)
+        "Escreva o nome do filtro em pé na caixa tracejada e marque a bolinha de cada tópico e "
+        "subtópico que ele sorteia — a coluna vira o retrato do filtro, e linha sem bolinha "
+        "nenhuma é conteúdo que filtro nenhum testa. <b>AULA</b> = videoaula do Gran que cobre o "
+        "tópico (o curso reordena o programa, não segue a numeração do edital).", NOTA)
 
 
 def pauta(linhas_pautadas: int):
@@ -234,30 +234,6 @@ def folha_do_mapa(linhas, m: Medidas, respiro=0.0, linhas_pautadas=0):
     return saida
 
 
-def tabela_placar():
-    rotulos = ["Nome do filtro", "Data do último lote", "Total de questões", "Acertos",
-               "Erros", "% bruto (meta 90%)"]
-    largura_rotulo = 100 * mm
-    l_coluna = (LARGURA_UTIL - largura_rotulo) / N_FILTROS
-    dados = [[Paragraph("PLACAR DE CADA FILTRO", CABECA), ""] +
-             [Paragraph(f"F{i}", MINI) for i in range(1, N_FILTROS + 1)]]
-    dados += [[Paragraph(f"<b>{r}</b>" if i == 0 else r, CELULA), ""] + [""] * N_FILTROS
-              for i, r in enumerate(rotulos)]
-    t = Table(dados, colWidths=[largura_rotulo - 1, 1] + [l_coluna] * N_FILTROS,
-              rowHeights=[6.5 * mm] + [7.5 * mm] * len(rotulos), hAlign="LEFT")
-    t.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), DESTAQUE),
-        ("SPAN", (0, 0), (1, 0)),
-        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-        ("ALIGN", (2, 0), (-1, -1), "CENTER"),
-        ("LEFTPADDING", (0, 0), (0, -1), 5),
-        ("GRID", (0, 0), (-1, -1), 0.4, LINHA),
-        ("BOX", (0, 0), (-1, -1), 0.8, CLARO),
-        ("ROWBACKGROUNDS", (0, 1), (1, -1), [FUNDO, colors.white]),
-    ] + [("SPAN", (0, i), (1, i)) for i in range(1, len(rotulos) + 1)]))
-    return t
-
-
 def tabela_registro(linhas):
     cab = ["Filtro", "Data", "Total", "Acertos", "Erros", "% Bruto", "% Líq.", "Veredito"]
     proporcoes = [0.26, 0.09, 0.07, 0.08, 0.07, 0.09, 0.08, 0.26]
@@ -277,15 +253,13 @@ def tabela_registro(linhas):
 
 def folha_do_registro(linhas_do_historico=None):
     return [
-        tabela_placar(),
-        Spacer(1, 12),
         Paragraph("REGISTRO DOS SIMULADOS DESTA MATÉRIA", SECAO),
         Paragraph(
             "Uma linha por lote resolvido. <b>Bruto</b> = acertos ÷ total, é ele que decide o "
             "avanço; <b>líquido</b> = (acertos − erros) ÷ total, é a régua da prova, onde cada erro "
-            "anula um acerto. Branco conta como erro: responda o lote inteiro. No <i>veredito</i>, "
-            "anote se o lote foi tentativa oficial de Nível 1 (tópico inteiro, 20 questões) ou "
-            "aferição.", NOTA),
+            "anula um acerto. Branco conta como erro: responda o lote inteiro. Em <i>filtro</i>, "
+            "repita o nome que você escreveu na coluna da folha 1; no <i>veredito</i>, anote se o "
+            "lote foi tentativa oficial de Nível 1 (tópico inteiro, 20 questões) ou aferição.", NOTA),
         Spacer(1, 4),
         tabela_registro(linhas_do_historico or LINHAS_DO_HISTORICO),
     ]
@@ -338,7 +312,7 @@ def layout_da_materia(linhas):
 
 def historico_que_cabe() -> int:
     """Maior numero de linhas do historico que ainda fecha a folha 2 em uma pagina."""
-    for n in range(24, 5, -1):
+    for n in range(40, 5, -1):
         if cabe_em_uma_folha(folha_do_registro(n)):
             return n
     return 6
@@ -364,7 +338,7 @@ def main() -> int:
 
     global LINHAS_DO_HISTORICO
     LINHAS_DO_HISTORICO = historico_que_cabe()
-    print(f"folha 2: placar dos {N_FILTROS} filtros + {LINHAS_DO_HISTORICO} linhas de historico")
+    print(f"folha 2: {LINHAS_DO_HISTORICO} linhas de registro")
 
     alvos = sys.argv[1:] or list(mats)
     SAIDA.mkdir(parents=True, exist_ok=True)
