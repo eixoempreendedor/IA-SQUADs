@@ -1,0 +1,329 @@
+{
+  "sistema": {
+    "nome": "Progressao por Niveis — 90% para avancar",
+    "fonte_das_questoes": "Gran Cursos (banco de questoes)",
+    "filtros_no_gran": {
+      "por_materia": "Cada matéria tem até 8 filtros livres (F1 a F8) na sua folha em pdf/materias/. O nome de cada um é escrito à mão no cabeçalho da coluna, e as bolinhas marcadas registram quais tópicos e subtópicos aquele filtro sorteia.",
+      "geral_n2": {
+        "nome": "GERAL N2",
+        "o_que_entra": "Todo tópico que venceu no Nível 1 — 18/20 sobre o tópico INTEIRO. Tópico com ementa aberta ou aprovado só em aferição não entra.",
+        "para_que_serve": "É o filtro que alimenta o simulado de Nível 2 do grupo e as revisões do que já está vencido; o pool do Nível 3 de domingo sai dele.",
+        "quando_atualizar": "No mesmo dia em que um tópico vence: acrescente-o ao filtro GERAL N2 no Gran e preencha a bolina da última coluna na folha da matéria.",
+        "por_que_separado": "O filtro geral é a única coisa que cresce de forma monotônica no sistema: um tópico só entra nele depois de provado, e sair de lá exige regressão explícita. É ele que transforma 'estudei' em 'já venci' na prática do banco de questões."
+      }
+    },
+    "criterio_de_aprovacao": {
+      "metrica": "bruto",
+      "formula": "acertos / total de questões do lote",
+      "meta": 0.9,
+      "regra_do_branco": "Questão deixada em branco conta como não-acerto no denominador. O lote precisa ser respondido inteiro — senão bastaria responder só o que se sabe para bater a meta.",
+      "metrica_secundaria": {
+        "nome": "líquido",
+        "formula": "(acertos - erros) / total de questões do lote",
+        "uso": "Acompanhamento obrigatório, mas NÃO decide avanço. É o placar que a prova real usa: cada erro anula um acerto (edital, subitem 9.11.2)."
+      },
+      "observacao": "O avanço é decidido pelo bruto (>= 90%). O líquido é sempre apurado e registrado ao lado, porque é ele que projeta a nota real: 90% bruto em um lote equivale a 80% líquido na régua da prova."
+    },
+    "niveis": [
+      {
+        "nivel": 1,
+        "nome": "Tema",
+        "unidade": "Um tópico numerado da ementa oficial (ex.: Direito Administrativo, tópico 3 — Ato administrativo)",
+        "questoes": 20,
+        "escopo_do_lote": "O lote de Nível 1 cobre UM tópico numerado INTEIRO — todos os seus subtópicos. Lote que cobre só parte do tópico, ou que mistura tópicos diferentes num placar só, não é tentativa de Nível 1: entra como AFERIÇÃO DIAGNÓSTICA.",
+        "afericao_diagnostica": {
+          "o_que_e": "Lote parcial, misto ou menor que 20 questões, resolvido durante o estudo.",
+          "para_que_serve": "Medir o entendimento do que acabou de ser estudado e apontar o reforço do dia.",
+          "o_que_nao_faz": "Não marca o tópico como VENCIDO, não conta para o pré-requisito de 70% do grupo e não queima tentativa — nem quando fica abaixo de 90%.",
+          "como_registrar": "Em scripts/progresso.json com \"gate\": false e \"escopo\": \"parcial\" ou \"misto\"."
+        },
+        "quando": "Logo apos estudar o tema, no mesmo dia",
+        "meta": 0.9,
+        "aprovado_gera": "Tópico marcado como VENCIDO e liberado para compor o simulado de Nível 2 do grupo a que ele pertence",
+        "reprovado_gera": "Aula de reforco com o professor da materia + 20 questoes novas em 48h (maximo 2 repeticoes antes de revisao completa do tema)"
+      },
+      {
+        "nivel": 2,
+        "nome": "Grupo de conteudo",
+        "unidade": "Um dos 6 grupos de conteúdo (conjunto de tópicos de matérias diferentes que se estudam juntos)",
+        "questoes": "50 ou 60, conforme o número de tópicos do grupo",
+        "quando": "Manhã do dia fixo do grupo, antes de qualquer conteúdo novo",
+        "meta": 0.9,
+        "pre_requisito": "Pelo menos 70% do peso dos tópicos do grupo já vencido no Nível 1",
+        "modo_rampa": {
+          "quando": "Enquanto o grupo não alcança os 70% de peso vencido no Nível 1 — inclusive na primeira semana, quando o grupo está em 0%.",
+          "o_que_e": "A manhã do dia do grupo roda mesmo assim, mas com um lote de rampa: só os tópicos do grupo já estudados, cerca de 4 questões por tópico, mínimo de 10 e teto no tamanho do lote oficial do grupo.",
+          "meta": 0.9,
+          "vale_como_gate": false,
+          "por_que": "Um lote de 50 questões sobre um grupo estudado pela metade mede sorteio, não domínio: reprovaria o grupo por conteúdo que ainda nem foi visto. A rampa preserva o rito da manhã e o hábito do cronômetro, e cresce sozinha à medida que os tópicos são estudados.",
+          "o_que_produz": "Lista de reforço do dia e a ordem dos próximos lotes de Nível 1 do grupo. Não aprova nem reprova o grupo.",
+          "saida_do_modo": "No primeiro dia em que o grupo passa dos 70% de peso vencido, a manhã volta a ser o simulado oficial de 50 ou 60 questões, que aí sim decide."
+        },
+        "aprovado_gera": "Grupo marcado como VENCIDO e incluido no pool do Nivel 3; o dia passa a rodar manutencao quinzenal",
+        "reprovado_gera": "Grupo permanece no Nivel 2 e repete na semana seguinte; as materias com pior liquido recebem revisao dirigida e novos lotes de Nivel 1 nos temas fracos"
+      },
+      {
+        "nivel": 3,
+        "nome": "Simulado geral",
+        "unidade": "Todos os tópicos dos grupos já vencidos no Nível 2",
+        "questoes": 200,
+        "quando": "Domingo de manha, cronometrado",
+        "meta": 0.9,
+        "composicao": "Proporcional ao peso de cada tópico vencido: 200 x (peso do tópico / soma dos pesos do pool)",
+        "inicio": "Quando o pool de matérias vencidas somar pelo menos 30 itens do edital (~20% da prova). Antes disso, rode um simulado reduzido proporcional, com mínimo de 50 questões",
+        "aprovado_gera": "Grupo confirmado no pool; segue em manutenção semanal sem voltar ao Nível 2",
+        "reprovado_gera": "Materia abaixo da meta entra em observacao: revisao dirigida na semana e novo lote de Nivel 2 no dia do seu grupo",
+        "regressao": "Grupo cujos tópicos, somados, ficarem abaixo de 0,90 em 2 domingos seguidos, ou abaixo de 0,80 em um único domingo, volta inteiro para o Nível 2 e reentra no seu dia da semana"
+      }
+    ],
+    "rotina_diaria": {
+      "manha": "Simulado de Nivel 2 do grupo do dia, cronometrado, + revisao dirigida dos erros. Enquanto o grupo nao chega a 70% de peso vencido, roda o lote de rampa (so os topicos ja estudados), que treina e orienta mas nao decide o grupo.",
+      "tarde_noite": "Estudo de tema novo com o professor da materia + 20 questoes de Nivel 1 do tema estudado",
+      "domingo": "Simulado de Nivel 3 (200 questoes) pela manha + relatorio semanal do mentor-desempenho a tarde"
+    },
+    "tempo_alvo": {
+      "nivel_1": "20 questoes em ate 30 minutos",
+      "nivel_2": "50 questões em até 70 minutos; 60 questões em até 85 minutos; lote de rampa em até 1,4 minuto por questão",
+      "nivel_3": "200 questoes em ate 4 horas (ritmo real de prova)"
+    },
+    "estrutura_dos_grupos": "Cada matéria do edital fica INTEIRA em um único dia — nenhuma matéria é repartida entre dias. Os grupos reúnem matérias que compartilham norma ou vocabulário, de modo que estudar uma adianta a outra. Dentro do dia, a unidade de Nível 1 continua sendo o tópico numerado do edital.",
+    "dimensionamento_do_nivel_2": {
+      "regra": "Lote de 50 questões para grupos com até 14 tópicos e de 60 para grupos com 15 ou mais, de modo que todo dia fique entre 3,5 e 4,5 questões por tópico",
+      "meta": "90% bruto: 45/50 ou 54/60",
+      "cota_minima_por_topico": 2,
+      "por_que": "Sem piso por tópico, um tópico de peso 1 recebia menos de duas questões e o grupo podia ser aprovado sem que ele fosse testado de verdade. O piso custa poucas questões e fecha essa brecha.",
+      "calculo": "Cada tópico recebe o piso; o restante é distribuído na proporção do peso, por maior resto, fechando o total exato"
+    },
+    "teto_semanal": {
+      "questoes": 450,
+      "por_que": "Com os seis grupos ativos, Nível 2 (330) + Nível 1 (~100) + Nível 3 (200) passa de 600 questões por semana, o que soma cerca de 24 horas só de resolução e correção. Acima de 450 o plano deixa de ser sustentável e o risco vira abandono, não reprovação.",
+      "ordem_de_corte": [
+        "1. Manutenção quinzenal dos grupos já vencidos (adia para a semana seguinte)",
+        "2. Segundo lote de Nível 1 no mesmo dia (fica um tópico novo por dia)",
+        "3. Simulado de domingo reduzido a 150 questões, mantida a proporção do pool"
+      ],
+      "nunca_cortar": [
+        "O lote de Nível 1 do tópico estudado no dia",
+        "O simulado de Nível 2 de um grupo ainda pendente"
+      ],
+      "observacao": "O teto só morde quando os seis grupos estiverem ativos. No começo o pré-requisito de 70% segura a carga, e cada grupo aprovado cai para manutenção quinzenal, devolvendo espaço."
+    }
+  },
+  "grupos": [
+    {
+      "id": "g2-orcamento-tributacao",
+      "dia": "Segunda-feira",
+      "nome": "Orçamento e Tributação",
+      "tese": "Abertura leve de propósito: AFO (Lei 4.320, LRF e o Decreto distrital 32.598/2010) com o Direito Tributário, que no recorte do edital para na receita — exatamente onde a receita pública de AFO começa. São 19 itens, o dia mais curto da semana: serve para entrar no ritmo antes do dia pesado.",
+      "materias": [
+        {
+          "id": "administracao-financeira-orcamentaria",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "id": "nocoes-direito-tributario",
+          "topicos": [
+            "1",
+            "2",
+            "3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g1-administrativo-contratacoes",
+      "dia": "Terça-feira",
+      "nome": "Direito Administrativo e Contratações",
+      "tese": "O dia mais pesado da semana, na terça, quando o ritmo já está montado: a maior matéria do edital inteira mais a matéria que é a continuação dela — Gestão de Contratos detalha o tópico 12 de Direito Administrativo, com a mesma Lei 14.133/2021 e o mesmo Decreto distrital 44.330/2023.",
+      "materias": [
+        {
+          "id": "direito-administrativo",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        },
+        {
+          "id": "gestao-de-contratos",
+          "topicos": [
+            "1",
+            "2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g3-controle-externo-estado",
+      "dia": "Quarta-feira",
+      "nome": "Controle Externo e Organização do Estado",
+      "tese": "O dia do cargo: a fiscalização contábil, financeira e orçamentária da CF (Constitucional, tópico 7.4), o tribunal que a exerce (Lei Orgânica e Regimento do TCDF) e a organização dos poderes no DF (LODF). As três normas tratam da mesma estrutura, em três alturas.",
+      "materias": [
+        {
+          "id": "direito-constitucional",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "id": "lei-organica-regimento-tcdf",
+          "topicos": [
+            "1",
+            "2"
+          ]
+        },
+        {
+          "id": "lei-organica-df",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g4-gestao-e-dados",
+      "dia": "Quinta-feira",
+      "nome": "Gestão e Dados",
+      "tese": "Administração Geral e Pública já traz governança, ferramentas, modelagem de processos, competências e projetos num programa só; Análise de Dados é o ferramental que sustenta tudo isso — estatística, Excel, visualização e IA aplicadas à gestão.",
+      "materias": [
+        {
+          "id": "administracao-geral-e-publica",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "id": "analise-dados-estatistica-ia",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g5-pessoal-e-civil",
+      "dia": "Sexta-feira",
+      "nome": "Servidores, Previdência e Direito Civil",
+      "tese": "O mesmo servidor em dois momentos — o estatuto distrital (LC 840/2011) e a aposentadoria (Previdenciário) — mais a parte geral do Código Civil, que dá a base de pessoas, prazos, prescrição e decadência usada nos dois.",
+      "materias": [
+        {
+          "id": "regime-juridico-servidores-df",
+          "topicos": [
+            "1"
+          ]
+        },
+        {
+          "id": "direito-previdenciario",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "id": "nocoes-direito-civil",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g6-instrumentais-df",
+      "dia": "Sábado",
+      "nome": "Instrumentais e Distrito Federal",
+      "tese": "Todo o bloco de conhecimentos básicos que resta: Português e Raciocínio Lógico, que se treinam por constância, mais os dois conteúdos de varredura (Distrito Federal e Primeiros Socorros). Vale 29 itens — mais do que qualquer matéria isolada do edital, exceto Direito Administrativo.",
+      "materias": [
+        {
+          "id": "lingua-portuguesa",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "id": "raciocinio-logico-matematica-financeira",
+          "topicos": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+          ]
+        },
+        {
+          "id": "conhecimentos-df-politica-mulheres",
+          "topicos": [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "id": "nocoes-primeiros-socorros",
+          "topicos": [
+            "1"
+          ]
+        }
+      ]
+    }
+  ]
+}

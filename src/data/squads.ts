@@ -220,6 +220,19 @@ export const squads: Squad[] = [
     tags: ["trends", "innovation", "market-intelligence", "viral", "competitive-intel", "emerging-tech", "social-media"],
     color: "#e11d48",
   },
+  // >>> tcdf-concurso (gerado por squads-md/tcdf-concurso/scripts/sync_app_registry.py)
+  {
+    id: "tcdf-concurso",
+    name: "TCDF Concurso Squad",
+    description: "Squad de 54 agentes para o concurso de Analista do TCDF (Cebraspe): professor, examinador e revisor para cada uma das 16 materias do edital, mais orquestrador, estrategista de prova, cronograma, discursiva e desempenho.",
+    version: "v1.0.0",
+    agents: 54,
+    tasks: 11,
+    workflows: 4,
+    tags: ["concurso-publico", "tcdf", "cebraspe", "controle-externo", "estudos", "questoes-certo-errado", "revisao-espacada", "discursiva", "cronograma", "direito"],
+    color: "#7c3aed",
+  },
+  // <<< tcdf-concurso
 ];
 
 export const inactiveSquads: Squad[] = [

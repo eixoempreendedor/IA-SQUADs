@@ -1,0 +1,937 @@
+{
+  "_comentario": "Mapa entre as aulas do curso do Gran Cursos e os topicos numerados do edital. O Gran fatia e reordena o programa: uma aula pode cobrir varios topicos e um topico pode estar em varias aulas.",
+  "curso": "Gran Cursos — TCDF Analista Administrativo de Controle Externo (ANACE)",
+  "conferido_em": "2026-09-13",
+  "extras_do_curso": [
+    {
+      "materia": "nocoes-direito-tributario",
+      "aula": 7,
+      "titulo": "Reforma Tributaria — Emenda Constitucional no 132/2023",
+      "situacao": "Nao e topico autonomo do edital. E o texto vigente da CF dentro dos topicos 2 (Sistema Tributario Nacional) e 3 (especies tributarias). Assistir sim; criar unidade de Nivel 1 separada, nao."
+    },
+    {
+      "materia": null,
+      "aula": null,
+      "titulo": "Modulo Prova Discursiva",
+      "situacao": "Reproduz o item 10 do edital (P4). Nao e conteudo programatico, e prova: no squad quem cobre e o agente redator-discursiva."
+    }
+  ],
+  "materias": {
+    "lingua-portuguesa": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 Compreensao e interpretacao de textos",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 3,
+        "rotulo": "6.1 Significacao das palavras",
+        "topicos": [
+          "6"
+        ],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 4,
+        "rotulo": "2 Reconhecimento de tipos e generos textuais",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 5,
+        "rotulo": "4 Coesao textual. 4.1 Referenciacao, substituicao, conectores",
+        "topicos": [
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 6,
+        "rotulo": "6 Reescrita. 6.2 Substituicao de palavras ou trechos",
+        "topicos": [
+          "6"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 7,
+        "rotulo": "5.1 Classes de palavras. 4.2 Tempos e modos verbais",
+        "topicos": [
+          "5",
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 8,
+        "rotulo": "5 Estrutura morfossintatica do periodo",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 9,
+        "rotulo": "5.3 Relacoes de subordinacao",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 10,
+        "rotulo": "5.2 Relacoes de coordenacao",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 11,
+        "rotulo": "5.4 Sinais de pontuacao",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 12,
+        "rotulo": "5.6 Regencia verbal e nominal",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 13,
+        "rotulo": "5.7 Sinal indicativo de crase",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 14,
+        "rotulo": "5.5 Concordancia verbal e nominal",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 15,
+        "rotulo": "5.8 Colocacao dos pronomes atonos",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 16,
+        "rotulo": "3 Dominio da ortografia oficial",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "lei-organica-df": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 a 5 — LODF inteira em uma aula",
+        "topicos": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "conhecimentos-df-politica-mulheres": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 Realidade do DF e RIDE (LC 94/1998, Decreto 7.469/2011)",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 3,
+        "rotulo": "2 Plano Distrital de Politica para Mulheres (2020-2023)",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "3 Lei 11.340/2006 — Maria da Penha",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "nocoes-primeiros-socorros": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 Cuidados iniciais, urgencia e emergencia, condutas basicas",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": true
+      }
+    ],
+    "raciocinio-logico-matematica-financeira": [
+      {
+        "aula": 1,
+        "rotulo": "1 a 4 — estruturas logicas, argumentacao, logica sentencial e de primeira ordem",
+        "topicos": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "5 Contagem e probabilidade. 6 Operacoes com conjuntos",
+        "topicos": [
+          "5",
+          "6"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "7 Matematica financeira",
+        "topicos": [
+          "7"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "lei-organica-regimento-tcdf": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 Lei Organica do TCDF (1.1 a 1.5)",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 3,
+        "rotulo": "2 Regimento Interno — Resolucao 296/2016, arts. 1o a 116",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": true
+      }
+    ],
+    "direito-constitucional": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 CF/1988. 1.1 Principios fundamentais",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 3,
+        "rotulo": "3 Direitos e garantias fundamentais",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 4,
+        "rotulo": "2 Aplicabilidade das normas constitucionais",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 5,
+        "rotulo": "4 Organizacao politico-administrativa do Estado",
+        "topicos": [
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 6,
+        "rotulo": "5 Administracao publica. 5.2 Servidores publicos",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 7,
+        "rotulo": "6 Poder Executivo",
+        "topicos": [
+          "6"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 8,
+        "rotulo": "7 Poder Legislativo. 7.4 Fiscalizacao contabil, financeira e orcamentaria",
+        "topicos": [
+          "7"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 9,
+        "rotulo": "8 Poder Judiciario",
+        "topicos": [
+          "8"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 10,
+        "rotulo": "9 Funcoes essenciais a justica",
+        "topicos": [
+          "9"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "direito-previdenciario": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 Seguridade social. 1.1 Origem e evolucao legislativa",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "1.2 Conceito, organizacao e principios constitucionais",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "2 RGPS — Lei 8.212/1991",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 5,
+        "rotulo": "Lei 8.213/1991",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 6,
+        "rotulo": "3 RPPS dos servidores publicos",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 7,
+        "rotulo": "RPPS/DF — LC distrital 769/2008",
+        "topicos": [
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 8,
+        "rotulo": "4 Previdencia complementar — LC 108/2001 e LC 109/2001",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 9,
+        "rotulo": "LC distrital 932/2017",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "nocoes-direito-civil": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 LINDB",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "2 Pessoas — naturais, juridicas e domicilio",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "3 Bens",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 5,
+        "rotulo": "4 Fatos juridicos. 5 Atos licitos e ilicitos. 6 Prescricao e decadencia",
+        "topicos": [
+          "4",
+          "5",
+          "6"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "nocoes-direito-tributario": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 Direito tributario. 1.1 Conceito. 2 STN. 2.1 Principios",
+        "topicos": [
+          "1",
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "1.2 Fontes do direito tributario",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "2.2 Limitacoes constitucionais ao poder de tributar",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 5,
+        "rotulo": "2.3 Reparticao das receitas tributarias",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 6,
+        "rotulo": "3 Tributo — conceito, natureza e especies (3.1 a 3.8)",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 7,
+        "rotulo": "Reforma Tributaria — EC 132/2023 (extra do curso)",
+        "topicos": [
+          "2",
+          "3"
+        ],
+        "extra": true,
+        "marcado_na_plataforma": false
+      }
+    ],
+    "analise-dados-estatistica-ia": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": true
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 Fundamentos de analise de dados",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "2 Estatistica descritiva e analise exploratoria",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "3 Visualizacao de dados. 3.1 Tipos de graficos. 3.2 Boas praticas",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 5,
+        "rotulo": "3 Storytelling. 3.3 Principios de narrativa com dados",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 6,
+        "rotulo": "4 IA generativa — prompt, vieses e etica",
+        "topicos": [
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 7,
+        "rotulo": "5 Excel. 5.2 Formulas logicas, financeiras e de busca",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 8,
+        "rotulo": "5.1 Excel avancado — Power Query",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 9,
+        "rotulo": "5.3 Tabelas dinamicas e grandes bases relacionais",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "direito-administrativo": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 Estado e administracao. 2 Direito administrativo. 6 Regime juridico-administrativo",
+        "topicos": [
+          "1",
+          "2",
+          "6"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "9 Organizacao administrativa e terceiro setor",
+        "topicos": [
+          "9"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "5 Poderes da administracao publica",
+        "topicos": [
+          "5"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 5,
+        "rotulo": "3 Ato administrativo",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 6,
+        "rotulo": "4 Agentes publicos, cargo, provimento e PAD",
+        "topicos": [
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 7,
+        "rotulo": "7 Responsabilidade civil do Estado",
+        "topicos": [
+          "7"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 8,
+        "rotulo": "8 Servicos publicos",
+        "topicos": [
+          "8"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 9,
+        "rotulo": "10 Controle da administracao publica (10.1 a 10.3)",
+        "topicos": [
+          "10"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 10,
+        "rotulo": "10.4 Improbidade administrativa — Lei 8.429/1992",
+        "topicos": [
+          "10"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 11,
+        "rotulo": "11 Lei 9.784/1999 c/c Lei distrital 2.834/2001",
+        "topicos": [
+          "11"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 12,
+        "rotulo": "12 Licitacoes e contratos. 12.1 Lei 14.133/2021",
+        "topicos": [
+          "12"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 13,
+        "rotulo": "12.3 Decreto distrital 44.330/2023",
+        "topicos": [
+          "12"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 14,
+        "rotulo": "13 Lei 12.527/2011 — LAI",
+        "topicos": [
+          "13"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 15,
+        "rotulo": "14 Lei 13.709/2018 — LGPD",
+        "topicos": [
+          "14"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "administracao-financeira-orcamentaria": [
+      {
+        "aula": 1,
+        "rotulo": "1 Orcamento publico. 1.1 Conceito. 1.2 Tecnicas orcamentarias",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "2.2 PPA. 2.3 LDO. 2.4 LOA",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "1.4 Ciclo orcamentario. 1.5 Processo orcamentario",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "2.1 Sistema de planejamento e orcamento federal. 2.5 Processo de orcamentacao",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 5,
+        "rotulo": "2.8 Creditos ordinarios e adicionais",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 6,
+        "rotulo": "1.3 Principios orcamentarios",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 7,
+        "rotulo": "4 Receita publica, estagios, fontes e divida ativa",
+        "topicos": [
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 8,
+        "rotulo": "5 Despesa publica. 2.6 Classificacoes. 2.7 Estrutura programatica. 7 Lei 4.320/1964",
+        "topicos": [
+          "5",
+          "2",
+          "7"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 9,
+        "rotulo": "3 Programacao e execucao orcamentaria e financeira",
+        "topicos": [
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 10,
+        "rotulo": "6 LRF. 5.5 Divida flutuante e fundada. 8 Transferencias voluntarias",
+        "topicos": [
+          "6",
+          "5",
+          "8"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 11,
+        "rotulo": "9 Decreto distrital 32.598/2010",
+        "topicos": [
+          "9"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "administracao-geral-e-publica": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "5 Funcoes administrativas. 1 Evolucao da administracao",
+        "topicos": [
+          "5",
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "6 Ferramentas da administracao. 7 Modelagem de processos (BPMN, EPC, IDEF0)",
+        "topicos": [
+          "6",
+          "7"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "8 Gestao de pessoas por competencias (CHA, APPO, lideranca, motivacao)",
+        "topicos": [
+          "8"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 5,
+        "rotulo": "2 Evolucao do setor publico brasileiro. 3 Patrimonialista, burocratica e gerencial",
+        "topicos": [
+          "2",
+          "3"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 6,
+        "rotulo": "4 Governanca publica — principios, praticas e mecanismos",
+        "topicos": [
+          "4"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 7,
+        "rotulo": "9 Gestao de projetos e portfolios. 9.1 PMBOK. 9.2 Cronogramas",
+        "topicos": [
+          "9"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 8,
+        "rotulo": "9.1 Prince",
+        "topicos": [
+          "9"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 9,
+        "rotulo": "9.1 Scrum e metodos ageis. 9.3 Kanban",
+        "topicos": [
+          "9"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "regime-juridico-servidores-df": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "1 LC 840/2011 — o estatuto inteiro em uma aula",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ],
+    "gestao-de-contratos": [
+      {
+        "aula": 1,
+        "rotulo": "Apresentacao da disciplina",
+        "topicos": [],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 2,
+        "rotulo": "1.1 Lei 14.133/2021. 1.3 Decreto distrital 44.330/2023",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 3,
+        "rotulo": "1.2 Instrucao Normativa SEGES/MP 5/2017",
+        "topicos": [
+          "1"
+        ],
+        "marcado_na_plataforma": false
+      },
+      {
+        "aula": 4,
+        "rotulo": "2 Elaboracao e fiscalizacao de contratos (2.1 a 2.7)",
+        "topicos": [
+          "2"
+        ],
+        "marcado_na_plataforma": false
+      }
+    ]
+  },
+  "sobre_a_marca_da_plataforma": "O campo 'marcado_na_plataforma' reproduz a marca CONCLUIDO do Gran e NAO significa conteudo estudado: ha material ja visto sem a marca e aula marcada sem dominio. Serve como indicio fraco. O que vale e o campo 'estudados' de progresso.json, declarado pelo candidato, e o que decide mesmo e o lote de 20 questoes."
+}

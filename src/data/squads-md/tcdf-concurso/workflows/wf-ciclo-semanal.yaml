@@ -1,0 +1,50 @@
+# Ciclo semanal de estudos — TCDF Concurso Squad
+# Rotina padrao de uma semana de preparacao, do planejamento ao diagnostico.
+
+workflow:
+  id: wf-ciclo-semanal
+  name: "Ciclo Semanal de Estudos"
+  trigger: "*ciclo-semanal"
+  entry_agent: reitor-tcdf
+  estimated_duration: "1 semana (15-25h de estudo)"
+  description: |
+    Loop semanal completo: diagnostico -> plano -> aulas -> questoes -> revisao -> discursiva -> relatorio.
+    O relatorio do mentor-desempenho realimenta o cronograma da semana seguinte.
+
+  type: cyclical
+  sequence:
+    - agent: reitor-tcdf
+      action: diagnosticar-e-rotear
+      creates: rota_da_semana
+    - agent: arquiteto-cronograma
+      action: montar-plano-de-estudos
+      creates: ciclo_da_semana
+    - agent: "<materia>-professor"
+      action: aula-de-topico
+      repeat: "por materia agendada no ciclo"
+      creates: aulas
+    - agent: "<materia>-examinador"
+      action: gerar-simulado
+      repeat: "apos cada aula"
+      creates: lotes_de_itens
+    - agent: "<materia>-revisor"
+      action: revisao-do-dia
+      repeat: "diario, conforme R1/R7/R30"
+      creates: flashcards_e_agenda
+    - agent: redator-discursiva
+      action: corrigir-discursiva
+      condition: "a partir de D-60 da prova"
+      creates: nota_p4
+    - agent: mentor-desempenho
+      action: diagnostico-de-erros
+      creates: relatorio_semanal
+    - agent: arquiteto-cronograma
+      action: montar-plano-de-estudos
+      input: relatorio_semanal
+      creates: ciclo_da_semana_seguinte
+
+  metricas:
+    - "Aderencia ao ciclo (horas liquidas / planejadas)"
+    - "Liquido por materia (acertos - erros)"
+    - "Revisoes executadas no prazo"
+    - "Projecao por bloco contra os minimos do edital"
