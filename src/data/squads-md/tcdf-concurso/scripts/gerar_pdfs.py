@@ -183,7 +183,12 @@ def caixa(texto_html, fundo=FUNDO, borda=DESTAQUE, largura=158 * mm):
 def documento(caminho, titulo: str, subtitulo: str, rodape: str, margem=26 * mm,
               tamanho=A4, faixa=20 * mm, topo=30 * mm, base=18 * mm):
     larg, alt = tamanho
-    doc = BaseDocTemplate(caminho if isinstance(caminho, str) else str(caminho), pagesize=tamanho,
+    # `caminho` pode ser um buffer em memoria (o medidor de paginas usa BytesIO).
+    # str() num buffer devolve "<_io.BytesIO object at 0x...>", que o reportlab
+    # aceita como NOME DE ARQUIVO e grava no disco — foi assim que milhares de
+    # arquivos de lixo entraram no repositorio.
+    destino = caminho if isinstance(caminho, str) or hasattr(caminho, "write") else str(caminho)
+    doc = BaseDocTemplate(destino, pagesize=tamanho,
                           leftMargin=margem, rightMargin=margem,
                           topMargin=topo, bottomMargin=base,
                           title=titulo, author="TCDF Concurso Squad")
