@@ -150,11 +150,15 @@ def main() -> int:
     linhas += ["| Domingo | [`pdf/7-domingo-nivel-3.pdf`](pdf/7-domingo-nivel-3.pdf) |", "",
                "Gerados por `python3 scripts/gerar_pdfs.py` — mudou grupo ou ementa, e so rodar de novo.", "",
                "### Uma folha por materia: a ementa cruzada com os filtros do Gran", "",
-               f"Em [`pdf/materias/`](pdf/materias/), um PDF por materia ({len(mats)} no total). Cada topico e cada "
-               "subtopico do edital em uma linha, com a aula do curso ao lado e oito colunas de bolinhas. O nome de "
-               "cada filtro montado no Gran e escrito em pe no cabecalho da coluna; as bolinhas marcadas dizem o que "
-               "aquele filtro sorteia. No pe das mesmas colunas entra o resultado do ultimo lote de cada filtro, e "
-               "abaixo o registro corrido (filtro, data, total, acertos, erros, bruto e liquido).", "",
+               f"Em [`pdf/materias/`](pdf/materias/), um PDF por materia ({len(mats)} no total), em paisagem e em "
+               "**duas folhas**. A folha 1 e a materia inteira: cada topico e cada subtopico do edital em uma linha, "
+               "a aula do curso ao lado e oito colunas de bolinhas. O nome de cada filtro montado no Gran e escrito "
+               "em pe no cabecalho da coluna; as bolinhas marcadas dizem o que aquele filtro sorteia. A folha 2 e o "
+               "registro: o placar de cada filtro (nome, data, total, acertos, erros, bruto) e o historico corrido "
+               "com filtro, data, total, acertos, erros, bruto, liquido e veredito.", "",
+               "O layout se ajusta a materia: as curtas saem em uma coluna larga com corpo grande e o que sobra vira "
+               "pauta de anotacao; as longas saem em duas colunas, com o corpo reduzido so o quanto for preciso para "
+               "fechar em uma folha. Direito Administrativo, a maior, cabe inteira — 14 topicos e 41 subtopicos.", "",
                "A folha responde a pergunta que o mapa por dia nao responde: **qual pedaco da ementa cada filtro "
                "esta realmente cobrindo** — e, por eliminacao, o que nenhum filtro esta testando.", "",
                "```bash",

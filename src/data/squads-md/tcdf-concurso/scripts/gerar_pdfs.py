@@ -180,28 +180,30 @@ def caixa(texto_html, fundo=FUNDO, borda=DESTAQUE, largura=158 * mm):
     return t
 
 
-def documento(caminho: Path, titulo: str, subtitulo: str, rodape: str, margem=26 * mm):
-    doc = BaseDocTemplate(str(caminho), pagesize=A4,
+def documento(caminho, titulo: str, subtitulo: str, rodape: str, margem=26 * mm,
+              tamanho=A4, faixa=20 * mm, topo=30 * mm, base=18 * mm):
+    larg, alt = tamanho
+    doc = BaseDocTemplate(caminho if isinstance(caminho, str) else str(caminho), pagesize=tamanho,
                           leftMargin=margem, rightMargin=margem,
-                          topMargin=30 * mm, bottomMargin=18 * mm,
+                          topMargin=topo, bottomMargin=base,
                           title=titulo, author="TCDF Concurso Squad")
 
     def moldura(canvas, _doc):
         canvas.saveState()
         canvas.setFillColor(DESTAQUE)
-        canvas.rect(0, A4[1] - 20 * mm, A4[0], 20 * mm, stroke=0, fill=1)
+        canvas.rect(0, alt - faixa, larg, faixa, stroke=0, fill=1)
         canvas.setFillColor(colors.white)
         canvas.setFont("Helvetica-Bold", 13)
-        canvas.drawString(margem, A4[1] - 13.5 * mm, titulo)
+        canvas.drawString(margem, alt - faixa * 0.675, titulo)
         canvas.setFont("Helvetica", 8.5)
-        canvas.drawRightString(A4[0] - margem, A4[1] - 13 * mm, subtitulo)
+        canvas.drawRightString(larg - margem, alt - faixa * 0.65, subtitulo)
         canvas.setFillColor(CINZA)
         canvas.setFont("Helvetica", 7.5)
-        canvas.drawString(margem, 11 * mm, rodape)
-        canvas.drawRightString(A4[0] - margem, 11 * mm, f"pág. {canvas.getPageNumber()}")
+        canvas.drawString(margem, base * 0.61, rodape)
+        canvas.drawRightString(larg - margem, base * 0.61, f"pág. {canvas.getPageNumber()}")
         canvas.setStrokeColor(LINHA)
         canvas.setLineWidth(0.4)
-        canvas.line(margem, 14 * mm, A4[0] - margem, 14 * mm)
+        canvas.line(margem, base * 0.78, larg - margem, base * 0.78)
         canvas.restoreState()
 
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="corpo")

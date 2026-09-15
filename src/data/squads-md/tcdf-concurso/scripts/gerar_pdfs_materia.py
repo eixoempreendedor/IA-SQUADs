@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 """Gera um PDF por materia: a ementa inteira cruzada com os filtros do Gran.
 
-A folha de cada materia tem tres partes:
+Duas folhas, em paisagem:
 
-  1. MAPA DA EMENTA x FILTROS — cada topico e cada subtopico do edital em uma
-     linha, com a aula do curso ao lado e uma bolinha em cada coluna de filtro.
-     O nome do filtro vai escrito a mao no cabecalho da coluna; as bolinhas
-     marcadas dizem o que aquele filtro esta sorteando.
-  2. RESULTADO DE CADA FILTRO — no pe das mesmas colunas, data, total, acertos
-     e percentual do ultimo lote daquele filtro.
-  3. REGISTRO DOS SIMULADOS — historico corrido: filtro, data, total, acertos,
-     erros, bruto e liquido.
+  FOLHA 1 — MAPA DA EMENTA x FILTROS. Cada topico e cada subtopico do edital em
+  uma linha, com a aula do curso ao lado e uma bolinha em cada coluna de filtro.
+  O nome do filtro vai escrito a mao, em pe, no cabecalho da coluna; as bolinhas
+  marcadas dizem o que aquele filtro esta sorteando.
+
+  FOLHA 2 — REGISTRO DOS SIMULADOS. O placar de cada filtro (nome, data, total,
+  acertos, erros, bruto) e o historico corrido: filtro, data, total, acertos,
+  erros, bruto, liquido e veredito.
+
+O layout se ajusta ao tamanho da materia: materia pequena sai em uma coluna
+larga e corpo grande; materia grande sai em duas colunas, com o corpo reduzido
+so o quanto for preciso para fechar em UMA folha. O que sobra de altura vira
+respiro entre as linhas, de modo que a folha fique cheia em qualquer caso —
+espaco em branco entre as linhas e onde a caneta trabalha.
 
 Uso:
     python3 scripts/gerar_pdfs_materia.py                      # todas as materias
@@ -19,46 +25,78 @@ Uso:
 from __future__ import annotations
 
 import json
+import math
+import re
 import sys
+from io import BytesIO
 from pathlib import Path
 
 from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.units import mm
-from reportlab.platypus import Flowable, KeepTogether, Paragraph, Spacer, Table, TableStyle
+from reportlab.pdfbase.pdfmetrics import stringWidth
+from reportlab.platypus import Flowable, PageBreak, Paragraph, Spacer, Table, TableStyle
+from reportlab.platypus.doctemplate import LayoutError
 
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "scripts"))
 
 from gerar_pdfs import (  # noqa: E402
-    CABECA, CELULA, CINZA, CLARO, DESTAQUE, FUNDO, LINHA, NOTA, SECAO,
-    Bolinha, caixa, documento, partes, slug,
+    CABECA, CELULA, CLARO, DESTAQUE, FUNDO, LINHA, NOTA, SECAO,
+    Bolinha, documento, partes, slug,
 )
 from gerar_status import ler_progresso  # noqa: E402
 
 SAIDA = RAIZ / "pdf" / "materias"
-MARGEM = 18 * mm
+PAGINA = landscape(A4)
+MARGEM = 12 * mm
+FAIXA = 16 * mm
+TOPO = 23 * mm
+BASE = 12 * mm
+CALHA = 7 * mm
+
 N_FILTROS = 8
+LARGURA_UTIL = PAGINA[0] - 2 * MARGEM
+ALTURA_UTIL = PAGINA[1] - TOPO - BASE
 
-L_TEXTO = 104 * mm
-L_AULA = 14 * mm
-L_FILTRO = 7 * mm
-LARGURAS = [L_TEXTO, L_AULA] + [L_FILTRO] * N_FILTROS
-LARGURA_TOTAL = sum(LARGURAS)
+PADDING = 1.2
+PADDING_MAXIMO = 6.0
+H_CAIXA = 18 * mm
+ZEBRA = colors.HexColor("#fafafa")
 
-ITEM = CELULA.clone("item", fontSize=8.6, leading=10.8)
-ITEM_TOP = ITEM.clone("itemtop", fontName="Helvetica-Bold")
-ITEM_SUB = ITEM.clone("itemsub", fontSize=8, leading=10, textColor=colors.HexColor("#374151"),
-                      leftIndent=9)
-AULA = CELULA.clone("aula", fontSize=7.4, leading=9, textColor=DESTAQUE)
-MINI = CABECA.clone("mini", fontSize=6.5, leading=8)
+# Layouts tentados em ordem de preferencia: primeiro a coluna unica com corpo
+# grande (materias curtas), depois duas colunas apertando o corpo (as longas).
+LAYOUTS = [(1, c) for c in (12.0, 11.0, 10.0, 9.2, 8.4)] + \
+          [(2, c) for c in (9.2, 8.6, 8.0, 7.6, 7.2, 6.9, 6.6, 6.3, 6.0)]
+
+MINI = CABECA.clone("mini", fontSize=6, leading=7)
+LINHAS_DO_HISTORICO = 12
+
+
+class Medidas:
+    """Larguras e raios de um layout — tudo deriva do corpo do texto."""
+
+    def __init__(self, colunas: int, escala: float):
+        self.colunas, self.escala = colunas, escala
+        self.l_filtro = max(5.6 * mm, 0.62 * mm * escala)
+        self.l_aula = max(9 * mm, 0.85 * mm * escala)
+        self.l_coluna = (LARGURA_UTIL - CALHA) / 2 if colunas == 2 else LARGURA_UTIL
+        self.l_texto = self.l_coluna - self.l_aula - N_FILTROS * self.l_filtro
+        self.larguras = [self.l_texto, self.l_aula] + [self.l_filtro] * N_FILTROS
+        self.raio = min(2.3 * mm, self.l_filtro * 0.28)
+        item = CELULA.clone("item", fontSize=escala, leading=escala * 1.2)
+        self.topico = item.clone("topico", fontName="Helvetica-Bold")
+        self.sub = item.clone("sub", fontSize=escala - 0.4, leading=escala * 1.17,
+                              leftIndent=escala * 0.9, textColor=colors.HexColor("#374151"))
+        self.aula = item.clone("aula", fontSize=escala - 1.1, leading=escala, textColor=DESTAQUE)
 
 
 class CaixaDoFiltro(Flowable):
     """Cabecalho da coluna: caixa alta e vazia, para escrever o nome do filtro em pe."""
 
-    def __init__(self, largura=L_FILTRO - 1.4 * mm, altura=27 * mm):
+    def __init__(self, largura):
         super().__init__()
-        self.width, self.height = largura, altura
+        self.width, self.height = largura - 1.2 * mm, H_CAIXA - 2 * mm
 
     def draw(self):
         c = self.canv
@@ -77,158 +115,243 @@ def aulas_da_materia(gran: dict, mid: str) -> dict[str, list[int]]:
     return saida
 
 
-def linha(texto, estilo, aula="", cheia=False):
-    return [Paragraph(texto, estilo), Paragraph(aula, AULA)] + \
-           [Bolinha(raio=2.0 * mm, cheia=cheia) for _ in range(N_FILTROS)]
-
-
-def tabela_caixas_de_filtro():
-    """Faixa onde o nome de cada filtro e escrito em pe, alinhada com as colunas do mapa."""
-    dados = [[Paragraph("Escreva aqui, em pé, o nome de cada filtro que você montar no Gran  →",
-                        NOTA), ""] + [CaixaDoFiltro() for _ in range(N_FILTROS)]]
-    t = Table(dados, colWidths=LARGURAS, rowHeights=[29 * mm])
-    t.setStyle(TableStyle([
-        ("VALIGN", (0, 0), (1, 0), "BOTTOM"),
-        ("VALIGN", (2, 0), (-1, 0), "MIDDLE"),
-        ("ALIGN", (0, 0), (1, 0), "RIGHT"),
-        ("ALIGN", (2, 0), (-1, 0), "CENTER"),
-        ("LEFTPADDING", (0, 0), (-1, 0), 0),
-        ("RIGHTPADDING", (0, 0), (1, 0), 6),
-        ("RIGHTPADDING", (2, 0), (-1, 0), 0),
-        ("BOTTOMPADDING", (0, 0), (-1, 0), 4),
-    ]))
-    return t
-
-
-def tabela_mapa(materia, aulas, estado):
-    rotulos = [Paragraph("TÓPICO E SUBTÓPICO DO EDITAL", CABECA), Paragraph("AULA", CABECA)] + \
-              [Paragraph(f"F{i}", MINI) for i in range(1, N_FILTROS + 1)]
-    dados, estilos = [rotulos], []
-    alturas = [6.5 * mm]
-
+def linhas_da_materia(materia, aulas, estado):
+    """[(e_topico, texto, aula, bolinha_cheia)] na ordem da ementa."""
+    saida = []
     for t in materia["ementa"]:
         n = t["n"]
         numero, titulo, subs = partes(t["texto"])
         e = estado["estudo"].get((materia["id"], n), {})
         vistos = set(e.get("subtopicos", []))
         ag = ", ".join(str(x) for x in aulas.get(n, [])) or "—"
-        if len(dados) > 1:
-            estilos.append(("LINEABOVE", (0, len(dados)), (-1, len(dados)), 0.6, CLARO))
-        dados.append(linha(f"<b>{numero or n}.</b> {titulo}", ITEM_TOP, ag,
-                           cheia=bool(e) and e.get("completo", True)))
-        alturas.append(None)
+        saida.append((True, f"<b>{numero or n}.</b> {titulo}", ag,
+                      bool(e) and e.get("completo", True)))
         for s in subs:
-            dados.append(linha(s, ITEM_SUB, cheia=s.split()[0] in vistos))
-            alturas.append(None)
+            saida.append((False, s, "", s.split()[0] in vistos))
         for s in t.get("subtopicos_sugeridos", []):
-            dados.append(linha(f"{s} <font size=6.5>(sugerido)</font>", ITEM_SUB))
-            alturas.append(None)
+            saida.append((False, f"{s} <font size=5.5>(sugerido)</font>", "", False))
+    return saida
 
-    t = Table(dados, colWidths=LARGURAS, rowHeights=alturas, repeatRows=1)
+
+def altura_estimada(linha, m: Medidas) -> float:
+    """Altura da celula em pontos — mede a largura real da string na fonte usada."""
+    e_topico, texto = linha[0], re.sub(r"<[^>]+>", "", linha[1])
+    fonte = "Helvetica-Bold" if e_topico else "Helvetica"
+    corpo = m.escala if e_topico else m.escala - 0.4
+    util = m.l_texto - 3 - (0 if e_topico else m.escala * 0.9)
+    n = max(1, math.ceil(stringWidth(texto, fonte, corpo) / util))
+    return n * corpo * 1.2 + 2 * PADDING
+
+
+def partir(linhas, m: Medidas):
+    """Divide a ementa em duas colunas, cortando sempre no inicio de um topico."""
+    if m.colunas == 1:
+        return linhas, []
+    alturas = [altura_estimada(x, m) for x in linhas]
+    total = sum(alturas)
+    cortes = [i for i, x in enumerate(linhas) if x[0] and i > 0] or [len(linhas)]
+    melhor = min(cortes, key=lambda i: abs(sum(alturas[:i]) - total / 2))
+    return linhas[:melhor], linhas[melhor:]
+
+
+def tabela_coluna(linhas, m: Medidas, respiro=0.0):
+    caixas = ["", ""] + [CaixaDoFiltro(m.l_filtro) for _ in range(N_FILTROS)]
+    rotulos = [Paragraph("TÓPICO E SUBTÓPICO DO EDITAL", MINI), Paragraph("AULA", MINI)] + \
+              [Paragraph(f"F{i}", MINI) for i in range(1, N_FILTROS + 1)]
+    dados, marcas, zebra = [caixas, rotulos], [], []
+
+    for i, (e_topico, texto, aula, cheia) in enumerate(linhas):
+        if e_topico and len(dados) > 2:
+            marcas.append(("LINEABOVE", (0, len(dados)), (-1, len(dados)), 0.5, CLARO))
+        if i % 2:
+            zebra.append(("BACKGROUND", (0, len(dados)), (-1, len(dados)), ZEBRA))
+        dados.append([Paragraph(texto, m.topico if e_topico else m.sub),
+                      Paragraph(aula, m.aula)] +
+                     [Bolinha(raio=m.raio, cheia=cheia) for _ in range(N_FILTROS)])
+
+    t = Table(dados, colWidths=m.larguras,
+              rowHeights=[H_CAIXA, 5 * mm] + [None] * len(linhas), hAlign="LEFT")
     t.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), DESTAQUE),
-        ("VALIGN", (0, 0), (-1, 0), "MIDDLE"),
-        ("VALIGN", (0, 1), (-1, -1), "TOP"),
+        ("BACKGROUND", (0, 1), (-1, 1), DESTAQUE),
+        ("VALIGN", (0, 0), (-1, 1), "MIDDLE"),
+        ("VALIGN", (0, 2), (-1, -1), "TOP"),
         ("ALIGN", (2, 0), (-1, -1), "CENTER"),
-        ("ALIGN", (1, 1), (1, -1), "CENTER"),
-        ("LEFTPADDING", (0, 0), (0, -1), 4),
+        ("ALIGN", (1, 2), (1, -1), "CENTER"),
+        ("LEFTPADDING", (0, 0), (0, -1), 3),
         ("LEFTPADDING", (1, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-        ("TOPPADDING", (0, 1), (-1, -1), 2.5),
-        ("BOTTOMPADDING", (0, 1), (-1, -1), 2.5),
-        ("LINEBEFORE", (2, 0), (2, -1), 0.8, CLARO),
-        ("BOX", (0, 0), (-1, -1), 0.8, CLARO),
-    ] + estilos))
+        ("TOPPADDING", (0, 2), (-1, -1), PADDING + respiro),
+        ("BOTTOMPADDING", (0, 2), (-1, -1), PADDING + respiro),
+        ("LINEBEFORE", (2, 1), (2, -1), 0.7, CLARO),
+        ("BOX", (0, 1), (-1, -1), 0.7, CLARO),
+    ] + zebra + marcas))
     return t
 
 
-def tabela_resultado_por_filtro():
-    """Pe das colunas: o ultimo lote de cada filtro, alinhado com o mapa acima."""
-    rotulos = ["Nome do filtro", "Data do último lote", "Total de questões",
-               "Acertos", "% bruto (meta 90%)"]
-    dados = [[Paragraph(f"<b>{r}</b>" if i == 0 else r, CELULA), ""] + [""] * N_FILTROS
-             for i, r in enumerate(rotulos)]
-    dados.insert(0, [Paragraph("RESULTADO DE CADA FILTRO", CABECA), ""] +
-                 [Paragraph(f"F{i}", MINI) for i in range(1, N_FILTROS + 1)])
-    t = Table(dados, colWidths=LARGURAS,
-              rowHeights=[6.5 * mm] + [7.5 * mm] * len(rotulos), repeatRows=1)
+def nota_de_uso():
+    return Paragraph(
+        "Escreva o nome de cada filtro que você montar no Gran em pé, na caixa tracejada da coluna, "
+        "e marque a bolinha de cada tópico e subtópico que ele está sorteando — a coluna vira o "
+        "retrato do filtro. Linha sem nenhuma bolinha marcada é conteúdo que filtro nenhum está "
+        "testando. <b>AULA</b> = número da videoaula do Gran que cobre o tópico (o curso fatia e "
+        "reordena o programa, então não segue a numeração do edital).", NOTA)
+
+
+def pauta(linhas_pautadas: int):
+    """Sobra da folha vira espaco pautado para anotar o que caiu no filtro."""
+    dados = [[Paragraph("ANOTAÇÕES — o que o filtro cobrou e onde doeu", CABECA)]] + \
+            [[""] for _ in range(linhas_pautadas)]
+    t = Table(dados, colWidths=[LARGURA_UTIL],
+              rowHeights=[6.5 * mm] + [7.5 * mm] * linhas_pautadas, hAlign="LEFT")
+    t.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), DESTAQUE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 5),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LINEBELOW", (0, 1), (-1, -1), 0.4, LINHA),
+        ("BOX", (0, 0), (-1, -1), 0.7, CLARO),
+    ]))
+    return t
+
+
+def folha_do_mapa(linhas, m: Medidas, respiro=0.0, linhas_pautadas=0):
+    esq, dir_ = partir(linhas, m)
+    corpo = tabela_coluna(esq, m, respiro)
+    if dir_:
+        lado = Table([[corpo, tabela_coluna(dir_, m, respiro)]],
+                     colWidths=[m.l_coluna, m.l_coluna + CALHA], hAlign="LEFT")
+        lado.setStyle(TableStyle([
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ("LEFTPADDING", (0, 0), (0, 0), 0),
+            ("LEFTPADDING", (1, 0), (1, 0), CALHA),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+            ("TOPPADDING", (0, 0), (-1, -1), 0),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+        ]))
+        corpo = lado
+    saida = [nota_de_uso(), Spacer(1, 5), corpo]
+    if linhas_pautadas:
+        saida += [Spacer(1, 10), pauta(linhas_pautadas)]
+    return saida
+
+
+def tabela_placar():
+    rotulos = ["Nome do filtro", "Data do último lote", "Total de questões", "Acertos",
+               "Erros", "% bruto (meta 90%)"]
+    largura_rotulo = 100 * mm
+    l_coluna = (LARGURA_UTIL - largura_rotulo) / N_FILTROS
+    dados = [[Paragraph("PLACAR DE CADA FILTRO", CABECA), ""] +
+             [Paragraph(f"F{i}", MINI) for i in range(1, N_FILTROS + 1)]]
+    dados += [[Paragraph(f"<b>{r}</b>" if i == 0 else r, CELULA), ""] + [""] * N_FILTROS
+              for i, r in enumerate(rotulos)]
+    t = Table(dados, colWidths=[largura_rotulo - 1, 1] + [l_coluna] * N_FILTROS,
+              rowHeights=[6.5 * mm] + [7.5 * mm] * len(rotulos), hAlign="LEFT")
     t.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, 0), DESTAQUE),
         ("SPAN", (0, 0), (1, 0)),
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("ALIGN", (2, 0), (-1, -1), "CENTER"),
-        ("LEFTPADDING", (0, 0), (0, -1), 4),
+        ("LEFTPADDING", (0, 0), (0, -1), 5),
         ("GRID", (0, 0), (-1, -1), 0.4, LINHA),
         ("BOX", (0, 0), (-1, -1), 0.8, CLARO),
-        ("SPAN", (0, 1), (1, 1)),
-        ("SPAN", (0, 2), (1, 2)),
-        ("SPAN", (0, 3), (1, 3)),
-        ("SPAN", (0, 4), (1, 4)),
-        ("SPAN", (0, 5), (1, 5)),
         ("ROWBACKGROUNDS", (0, 1), (1, -1), [FUNDO, colors.white]),
-    ]))
+    ] + [("SPAN", (0, i), (1, i)) for i in range(1, len(rotulos) + 1)]))
     return t
 
 
-def tabela_registro(linhas=12):
+def tabela_registro(linhas):
     cab = ["Filtro", "Data", "Total", "Acertos", "Erros", "% Bruto", "% Líq.", "Veredito"]
-    larguras = [46 * mm, 20 * mm, 15 * mm, 18 * mm, 15 * mm, 18 * mm, 16 * mm, 26 * mm]
+    proporcoes = [0.26, 0.09, 0.07, 0.08, 0.07, 0.09, 0.08, 0.26]
     dados = [[Paragraph(c, CABECA) for c in cab]] + [[""] * len(cab) for _ in range(linhas)]
-    t = Table(dados, colWidths=larguras, rowHeights=[7 * mm] + [7.5 * mm] * linhas, repeatRows=1)
+    t = Table(dados, colWidths=[LARGURA_UTIL * p for p in proporcoes],
+              rowHeights=[7 * mm] + [7.2 * mm] * linhas, hAlign="LEFT")
     t.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, 0), DESTAQUE),
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("ALIGN", (1, 0), (-1, -1), "CENTER"),
         ("GRID", (0, 0), (-1, -1), 0.4, LINHA),
         ("BOX", (0, 0), (-1, -1), 0.7, CLARO),
-        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#fafafa")]),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, ZEBRA]),
     ]))
     return t
 
 
-def pdf_da_materia(materia, gran, estado, dia):
-    aulas = aulas_da_materia(gran, materia["id"])
-    n_top = len(materia["ementa"])
-    peso = sum(t["peso"] for t in materia["ementa"])
-    arq = SAIDA / f"{slug(materia['nome'])}.pdf"
-    doc = documento(arq, materia["nome"].upper(),
-                    f"{materia['bloco']} · {dia}",
-                    "TCDF / ANACE 2026 · mapa da ementa por filtro do Gran — meta 90% bruto",
-                    margem=MARGEM)
-
-    hist = [caixa(largura=LARGURA_TOTAL, texto_html=(
-        f"<b>{materia['nome']}</b> — {n_top} tópicos · {materia['itens_estimados']} itens estimados "
-        f"do edital · bloco {materia['bloco']} · estudada na <b>{dia}</b><br/><br/>"
-        "<b>Como usar:</b> monte o filtro no Gran, escreva o nome dele em pé no cabeçalho de uma "
-        "coluna (F1, F2, …) e marque a bolinha de cada tópico e subtópico que aquele filtro está "
-        "sorteando. A coluna passa a ser o retrato do filtro: o que ele cobre e o que ele deixa de "
-        "fora.<br/>"
-        "<font size=8 color='#6b7280'>A coluna <i>AULA</i> traz o número da aula do curso que cobre "
-        "o tópico — o Gran fatia e reordena o programa, então a numeração das aulas não é a do "
-        "edital. Um tópico sem bolinha marcada em nenhuma coluna é conteúdo que nenhum filtro seu "
-        "está testando.</font>"))]
-    hist.append(Spacer(1, 8))
-    hist.append(Paragraph("MAPA DA EMENTA × FILTROS", SECAO))
-    hist.append(tabela_caixas_de_filtro())
-    hist.append(tabela_mapa(materia, aulas, estado))
-    hist.append(Spacer(1, 10))
-    hist.append(KeepTogether(tabela_resultado_por_filtro()))
-    hist.append(Spacer(1, 12))
-
-    hist.append(KeepTogether([
+def folha_do_registro(linhas_do_historico=None):
+    return [
+        tabela_placar(),
+        Spacer(1, 12),
         Paragraph("REGISTRO DOS SIMULADOS DESTA MATÉRIA", SECAO),
         Paragraph(
             "Uma linha por lote resolvido. <b>Bruto</b> = acertos ÷ total, é ele que decide o "
-            "avanço; <b>líquido</b> = (acertos − erros) ÷ total, é a régua da prova, onde cada "
-            "erro anula um acerto. Branco conta como erro: responda o lote inteiro. No "
-            "<i>veredito</i>, anote se o lote foi tentativa oficial de Nível 1 (tópico inteiro, "
-            "20 questões) ou aferição.", NOTA),
+            "avanço; <b>líquido</b> = (acertos − erros) ÷ total, é a régua da prova, onde cada erro "
+            "anula um acerto. Branco conta como erro: responda o lote inteiro. No <i>veredito</i>, "
+            "anote se o lote foi tentativa oficial de Nível 1 (tópico inteiro, 20 questões) ou "
+            "aferição.", NOTA),
         Spacer(1, 4),
-        tabela_registro(),
-    ]))
+        tabela_registro(linhas_do_historico or LINHAS_DO_HISTORICO),
+    ]
 
-    doc.build(hist)
-    return arq, n_top, peso
+
+def doc_em_branco(destino, materia=None, dia=""):
+    titulo = materia["nome"].upper() if materia else "medida"
+    sub = (f"{materia['bloco']} · {dia} · {len(materia['ementa'])} tópicos · "
+           f"{materia['itens_estimados']} itens estimados do edital") if materia else ""
+    return documento(destino, titulo, sub,
+                     "TCDF / ANACE 2026 · mapa da ementa por filtro do Gran — meta 90% bruto",
+                     margem=MARGEM, tamanho=PAGINA, faixa=FAIXA, topo=TOPO, base=BASE)
+
+
+def cabe_em_uma_folha(flowables) -> bool:
+    doc = doc_em_branco(BytesIO())
+    try:
+        doc.build(flowables)
+    except LayoutError:
+        return False
+    return doc.page == 1
+
+
+def layout_da_materia(linhas):
+    """Primeiro layout que fecha o mapa em uma folha, mais o respiro que sobra.
+
+    Uma coluna alta demais estoura o frame como LayoutError em vez de paginar —
+    a tabela de cada metade e indivisivel de proposito, para o mapa nao quebrar
+    no meio. Nos dois casos a leitura e a mesma: nao coube, tenta o proximo.
+    """
+    for colunas, escala in LAYOUTS:
+        m = Medidas(colunas, escala)
+        if not cabe_em_uma_folha(folha_do_mapa(linhas, m)):
+            continue
+        respiro = 0.0
+        while respiro < PADDING_MAXIMO:
+            passo = round(respiro + 0.25, 2)
+            if not cabe_em_uma_folha(folha_do_mapa(linhas, m, passo)):
+                break
+            respiro = passo
+        # O que ainda sobra da folha vira pauta de anotacao, em vez de branco.
+        pautadas = 0
+        for n in range(14, 2, -1):
+            if cabe_em_uma_folha(folha_do_mapa(linhas, m, respiro, n)):
+                pautadas = n
+                break
+        return m, respiro, pautadas, True
+    return Medidas(*LAYOUTS[-1]), 0.0, 0, False
+
+
+def historico_que_cabe() -> int:
+    """Maior numero de linhas do historico que ainda fecha a folha 2 em uma pagina."""
+    for n in range(24, 5, -1):
+        if cabe_em_uma_folha(folha_do_registro(n)):
+            return n
+    return 6
+
+
+def pdf_da_materia(materia, gran, estado, dia):
+    aulas = aulas_da_materia(gran, materia["id"])
+    linhas = linhas_da_materia(materia, aulas, estado)
+    m, respiro, pautadas, coube = layout_da_materia(linhas)
+    arq = SAIDA / f"{slug(materia['nome'])}.pdf"
+    doc = doc_em_branco(str(arq), materia, dia)
+    doc.build(folha_do_mapa(linhas, m, respiro, pautadas) + [PageBreak()] + folha_do_registro())
+    return arq, len(linhas), m, respiro, pautadas, doc.page, coube
 
 
 def main() -> int:
@@ -239,15 +362,25 @@ def main() -> int:
     estado = ler_progresso(mats)
     dia = {b["id"]: g["dia"] for g in prog["grupos"] for b in g["materias"]}
 
+    global LINHAS_DO_HISTORICO
+    LINHAS_DO_HISTORICO = historico_que_cabe()
+    print(f"folha 2: placar dos {N_FILTROS} filtros + {LINHAS_DO_HISTORICO} linhas de historico")
+
     alvos = sys.argv[1:] or list(mats)
     SAIDA.mkdir(parents=True, exist_ok=True)
+    problemas = 0
     for mid in alvos:
         if mid not in mats:
             print(f"materia desconhecida: {mid}")
             return 1
-        arq, n_top, peso = pdf_da_materia(mats[mid], gran, estado, dia.get(mid, "—"))
-        print(f"{arq.relative_to(RAIZ)}: {n_top} topicos, peso {peso}")
-    return 0
+        arq, n, m, respiro, pautadas, paginas, coube = pdf_da_materia(
+            mats[mid], gran, estado, dia.get(mid, "—"))
+        ok = coube and paginas == 2
+        problemas += 0 if ok else 1
+        print(f"{arq.name}: {n} linhas · {m.colunas} coluna(s) · corpo {m.escala}pt · "
+              f"respiro {respiro:.2f}pt · pauta {pautadas} · "
+              f"{paginas} folhas{'' if ok else '  <-- NAO FECHOU'}")
+    return 1 if problemas else 0
 
 
 if __name__ == "__main__":
