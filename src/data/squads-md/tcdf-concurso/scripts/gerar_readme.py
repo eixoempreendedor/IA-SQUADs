@@ -162,6 +162,17 @@ def main() -> int:
                "sozinho nao fecha nada.", "",
                "No pe da folha, **cada coluna de filtro fecha com uma bolona**: aquele filtro bateu a meta e pode "
                "ser jogado dentro do GERAL N2. A ultima bolona e a materia inteira.", "",
+               "A coluna **AULA** desce ate o subtopico: o rotulo de cada aula do Gran ja diz o recorte que ela "
+               "cobre (a aula 3 de AFO e \"1.4 Ciclo orcamentario. 1.5 Processo orcamentario\"), e "
+               "`scripts/aulas.py` le esse rotulo. Dos 181 subtopicos do edital, 164 (91%) tem aula exata; nos "
+               "outros 17 a aula aparece entre parenteses — ela cobre o topico, mas o rotulo nao cita aquele "
+               "pedaco.", "",
+               "### Planilha de acompanhamento", "",
+               "[`planilha/TCDF-acompanhamento.xlsx`](planilha/TCDF-acompanhamento.xlsx), gerada por "
+               "`python3 scripts/gerar_planilha.py`: um **Painel** onde tudo e formula, uma aba por materia com a "
+               "ementa x 8 filtros e o registro dos lotes (bruto, liquido e veredito calculados), e uma aba com as "
+               "111 aulas do curso e o que cada uma cobre. Solta no Google Drive, vira planilha Google com as "
+               "formulas vivas.", "",
                "A materia inteira cabe na folha 1 qualquer que seja o tamanho dela. O corpo do texto encolhe so o "
                "quanto for preciso — as curtas saem em 12pt e o que sobra vira pauta de anotacao; Direito "
                "Administrativo, a maior, fecha em 7,6pt com os 14 topicos e os 41 subtopicos.", "",
@@ -184,6 +195,8 @@ def main() -> int:
                "python3 scripts/gerar_status.py         # status atual a partir dos simulados registrados",
                "python3 scripts/gerar_pdfs.py           # os 7 PDFs de checklist (pdf/)",
                "python3 scripts/gerar_pdfs_materia.py   # um PDF por materia: ementa x filtros (pdf/materias/)",
+               "python3 scripts/gerar_planilha.py       # planilha de acompanhamento (planilha/)",
+               "python3 scripts/aulas.py                # confere a cobertura das aulas do Gran por subtopico",
                "python3 scripts/gerar_readme.py         # este README",
                "python3 scripts/sync_app_registry.py    # registra o squad em squads.ts e agents.ts",
                "```", "",

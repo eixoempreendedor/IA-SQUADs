@@ -42,6 +42,7 @@ from reportlab.platypus.doctemplate import LayoutError
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "scripts"))
 
+import aulas as mapa_aulas  # noqa: E402
 from gerar_pdfs import (  # noqa: E402
     CABECA, CELULA, CLARO, DESTAQUE, FUNDO, LINHA, SECAO,
     Bolinha, documento, partes, slug,
@@ -81,7 +82,7 @@ class Medidas:
     def __init__(self, colunas: int, escala: float):
         self.colunas, self.escala = colunas, escala
         self.l_filtro = min(7 * mm, max(5.2 * mm, 0.62 * mm * escala))
-        self.l_aula = max(9 * mm, 0.85 * mm * escala)
+        self.l_aula = max(11 * mm, 1.0 * mm * escala)
         self.l_coluna = (LARGURA_UTIL - CALHA) / 2 if colunas == 2 else LARGURA_UTIL
         # A coluna do GERAL N2 e mais larga e leva a bolina: ela decide se o
         # conteudo entrou no bolo que os simulados de grupo e as revisoes usam.
@@ -144,15 +145,16 @@ class RotuloGeral(Flowable):
         c.restoreState()
 
 
-def aulas_da_materia(gran: dict, mid: str) -> dict[str, list[int]]:
-    saida: dict[str, list[int]] = {}
-    for a in gran["materias"].get(mid, []):
-        for n in a["topicos"]:
-            saida.setdefault(n, []).append(a["aula"])
-    return saida
+def rotulo_da_aula(mapa, mid, chave):
+    """Numero da aula. Entre parenteses quando a aula e do topico, nao do subtopico."""
+    m = mapa.get((mid, chave))
+    if not m:
+        return "—"
+    lista = ", ".join(str(x) for x in m["aulas"])
+    return lista if m["precisao"] == mapa_aulas.EXATA else f"<font color='#9ca3af'>({lista})</font>"
 
 
-def linhas_da_materia(materia, aulas):
+def linhas_da_materia(materia, mapa):
     """[(e_topico, texto, aula)] na ordem da ementa.
 
     Nenhuma bolinha sai marcada. A bolinha de uma coluna diz que AQUELE FILTRO
@@ -163,10 +165,10 @@ def linhas_da_materia(materia, aulas):
     for t in materia["ementa"]:
         n = t["n"]
         numero, titulo, subs = partes(t["texto"])
-        ag = ", ".join(str(x) for x in aulas.get(n, [])) or "—"
-        saida.append((True, f"<b>{numero or n}.</b> {titulo}", ag))
+        saida.append((True, f"<b>{numero or n}.</b> {titulo}", rotulo_da_aula(mapa, materia["id"], n)))
         for s in subs:
-            saida.append((False, s, ""))
+            chave = s.split()[0]
+            saida.append((False, s, rotulo_da_aula(mapa, materia["id"], chave)))
         for s in t.get("subtopicos_sugeridos", []):
             saida.append((False, f"{s} <font size=5.5>(sugerido)</font>", ""))
     return saida
@@ -397,9 +399,8 @@ def historico_que_cabe() -> int:
     return 6
 
 
-def pdf_da_materia(materia, gran, dia):
-    aulas = aulas_da_materia(gran, materia["id"])
-    linhas = linhas_da_materia(materia, aulas)
+def pdf_da_materia(materia, mapa, dia):
+    linhas = linhas_da_materia(materia, mapa)
     m, respiro, pautadas, coube = layout_da_materia(linhas)
     arq = SAIDA / f"{slug(materia['nome'])}.pdf"
     doc = doc_em_branco(str(arq), materia, dia)
@@ -412,6 +413,7 @@ def main() -> int:
     prog = json.loads((RAIZ / "scripts" / "progressao.json").read_text(encoding="utf-8"))
     gran = json.loads((RAIZ / "scripts" / "gran.json").read_text(encoding="utf-8"))
     mats = {m["id"]: m for m in ed["materias"]}
+    mapa = mapa_aulas.mapa_de_aulas(gran, mats)
     dia = {b["id"]: g["dia"] for g in prog["grupos"] for b in g["materias"]}
 
     global LINHAS_DO_HISTORICO
@@ -426,7 +428,7 @@ def main() -> int:
             print(f"materia desconhecida: {mid}")
             return 1
         arq, n, m, respiro, pautadas, paginas, coube = pdf_da_materia(
-            mats[mid], gran, dia.get(mid, "—"))
+            mats[mid], mapa, dia.get(mid, "—"))
         ok = coube and paginas == 2
         problemas += 0 if ok else 1
         print(f"{arq.name}: {n} linhas · {m.colunas} coluna(s) · corpo {m.escala}pt · "
