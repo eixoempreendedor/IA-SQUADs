@@ -244,7 +244,7 @@ def tabela_coluna(linhas, m: Medidas, respiro=0.0):
     return t
 
 
-def rodape_do_geral(m: Medidas, n_topicos: int):
+def rodape_do_geral(m: Medidas):
     """Pe da folha: uma bolona embaixo de cada coluna de filtro.
 
     A coluna diz, topico a topico, o que aquele filtro sorteia. A bolona do pe
@@ -258,11 +258,6 @@ def rodape_do_geral(m: Medidas, n_topicos: int):
         "ESTE FILTRO JÁ VENCEU? Bateu 90%, marque a bolona e jogue o filtro dentro do "
         "<b>GERAL N2</b> — o filtro único da matéria vencida, de onde saem os simulados de grupo "
         "e as revisões", CABECA)
-    ficha = Paragraph(
-        f"GERAL N2 · tópicos já dentro dele: ______ de {n_topicos} &nbsp;·&nbsp; "
-        "atualizado em ______/______/__________ &nbsp;·&nbsp; última rodada: "
-        "______/______/______ &nbsp;·&nbsp; questões ________ &nbsp;·&nbsp; acertos ________ "
-        "&nbsp;·&nbsp; % bruto ________", corpo)
     raio = min(2.4 * mm, m.l_filtro * 0.36)
 
     dados = [
@@ -270,7 +265,6 @@ def rodape_do_geral(m: Medidas, n_topicos: int):
         [Paragraph("<b>Entra no GERAL N2  →</b>", corpo)] +
         [Bolinha(raio=raio, cor=DESTAQUE, espessura=1.1) for _ in range(N_FILTROS)] +
         [Bolinha(raio=raio, cor=DESTAQUE, espessura=1.4)],
-        [ficha] + [""] * N_FILTROS + [""],
     ]
     larguras = [sum(m.larguras[:2])] + m.larguras[2:]
     t = Table(dados, colWidths=larguras, hAlign="LEFT")
@@ -278,7 +272,6 @@ def rodape_do_geral(m: Medidas, n_topicos: int):
         ("BACKGROUND", (0, 0), (-1, 0), DESTAQUE),
         ("BACKGROUND", (0, 1), (-1, -1), FUNDO),
         ("SPAN", (0, 0), (-2, 0)),
-        ("SPAN", (0, 2), (-1, 2)),
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("ALIGN", (0, 1), (0, 1), "RIGHT"),
         ("ALIGN", (1, 0), (-1, -1), "CENTER"),
@@ -289,7 +282,6 @@ def rodape_do_geral(m: Medidas, n_topicos: int):
         ("TOPPADDING", (0, 1), (-1, -1), 3.5),
         ("BOTTOMPADDING", (0, 1), (-1, -1), 3.5),
         ("LINEBEFORE", (-1, 0), (-1, -1), 1.0, DESTAQUE),
-        ("LINEBELOW", (0, 1), (-1, 1), 0.5, CLARO),
         ("BOX", (0, 0), (-1, -1), 0.8, CLARO),
     ]))
     return t
@@ -311,7 +303,7 @@ def pauta(linhas_pautadas: int):
     return t
 
 
-def folha_do_mapa(linhas, m: Medidas, respiro=0.0, linhas_pautadas=0, n_topicos=0):
+def folha_do_mapa(linhas, m: Medidas, respiro=0.0, linhas_pautadas=0):
     esq, dir_ = partir(linhas, m)
     corpo = tabela_coluna(esq, m, respiro)
     if dir_:
@@ -326,8 +318,7 @@ def folha_do_mapa(linhas, m: Medidas, respiro=0.0, linhas_pautadas=0, n_topicos=
             ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
         ]))
         corpo = lado
-    saida = [corpo, Spacer(1, 3),
-             rodape_do_geral(m, n_topicos or sum(1 for x in linhas if x[0]))]
+    saida = [corpo, Spacer(1, 3), rodape_do_geral(m)]
     if linhas_pautadas:
         saida += [Spacer(1, 10), pauta(linhas_pautadas)]
     return saida
